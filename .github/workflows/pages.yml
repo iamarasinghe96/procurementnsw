@@ -52,20 +52,30 @@ jobs:
           cp dist/procurement-navigator.html out/index.html
           touch out/.nojekyll
 
+          # Skip the deploy when the published page is byte-identical.
+          if git fetch origin gh-pages --depth=1 2>/dev/null \
+             && git cat-file -e origin/gh-pages:index.html 2>/dev/null; then
+            git show origin/gh-pages:index.html > out/published.html
+            if cmp -s out/index.html out/published.html; then
+              echo "Site unchanged, nothing to publish."
+              exit 0
+            fi
+            rm out/published.html
+          fi
+
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin gh-pages --depth=1 || true
-          git checkout -B gh-pages
+          # Orphan branch so gh-pages holds the built site only - no source tree,
+          # no accumulating history. `git add -A <pathspec>` would not stage the
+          # deletions below, which is how the source tree leaked in once.
+          git checkout --orphan gh-pages-build
+          git rm -rf --cached . --quiet
           find . -maxdepth 1 -mindepth 1 \
             ! -name .git ! -name out ! -name node_modules -exec rm -rf {} +
           mv out/index.html out/.nojekyll .
           rmdir out
 
-          git add -A index.html .nojekyll
-          if git diff --cached --quiet; then
-            echo "Site unchanged, nothing to publish."
-            exit 0
-          fi
-          git commit -m "Rebuild site from ${GITHUB_SHA::7}"
-          git push --force origin gh-pages
+          git add index.html .nojekyll
+          git commit --quiet -m "Rebuild site from ${GITHUB_SHA::7}"
+          git push --force origin gh-pages-build:gh-pages
