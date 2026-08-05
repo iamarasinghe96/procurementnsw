@@ -69,6 +69,24 @@ Unverified answering is on by default and can be switched off entirely with
 `new Answerer(kb, { allowGeneralAnswers: false })`, which makes the tool decline
 anything it has no sources for.
 
+### Retrieval evaluation
+
+```
+node scripts/evaluate.mjs            # summary
+node scripts/evaluate.mjs --verbose  # every case
+node scripts/evaluate.mjs --tune     # sweep the gate threshold
+```
+
+71 cases: real questions across every topic and audience, phrased the way people
+actually type them — long, messy, full of commodity nouns the knowledge base has
+never heard of — plus off-topic negatives that must be turned away. It runs as
+part of `npm test`, so a scoring change that helps one query and quietly breaks
+five others fails the build.
+
+It exists because "how to become a supplier to supply office laptops to
+government institutions" was answered with "not covered". Fixing that one query
+would have hidden the class of problem behind it.
+
 ### How relevance is judged
 
 Raw BM25 scores are not comparable between questions, so the gate is **coverage**:
@@ -76,10 +94,30 @@ how much of the question's distinctive vocabulary the best hit explains, and how
 much of that landed in the chunk's curated labels (heading, keywords, summary)
 rather than incidentally in its prose.
 
-Both matter. "How do I write a good job application" matches *application* and
-nothing else. "What is the weather tomorrow" matches *tomorrow*, which appears
-once in a probity checklist line. Neither is a procurement question, and neither
-gets a grounded answer. `test/relevance.test.js` holds the regression set.
+The gate is the **absolute** IDF-weighted mass of query terms matching a chunk's
+curated labels — heading, keywords, summary — rather than appearing incidentally
+in its prose.
+
+Absolute, not a ratio: a ratio punishes long specific questions, which is how
+people ask. Two unknown nouns (*laptops*, *institutions*) were enough to make a
+perfectly good supplier question look off-topic. Length must not decide
+relevance.
+
+Labels rather than prose: "what is the weather tomorrow" matches *tomorrow*,
+which appears once in a probity checklist line.
+
+A single term carries a question only when it is **domain vocabulary** — a
+corpus-wide set built from the single-word entries in the curated keyword lists.
+Rarity is the wrong test: the most central words (*tender*, *quote*, *contract*)
+appear everywhere and so have the lowest IDF, yet "do we have to tender" is an
+ordinary question. Multi-word keywords are indexed for matching but do not confer
+domain status on their parts, or "open tender" would make "open" a procurement
+term and "what time does the library open" a question about tendering.
+
+**Chunk audience order is meaningful.** Each chunk lists the audience it is
+*written for* first, then those it is merely relevant to. "Paying suppliers" and
+"Getting paid" describe the same rule from opposite sides, and a supplier asking
+"when will I get paid" wants the one addressed to them.
 
 ---
 

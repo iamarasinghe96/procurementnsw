@@ -5,7 +5,12 @@
     "path": "source",
     "stage": "source",
     "source_document": "Sourcing.docx",
-    "audiences": ["agency", "council", "supplier", "corporate"],
+    "audiences": [
+      "agency",
+      "council",
+      "supplier",
+      "corporate"
+    ],
     "summary": "Stage 2: get authorised, choose and run a market approach, evaluate responses under a probity framework, then negotiate, award and debrief."
   },
   "chunks": [
@@ -13,12 +18,24 @@
       "id": "sourcing.authorisation",
       "path": "source/get-authorised",
       "heading": "Get authorised to approach the market",
-      "audiences": ["agency"],
+      "audiences": [
+        "agency"
+      ],
       "jurisdiction": "nsw-government",
       "authority": "policy",
       "summary": "Four things must be in place before you can go to market: accreditation, an approved strategy, process arrangements and budget approval.",
       "text": "The way you approach and engage with suppliers is often referred to as going to market or a market approach. There is no one-size-fits-all approach; choose one that best fits your situation based on the value, complexity, timing and goals of your procurement. Generally, the higher the value or risk, the more rigorous the market approach, and simple purchases are less likely to require a formal market approach. You must be authorised to approach the market. To be authorised you need the appropriate level of agency accreditation, an approved procurement strategy, arrangements in place to manage all stages of the procurement process and outcome, and adequate budget and approval from your financial delegate. The contract value helps determine whether you are accredited to conduct the procurement and whether your agency head or another delegate can approve the procurement and sign the contract. Remember to consider local suppliers, social enterprises, disability employment organisations, SMEs, regional, gender equitable and Aboriginal businesses as per exemptions and preferences. You also have environmental considerations so you can meet mandatory requirements, improve value for money and achieve sustainability benefits. If you estimate your procurement is over $680,000 you must apply the Enforceable Procurement Provisions Board Direction. If your procurement is over $7.5 million you are required to embed upfront local market testing in your procurement plan as per PBD-2024-02.",
-      "keywords": ["authorisation", "authorised", "approach the market", "going to market", "market approach", "accreditation", "budget", "delegate", "before you go to market"],
+      "keywords": [
+        "authorisation",
+        "authorised",
+        "approach the market",
+        "going to market",
+        "market approach",
+        "accreditation",
+        "budget",
+        "delegate",
+        "before you go to market"
+      ],
       "checklist": [
         "Confirm your agency's accreditation covers this value and risk level",
         "Confirm the procurement strategy is approved, in writing",
@@ -28,22 +45,61 @@
         "Check the $7.5 million local market testing requirement",
         "Check supplier preferencing obligations before you design the approach"
       ],
-      "thresholds": ["thr-unaccredited-680k", "thr-local-7-5m", "thr-accreditation-levels"],
+      "thresholds": [
+        "thr-unaccredited-680k",
+        "thr-local-7-5m",
+        "thr-accreditation-levels"
+      ],
       "citations": [
-        { "label": "Accreditation - buy.nsw", "url": "https://info.buy.nsw.gov.au/buyer-guidance/get-started/accreditation" },
-        { "label": "PBD-2024-02 local suppliers", "url": "https://arp.nsw.gov.au/pbd-2024-02-increasing-opportunities-for-local-suppliers-to-supply-to-government/" }
+        {
+          "label": "Accreditation - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/get-started/accreditation"
+        },
+        {
+          "label": "PBD-2024-02 local suppliers",
+          "url": "https://arp.nsw.gov.au/pbd-2024-02-increasing-opportunities-for-local-suppliers-to-supply-to-government/"
+        }
       ]
     },
     {
       "id": "sourcing.market-approach-types",
       "path": "source/choose-a-market-approach",
       "heading": "Choosing your market approach: RFI, EOI, RFQ, RFP, RFT",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Five common approaches, and when each one is the right tool.",
       "text": "Request for Information (RFI): a useful way to better understand the market before starting a procurement. You invite suppliers to provide information about their capabilities, solutions and emerging trends without committing to purchase. This helps you test assumptions, refine requirements and identify what the market can offer. Most effective for higher risk or more complex procurements, or where requirements are not yet fully defined, and often used early in the lifecycle to inform your strategy. Expression of Interest (EOI): use where you are uncertain about the goods or services you are procuring. It helps you find out what is available and whether suppliers are interested and capable. You do not include price information or award a contract; instead you usually shortlist potential suppliers and invite them to tender. Benefits include testing whether a good or service exists, keeping costs down by only inviting capable suppliers to respond, and encouraging competition. Request for Quote (RFQ): a simple and efficient way to procure goods and services you understand well and use frequently. You invite potential suppliers to provide a quote for specific goods or services, often from a list of registered suppliers on a prequalification scheme. Most effective for low risk, low-to-medium-value procurements with well-defined requirements and standard terms and conditions. Request for Proposal (RFP): helps you explore solutions and draw out a detailed response to a specific problem or need, and can tap into new and innovative approaches. Like an EOI it is often the first step in a multi-stage process; once you have proposals you can shortlist suppliers and invite them to tender or negotiate directly with your preferred supplier. Include criteria to evaluate suppliers' expertise, experience and capacity to deliver. Open Request for Tender (RFT): works best when there is a broad and competitive market, that market is dynamic and subject to change, your procurement is high value, and there is likely to be a lot of supplier interest. Anybody can submit a tender and tenderers must show they satisfy the evaluation criteria. An open RFT encourages competition and is effective for ensuring value for money, making it attractive when you are unsure of pricing or do not know who can supply what you need. Multi-stage or selective RFT: works best when you want to establish a panel of suppliers for ongoing work, identify several potential suppliers for a single contract, or identify the supplier with the best solution to a complex or unusual procurement. It reduces tendering costs for both sides and helps quickly identify the best suppliers in a mature marketplace. It usually involves two stages: identify suitable prospective suppliers, for example from a prequalification scheme or via an EOI, then shortlist applicants who have demonstrated they can fulfil the criteria and invite the best to tender.",
-      "keywords": ["rfi", "eoi", "rfq", "rfp", "rft", "tender", "quote", "expression of interest", "request for proposal", "request for tender", "which approach", "market approach types", "multi-stage", "selective"],
+      "keywords": [
+        "rfi",
+        "eoi",
+        "rfq",
+        "rfp",
+        "rft",
+        "tender",
+        "quote",
+        "expression of interest",
+        "request for proposal",
+        "request for tender",
+        "which approach",
+        "market approach types",
+        "multi-stage",
+        "selective",
+        "what approach should i use",
+        "choose an approach",
+        "best way to go to market",
+        "procurement system",
+        "software",
+        "payroll",
+        "ict",
+        "new system",
+        "procure a system"
+      ],
       "checklist": [
         "Do you know exactly what you need? If not, start with an RFI or EOI",
         "Is it well defined, low risk and low-to-medium value? An RFQ off a scheme is usually right",
@@ -51,36 +107,73 @@
         "Is it high value with a broad competitive market? Use an open RFT",
         "Do you need a panel or a shortlist first? Use a multi-stage RFT"
       ],
-      "templates": ["tpl-rfi", "tpl-eoi", "tpl-opportunity-terms", "tpl-opportunity-sor", "tpl-opportunity-response"],
+      "templates": [
+        "tpl-rfi",
+        "tpl-eoi",
+        "tpl-opportunity-terms",
+        "tpl-opportunity-sor",
+        "tpl-opportunity-response"
+      ],
       "citations": [
-        { "label": "Best practice procurement - source", "url": "https://www.info.buy.nsw.gov.au/buyer-guidance/get-started/best-practice-procurement/source" }
+        {
+          "label": "Best practice procurement - source",
+          "url": "https://www.info.buy.nsw.gov.au/buyer-guidance/get-started/best-practice-procurement/source"
+        }
       ]
     },
     {
       "id": "sourcing.evaluation-plan",
       "path": "source/evaluation-plan",
       "heading": "Your evaluation plan",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "The evaluation plan must be finalised before the tender closes and before any response is opened.",
       "text": "Your evaluation plan should include details of your evaluation team members and their responsibilities; evaluation protocols covering the evaluation process, managing confidentiality and conflicts of interest, record keeping, communicating with respondents, and negotiation protocols; clearly defined evaluation criteria and weightings; and how the successful supplier should be recommended for contract award and notification. You must finalise your evaluation plan before the tender period closes and before opening supplier responses.",
-      "keywords": ["evaluation plan", "evaluation", "protocols", "weightings", "evaluation team", "before opening responses"],
+      "keywords": [
+        "evaluation plan",
+        "evaluation",
+        "protocols",
+        "weightings",
+        "evaluation team",
+        "before opening responses"
+      ],
       "watch_outs": [
         "Writing or changing the evaluation plan after responses are opened is a serious probity breach"
       ],
-      "templates": ["tpl-evaluation-plan", "tpl-conduct-plan"]
+      "templates": [
+        "tpl-evaluation-plan",
+        "tpl-conduct-plan"
+      ]
     },
     {
       "id": "sourcing.evaluation-criteria",
       "path": "source/evaluation-criteria",
       "heading": "Setting evaluation criteria and weightings",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Mandatory criteria are pass/fail and must be real needs; non-mandatory criteria are weighted across price and non-price.",
       "text": "Your evaluation plan and tender documents should include the mandatory and non-mandatory criteria you will use to evaluate supplier responses and select the successful supplier. Mandatory criteria should reflect actual needs and not wants; suppliers must meet them to be considered further. Non-mandatory criteria are what your evaluation team will use to evaluate responses to a competitive market approach, and these can be weighted to give more importance to some criteria. Your criteria are made up of price and non-price criteria and you should determine the importance of each by applying a percentage; for example price might have a weighting of 60 per cent and the non-price criteria 40 per cent. Examples of non-price criteria include quality and quantity, fitness for purpose, technical requirements, ability to meet quality or performance standards, the supplier's experience and performance history, and environmental sustainability. Your criteria could also address government priorities such as supporting SMEs and regional businesses, providing employment and business opportunities for Aboriginal people, and supporting apprenticeships and trainees. The SME and Regional Procurement Policy includes mandatory minimum non-price evaluation criteria for contracts over $3 million; you can apply these criteria below this value as a way of supporting SME participation and NSW Government's economic, ethical, environmental and social priorities. Your RFx documents should include key evaluation criteria and their relative importance, although you should not publish individual weightings.",
-      "keywords": ["evaluation criteria", "weighting", "mandatory criteria", "non-price", "price", "scoring", "how are tenders scored", "60 40", "sme criteria"],
+      "keywords": [
+        "evaluation criteria",
+        "weighting",
+        "mandatory criteria",
+        "non-price",
+        "price",
+        "scoring",
+        "how are tenders scored",
+        "60 40",
+        "sme criteria"
+      ],
       "checklist": [
         "Test every mandatory criterion: is this a genuine need, or a want that will exclude good suppliers?",
         "Set price and non-price weightings before you see any response",
@@ -88,21 +181,38 @@
         "Publish the criteria and their relative importance, but not the individual weightings",
         "Make sure the criteria can actually be scored from the information you asked suppliers to provide"
       ],
-      "thresholds": ["thr-sme-3m"],
+      "thresholds": [
+        "thr-sme-3m"
+      ],
       "citations": [
-        { "label": "SME and Regional Procurement Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy" }
+        {
+          "label": "SME and Regional Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy"
+        }
       ]
     },
     {
       "id": "sourcing.evaluation-team-coi",
       "path": "source/evaluation-team-and-conflicts",
       "heading": "Forming the evaluation team and declaring conflicts",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "The team combines business users and technical experts, and every member declares conflicts before the approach opens.",
       "text": "Your evaluation team should include business users and technical experts who will evaluate supplier responses and form a recommendation. Their role includes reviewing and assessing each response in accordance with the evaluation criteria and methodology in your evaluation plan, making clarifications with respondents, undertaking reference checks if required, summarising the assessment results and recommending the successful respondents, identifying areas for negotiation, and signing off the final evaluation report including the recommendation. Before approaching the market you should develop and implement a conduct plan to ensure your evaluation team works within a framework of probity and fair dealing. This includes declaring any conflicts of interest.",
-      "keywords": ["evaluation team", "conflict of interest", "conduct plan", "probity", "declare", "coi", "panel members", "reference checks"],
+      "keywords": [
+        "evaluation team",
+        "conflict of interest",
+        "conduct plan",
+        "probity",
+        "declare",
+        "coi",
+        "panel members",
+        "reference checks"
+      ],
       "checklist": [
         "Include both business users and technical experts",
         "Issue and sign the procurement conduct plan before the approach opens",
@@ -110,18 +220,34 @@
         "Re-check for conflicts when the respondent list is known - a conflict can appear at that point",
         "Have the whole team sign off the final evaluation report"
       ],
-      "templates": ["tpl-conduct-plan", "tpl-icac-coi"]
+      "templates": [
+        "tpl-conduct-plan",
+        "tpl-icac-coi"
+      ]
     },
     {
       "id": "sourcing.rfx-documents",
       "path": "source/prepare-rfx-documents",
       "heading": "Preparing your RFx documents",
-      "audiences": ["agency", "council", "supplier"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Eight things your market documents must tell suppliers, plus a response template so offers are comparable.",
       "text": "Before you can approach the market you need to prepare your RFx documents. To get a successful outcome you need to provide suppliers with all the information they need to submit the best fit for purpose bid. You must provide the same level of information and equal treatment to all prospective suppliers. You will also need to provide suppliers with a response template, which helps ensure responses are provided in a consistent way that can be reasonably compared and evaluated. Your RFx documents should include a description of the goods or services you are procuring; the contract duration or the period the goods or services must be provided (generally you should not make the contract last longer than 5 years including any extensions); where and how suppliers can lodge their responses; the due date for responses; any conditions suppliers must meet to be considered for the contract; key evaluation criteria and their relative importance, although you should not provide individual weightings; whether the procurement process contains any further steps; and your contact details and how prospective suppliers can ask for further information.",
-      "keywords": ["rfx", "tender documents", "response template", "what to include", "statement of requirements", "lodgement", "closing date", "contract duration"],
+      "keywords": [
+        "rfx",
+        "tender documents",
+        "response template",
+        "what to include",
+        "statement of requirements",
+        "lodgement",
+        "closing date",
+        "contract duration"
+      ],
       "checklist": [
         "Describe what you are buying in outcome terms a supplier outside your organisation can understand",
         "State the contract term and every extension option",
@@ -132,36 +258,86 @@
         "Give a named contact and a channel for questions",
         "Attach a response template so offers arrive comparable"
       ],
-      "thresholds": ["thr-contract-5-years"],
-      "templates": ["tpl-opportunity-sor", "tpl-opportunity-terms", "tpl-opportunity-response"]
+      "thresholds": [
+        "thr-contract-5-years"
+      ],
+      "templates": [
+        "tpl-opportunity-sor",
+        "tpl-opportunity-terms",
+        "tpl-opportunity-response"
+      ]
     },
     {
       "id": "sourcing.systems-and-tender-periods",
       "path": "source/systems-and-tender-periods",
       "heading": "Issuing your RFx and setting the tender period",
-      "audiences": ["agency", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "nsw-government",
       "authority": "policy",
       "summary": "Use Supplier Hub and eTendering; allow 25 days as a default, 10 in defined circumstances, and avoid closing on weekends or public holidays.",
       "text": "There are two whole-of-government systems you can use to find suppliers and approach the market, and your agency may also have its own. The Supplier Hub is where you find suppliers ready to sell to government. NSW eTendering is where you request quotes from suppliers on prequalification schemes, advertise and manage tenders, list upcoming or closed business opportunities, and list awarded contracts valued over $150,000 (inc GST). When determining your tender period, consider your needs and the suppliers' ability to prepare a proper response. Allow a minimum of 25 calendar days if you publish the tender on NSW eTendering. Ten calendar days is the minimum recommended if information about the procurement has been published in your agency's annual procurement plan within the last 12 months, for buying goods or services using approved procurement arrangements such as prequalification schemes, and for recurring procurement arrangements. There are no set minimum tender periods for urgent procurements such as responding to a critical issue or an emergency. Your agency may have specific timeframe requirements based on value, risk and complexity. If your procurement is for goods and services valued over $680,000 (ex GST) it may be subject to the enforceable procurement provisions, including the minimum tender periods for covered procurements. Try to avoid closing your tender on public holidays or weekends; the system sets a standard closing time of 3pm for all opportunities. Suppliers are often preparing their response right up until the closing date and time and may need to contact you if there are issues submitting. You must give suppliers as much notice as possible of upcoming procurements.",
-      "keywords": ["etendering", "tenders.nsw.gov.au", "supplier hub", "tender period", "25 days", "10 days", "closing time", "3pm", "advertise", "how long", "deadline"],
-      "thresholds": ["thr-agency-tender-25-days", "thr-gipa-150k"],
-      "templates": ["tpl-etendering", "tpl-supplier-hub"],
+      "keywords": [
+        "etendering",
+        "tenders.nsw.gov.au",
+        "supplier hub",
+        "tender period",
+        "25 days",
+        "10 days",
+        "closing time",
+        "3pm",
+        "advertise",
+        "how long",
+        "deadline"
+      ],
+      "thresholds": [
+        "thr-agency-tender-25-days",
+        "thr-gipa-150k"
+      ],
+      "templates": [
+        "tpl-etendering",
+        "tpl-supplier-hub"
+      ],
       "citations": [
-        { "label": "NSW eTendering", "url": "https://tenders.nsw.gov.au/" },
-        { "label": "Run a tender process", "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/notify-and-brief-the-market/run-tender-process" }
+        {
+          "label": "NSW eTendering",
+          "url": "https://tenders.nsw.gov.au/"
+        },
+        {
+          "label": "Run a tender process",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/notify-and-brief-the-market/run-tender-process"
+        }
       ]
     },
     {
       "id": "sourcing.running-the-process",
       "path": "source/running-the-process",
       "heading": "Running the process: questions, addenda, mistakes, late tenders and extensions",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Five rules for keeping a live market approach fair and defensible.",
       "text": "Step 1, respond to questions and clarifications. You must reply promptly to any questions or requests for clarification from respondents. Your answers should be deidentified and supplied to all respondents, and the information you provide must not give one supplier an advantage over another. Step 2, issuing addenda or amendments. If you issue an addendum you must give suppliers reasonable time to modify and re-submit their response, and make reasonable efforts to notify all prospective respondents, for example by emailing all suppliers that downloaded the tender documents. Generally you should not issue an addendum within 5 working days of a tender closing date; if this is not possible you should consider extending the tender period by at least 5 working days. Step 3, allowing suppliers to correct mistakes. If you let a supplier correct an unintentional error during the tender period you must give all suppliers the same opportunity. Step 4, late tender submissions. You should not accept a late tender submission unless your action or omission caused the lateness, or you are sure no other bidder will be disadvantaged. Your tender documents should clearly state whether you will accept late submissions and in what circumstances. Step 5, extending the tender period. You should not extend the tender period except in exceptional circumstances, for example where you need to issue late addenda; a request from one or more suppliers for an extension is not an exceptional circumstance. Throughout, you must provide the same level of information and equal treatment to all prospective suppliers, always use secure processes to manage responses, and maintain the confidentiality of all supplier proposals.",
-      "keywords": ["addendum", "amendment", "late tender", "extension", "clarification", "questions", "equal treatment", "deidentified", "correct a mistake", "tender rules"],
+      "keywords": [
+        "addendum",
+        "amendment",
+        "late tender",
+        "extension",
+        "clarification",
+        "questions",
+        "equal treatment",
+        "deidentified",
+        "correct a mistake",
+        "tender rules"
+      ],
       "checklist": [
         "Deidentify every question and circulate the answer to all respondents",
         "Do not issue an addendum inside 5 working days of close without extending the period",
@@ -173,62 +349,141 @@
         "Answering one supplier's question privately is one of the fastest ways to compromise a process",
         "A supplier asking for more time is not, by itself, an exceptional circumstance"
       ],
-      "templates": ["tpl-addendum"]
+      "templates": [
+        "tpl-addendum"
+      ]
     },
     {
       "id": "sourcing.evaluate-responses",
       "path": "source/evaluate-responses",
       "heading": "Evaluating responses and selecting a supplier",
-      "audiences": ["agency", "council", "supplier"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Three steps: rule out non-conforming responses, score the rest against your criteria, then document the recommendation.",
       "text": "After the tender closes, open the responses and have the evaluation team evaluate them and recommend the successful supplier. To select the successful supplier the evaluation team must follow the processes documented in your evaluation plan and procurement conduct plan. Step 1: rule out responses that do not meet the tender conditions and mandatory criteria. Step 2: assess the remaining responses against your non-mandatory evaluation criteria; you can use the buy.nsw evaluation scoresheet, which includes guidance on scoring how well a supplier's response meets your requirements. Step 3: recommend the successful supplier, documenting the evaluation team's recommendations in an evaluation report. You must use a framework of probity and fair dealing to select the suppliers you assess are most likely to deliver value for money.",
-      "keywords": ["evaluate", "evaluation", "scoresheet", "evaluation report", "shortlist", "non-conforming", "select supplier", "recommendation"],
-      "templates": ["tpl-evaluation-scoresheet", "tpl-evaluation-report"]
+      "keywords": [
+        "evaluate",
+        "evaluation",
+        "scoresheet",
+        "evaluation report",
+        "shortlist",
+        "non-conforming",
+        "select supplier",
+        "recommendation"
+      ],
+      "templates": [
+        "tpl-evaluation-scoresheet",
+        "tpl-evaluation-report"
+      ]
     },
     {
       "id": "sourcing.due-diligence-at-sourcing",
       "path": "source/supplier-due-diligence",
       "heading": "Supplier due diligence before you engage",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "Before finalising an engagement, verify the supplier is real, capable, solvent, licensed and reputable - it is your responsibility.",
       "text": "Supplier due diligence refers to the checks you perform on potential suppliers to understand whether they are genuine, are capable and reliable, are financially viable, have the required authorities, licences and status, and are of good repute and integrity. This helps you ensure value for money, prevent corrupt conduct, maintain trust in public administration, and comply with legal and regulatory expectations. Ensuring that suppliers are legitimate and capable of delivering the specified goods or services is your responsibility. After identifying potential suppliers, and before finalising the engagement, you must verify that suppliers are capable of performing the work and have provided truthful information about their skills, experience, business records and qualifications. This applies both to individual procurement activities and when creating a panel of prequalified suppliers.",
-      "keywords": ["due diligence", "verify supplier", "genuine", "financially viable", "licences", "reputation", "checks before engaging", "panel"],
-      "templates": ["tpl-icac-due-diligence"],
+      "keywords": [
+        "due diligence",
+        "verify supplier",
+        "genuine",
+        "financially viable",
+        "licences",
+        "reputation",
+        "checks before engaging",
+        "supplier panel"
+      ],
+      "templates": [
+        "tpl-icac-due-diligence"
+      ],
       "citations": [
-        { "label": "ICAC Supplier Due Diligence guide", "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies" }
+        {
+          "label": "ICAC Supplier Due Diligence guide",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        }
       ]
     },
     {
       "id": "sourcing.negotiate-and-award",
       "path": "source/negotiate-and-award-contract",
       "heading": "Negotiate and award the contract",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Use an existing contract template where one exists; get legal advice before you modify one. Purchase orders are contracts too.",
       "text": "A contract is an agreement made between two or more parties where legal rights and obligations are created that are enforceable in law. Your contracts should always be commercial and make it easy for suppliers to understand their obligations and your needs. Generally you should not make the contract last longer than 5 years, including any extensions. For more complex procurements you may need to negotiate to achieve the best possible arrangement with your preferred suppliers; good negotiation leaves both parties satisfied. When you award a contract, use an existing contract template where one exists, because they include standard terms and conditions. If there is no template, or you need to modify an existing template, you may need to negotiate new contract terms with the supplier, and you should seek legal advice if you do. Refer to buy.nsw for information on contract clauses and requirements including insurances, indemnity, intellectual property, reporting and termination. You should use model tender and contract clauses for goods and services contracts over $7.5 million to meet the requirements of the Small Business Shorter Payment Terms Policy. When you procure certain types of goods or services, such as those from prequalification schemes, you must use existing contract templates - this includes procuring ICT and professional services. Purchase orders form the contract where you do not use a standalone contract, for example for low value purchases where no contract template exists, when buying off a scheme where you do not issue a contract, and when buying off a standing offer or panel where no customer contract is issued. A purchase order is a commercial document issued by a buyer to a seller and is a legally binding contract once accepted; it indicates the types, quantities and agreed prices for goods or services and outlines the delivery date and payment terms, and is usually based on a quote provided by the seller. No contract exists until the purchase order is accepted by the seller.",
-      "keywords": ["contract", "award", "negotiate", "negotiation", "contract template", "purchase order", "po", "terms and conditions", "legal advice", "5 years", "binding"],
-      "thresholds": ["thr-contract-5-years", "thr-local-7-5m"],
-      "templates": ["tpl-contract-templates", "tpl-contract-clauses", "tpl-shorter-payment-clauses"],
+      "keywords": [
+        "contract",
+        "award",
+        "negotiate",
+        "negotiation",
+        "contract template",
+        "purchase order",
+        "po",
+        "terms and conditions",
+        "legal advice",
+        "5 years",
+        "binding"
+      ],
+      "thresholds": [
+        "thr-contract-5-years",
+        "thr-local-7-5m"
+      ],
+      "templates": [
+        "tpl-contract-templates",
+        "tpl-contract-clauses",
+        "tpl-shorter-payment-clauses"
+      ],
       "citations": [
-        { "label": "Contract templates", "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-templates" },
-        { "label": "Contract clauses and requirements", "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-clauses" }
+        {
+          "label": "Contract templates",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-templates"
+        },
+        {
+          "label": "Contract clauses and requirements",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-clauses"
+        }
       ]
     },
     {
       "id": "sourcing.debrief-suppliers",
       "path": "source/debrief-unsuccessful-suppliers",
       "heading": "Debriefing unsuccessful suppliers",
-      "audiences": ["agency", "council", "supplier", "corporate", "nfp"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
       "jurisdiction": "both",
       "authority": "policy",
       "summary": "A debrief is feedback to help the supplier improve, not a re-argument of the decision. SMEs and regional suppliers can require one.",
       "text": "After awarding a contract you should debrief unsuccessful suppliers. This is an opportunity to provide feedback on their response to help improve their future tender responses, not a debate on the evaluation process. You can conduct debriefings by telephone or in a face-to-face meeting. Your feedback should include strengths in the supplier's response and areas for improvement for future tender submissions. You must provide pre and post-tender briefings when reasonably requested by SMEs and regional suppliers, to clarify requirements and provide feedback on unsuccessful bids. You must not discuss commercial-in-confidence information, such as details of other suppliers' responses, and you must keep a record of the debrief including attendees.",
-      "keywords": ["debrief", "feedback", "unsuccessful", "lost the tender", "why did we lose", "briefing", "sme rights"],
+      "keywords": [
+        "debrief",
+        "feedback",
+        "unsuccessful",
+        "lost the tender",
+        "why did we lose",
+        "briefing",
+        "sme rights"
+      ],
       "checklist": [
         "Offer a debrief to every unsuccessful respondent",
         "Prepare strengths and improvement areas from the evaluation record, not from memory",

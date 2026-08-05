@@ -5,7 +5,12 @@
     "path": "integrity/supplier-due-diligence",
     "stage": "all",
     "source_document": "Researched addition based on the ICAC NSW Supplier Due Diligence guide, referenced throughout the Comperio course.",
-    "audiences": ["agency", "council", "supplier", "corporate"],
+    "audiences": [
+      "agency",
+      "council",
+      "supplier",
+      "corporate"
+    ],
     "summary": "The five categories of check, when to run them, the red flags to look for, and how deep to go."
   },
   "chunks": [
@@ -13,12 +18,29 @@
       "id": "due-diligence.five-categories",
       "path": "integrity/supplier-due-diligence/five-categories-of-check",
       "heading": "The five categories of due diligence check",
-      "audiences": ["agency", "council", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "Due diligence answers one question - should we be doing business with this supplier - across five categories of check.",
       "text": "In a nutshell, due diligence helps to answer the question: should we be doing business with this supplier? Numerous ICAC investigations have shown that poor due diligence has led to corrupt conduct. Conducting supplier due diligence helps you ensure value for money, prevent corrupt conduct, maintain trust in public administration and comply with legal and regulatory expectations. Ensuring that suppliers are legitimate and capable of delivering the goods or services specified in your contract is your responsibility. The ICAC's Supplier Due Diligence guide organises checks into five categories, framed as questions. Is the supplier genuine - does the business actually exist as claimed, and is it who it says it is? Is the supplier capable and reliable - can they actually do this work, and have they done it before? Is the supplier financially viable - can they survive the length of the contract? Do they have the required authorities, licences and status - the specific legal permissions the work requires? Are they of good repute and integrity - is there history that should give you pause? The guide covers what due diligence is, why, when and how it should be performed, and by whom, and includes practical techniques for probing the integrity of online suppliers, such as viewing webpage source code, searching internet archives, obtaining a site's IP address and geolocation, and reverse image searches.",
-      "keywords": ["due diligence", "five categories", "genuine", "capable", "reliable", "financially viable", "licences", "repute", "integrity", "should we do business", "icac guide", "checks"],
+      "keywords": [
+        "due diligence",
+        "five categories",
+        "genuine",
+        "capable",
+        "reliable",
+        "financially viable",
+        "licences",
+        "repute",
+        "integrity",
+        "should we do business",
+        "icac guide",
+        "due diligence checks"
+      ],
       "checklist": [
         "Genuine: verify the ABN against the Australian Business Register and check it matches the entity name you are contracting with",
         "Capable and reliable: check referees, past performance and comparable projects rather than accepting the claim",
@@ -27,21 +49,51 @@
         "Repute and integrity: search for adverse findings, regulator actions and litigation history",
         "Scale the depth of checking to the value, duration and risk of the engagement"
       ],
-      "templates": ["tpl-icac-due-diligence"],
+      "templates": [
+        "tpl-icac-due-diligence"
+      ],
       "citations": [
-        { "label": "ICAC - Supplier Due Diligence: a guide for NSW public sector agencies", "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies" }
+        {
+          "label": "ICAC - Supplier Due Diligence: a guide for NSW public sector agencies",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        }
       ]
     },
     {
       "id": "due-diligence.red-flags",
       "path": "integrity/supplier-due-diligence/red-flags",
       "heading": "Supplier red flags",
-      "audiences": ["agency", "council", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "ABN problems, no separation between ownership and management, and thin verifiable history are the signals ICAC highlights.",
       "text": "Red flags include suppliers that have no ABN, an invalid ABN, or an ABN that does not match to the Australian Business Register. ICAC's past investigations show that corruption risk is much greater where there is little or no separation between management and ownership of the company, so a sole-controlled entity bidding for significant work warrants closer attention - not disqualification, but a deeper look. Other signals worth probing include a business whose online presence is thin, recently created, or inconsistent with its claimed trading history; addresses that resolve to residential premises, virtual offices or the address of another bidder; directors or shareholders who overlap with another bidder in the same process; referees who cannot be independently located; insurance or licence certificates supplied as images rather than verifiable records; and pricing that is markedly out of line with the rest of the field in either direction. ICAC's guide includes techniques for probing the online presence of a supplier, including viewing webpage source code, searching internet archives for how long a site has really existed, obtaining a site's IP address and geolocation, and running reverse image searches on photographs used to establish credibility. The general principle is that a claim that cannot be independently verified should not be treated as verified.",
-      "keywords": ["red flags", "warning signs", "abn", "invalid abn", "shell company", "beneficial ownership", "sole director", "fake website", "reverse image", "shared address", "same directors", "suspicious", "phoenix"],
+      "keywords": [
+        "red flags",
+        "warning signs",
+        "abn",
+        "invalid abn",
+        "shell company",
+        "beneficial ownership",
+        "sole director",
+        "fake website",
+        "reverse image",
+        "shared address",
+        "same directors",
+        "suspicious",
+        "phoenix",
+        "is the supplier real",
+        "real business",
+        "genuine business",
+        "legitimate supplier",
+        "how do i know if",
+        "verify the supplier",
+        "check the supplier is real"
+      ],
       "checklist": [
         "Validate the ABN on the Australian Business Register and confirm the entity name matches",
         "Look for overlap in directors, shareholders, addresses or contact details between bidders",
@@ -54,22 +106,47 @@
         "Two bidders sharing an address, a phone number or a director is a collusion indicator that needs escalation, not a clerical query",
         "A very low bid can indicate a supplier who has misunderstood the scope, or who intends to recover margin through variations"
       ],
-      "templates": ["tpl-icac-due-diligence"],
+      "templates": [
+        "tpl-icac-due-diligence"
+      ],
       "citations": [
-        { "label": "ICAC - Supplier Due Diligence guide", "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies" },
-        { "label": "ICAC media release - new supplier due diligence guide", "url": "https://www.icac.nsw.gov.au/media-centre/media-releases/2020-media-releases/new-icac-supplier-due-diligence-guide-to-help-public-sector-take-good-care-when-doing-business" }
+        {
+          "label": "ICAC - Supplier Due Diligence guide",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        },
+        {
+          "label": "ICAC media release - new supplier due diligence guide",
+          "url": "https://www.icac.nsw.gov.au/media-centre/media-releases/2020-media-releases/new-icac-supplier-due-diligence-guide-to-help-public-sector-take-good-care-when-doing-business"
+        }
       ]
     },
     {
       "id": "due-diligence.when-to-run-checks",
       "path": "integrity/supplier-due-diligence/when-to-run-checks",
       "heading": "When to run due diligence across the procurement lifecycle",
-      "audiences": ["agency", "council", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "Design the checks at planning, run them before engagement, and repeat them during long contracts - always on a bank detail change.",
       "text": "Due diligence is not a single gate. At the planning stage you design it: identify the capabilities the procurement genuinely requires, understand the regulatory environment applying to suppliers in that market, and decide what information suppliers must provide and how you will verify it. Write those requirements into the market-facing documents, not just the internal plan, because you can only verify what you asked for. At the sourcing stage you run the checks: after identifying potential suppliers and before finalising the engagement, verify that suppliers are capable of performing the work and have provided truthful information about their skills, experience, business records and qualifications. This applies both to individual procurements and to admitting suppliers onto a panel or prequalification scheme - a scheme is only as reliable as the checks that put suppliers on it. At the manage stage you repeat them: for lengthy contracts, re-check that insurances and licences remain current, and for more complex contracts run ongoing checks on the supplier's corporate structure, financial health and regulatory compliance. Additional due diligence is always required if the supplier requests a change to its bank account details - verify independently, through contact details you already hold, never through details supplied in the request itself.",
-      "keywords": ["when to check", "lifecycle", "planning", "sourcing", "manage", "ongoing", "panel", "scheme", "bank account change", "payment redirection", "re-check", "insurance expiry"],
+      "keywords": [
+        "when to check",
+        "lifecycle",
+        "planning",
+        "sourcing",
+        "manage",
+        "ongoing",
+        "supplier panel",
+        "scheme",
+        "bank account change",
+        "payment redirection",
+        "re-check",
+        "insurance expiry"
+      ],
       "checklist": [
         "Plan: decide what evidence is required and how it will be verified, and put it in the RFx",
         "Source: verify before you finalise the engagement, not after",
@@ -77,9 +154,14 @@
         "Manage: diarise insurance and licence expiries and re-check on long contracts",
         "Always: verify any bank detail change through an independently held contact channel"
       ],
-      "templates": ["tpl-icac-due-diligence"],
+      "templates": [
+        "tpl-icac-due-diligence"
+      ],
       "citations": [
-        { "label": "ICAC - Supplier Due Diligence guide", "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies" }
+        {
+          "label": "ICAC - Supplier Due Diligence guide",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        }
       ]
     }
   ]

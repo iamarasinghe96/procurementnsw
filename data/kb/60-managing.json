@@ -5,7 +5,12 @@
     "path": "manage",
     "stage": "manage",
     "source_document": "Implementing and managing the arrangement.docx",
-    "audiences": ["agency", "council", "supplier", "corporate"],
+    "audiences": [
+      "agency",
+      "council",
+      "supplier",
+      "corporate"
+    ],
     "summary": "Stage 3: pay on time, meet your disclosure obligations, manage supplier performance against KPIs, accept goods properly, and plan the renewal."
   },
   "chunks": [
@@ -13,12 +18,25 @@
       "id": "managing.manage-stage",
       "path": "manage/the-manage-stage",
       "heading": "The manage stage starts at signature",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Signing is the start, not the end. Set up systems, allocate responsibilities, brief stakeholders and keep checking the supplier.",
       "text": "Signing a contract is not the end of the procurement process. It is the start of your ongoing relationship with the supplier, and you need to manage the contract to make sure the supplier delivers what they have committed to. Every arrangement sets out the rights and responsibilities of the parties, so it is important to identify, understand and manage them to better ensure you get what you contracted for. Key activities in this stage include paying suppliers in line with policies and procedures, including the Faster Payment Terms Policy and Small Business Shorter Payment Terms Policy; working with the supplier to establish systems and processes and determine who is responsible for key tasks and activities; engaging key stakeholders and communicating the details of the new arrangement to them; and conducting additional supplier due diligence checks.",
-      "keywords": ["manage stage", "contract management", "mobilisation", "implementation", "after signing", "handover", "responsibilities"],
+      "keywords": [
+        "manage stage",
+        "contract management",
+        "mobilisation",
+        "implementation",
+        "after signing",
+        "handover",
+        "responsibilities"
+      ],
       "checklist": [
         "Agree with the supplier who is responsible for each task and activity",
         "Set up the systems and processes needed to run the contract before day one",
@@ -31,12 +49,33 @@
       "id": "managing.paying-suppliers",
       "path": "manage/paying-suppliers",
       "heading": "Paying suppliers on time",
-      "audiences": ["agency", "supplier", "corporate", "nfp"],
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
       "jurisdiction": "nsw-government",
       "authority": "policy",
       "summary": "Small business invoices between $10,000 and $1 million: 5 business days. Under $10,000: as fast as possible, ideally by PCard.",
       "text": "You must pay suppliers on time, especially small businesses. The Office of the Small Business Commissioner monitors and reports on agency payment performance to small businesses. You must pay correctly rendered invoices between $10,000 and $1 million from registered small businesses, those with fewer than 20 full-time equivalent employees, within 5 business days as per the Faster Payment Terms Policy. You should pay any correctly rendered invoice under $10,000 as soon as possible using a purchasing card or electronic funds transfer; check your agency's thresholds for PCard use. Large businesses with NSW Government goods and services contracts over $7.5 million must pay the small businesses they directly subcontract to within 20 business days upon receipt of a correctly rendered invoice, as per the Small Business Shorter Payment Terms Policy. If you are buying above your agency's PCard threshold you will generally need to request a purchase order using your agency's systems and processes. Purchase orders are commercial documents commonly used for low value, low risk procurements, and are often issued through ERP systems such as SAP and Oracle. Your PO should include details of the successful supplier's response or negotiated contract, or be based on a quote, and should include details of goods or services being purchased, quantities, agreed prices, delivery date and location, and payment terms. The supplier should include the PO number on their invoices to assist with faster payment processing. A purchasing card is a type of credit card; because there is a cost associated with raising and processing POs, agencies typically use PCards for low value purchases, which is better value for money, removes the need to raise a PO and automatically generates payment. When you use a PCard instead of a PO, the terms and conditions of the agreement are usually those of the seller rather than the buyer, so check you are able to comply.",
-      "keywords": ["payment", "pay", "invoice", "5 business days", "20 business days", "faster payment terms", "shorter payment terms", "pcard", "purchase order", "po number", "when do i get paid", "late payment", "erp", "sap", "oracle"],
+      "keywords": [
+        "payment",
+        "pay suppliers",
+        "invoice",
+        "5 business days",
+        "20 business days",
+        "faster payment terms",
+        "shorter payment terms",
+        "pcard",
+        "purchase order",
+        "po number",
+        "when do i get paid",
+        "late payment",
+        "erp",
+        "sap",
+        "oracle"
+      ],
       "checklist": [
         "Confirm whether the supplier is a registered small business - it changes the payment deadline",
         "Check the invoice is correctly rendered before starting the clock, and tell the supplier promptly if it is not",
@@ -44,47 +83,108 @@
         "For contracts over $7.5 million, check the head contractor is paying its small business subcontractors within 20 business days",
         "If paying by PCard, check you can comply with the seller's terms and conditions"
       ],
-      "thresholds": ["thr-faster-payment-5-days", "thr-pcard-10k", "thr-local-7-5m"],
-      "templates": ["tpl-shorter-payment-clauses"],
+      "thresholds": [
+        "thr-faster-payment-5-days",
+        "thr-pcard-10k",
+        "thr-local-7-5m"
+      ],
+      "templates": [
+        "tpl-shorter-payment-clauses"
+      ],
       "citations": [
-        { "label": "Faster Payment Terms Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms" },
-        { "label": "Small Business Shorter Payment Terms Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/small-business-shorter-payment-terms-policy" },
-        { "label": "What is a correctly rendered invoice", "url": "https://www.smallbusiness.nsw.gov.au/get-help/faster-payment-terms/what-correctly-rendered-invoice" }
+        {
+          "label": "Faster Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms"
+        },
+        {
+          "label": "Small Business Shorter Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/small-business-shorter-payment-terms-policy"
+        },
+        {
+          "label": "What is a correctly rendered invoice",
+          "url": "https://www.smallbusiness.nsw.gov.au/get-help/faster-payment-terms/what-correctly-rendered-invoice"
+        }
       ]
     },
     {
       "id": "managing.disclosure-reporting",
       "path": "manage/reporting-and-contract-disclosure",
       "heading": "Reporting and contract disclosure obligations",
-      "audiences": ["agency", "council", "corporate", "public"],
+      "audiences": [
+        "agency",
+        "council",
+        "corporate",
+        "public"
+      ],
       "jurisdiction": "both",
       "authority": "legislation",
       "summary": "Contracts of $150,000 (inc GST) or more must be publicly disclosed within 45 working days and stay listed for at least 20 days.",
       "text": "You have several reporting and disclosure obligations once a procurement contract is active. Under the GIPA Act 2009 you must disclose all contracts over $150,000 (inc GST) within 45 working days of the contract coming into effect. Agencies do this by publicly publishing the contract details on NSW eTendering and ensuring the entry remains listed for at least 20 days or until the contract is complete, whichever is longer. Your agency must also report on its record of on-time paying in its annual report. Councils have an equivalent obligation: under section 27 of the GIPA Act a council must maintain a public contracts register recording information about each contract with a private sector body valued at $150,000 (inc GST) or more, published within 45 days of the contract becoming effective and kept available for 20 working days or until the obligations under the contract have been satisfied, whichever is longer. Contracts are classified as Class 1 (value of $150,000 or more), Class 2 (Class 1 contracts requiring additional information in certain circumstances) and Class 3 (Class 2 contracts valued at $5 million or more). Agencies and councils are not required to publish certain confidential information, including commercial-in-confidence provisions and information where there is an overriding public interest against disclosure.",
-      "keywords": ["disclosure", "contracts register", "gipa", "150000", "45 days", "20 days", "class 1", "class 2", "class 3", "publish", "transparency", "annual report", "etendering"],
+      "keywords": [
+        "disclosure",
+        "contracts register",
+        "gipa",
+        "150000",
+        "45 days",
+        "20 days",
+        "class 1",
+        "class 2",
+        "class 3",
+        "publish",
+        "transparency",
+        "annual report",
+        "etendering"
+      ],
       "checklist": [
         "Diarise the 45-day disclosure deadline from the date the contract takes effect",
         "Classify the contract (Class 1, 2 or 3) and publish the right level of detail",
         "Identify genuinely commercial-in-confidence content before publishing - and only that",
         "Keep the entry live for at least 20 days, or until the contract completes if that is longer"
       ],
-      "thresholds": ["thr-gipa-150k"],
+      "thresholds": [
+        "thr-gipa-150k"
+      ],
       "citations": [
-        { "label": "Disclosure obligations - buy.nsw", "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/after-awarding-a-contract/disclosure-obligations" },
-        { "label": "Reporting obligations - buy.nsw", "url": "https://info.buy.nsw.gov.au/buyer-guidance/manage/reporting-obligations" },
-        { "label": "IPC NSW - Register of government contracts", "url": "https://www.ipc.nsw.gov.au/about-us/accessing-ipc-information/register-government-contracts" }
+        {
+          "label": "Disclosure obligations - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/after-awarding-a-contract/disclosure-obligations"
+        },
+        {
+          "label": "Reporting obligations - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/manage/reporting-obligations"
+        },
+        {
+          "label": "IPC NSW - Register of government contracts",
+          "url": "https://www.ipc.nsw.gov.au/about-us/accessing-ipc-information/register-government-contracts"
+        }
       ]
     },
     {
       "id": "managing.managing-the-arrangement",
       "path": "manage/managing-the-arrangement",
       "heading": "Managing supplier performance and the relationship",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Regardless of value, you must actively manage the arrangement: performance against KPIs, regular contact, and policy reporting from the supplier.",
       "text": "Regardless of the value of your arrangement you need to manage it. It is important to communicate regularly and foster a positive relationship with your supplier to ensure the original objective is met and value for money is achieved. This includes expediting or following up on an order; managing supplier performance and relationships to ensure delivery of commitments; reviewing how the contract is performing against agreed key performance indicators; conducting post-engagement due diligence checks, especially for lengthy contracts; and ensuring suppliers meet reporting requirements, including those in the Aboriginal Procurement Policy, the SME and Regional Procurement Policy, and the Small Business Shorter Payment Terms Policy. Regular contact will help you identify and address any problems early.",
-      "keywords": ["contract management", "supplier performance", "kpi", "performance management", "relationship", "supplier relationship management", "srm", "monitoring", "reporting requirements", "manage a contract"],
+      "keywords": [
+        "contract management",
+        "supplier performance",
+        "kpi",
+        "performance management",
+        "relationship",
+        "supplier relationship management",
+        "srm",
+        "monitoring",
+        "reporting requirements",
+        "manage a contract"
+      ],
       "checklist": [
         "Confirm the KPIs in the contract are measurable and that you actually receive the data to measure them",
         "Set a regular contract meeting rhythm and hold it even when things are going well",
@@ -100,12 +200,33 @@
       "id": "managing.contract-management-practice",
       "path": "manage/contract-management-in-practice",
       "heading": "Running contract management meetings and reviewing schedules",
-      "audiences": ["agency", "council", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "practice",
       "summary": "A practical operating rhythm for a live service contract: agenda, evidence, schedule reviews, variations and escalation.",
       "text": "For an ongoing service contract, contract management usually settles into a routine built around scheduled meetings, performance reporting and periodic schedule reviews. A workable operating rhythm looks like this. Before the meeting, collect the supplier's performance report against the contract KPIs, your own service data and any complaints or incidents logged since the last meeting, and circulate an agenda in advance. Run the meeting to a standing agenda: actions from last time, safety and incidents, performance against each KPI with the evidence behind it, complaints and service failures, financial matters including invoices, variations and any abatements, upcoming works or changes, and risks. Record decisions and actions with owners and due dates, and issue the minutes - these are records under the State Records Act and they are the evidence base if performance later has to be enforced. Reviewing contract schedules means checking that the operational annexures still match reality: the service specification, the price or rate schedule and any indexation mechanism, the KPI and reporting schedule, the asset or equipment list, and the service area or route definitions. Where reality has drifted from the schedule, deal with it as a formal variation with a documented value-for-money and delegation assessment - do not let it settle in as an informal practice. Where performance falls short, use the remedies the contract actually gives you, in order: informal escalation, a written performance notice, a rectification or improvement plan with a deadline, then the contractual abatement, step-in or termination rights. Keep the paper trail complete at every step, because remedies that were never formally invoked are very hard to rely on later.",
-      "keywords": ["contract management meeting", "meeting", "agenda", "minutes", "contract schedules", "schedule review", "variation", "abatement", "rectification", "escalation", "performance management", "review schedules", "supporting meetings", "service specification", "rate schedule", "indexation"],
+      "keywords": [
+        "contract management meeting",
+        "meeting",
+        "agenda",
+        "minutes",
+        "contract schedules",
+        "schedule review",
+        "variation",
+        "abatement",
+        "rectification",
+        "escalation",
+        "performance management",
+        "review schedules",
+        "supporting meetings",
+        "service specification",
+        "rate schedule",
+        "indexation"
+      ],
       "checklist": [
         "Circulate an agenda and the performance pack before each contract meeting",
         "Work through KPIs one by one against evidence, not against impressions",
@@ -123,12 +244,24 @@
       "id": "managing.receiving-goods",
       "path": "manage/receiving-and-accepting-goods",
       "heading": "Receiving and accepting goods",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Delivery is not acceptance. Check against the contract before you accept, because acceptance discharges the supplier's obligation.",
       "text": "When receiving goods you need to check they meet the requirements of the contract. This is called acceptance and includes checking the goods against delivery dockets and descriptions on the quote or purchase order; inspecting for damage; rejecting damaged goods and returning them; accepting conforming goods and signing the carrier's delivery docket as a receipt; and informing accounts payable that you have received the goods. Most purchase order terms and conditions do not regard delivery of goods as acceptance. Acceptance refers to the agency checking to ensure that the supplies meet the requirements of the contract. If the goods meet the requirements of the purchase order, the supplier has fulfilled their contractual obligations.",
-      "keywords": ["receiving goods", "acceptance", "delivery", "delivery docket", "damaged", "reject", "accounts payable", "goods receipt"],
+      "keywords": [
+        "receiving goods",
+        "acceptance",
+        "delivery",
+        "delivery docket",
+        "damaged",
+        "reject",
+        "accounts payable",
+        "goods receipt"
+      ],
       "watch_outs": [
         "Signing for delivery is not the same as accepting the goods - check against the PO first"
       ]
@@ -137,12 +270,24 @@
       "id": "managing.post-engagement-due-diligence",
       "path": "manage/post-engagement-due-diligence",
       "heading": "Post-engagement due diligence",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "Re-check insurances, licences and financial health on long contracts - and always re-verify a change of bank account details.",
       "text": "Some due diligence checks may need to be repeated after engaging a supplier, particularly for lengthy contracts. This may be as simple as checking that the supplier's insurances and licences remain current. For more complex contracts it may require ongoing checks on the supplier's structure, financial health and regulatory compliance. Additional due diligence is also required if the supplier requests a change to its bank account details.",
-      "keywords": ["post engagement", "ongoing due diligence", "insurance expiry", "licence renewal", "bank account change", "payment redirection", "fraud", "solvency"],
+      "keywords": [
+        "post engagement",
+        "ongoing due diligence",
+        "insurance expiry",
+        "licence renewal",
+        "bank account change",
+        "payment redirection",
+        "fraud",
+        "solvency"
+      ],
       "checklist": [
         "Diarise insurance and licence expiry dates and chase renewals before they lapse",
         "Re-check the supplier's corporate structure and financial health periodically on long contracts",
@@ -151,18 +296,42 @@
       "watch_outs": [
         "Payment redirection fraud usually arrives as a routine-looking request to update bank details - always verify through a channel you established earlier"
       ],
-      "templates": ["tpl-icac-due-diligence"]
+      "templates": [
+        "tpl-icac-due-diligence"
+      ]
     },
     {
       "id": "managing.renewal",
       "path": "manage/renewing-the-arrangement",
       "heading": "Renewing the arrangement",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Start the next procurement before this one ends: review what worked, then re-analyse demand and market.",
       "text": "Part of the manage stage is considering your strategy for the next arrangement and planning for renewal. You should be continually assessing and improving your procurement strategy and processes to help provide the best possible outcome for the next arrangement. Before the contract expires, review the strengths and weaknesses of the existing contract with the supplier and internal stakeholders, and analyse the demand and the market to inform your next procurement strategy.",
-      "keywords": ["renewal", "expiry", "extension", "next contract", "retender", "lessons learned", "contract end", "transition"],
+      "keywords": [
+        "renewal",
+        "expiry",
+        "extension",
+        "next contract",
+        "retender",
+        "lessons learned",
+        "contract end",
+        "transition",
+        "expiring",
+        "expires",
+        "expiring soon",
+        "coming to an end",
+        "ending soon",
+        "about to expire",
+        "what do i do next",
+        "plan for renewal"
+      ],
       "checklist": [
         "Work back from the contract end date - a full retender needs planning, approval and a tender period",
         "Run a joint review with the supplier and with internal stakeholders on what worked and what did not",

@@ -5,7 +5,13 @@
     "path": "integrity/corruption-prevention",
     "stage": "all",
     "source_document": "Preventing corruption in procurement.docx",
-    "audiences": ["agency", "council", "supplier", "corporate", "public"],
+    "audiences": [
+      "agency",
+      "council",
+      "supplier",
+      "corporate",
+      "public"
+    ],
     "summary": "What corrupt conduct is, the four main corruption risks in procurement, your ethical obligations, and how to report."
   },
   "chunks": [
@@ -13,26 +19,59 @@
       "id": "corruption.what-is-corrupt-conduct",
       "path": "integrity/corruption-prevention/what-is-corrupt-conduct",
       "heading": "What counts as corrupt conduct",
-      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
       "jurisdiction": "both",
       "authority": "legislation",
       "summary": "Corrupt conduct is deliberate wrongdoing involving a NSW public official - not negligence or a mistake.",
       "text": "Corrupt conduct is deliberate or intentional wrongdoing, not negligence or a mistake. It has to involve or affect a New South Wales public official or public sector organisation. Corrupt conduct occurs when a public official improperly uses, or tries to improperly use, the knowledge, power or resources of their position for personal gain or the advantage of others; or dishonestly or improperly exercises their official functions in a partial manner or in a way that breaches public trust; or misuses information or material acquired during the course of their official functions. It also occurs when a member of the public influences, or tries to influence, a public official to use their position in a way that is dishonest or partial. And it occurs when the actions of any person impair, or could impair, public confidence in public administration - this could involve collusive tendering, fraud in relation to applications for licences or permits, dishonestly obtaining or benefiting from public funds or assets for private advantage, defrauding the public revenue, or fraudulently obtaining or retaining a position as a public official. Conduct is only corrupt if it could constitute or involve a criminal offence, a disciplinary offence, reasonable grounds for dismissal, or a substantial breach of an applicable code of conduct for Ministers and MPs. Examples in procurement include a public official providing confidential information to a supplier to give them an unfair advantage; an official secretly owning a private company, submitting bids and influencing the assessment; an official colluding with a contractor to falsify or inflate invoices; deliberately over-ordering goods and keeping the extra for private use; and two suppliers colluding to artificially elevate prices or manipulate which of them wins the work.",
-      "keywords": ["corrupt conduct", "corruption", "icac", "collusion", "collusive tendering", "fraud", "bribery", "what is corruption", "definition"],
+      "keywords": [
+        "corrupt conduct",
+        "corruption",
+        "icac",
+        "collusion",
+        "collusive tendering",
+        "fraud",
+        "bribery",
+        "what is corruption",
+        "definition"
+      ],
       "citations": [
-        { "label": "ICAC - what is corrupt conduct", "url": "https://www.icac.nsw.gov.au/about-corruption/what-is-corrupt-conduct" }
+        {
+          "label": "ICAC - what is corrupt conduct",
+          "url": "https://www.icac.nsw.gov.au/about-corruption/what-is-corrupt-conduct"
+        }
       ]
     },
     {
       "id": "corruption.unwanted-outcomes",
       "path": "integrity/corruption-prevention/unwanted-outcomes",
       "heading": "The four unwanted outcomes that signal corruption",
-      "audiences": ["agency", "council", "public"],
+      "audiences": [
+        "agency",
+        "council",
+        "public"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Overcharging, underdelivery, overservicing and incorrect supplier choice - manage these and you detect corruption earlier.",
       "text": "Corruption in procurement can be difficult to detect because it often involves a secret arrangement that two or more corrupt parties are happy with. However, you can better detect and prevent corruption if you understand and manage unwanted procurement outcomes. These outcomes could be due to poor systems and practices, but they can also result from corrupt conduct. Overcharging: corruption usually involves the improper transfer of something valuable from public to private hands, and one of the most direct ways is intentional overcharging - approving unnecessary or over-priced contract variations, accepting unreasonably high bids and paying an excessive price, and paying invoices improperly charged above contract rates. Underdelivery: receiving less than what was expected and paid for - paying invoices where no items are delivered, receiving lesser quality goods or services than specified such as less thorough advice or poorer service, and receiving a lesser quantity than specified such as fewer computers or less regular cleaning. Overservicing: ordering and paying for items surplus to agency needs or of a higher quality or specification than required, even if the correct price is paid. Incorrect supplier choice: a supplier being awarded work undeservedly, including through confidential information being leaked to give them an advantage, assessment criteria weighted to favour a bid, and suppliers lying about their capability or credentials. The impacts of corrupt conduct include direct financial loss, wasted resources, reduced operational effectiveness, lowered staff morale, reputational damage to the agency and individual staff, and erosion of public trust.",
-      "keywords": ["overcharging", "underdelivery", "overservicing", "incorrect supplier choice", "red flags", "detect corruption", "variations", "invoices above contract rates", "warning signs"],
+      "keywords": [
+        "overcharging",
+        "underdelivery",
+        "overservicing",
+        "incorrect supplier choice",
+        "red flags",
+        "detect corruption",
+        "variations",
+        "invoices above contract rates",
+        "warning signs"
+      ],
       "checklist": [
         "Spot-check invoices against contract rates rather than assuming they are correct",
         "Verify that what was ordered was actually delivered, in the quantity and quality specified",
@@ -45,12 +84,30 @@
       "id": "corruption.conflicts-of-interest",
       "path": "integrity/corruption-prevention/conflicts-of-interest",
       "heading": "Conflicts of interest",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "A conflict exists when a reasonable person might perceive personal interests could be favoured over public duty. Conflicts are not wrong - failing to manage them is.",
       "text": "Conflicts of interest can lead to corrupt conduct, and even honest public officials may be unintentionally biased by their relationships and interests. A conflict of interest exists when a reasonable person might perceive that a public official's personal interests could be favoured over their public duties. Personal interests include family and friends, career opportunities, financial interests, and power and influence. Public duty includes performing your duties, complying with policies and procedures, and serving the public interest, your agency and the public in an ethical manner. Personal interests that may trigger a conflict include: pecuniary interests, involving actual or potential financial gain or loss, such as sources of income including secondary employment, ownership or lease of land, buildings and property, shares or investments, or an option to buy or sell an asset. People who are more than acquaintances - spouses, relatives including by marriage and close family friends, friends, current romantic partners, close colleagues and mentors, and social connections; feelings of animosity towards a person can also constitute a personal interest. People providing income - providers of secondary or other employment, current or former business partners, customers, significant suppliers or contractors of a private business or secondary employer, future employment or business opportunities for you or a family member, and relationships with former employers and colleagues especially where there is ongoing social contact. Organisations and clubs and people connected to them, including professional, sporting, recreational, community, arts or social organisations. People and entities who give benefits or favours, where you could feel or be perceived to feel indebted - gifts, benefits or hospitality more than token in nature, favours or valuable advice, discounts on goods and services, borrowing equipment, and sponsorships or donations to causes associated with you. Close connections including social media associations; you should be prudent about how you use social media and generally avoid endorsing products, services or companies connected to your work. Four elements determine whether a conflict exists: does the official have a personal interest; does the official have a public duty; is there a connection between the personal interest and the public duty; and could a reasonable person perceive that the personal interest might be favoured? Conflicts of interest are not wrong in themselves - it is how you manage them that matters. To protect yourself and your agency you must disclose all conflicts of interest and follow your agency's conflicts of interest management policy.",
-      "keywords": ["conflict of interest", "coi", "declare", "pecuniary", "personal interest", "reasonable person", "bias", "family", "friend", "secondary employment", "social media", "manage conflicts"],
+      "keywords": [
+        "conflict of interest",
+        "coi",
+        "declare",
+        "pecuniary",
+        "personal interest",
+        "reasonable person",
+        "bias",
+        "family",
+        "friend",
+        "secondary employment",
+        "social media",
+        "manage conflicts"
+      ],
       "checklist": [
         "Apply the four-element test: personal interest, public duty, connection, reasonable person perception",
         "Declare actual, potential and perceived conflicts - all three",
@@ -58,22 +115,54 @@
         "Follow your agency or council's conflicts of interest management policy for the treatment, not just the declaration",
         "Record the declaration and the management strategy in the procurement file"
       ],
-      "templates": ["tpl-conduct-plan", "tpl-icac-coi"],
+      "templates": [
+        "tpl-conduct-plan",
+        "tpl-icac-coi"
+      ],
       "citations": [
-        { "label": "ICAC - conflicts of interest FAQs for public officials", "url": "https://www.icac.nsw.gov.au/prevention/basic-standards/conflicts-of-interest/coi-faqs-for-public-officials" },
-        { "label": "ICAC - Managing conflicts of interest in the NSW public sector", "url": "https://www.icac.nsw.gov.au/ArticleDocuments/232/Managing-conflicts-of-interest-in-the-nsw-public-sector_June-2019.pdf.aspx" }
+        {
+          "label": "ICAC - conflicts of interest FAQs for public officials",
+          "url": "https://www.icac.nsw.gov.au/prevention/basic-standards/conflicts-of-interest/coi-faqs-for-public-officials"
+        },
+        {
+          "label": "ICAC - Managing conflicts of interest in the NSW public sector",
+          "url": "https://www.icac.nsw.gov.au/ArticleDocuments/232/Managing-conflicts-of-interest-in-the-nsw-public-sector_June-2019.pdf.aspx"
+        }
       ]
     },
     {
       "id": "corruption.misuse-of-information",
       "path": "integrity/corruption-prevention/misuse-of-information",
       "heading": "Misuse of information",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Know what you can and cannot share. Suppliers will sometimes ask for information they are not entitled to.",
       "text": "Procurement processes generate a range of documents and information that may be misused to gain an unfair advantage, originating from buyers or suppliers. Examples of misuse include using confidential information to help a supplier prepare bids, giving one supplier's prices to another so they can meet or beat them, and sharing information gained during negotiations with one supplier to help another. Buyer documents and information include evaluation criteria, project budget and contingency, evaluation panel members, and EOI responses; improper or untimely release may give a favoured supplier an unfair advantage. Supplier documents and information include intellectual property and commercial-in-confidence information; improper sharing with a competitor may give the competitor an unfair advantage and disadvantage the supplier in the broader market. You must maintain confidentiality and follow your agency's policies and processes for record keeping and information security. If a supplier asks which other solutions you are considering or which suppliers have been invited to respond, the correct response is to decline to provide the information because it is confidential, record details of what happened and report it, and follow your agency's policies and procedures. Suppliers may attempt to obtain information they are not entitled to, so you must know what information you can and cannot share and be aware of suppliers trying to trick you into providing information or otherwise gaining favourable treatment.",
-      "keywords": ["confidential", "information", "misuse", "leak", "commercial in confidence", "intellectual property", "budget", "panel members", "what can i share", "supplier asking questions"],
+      "keywords": [
+        "confidential",
+        "information",
+        "misuse",
+        "leak",
+        "commercial in confidence",
+        "intellectual property",
+        "budget",
+        "panel members",
+        "what can i share",
+        "supplier asking questions",
+        "who else is tendering",
+        "who else is bidding",
+        "which suppliers were invited",
+        "asked me who",
+        "supplier asked",
+        "fishing for information",
+        "wants to know who"
+      ],
       "watch_outs": [
         "Naming who else was invited to respond, or revealing the budget, are the two most commonly leaked pieces of information",
         "If a supplier fishes for information, decline, record it and report it - do not just decline and move on"
@@ -83,12 +172,30 @@
       "id": "corruption.improper-influence-gifts",
       "path": "integrity/corruption-prevention/improper-influence-and-gifts",
       "heading": "Improper influence, gifts and benefits",
-      "audiences": ["agency", "council", "supplier", "corporate"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Suppliers can build influence through enrichment, relationships or coercion. The safest option is to decline and declare.",
       "text": "Suppliers may attempt to improperly influence public officials to perform actions that advantage them by offering immediate or future benefits. This can involve enrichment such as gifts and benefits, relationships such as the cultivation of a friendship, and coercion such as blackmail. Examples include the offer of a bribe to influence a current procurement process, and grooming via a series of gifts to obtain favourable treatment in future contract management processes. It is easy to develop friendly relationships with suppliers or contractors, but friendships can lead to biased decision making. You must be aware of suppliers trying to develop friendships to gain influence and follow your agency's policies and procedures for managing conflicts of interest. Where a supplier on a contract you manage invites you to a personal social activity, the appropriate responses are to decline the invitation, report any attempt to improperly influence you, implement an appropriate management strategy with your manager, and declare all perceived, potential and actual conflicts of interest as per your agency's policies and procedures. Gifts and benefits are often used by suppliers to ingratiate themselves with buyers, to create a sense of friendship and of being indebted, and to incentivise and reward collusive corrupt conduct. This can result in a buyer placing unwarranted trust in a supplier and unwittingly being influenced. If you are offered gifts or benefits, think about the intent of the offer and the potential impact on you. You must follow your agency's gifts and benefits policy. The safest and easiest option is to decline and declare all gifts or benefits. Declaration is important because it helps your agency work out whether particular suppliers are systematically targeting people in your organisation.",
-      "keywords": ["gifts", "benefits", "hospitality", "bribe", "grooming", "influence", "friendship", "decline and declare", "gift register", "lunch", "tickets", "invitation"],
+      "keywords": [
+        "gifts",
+        "benefits",
+        "hospitality",
+        "bribe",
+        "grooming",
+        "influence",
+        "friendship",
+        "decline and declare",
+        "gift register",
+        "lunch",
+        "tickets",
+        "invitation"
+      ],
       "checklist": [
         "Default to declining gifts, benefits and hospitality from suppliers",
         "Declare the offer even when you declined it",
@@ -104,12 +211,29 @@
       "id": "corruption.ethical-obligations-reporting",
       "path": "integrity/corruption-prevention/ethical-obligations-and-reporting",
       "heading": "Your ethical obligations and how to report corruption",
-      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
       "jurisdiction": "both",
       "authority": "legislation",
       "summary": "The GSE Act sets the ethical duty; you can report internally or directly to the ICAC, with PID Act protections if you follow the requirements.",
       "text": "The Government Sector Employment (GSE) Act 2013 sets the legal requirements for all people employed in the public sector to act ethically and in the public interest. You must comply with the law and ethical obligations, follow your agency's policies and procedures, be professional and uphold the probity principles, be impartial and treat suppliers fairly and consistently, effectively manage conflicts of interest and offers of gifts and benefits, and be accountable for your decisions and actions. Reporting actual or suspected corruption helps ensure the highest ethical standards are maintained, reduces the effects of corruption by allowing it to be dealt with promptly, helps prevent future corruption because of the likelihood conduct will be reported, and is in the public interest. You do not have to prove that a matter is serious before you report it - all suspicions of corruption on reasonable grounds should be reported as soon as possible. You can report suspected corrupt conduct directly to the agency concerned, internally using your agency's internal reporting process, or directly to the NSW ICAC. Under the Public Interest Disclosures (PID) Act there are protections for NSW public officials reporting corrupt conduct. You can make a PID internally or to the ICAC, but you must comply with the PID Act to secure the associated protections. For more information on how to make a PID, consult your agency's Public Interest Disclosures policy or contact the NSW Ombudsman PID Unit.",
-      "keywords": ["report corruption", "icac", "pid", "public interest disclosure", "whistleblower", "gse act", "ethics", "ombudsman", "how do i report", "protections"],
+      "keywords": [
+        "report corruption",
+        "icac",
+        "pid",
+        "public interest disclosure",
+        "whistleblower",
+        "gse act",
+        "ethics",
+        "ombudsman",
+        "how do i report",
+        "protections"
+      ],
       "checklist": [
         "You do not need proof or seriousness - reasonable suspicion is enough to report",
         "Choose a route: your agency's internal reporting process, the agency concerned, or the ICAC directly",
@@ -117,10 +241,22 @@
         "Contact the NSW Ombudsman PID Unit if you are unsure how to make a disclosure"
       ],
       "citations": [
-        { "label": "Report corruption to the ICAC", "url": "https://www.icac.nsw.gov.au/reporting/report-corruption" },
-        { "label": "NSW Ombudsman - public interest disclosures", "url": "https://www.ombo.nsw.gov.au/what-we-do/our-work/public-interest-disclosures" },
-        { "label": "Behaving Ethically - NSW Public Service Commission", "url": "https://www.psc.nsw.gov.au/culture-and-inclusion/ethics-hub/behaving-ethically" },
-        { "label": "Government Sector Employment Act 2013", "url": "https://www.legislation.nsw.gov.au/view/html/inforce/current/act-2013-040" }
+        {
+          "label": "Report corruption to the ICAC",
+          "url": "https://www.icac.nsw.gov.au/reporting/report-corruption"
+        },
+        {
+          "label": "NSW Ombudsman - public interest disclosures",
+          "url": "https://www.ombo.nsw.gov.au/what-we-do/our-work/public-interest-disclosures"
+        },
+        {
+          "label": "Behaving Ethically - NSW Public Service Commission",
+          "url": "https://www.psc.nsw.gov.au/culture-and-inclusion/ethics-hub/behaving-ethically"
+        },
+        {
+          "label": "Government Sector Employment Act 2013",
+          "url": "https://www.legislation.nsw.gov.au/view/html/inforce/current/act-2013-040"
+        }
       ]
     }
   ]

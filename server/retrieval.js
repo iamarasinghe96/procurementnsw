@@ -118,16 +118,38 @@ const FIELD_WEIGHTS = {
 const BM25_K1 = 1.4;
 const BM25_B = 0.72;
 
+/**
+ * Light suffix stripper.
+ *
+ * Not a real stemmer, just enough to make a term and its inflections meet:
+ * "accreditation"/"accredited", "evaluation"/"evaluate", "acceptable"/"accept".
+ * Every rule is guarded on a minimum remaining length, so "state" does not
+ * become "st" and collide with unrelated words.
+ */
+const SUFFIXES = [
+  [/ies$/, 'y', 3],
+  [/(sses|ches|shes|xes)$/, '', 3],
+  [/([^s])s$/, '$1', 3],
+  // Before the shorter rules below, so both halves of a pair land together:
+  // "accreditation" -> "accredit", "evaluation" -> "evalu".
+  [/ation$/, '', 4],
+  // ...and "evaluate" -> "evalu" to meet it.
+  [/ate$/, '', 4],
+  [/(ing|ment|tion|sion)$/, '', 4],
+  [/ed$/, '', 4],
+  [/(able|ible|abl|ibl)$/, '', 4],
+  [/(ance|ence)$/, '', 4],
+];
+
 function stem(token) {
   if (token.length <= 4) return token;
-  return token
-    .replace(/(ies)$/, 'y')
-    .replace(/(sses|ches|shes|xes)$/, '')
-    .replace(/([^s])s$/, '$1')
-    // "ation" before "tion", or "accreditation" stems to "accredita" while
-    // "accredited" stems to "accredit" and the two never meet.
-    .replace(/(ation)$/, '')
-    .replace(/(ing|ed|ment|tion|sion)$/, '');
+  let out = token;
+  for (const [pattern, replacement, minLength] of SUFFIXES) {
+    if (!pattern.test(out)) continue;
+    const candidate = out.replace(pattern, replacement);
+    if (candidate.length >= minLength) out = candidate;
+  }
+  return out;
 }
 
 export function tokenize(text) {
@@ -165,35 +187,58 @@ function fieldTokens(chunk) {
   // separately lets retrieval tell "this chunk is about X" from "this chunk
   // happens to contain the word X".
   const topical = new Set();
-  const add = (value, weight, isTopical = false) => {
+  const keyworded = new Set();
+  const add = (value, weight, kind = null) => {
     for (const raw of tokenize(value)) {
       for (const token of [raw, stem(raw)]) {
         bag.set(token, (bag.get(token) || 0) + weight);
-        if (isTopical) topical.add(token);
+        if (kind) topical.add(token);
+        if (kind === 'keyword') keyworded.add(token);
       }
     }
   };
-  add(chunk.heading, FIELD_WEIGHTS.heading, true);
-  add((chunk.keywords || []).join(' '), FIELD_WEIGHTS.keywords, true);
-  add(chunk.summary, FIELD_WEIGHTS.summary, true);
-  add(chunk.topic_title, FIELD_WEIGHTS.topic_title, true);
+  add(chunk.heading, FIELD_WEIGHTS.heading, 'label');
+  // Single-word keywords are the hand-authored domain vocabulary: "tender",
+  // "addendum", "kerbside". Multi-word ones are indexed for matching but do not
+  // confer domain status on their parts - "open tender" must not make "open" a
+  // procurement term, or "what time does the library open" becomes a question
+  // about tendering.
+  for (const keyword of chunk.keywords || []) {
+    add(keyword, FIELD_WEIGHTS.keywords, keyword.includes(' ') ? 'label' : 'keyword');
+  }
+  add(chunk.summary, FIELD_WEIGHTS.summary, 'label');
+  add(chunk.topic_title, FIELD_WEIGHTS.topic_title, 'label');
   add((chunk.checklist || []).join(' '), FIELD_WEIGHTS.checklist);
   add((chunk.watch_outs || []).join(' '), FIELD_WEIGHTS.watch_outs);
   add(chunk.text, FIELD_WEIGHTS.text);
-  return { bag, topical };
+  return { bag, topical, keyworded };
 }
 
 export class Index {
   constructor(kb) {
     this.kb = kb;
     this.docs = kb.chunks.map((chunk) => {
-      const { bag, topical } = fieldTokens(chunk);
+      const { bag, topical, keyworded } = fieldTokens(chunk);
       let length = 0;
       for (const v of bag.values()) length += v;
-      return { chunk, bag, topical, length };
+      return { chunk, bag, topical, keyworded, length };
     });
 
     this.avgLength = this.docs.reduce((a, d) => a + d.length, 0) / (this.docs.length || 1);
+
+    // Corpus-wide domain vocabulary: every single-word curated keyword. Whether
+    // "tender" is procurement vocabulary is a property of the subject, not of
+    // whichever chunk happened to rank first for a given query.
+    this.domainVocabulary = new Set();
+    for (const chunk of kb.chunks) {
+      for (const keyword of chunk.keywords || []) {
+        if (keyword.includes(' ')) continue;
+        for (const token of tokenize(keyword)) {
+          this.domainVocabulary.add(token);
+          this.domainVocabulary.add(stem(token));
+        }
+      }
+    }
 
     this.df = new Map();
     for (const doc of this.docs) {
@@ -241,13 +286,19 @@ export class Index {
       let matchedTerms = 0;
       let matchedMass = 0;
       let topicalMass = 0;
+      let topicalTerms = 0;
+      let domainTerms = 0;
       for (const [token, qf] of counts) {
         const tf = doc.bag.get(token);
         if (!tf) continue;
         matchedTerms += 1;
         if (!isNumeric(token)) {
           matchedMass += this.idf(token);
-          if (doc.topical.has(token)) topicalMass += this.idf(token);
+          if (doc.topical.has(token)) {
+            topicalMass += this.idf(token);
+            topicalTerms += 1;
+            if (this.domainVocabulary.has(token)) domainTerms += 1;
+          }
         }
         const numerator = tf * (BM25_K1 + 1);
         const denominator = tf + BM25_K1 * (1 - BM25_B + BM25_B * (doc.length / this.avgLength));
@@ -268,8 +319,16 @@ export class Index {
       const chunk = doc.chunk;
 
       if (audience) {
-        if ((chunk.audiences || []).includes(audience)) score *= 1.35;
+        const audiences = chunk.audiences || [];
+        if (audiences.includes(audience)) score *= 1.35;
         else score *= 0.75;
+
+        // Convention: a chunk lists the audience it is WRITTEN FOR first, then
+        // everyone else it is merely relevant to. "Paying suppliers" and
+        // "Getting paid" cover the same rule from opposite sides of the
+        // transaction, and a supplier asking "when will I get paid" wants the
+        // one addressed to them.
+        if (audiences[0] === audience) score *= 1.35;
 
         // Councils and state agencies run under genuinely different rulebooks.
         // Serving one the other's thresholds is the worst failure this tool can make.
@@ -299,6 +358,12 @@ export class Index {
         // ...and how much of that landed in the chunk's curated labels rather
         // than incidentally in its prose.
         topicalCoverage: queryMass > 0 ? topicalMass / queryMass : 0,
+        // Absolute IDF mass matched in those labels. Unlike the ratios above
+        // this does not shrink when a question carries extra words, which is
+        // what makes it usable as a relevance gate.
+        topicalMass,
+        topicalTerms,
+        domainTerms,
       });
     }
 
@@ -431,23 +496,43 @@ function editDistance(a, b) {
 /**
  * Is there enough here to answer from, or is it noise?
  *
- * Raw BM25 scores are not comparable between queries - they scale with query
- * length and term rarity - so the gate is coverage: how much of the question's
- * distinctive vocabulary the best hit actually explains. "How do I write a good
- * job application" matches "application" and nothing else, and is rejected;
- * "what is value for money" matches both content words, and passes.
+ * The gate is the absolute IDF-weighted mass of query terms that matched a
+ * chunk's curated labels - its heading, keywords and summary - rather than
+ * appearing incidentally in its prose.
+ *
+ * Absolute, not a ratio. A ratio punishes long specific questions, which is how
+ * people actually ask: "how to become a supplier to supply office laptops to
+ * government institutions" contains two nouns the knowledge base has never
+ * heard of, and a coverage ratio read that as an off-topic question. Length
+ * must not decide relevance.
+ *
+ * Labels rather than prose, because "what is the weather tomorrow" matches
+ * "tomorrow" in a probity checklist line, and that is not a procurement
+ * question.
  */
-export const MIN_COVERAGE = 0.34;
-export const MIN_TOPICAL_COVERAGE = 0.25;
+export const MIN_TOPICAL_MASS = 0.6;
+/**
+ * A single term carries a question only when it is domain vocabulary.
+ *
+ * Rarity is the wrong test here: the most central words - "tender", "quote",
+ * "contract" - appear everywhere and so have the LOWEST inverse document
+ * frequency. "Do we have to tender" is one such word and a perfectly ordinary
+ * question. Membership of the curated single-word keyword lists is the signal
+ * that actually means "this word is procurement vocabulary".
+ */
 
-export function relevant(hits, { minCoverage = MIN_COVERAGE, minTopical = MIN_TOPICAL_COVERAGE } = {}) {
+export function relevant(hits, { minTopicalMass = MIN_TOPICAL_MASS } = {}) {
   if (!hits.length) return [];
   const best = hits[0];
-  // Both gates must pass. Coverage alone accepts "what is the weather
-  // tomorrow", because "tomorrow" happens to appear in one checklist line.
-  if (best.coverage < minCoverage) return [];
-  if (best.topicalCoverage < minTopical) return [];
-  // Keep the supporting hits that are in the same league as the best one.
+  if (best.topicalMass < minTopicalMass) return [];
+  // "Tell me a joke" hits "tell" from the summary "...documents must tell
+  // suppliers"; "what time does the library open" hits "open" from "open
+  // tender". Neither is a procurement question, and neither word is domain
+  // vocabulary.
+  //
+  // So: two matching label terms, or one that is procurement vocabulary.
+  if (best.topicalTerms < 2 && best.domainTerms < 1) return [];
+  // Keep supporting hits that are in the same league as the best one.
   const floor = Math.max(hits[0].score * 0.12, 1);
   return hits.filter((h) => h.score >= floor);
 }

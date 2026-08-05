@@ -5,7 +5,12 @@
     "path": "plan",
     "stage": "plan",
     "source_document": "Planning your procurement.docx",
-    "audiences": ["agency", "council", "supplier", "corporate"],
+    "audiences": [
+      "agency",
+      "council",
+      "supplier",
+      "corporate"
+    ],
     "summary": "Stage 1 of the best practice method: understand the business need, analyse the market, and get a procurement strategy approved."
   },
   "chunks": [
@@ -13,23 +18,50 @@
       "id": "planning.best-practice-method",
       "path": "plan/best-practice-methodology",
       "heading": "The three-stage best practice method: plan, source, manage",
-      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Every procurement runs through plan, source and manage - each with three steps - plus disposal where relevant.",
       "text": "In the simplest terms, goods and services procurement involves planning to determine needs and define the right strategy, sourcing the right suppliers to provide goods or services, managing the rights and responsibilities of all parties involved, and disposing of goods when they are no longer required, where applicable. Procurement best practice follows three stages, each with three steps. Stage 1 Planning involves engaging with stakeholders to identify their needs, conducting market research and forming a procurement strategy. Stage 2 Sourcing includes approaching the market, evaluating offers, negotiating and awarding a contract. Stage 3 Managing is not the end of the process - signing a contract is the start of an ongoing relationship with the supplier to ensure you get what you contracted for, including monitoring supplier performance, reporting, ensuring the supplier is paid, and acting as a point of contact if issues arise.",
-      "keywords": ["plan source manage", "stages", "lifecycle", "best practice", "methodology", "procurement process", "end to end", "steps", "how does procurement work"]
+      "keywords": [
+        "plan source manage",
+        "stages",
+        "lifecycle",
+        "best practice",
+        "methodology",
+        "procurement process",
+        "end to end",
+        "procurement steps",
+        "how does procurement work"
+      ]
     },
     {
       "id": "planning.proportionate-effort",
       "path": "plan/proportionate-planning",
       "heading": "How much planning is enough",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Scale the planning effort to the size, value and complexity of the buy - but never skip it entirely.",
       "text": "Investing effort in planning directly contributes to better procurement outcomes. It helps ensure value for money, reduces risks and increases opportunities for sustainable procurement and innovation. Many procurements that have issues during the Manage stage arise because of poor planning. Even simple procurements require some basic planning prior to conducting the purchase. The effort you put into planning should be proportionate to the size, value and complexity of your procurement. Low value, simple purchases are less likely to need elaborate planning. However, a degree of effort is always required to understand the business need, analyse the supply market, consider your options, and plan the procurement.",
-      "keywords": ["planning effort", "proportionate", "simple purchase", "complex", "risk", "how much planning", "low value"],
+      "keywords": [
+        "planning effort",
+        "proportionate",
+        "simple purchase",
+        "complex",
+        "procurement risk",
+        "how much planning",
+        "low value"
+      ],
       "watch_outs": [
         "Most contract management problems are planning problems that surfaced late"
       ]
@@ -38,12 +70,25 @@
       "id": "planning.business-need",
       "path": "plan/analyse-the-business-need",
       "heading": "Analyse the business need and engage stakeholders",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Separate what stakeholders want from what the business actually needs, and get their buy-in early.",
       "text": "Getting a good understanding of what is really needed is critical for ensuring that the goods or services you procure are fit for purpose and achieve value for money. Considering quantity, capability, cost, timing and quality helps you plan a procurement that will satisfy the business need. At the start of the project engage your stakeholders to understand their needs and win their commitment to your procurement strategy. Stakeholders are people or organisations with an interest in the procurement because it affects them or because you need their support. Identify whether they are internal or external, involve them early to help inform, improve and shape your planning, and understand any concerns they may have and how they could positively or negatively influence the procurement. Demand for goods or services can be initiated in several ways, verbal or written, from a variety of stakeholders, and it is common for stakeholders to produce a long list of things they want rather than what they need to address the problem. When defining the business need you should consider both current and future requirements, explore ideas and alternatives for delivering the same outcome, define the need so potential suppliers can clearly understand the requirement, and seek agreement from your stakeholders. When considering alternatives, think about challenging the demand (are the goods and services really needed), alternative methods of meeting the demand, reducing the frequency of use, reusing or recycling, simplifying or standardising specifications, and reducing the product and service range and complexity.",
-      "keywords": ["business need", "stakeholder", "requirements", "specification", "needs versus wants", "demand", "scope", "engage stakeholders", "alternatives"],
+      "keywords": [
+        "business need",
+        "stakeholder",
+        "requirements",
+        "specification",
+        "needs versus wants",
+        "demand",
+        "scope",
+        "engage stakeholders",
+        "alternatives"
+      ],
       "checklist": [
         "Map internal and external stakeholders and what each one needs from this procurement",
         "Write the business need as a problem to be solved, not as a product to be bought",
@@ -59,12 +104,33 @@
       "id": "planning.market-analysis",
       "path": "plan/analyse-the-market",
       "heading": "Analyse the supply market",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "Five practical steps to understand prices, players, competitiveness and alternatives before you commit to an approach.",
       "text": "Market analysis is about understanding how the market for particular goods or services works. Without this information it can be difficult to decide on the best way to approach the market or to assess the risks associated with your procurement. Analysing the market helps you understand typical prices, the size of the market, who the key suppliers are and their location, how competitive the market is, alternative goods and services, market trends, new and innovative solutions, suppliers' capability and capacity to deliver, solutions implemented by other agencies, and your agency's buying power. There are five practical steps. Step 1: consider existing procurement arrangements - first check whether the goods or services are available on an existing arrangement. Step 2: identify suppliers using the buy.nsw Supplier Hub, including local businesses, SMEs, regional businesses, Aboriginal businesses and social enterprises. Registration is required to view supplier profiles and products. When suppliers join the Supplier Hub they can add business identifiers, which are either self-identified (shown blue) or verified through a third party (shown green) - for example a verified Aboriginal owned business, disability employment organisation, verified social enterprise or gender equitable employer. Step 3: gather information about goods and services by requesting information from suppliers, checking their websites and marketing materials, and arranging demonstrations; this is also a good opportunity to ask about their sustainable procurement methods. Step 4: research customer reviews, comparison sites and industry bodies or experts. Step 5: learn from others - check whether another agency has procured something similar and seek their advice and lessons learned.",
-      "keywords": ["market analysis", "market research", "supply market", "supplier hub", "identify suppliers", "prices", "competitive", "benchmarking", "verified", "identifiers", "who supplies this"],
+      "keywords": [
+        "market analysis",
+        "market research",
+        "supply market",
+        "supplier hub",
+        "identify suppliers",
+        "prices",
+        "competitive",
+        "benchmarking",
+        "verified",
+        "identifiers",
+        "who supplies this",
+        "analyse the market",
+        "analyse the supply market",
+        "before buying",
+        "understand the market",
+        "research the market",
+        "market before buying"
+      ],
       "checklist": [
         "Check existing whole-of-government, scheme and agency arrangements first",
         "Search the Supplier Hub and note which identifiers are verified (green) versus self-declared (blue)",
@@ -72,43 +138,88 @@
         "Look at independent reviews, comparison sites and industry bodies",
         "Ask another agency or council that has bought something similar what they learned"
       ],
-      "templates": ["tpl-supplier-hub", "tpl-schemes", "tpl-contracts"],
+      "templates": [
+        "tpl-supplier-hub",
+        "tpl-schemes",
+        "tpl-contracts"
+      ],
       "citations": [
-        { "label": "buy.nsw Supplier Hub", "url": "https://buy.nsw.gov.au/suppliers" },
-        { "label": "Government arrangements", "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/government-arrangements" }
+        {
+          "label": "buy.nsw Supplier Hub",
+          "url": "https://buy.nsw.gov.au/suppliers"
+        },
+        {
+          "label": "Government arrangements",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/government-arrangements"
+        }
       ]
     },
     {
       "id": "planning.due-diligence-at-planning",
       "path": "plan/supplier-due-diligence-at-planning",
       "heading": "Building supplier due diligence into your plan",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "guidance",
       "summary": "Due diligence checks are mostly done at sourcing, but you design them at planning - and you write them into the market documents.",
       "text": "Supplier due diligence refers to the checks you perform on potential suppliers to understand whether they are genuine, are capable and reliable, are financially viable, have the required authorities, licences and status, and are of good repute and integrity. While most due diligence tasks are performed during the sourcing stage after potential suppliers have been identified, it is important to consider due diligence when planning your procurement. This includes identifying the capabilities that will be required to fulfil the procurement, understanding the regulatory environment that applies to suppliers in the market, and deciding how to approach the market, what information suppliers will need to provide, and how that information will be verified. You should include due diligence measures in your procurement strategy and in your market-facing documents. The ICAC Supplier Due Diligence guide sets out specific checks you can make.",
-      "keywords": ["due diligence", "supplier checks", "planning", "verification", "capability", "licences", "regulatory", "what checks"],
+      "keywords": [
+        "due diligence",
+        "supplier checks",
+        "planning",
+        "verification",
+        "capability",
+        "licences",
+        "regulatory",
+        "what checks"
+      ],
       "checklist": [
         "List the capabilities, licences and insurances the work genuinely requires",
         "Identify the regulatory regime that applies to suppliers in this market",
         "Decide what evidence suppliers must supply, and how you will verify it independently",
         "Write those requirements into the RFx documents, not just into your internal plan"
       ],
-      "templates": ["tpl-icac-due-diligence"],
+      "templates": [
+        "tpl-icac-due-diligence"
+      ],
       "citations": [
-        { "label": "ICAC Supplier Due Diligence guide", "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies" }
+        {
+          "label": "ICAC Supplier Due Diligence guide",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        }
       ]
     },
     {
       "id": "planning.procurement-strategy",
       "path": "plan/finalise-procurement-strategy",
       "heading": "Finalise and approve your procurement strategy",
-      "audiences": ["agency", "council"],
+      "audiences": [
+        "agency",
+        "council"
+      ],
       "jurisdiction": "both",
       "authority": "training",
       "summary": "The strategy answers ten questions and must be approved by the right delegate before you go anywhere near the market.",
       "text": "To be successful you should develop a strategy that considers your business needs, the market, risks and opportunities. Obtaining approval for the expenditure is critically important. For low value, low risk procurements and simple purchases, a briefing note or email approval may be used as the procurement strategy - check with your agency's procurement team. When developing your strategy consider: what is needed and why, what the benefits are, and whether it will deliver environmental, social or economic outcomes; the total estimated contract value; what the supply market looks like; whether there are existing contracts or schemes you should use; whether your procurement should preference certain types of suppliers, and whether it qualifies for exemptions; the risks you face and how you will manage them; the type of market approach you will use and why; what success will look like; and timings, including when existing arrangements conclude and when you need to release market documents. To finalise the strategy: summarise your key findings on business needs, market analysis, and risks and opportunities; include the total estimated contract value and contract period including any extensions, and your strategy for approaching the market; identify the benefits of the procurement outcome; make sure you have enough support from stakeholders; and get approval from your manager, director or agency head as per your agency's financial delegations.",
-      "keywords": ["procurement strategy", "strategy", "approval", "financial delegation", "business case", "briefing note", "estimated value", "contract period", "risk"],
+      "keywords": [
+        "procurement strategy",
+        "strategy",
+        "approval",
+        "financial delegation",
+        "business case",
+        "briefing note",
+        "estimated value",
+        "contract period",
+        "procurement risk",
+        "write a procurement strategy",
+        "how do i write",
+        "draft a strategy",
+        "strategy document",
+        "procurement plan"
+      ],
       "checklist": [
         "State the need, the benefits, and any environmental, social or economic outcomes",
         "State the total estimated contract value including all extension options",
@@ -124,7 +235,10 @@
         "Approaching the market before the strategy is approved is one of the most common compliance failures",
         "Understating the contract value by leaving out extension options can put you on the wrong side of a threshold"
       ],
-      "thresholds": ["thr-contract-5-years", "thr-accreditation-levels"]
+      "thresholds": [
+        "thr-contract-5-years",
+        "thr-accreditation-levels"
+      ]
     }
   ]
 }

@@ -27,7 +27,7 @@
       }
     ],
     "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base.",
-    "built_at": "2026-08-05T20:56:33.476Z",
+    "built_at": "2026-08-05T22:07:25.463Z",
     "topic_count": 11,
     "chunk_count": 73
   },
@@ -1234,7 +1234,7 @@
       "keywords": [
         "competition",
         "fair",
-        "open",
+        "open tender",
         "prescriptive",
         "specification",
         "incumbent",
@@ -1268,15 +1268,15 @@
       "keywords": [
         "easy to do business",
         "payment",
-        "pay",
+        "pay suppliers",
         "invoice",
         "cashflow",
         "faster payment terms",
         "5 days",
         "pcard",
         "purchasing card",
-        "late payment",
-        "when will i get paid"
+        "obligation to pay promptly",
+        "paying suppliers on time"
       ],
       "checklist": [
         "Advertise upcoming opportunities early so suppliers can prepare",
@@ -1544,11 +1544,18 @@
         "modern slavery act",
         "legislation",
         "disclosure",
-        "records",
+        "procurement records",
         "1998",
         "2009",
         "2018",
-        "transparency"
+        "transparency",
+        "what laws",
+        "which laws",
+        "laws govern",
+        "legal requirements",
+        "what legislation",
+        "statutes",
+        "acts that apply"
       ],
       "thresholds": [
         "thr-gipa-150k"
@@ -1877,7 +1884,7 @@
         "whole of government contract",
         "wog",
         "prequalification scheme",
-        "panel",
+        "supplier panel",
         "standing offer",
         "piggyback",
         "multi-agency",
@@ -1885,7 +1892,17 @@
         "approved arrangements",
         "must i use",
         "catalogue",
-        "existing contract"
+        "existing contract",
+        "three quotes",
+        "how many quotes",
+        "number of quotes",
+        "do i need quotes",
+        "quotes required",
+        "small purchase",
+        "low value purchase",
+        "buying laptops",
+        "office equipment",
+        "stationery"
       ],
       "checklist": [
         "Is it under $10,000? Buy from anywhere, on PCard, with delegate approval and a recorded VFM note",
@@ -1988,16 +2005,17 @@
       "summary": "Keeping good records at every stage is a legal obligation under the State Records Act - and your defence if a decision is challenged.",
       "text": "Records are an essential part of an accountable and transparent government and all government employees are obligated to keep them. You must keep good records at every stage of a procurement to document your decisions and the reasons behind them. This is a legal obligation under the State Records Act and will help you answer any complaints or requests for public information. All information created, sent or received in the course of your work is a record; you do not own these records even when you create them yourself - the government does. Your purchasing records should show authorisation for the purchase, reasons for selection of the purchasing method, details of all offers obtained, supplier evaluation criteria and reasons for supplier selection, records of negotiations if applicable, completed purchase orders and payment documentation, evidence of receipt, acceptance and payment, and copies of all related correspondence. Keep emails and letters relating to business; RFx documents, purchase orders, contract documents, evidence of payment and receipts; notes of phone calls recording when the call occurred, who was involved, what was discussed, decisions made and advice given; meeting records with dates, times, locations, attendees, key discussion points and decisions; instant messages where they contain advice, decisions or approvals; text messages containing decisions or actions; and briefing notes, approvals, plans and reports. You do not need to keep sticky notes (make a proper record of the content instead), emails duplicating information already captured elsewhere, or unsolicited mail. If you are unsure whether to make or keep a record, ask: did I write, send, use or keep this in the course of my work; am I or is someone else required to act on this; will anyone need this information in the future?",
       "keywords": [
-        "records",
+        "procurement records",
         "recordkeeping",
         "state records act",
         "documentation",
         "audit trail",
         "what to keep",
         "file notes",
-        "emails",
         "meeting minutes",
-        "evidence"
+        "evidence",
+        "keep emails and letters",
+        "which emails to keep"
       ],
       "checklist": [
         "Record the authorisation and the financial delegate who gave it",
@@ -2041,7 +2059,7 @@
         "methodology",
         "procurement process",
         "end to end",
-        "steps",
+        "procurement steps",
         "how does procurement work"
       ],
       "topic_id": "planning",
@@ -2067,7 +2085,7 @@
         "proportionate",
         "simple purchase",
         "complex",
-        "risk",
+        "procurement risk",
         "how much planning",
         "low value"
       ],
@@ -2142,7 +2160,13 @@
         "benchmarking",
         "verified",
         "identifiers",
-        "who supplies this"
+        "who supplies this",
+        "analyse the market",
+        "analyse the supply market",
+        "before buying",
+        "understand the market",
+        "research the market",
+        "market before buying"
       ],
       "checklist": [
         "Check existing whole-of-government, scheme and agency arrangements first",
@@ -2236,7 +2260,12 @@
         "briefing note",
         "estimated value",
         "contract period",
-        "risk"
+        "procurement risk",
+        "write a procurement strategy",
+        "how do i write",
+        "draft a strategy",
+        "strategy document",
+        "procurement plan"
       ],
       "checklist": [
         "State the need, the benefits, and any environmental, social or economic outcomes",
@@ -2343,7 +2372,16 @@
         "which approach",
         "market approach types",
         "multi-stage",
-        "selective"
+        "selective",
+        "what approach should i use",
+        "choose an approach",
+        "best way to go to market",
+        "procurement system",
+        "software",
+        "payroll",
+        "ict",
+        "new system",
+        "procure a system"
       ],
       "checklist": [
         "Do you know exactly what you need? If not, start with an RFI or EOI",
@@ -2686,7 +2724,7 @@
         "licences",
         "reputation",
         "checks before engaging",
-        "panel"
+        "supplier panel"
       ],
       "templates": [
         "tpl-icac-due-diligence"
@@ -2847,7 +2885,7 @@
       "text": "You must pay suppliers on time, especially small businesses. The Office of the Small Business Commissioner monitors and reports on agency payment performance to small businesses. You must pay correctly rendered invoices between $10,000 and $1 million from registered small businesses, those with fewer than 20 full-time equivalent employees, within 5 business days as per the Faster Payment Terms Policy. You should pay any correctly rendered invoice under $10,000 as soon as possible using a purchasing card or electronic funds transfer; check your agency's thresholds for PCard use. Large businesses with NSW Government goods and services contracts over $7.5 million must pay the small businesses they directly subcontract to within 20 business days upon receipt of a correctly rendered invoice, as per the Small Business Shorter Payment Terms Policy. If you are buying above your agency's PCard threshold you will generally need to request a purchase order using your agency's systems and processes. Purchase orders are commercial documents commonly used for low value, low risk procurements, and are often issued through ERP systems such as SAP and Oracle. Your PO should include details of the successful supplier's response or negotiated contract, or be based on a quote, and should include details of goods or services being purchased, quantities, agreed prices, delivery date and location, and payment terms. The supplier should include the PO number on their invoices to assist with faster payment processing. A purchasing card is a type of credit card; because there is a cost associated with raising and processing POs, agencies typically use PCards for low value purchases, which is better value for money, removes the need to raise a PO and automatically generates payment. When you use a PCard instead of a PO, the terms and conditions of the agreement are usually those of the seller rather than the buyer, so check you are able to comply.",
       "keywords": [
         "payment",
-        "pay",
+        "pay suppliers",
         "invoice",
         "5 business days",
         "20 business days",
@@ -3138,7 +3176,15 @@
         "retender",
         "lessons learned",
         "contract end",
-        "transition"
+        "transition",
+        "expiring",
+        "expires",
+        "expiring soon",
+        "coming to an end",
+        "ending soon",
+        "about to expire",
+        "what do i do next",
+        "plan for renewal"
       ],
       "checklist": [
         "Work back from the contract end date - a full retender needs planning, approval and a tender period",
@@ -3413,7 +3459,14 @@
         "budget",
         "panel members",
         "what can i share",
-        "supplier asking questions"
+        "supplier asking questions",
+        "who else is tendering",
+        "who else is bidding",
+        "which suppliers were invited",
+        "asked me who",
+        "supplier asked",
+        "fishing for information",
+        "wants to know who"
       ],
       "watch_outs": [
         "Naming who else was invited to respond, or revealing the budget, are the two most commonly leaked pieces of information",
@@ -3608,7 +3661,12 @@
         "estimated expenditure",
         "quotes",
         "quotation",
-        "council tender"
+        "council tender",
+        "construction",
+        "playground",
+        "new contract",
+        "do we need to tender",
+        "need to tender"
       ],
       "checklist": [
         "Estimate the full contract value including all options and extension years, not the first year alone",
@@ -3716,7 +3774,7 @@
         "open tender",
         "selective tender",
         "recognised contractors",
-        "list",
+        "contractor list",
         "21 days",
         "advertisement",
         "expression of interest",
@@ -3726,7 +3784,15 @@
         "168",
         "169",
         "how do councils tender",
-        "joint organisation"
+        "joint organisation",
+        "advertised",
+        "advertising period",
+        "how long advertised",
+        "public notice",
+        "tender period",
+        "minimum period",
+        "days to advertise",
+        "invite tenders"
       ],
       "checklist": [
         "Resolve or record the decision on whether the tender is open or selective",
@@ -3815,7 +3881,7 @@
       "keywords": [
         "lgp",
         "local government procurement",
-        "panel",
+        "supplier panel",
         "prescribed",
         "prequalified",
         "approved contractor",
@@ -3946,7 +4012,13 @@
         "anti-slavery commissioner",
         "council transparency",
         "publish contracts",
-        "disclosure"
+        "disclosure",
+        "what has my council contracted",
+        "see council contracts",
+        "council contract disclosure",
+        "find council contracts",
+        "public access to contracts",
+        "contracted"
       ],
       "checklist": [
         "Publish Class 1, 2 and 3 contract information within 45 days of the contract becoming effective",
@@ -4005,7 +4077,15 @@
         "etendering",
         "identifiers",
         "verified",
-        "sign up"
+        "sign up",
+        "become a supplier",
+        "how to become a supplier",
+        "start selling",
+        "where do i start",
+        "supply to government",
+        "supplier to government",
+        "vendor registration",
+        "get started selling"
       ],
       "checklist": [
         "Have a current ABN before you start",
@@ -4071,7 +4151,27 @@
         "disability employment",
         "how to win work",
         "get on a panel",
-        "not advertised"
+        "not advertised",
+        "we make",
+        "we supply",
+        "we sell",
+        "want government contracts",
+        "get government work",
+        "join a panel",
+        "business wants to supply",
+        "win government work",
+        "services we offer",
+        "office supplies",
+        "laptops",
+        "it equipment",
+        "furniture",
+        "get on a government panel",
+        "how do i get on a panel",
+        "apply to join a scheme",
+        "cleaning company",
+        "small company",
+        "contractor wants work",
+        "supplier panel"
       ],
       "checklist": [
         "Set up eTendering notifications for your categories",
@@ -4135,7 +4235,7 @@
         "mandatory criteria",
         "template",
         "questions",
-        "late",
+        "late tender",
         "tender tips"
       ],
       "checklist": [
@@ -4182,7 +4282,14 @@
         "faster payment terms",
         "not been paid",
         "overdue",
-        "cashflow"
+        "cashflow",
+        "when will i get paid",
+        "how long until i get paid",
+        "invoice not paid",
+        "chasing payment",
+        "payment is late",
+        "waiting for payment",
+        "still not paid"
       ],
       "checklist": [
         "Register your small business status so the 5-day terms apply",
@@ -4241,7 +4348,14 @@
         "ombudsman",
         "dispute",
         "appeal",
-        "feedback"
+        "feedback",
+        "lost the tender",
+        "lose the tender",
+        "did not win",
+        "unsuccessful bid",
+        "ask for feedback",
+        "request a debrief",
+        "supplier feedback"
       ],
       "checklist": [
         "Ask for a debrief in writing promptly after the award notification",
@@ -4401,7 +4515,7 @@
         "integrity",
         "should we do business",
         "icac guide",
-        "checks"
+        "due diligence checks"
       ],
       "checklist": [
         "Genuine: verify the ABN against the Australian Business Register and check it matches the entity name you are contracting with",
@@ -4452,7 +4566,14 @@
         "shared address",
         "same directors",
         "suspicious",
-        "phoenix"
+        "phoenix",
+        "is the supplier real",
+        "real business",
+        "genuine business",
+        "legitimate supplier",
+        "how do i know if",
+        "verify the supplier",
+        "check the supplier is real"
       ],
       "checklist": [
         "Validate the ABN on the Australian Business Register and confirm the entity name matches",
@@ -4505,7 +4626,7 @@
         "sourcing",
         "manage",
         "ongoing",
-        "panel",
+        "supplier panel",
         "scheme",
         "bank account change",
         "payment redirection",
