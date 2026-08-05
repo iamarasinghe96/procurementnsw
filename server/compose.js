@@ -62,27 +62,38 @@ export function composeFromKnowledgeBase(kb, hits, supporting, audienceMeta) {
   };
 }
 
-export function composeNoMatch(kb, audienceMeta) {
+export function composeNoMatch(kb, audienceMeta, corrections = []) {
   const suggestions = audienceMeta
     ? audienceMeta.top_questions
     : kb.audiences.flatMap((a) => a.top_questions.slice(0, 1));
 
+  // A near-miss on an acronym is the most likely reason a real question finds
+  // nothing, so lead with the correction rather than the generic apology.
+  const lead = corrections.length
+    ? `Nothing here matches that. Did you mean ${corrections
+        .map((c) => `${c.suggestion.toUpperCase()} instead of ${c.typed.toUpperCase()}`)
+        .join(', or ')}?`
+    : 'This knowledge base does not cover that question, so there is nothing here that can be answered without guessing.';
+
   return {
-    direct_answer:
-      'This knowledge base does not cover that question, so there is nothing here that can be answered without guessing.',
+    direct_answer: lead,
+    corrections,
     applies_to_you: null,
     key_points: [
+      ...corrections.map((c) => `${c.suggestion.toUpperCase()} - ${c.means}`),
       'The knowledge base covers NSW procurement objectives, legislation and policy, governance, planning, sourcing, contract management, probity, corruption prevention, council procurement and supplier guidance.',
     ],
     checklist: [],
     thresholds: [],
     templates: [],
     watch_outs: [],
-    summary: `Try rephrasing, or start from one of these: ${suggestions.slice(0, 4).join(' / ')}`,
+    summary: corrections.length
+      ? `If you did mean ${corrections[0].typed.toUpperCase()}, this tool covers procurement process rather than specific goods or commodities. Otherwise try: ${suggestions.slice(0, 3).join(' / ')}`
+      : `Try rephrasing, or start from one of these: ${suggestions.slice(0, 4).join(' / ')}`,
     sources: [],
     confidence: 'low',
     out_of_scope: true,
-    suggestions: suggestions.slice(0, 5),
+    suggestions: [...corrections.map((c) => c.suggestion.toUpperCase()), ...suggestions].slice(0, 5),
   };
 }
 

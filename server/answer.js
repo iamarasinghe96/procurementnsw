@@ -119,7 +119,7 @@ export class Answerer {
     return composeFromKnowledgeBase(this.kb, hits, supporting, audienceMeta);
   }
 
-  noMatchAnswer(_question, audienceMeta) {
-    return composeNoMatch(this.kb, audienceMeta);
+  noMatchAnswer(question, audienceMeta) {
+    return composeNoMatch(this.kb, audienceMeta, this.index.didYouMean(question));
   }
 }

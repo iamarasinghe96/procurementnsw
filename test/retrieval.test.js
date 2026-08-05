@@ -92,3 +92,32 @@ test('thresholds surfaced for a council never include agency-only rules', () => 
     assert.ok(t.applies_to.includes('council'), `${t.id} should not be shown to councils`);
   }
 });
+
+test('a near-miss acronym gets a correction rather than a dead end', () => {
+  // LPG (the fuel) and LGP (Local Government Procurement) are one transposition
+  // apart, and a council officer will type the wrong one.
+  const corrections = index.didYouMean('What is LPG?');
+  assert.equal(corrections.length, 1);
+  assert.equal(corrections[0].typed, 'lpg');
+  assert.equal(corrections[0].suggestion.toLowerCase(), 'lgp');
+  assert.match(corrections[0].means, /LGP/i);
+});
+
+test('correction suggestions must actually retrieve something', () => {
+  // Every suggestion has to lead somewhere, or it is just a second dead end.
+  for (const q of ['What is LPG?', 'tell me about the EPPP', 'what is a RFQQ']) {
+    for (const c of index.didYouMean(q)) {
+      const hits = index.search(c.suggestion, { limit: 1 });
+      assert.ok(hits.length && hits[0].score >= 5, `"${c.suggestion}" leads nowhere`);
+    }
+  }
+});
+
+test('genuine nonsense gets no correction', () => {
+  assert.equal(index.didYouMean('purple monkey dishwasher xyzzy').length, 0);
+});
+
+test('a term already in the vocabulary is never "corrected"', () => {
+  assert.equal(index.didYouMean('What is LGP?').length, 0);
+  assert.equal(index.didYouMean('what is an RFQ').length, 0);
+});

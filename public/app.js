@@ -133,7 +133,7 @@
         if (!hits.length) {
           return { status: 200, data: {
             question, status: 'no_match',
-            answer: composeNoMatch(kb, audienceMeta),
+            answer: composeNoMatch(kb, audienceMeta, index.didYouMean(question)),
             meta: { audience: audienceMeta?.id || null, grounded: false, mode: 'retrieval-only' },
           } };
         }

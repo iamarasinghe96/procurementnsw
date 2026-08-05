@@ -273,6 +273,57 @@ export class Index {
     return results;
   }
 
+  /**
+   * Vocabulary of short terms worth correcting towards, built once from the
+   * glossary and the chunk keywords.
+   */
+  get vocabulary() {
+    if (!this._vocab) {
+      const seen = new Map();
+      const add = (term, label) => {
+        const key = term.toLowerCase();
+        if (key.length < 2 || key.length > 6 || !/^[a-z]+$/.test(key)) return;
+        if (!seen.has(key)) seen.set(key, label);
+      };
+      for (const entry of this.kb.glossary) add(entry.term, entry.term);
+      for (const chunk of this.kb.chunks) {
+        for (const keyword of chunk.keywords || []) {
+          if (!keyword.includes(' ')) add(keyword, keyword);
+        }
+      }
+      this._vocab = seen;
+    }
+    return this._vocab;
+  }
+
+  /**
+   * When nothing matched, look for a near miss. In this domain LGP (Local
+   * Government Procurement) and LPG (the fuel) are one transposition apart, and
+   * a council officer will type the wrong one. Suggest rather than silently
+   * rewrite: the two mean entirely different things.
+   */
+  didYouMean(query, limit = 3) {
+    const tokens = tokenize(query).filter((t) => t.length >= 2 && t.length <= 6);
+    const out = [];
+    for (const token of tokens) {
+      if (this.vocabulary.has(token)) continue; // already a known term
+      let best = null;
+      for (const [candidate, label] of this.vocabulary) {
+        const distance = editDistance(token, candidate);
+        if (distance > 1) continue;
+        // Require the correction to actually retrieve something.
+        const hits = this.search(candidate, { limit: 1 });
+        if (!hits.length || hits[0].score < 5) continue;
+        if (!best || distance < best.distance || hits[0].score > best.score) {
+          best = { typed: token, suggestion: label, distance, score: hits[0].score, chunk: hits[0].chunk };
+        }
+      }
+      if (best) out.push({ typed: best.typed, suggestion: best.suggestion, means: best.chunk.heading });
+      if (out.length >= limit) break;
+    }
+    return out;
+  }
+
   /** Thresholds and glossary entries worth attaching to the answer context. */
   supporting(query, hits, audience) {
     const tokens = new Set(expand(tokenize(query)));
@@ -309,6 +360,28 @@ export class Index {
       glossary: glossary.slice(0, 4),
     };
   }
+}
+
+/**
+ * Damerau-Levenshtein: counts a transposition as one edit, so LPG/LGP is
+ * distance 1. Plain Levenshtein scores it 2 and would miss it.
+ */
+function editDistance(a, b) {
+  if (a === b) return 0;
+  if (Math.abs(a.length - b.length) > 2) return 99;
+  const d = Array.from({ length: a.length + 1 }, (_, i) =>
+    Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  );
+  for (let i = 1; i <= a.length; i += 1) {
+    for (let j = 1; j <= b.length; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      }
+    }
+  }
+  return d[a.length][b.length];
 }
 
 export function detectIntent(query) {
