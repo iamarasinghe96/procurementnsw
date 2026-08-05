@@ -1,0 +1,154 @@
+{
+  "topic": {
+    "id": "objectives",
+    "title": "NSW Government's procurement objectives",
+    "path": "foundations/objectives",
+    "stage": "foundations",
+    "source_document": "NSW government's procurement objectives.docx",
+    "audiences": ["agency", "council", "supplier", "corporate", "nfp", "public"],
+    "summary": "The five objectives that guide every NSW procurement decision: value for money, fair and open competition, easy to do business, innovation, and economic development, social outcomes and sustainability."
+  },
+  "chunks": [
+    {
+      "id": "objectives.five-objectives",
+      "path": "foundations/objectives/the-five-objectives",
+      "heading": "The five NSW procurement objectives",
+      "audiences": ["agency", "council", "supplier", "corporate", "nfp", "public"],
+      "jurisdiction": "nsw-government",
+      "authority": "training",
+      "summary": "Five objectives guide all NSW Government procurement decisions.",
+      "text": "The NSW Government has five key objectives which guide its procurement decisions. Value for money: ensuring best value for money in the procurement of goods, services and construction. Fair and open competition: improving outcomes for NSW by broadening access to government procurement. Easy to do business: being the easiest state to start and stay in business. Innovation: assisting government to work smarter and deliver better services. Economic development, social outcomes and sustainability: supporting economic participation and social outcomes, developing skills and creating jobs. Value for money is the main aim of procurement and should be your first consideration in every procurement.",
+      "keywords": ["objectives", "five objectives", "value for money", "competition", "innovation", "sustainability", "principles", "goals", "why procurement"],
+      "checklist": [
+        "Can you state, in one sentence, the value for money case for this purchase?",
+        "Have you done anything that narrows competition unnecessarily?",
+        "Is it easy for a small supplier to understand and respond to what you have written?",
+        "Have you looked for a better, faster or cheaper way of meeting the need?",
+        "Have you considered the social, economic and environmental effects of this spend?"
+      ],
+      "citations": [
+        { "label": "Procurement objectives - buy.nsw", "url": "https://www.info.buy.nsw.gov.au/buyer-guidance/before-you-buy/procurement-objectives/social-outcomes-and-sustainability" }
+      ]
+    },
+    {
+      "id": "objectives.value-for-money",
+      "path": "foundations/objectives/value-for-money",
+      "heading": "What value for money actually means",
+      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "jurisdiction": "both",
+      "authority": "training",
+      "summary": "Value for money equals total lifetime benefit minus total lifetime cost. It is not the lowest price.",
+      "text": "Put simply, value for money equals the total lifetime benefit minus the total lifetime cost. Value for money is the main aim of procurement and your procurement decisions and outcomes must reflect it. Value for money is not necessarily the lowest price, nor the highest quality good or service. Generally you achieve value for money by buying fit for purpose goods or services at the lowest lifetime cost. When assessing value for money, consider the range of cost-related and non-cost factors, both up-front and after the initial purchase. Fit for purpose is about whether the goods or services will meet the business need, and is generally determined by non-cost factors. Determining whether goods are fit for purpose is often easier because goods are tangible. When assessing services, consider suppliers' capability and capacity. Capability means the supplier can perform the service - the right skills, qualifications, experience, licences and insurances. Capacity means the supplier can actually deliver - sufficient time, sufficient staff, the right equipment, the right materials and other required resources.",
+      "keywords": ["value for money", "vfm", "lifetime cost", "whole of life", "fit for purpose", "capability", "capacity", "lowest price", "cheapest", "total cost of ownership"],
+      "checklist": [
+        "List the up-front costs and the ongoing costs over the whole life of the arrangement",
+        "Identify the non-cost factors that determine fitness for purpose",
+        "Test capability: skills, qualifications, experience, licences, insurances",
+        "Test capacity: time, staff, equipment, materials, other resources",
+        "Record the value for money reasoning, even for a small purchase"
+      ],
+      "watch_outs": [
+        "Choosing the cheapest bid without a fitness-for-purpose assessment is not value for money and is hard to defend later",
+        "A supplier can be capable but not have the capacity to take on your work right now - test both"
+      ],
+      "thresholds": ["thr-pcard-10k"],
+      "citations": [
+        { "label": "Procurement Policy Framework", "url": "https://info.buy.nsw.gov.au/policy-library/policies/procurement-policy-framework" }
+      ]
+    },
+    {
+      "id": "objectives.fair-open-competition",
+      "path": "foundations/objectives/fair-and-open-competition",
+      "heading": "Fair and open competition",
+      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "jurisdiction": "both",
+      "authority": "training",
+      "summary": "Competition delivers savings, quality and innovation. Avoid behaviours that quietly shut it down.",
+      "text": "Competition helps to deliver outcomes such as cost savings, increased quality and innovation and improved market sustainability. Competition exists where suppliers are under pressure to offer the best possible range of goods and services at the best possible prices. To help promote fairness and open competition you should especially encourage new businesses, including local suppliers, SMEs and gender-equitable suppliers, to compete for government work; make your processes simple and transparent; break down silos within your agency and government to share ideas for procurement; and avoid behaviours that limit competition, including being overly prescriptive and not questioning the status quo.",
+      "keywords": ["competition", "fair", "open", "prescriptive", "specification", "incumbent", "market", "level playing field"],
+      "watch_outs": [
+        "Writing a specification around the incumbent's product is a common and serious way of killing competition",
+        "Repeating last cycle's requirements without questioning them entrenches the status quo"
+      ]
+    },
+    {
+      "id": "objectives.easy-to-do-business",
+      "path": "foundations/objectives/easy-to-do-business",
+      "heading": "Easy to do business and faster supplier payments",
+      "audiences": ["agency", "supplier", "nfp", "corporate"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Keep contracts short and plain, give suppliers notice, and pay promptly - cashflow is critical to small business.",
+      "text": "The NSW Government wants to attract a broad supply base that includes local businesses, small and medium enterprises, regional, gender equitable and Aboriginal businesses, with the aim of making NSW the easiest state in which to do business. To help achieve this you should use eTendering or your agency's procurement system to make suppliers aware of contracting opportunities in advance and give them time to prepare; make it easy for suppliers to understand and comply with contractual terms by keeping contracts brief, in plain English and including only necessary conditions and insurances; and pay promptly, because cashflow is vital to small businesses. On payment: pay correctly rendered invoices up to $10,000 instantly via your agency's purchasing card, subject to your agency's rules and PCard thresholds; and pay correctly rendered invoices between $10,000 and $1 million within 5 business days if the supplier is a registered small business, as per the Faster Payment Terms Policy.",
+      "keywords": ["easy to do business", "payment", "pay", "invoice", "cashflow", "faster payment terms", "5 days", "pcard", "purchasing card", "late payment", "when will i get paid"],
+      "checklist": [
+        "Advertise upcoming opportunities early so suppliers can prepare",
+        "Strip the contract back to necessary conditions and insurances only",
+        "Confirm the supplier's small business registration status so the 5-day clock applies correctly",
+        "Use a PCard for purchases under $10,000 where your agency allows it",
+        "Check what makes an invoice 'correctly rendered' - the clock does not start until it is"
+      ],
+      "thresholds": ["thr-faster-payment-5-days", "thr-pcard-10k"],
+      "citations": [
+        { "label": "Faster Payment Terms Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms" },
+        { "label": "What is a correctly rendered invoice", "url": "https://www.smallbusiness.nsw.gov.au/get-help/faster-payment-terms/what-correctly-rendered-invoice" }
+      ]
+    },
+    {
+      "id": "objectives.innovation",
+      "path": "foundations/objectives/innovation",
+      "heading": "Innovation and unsolicited proposals",
+      "audiences": ["agency", "supplier", "corporate"],
+      "jurisdiction": "nsw-government",
+      "authority": "training",
+      "summary": "Engage the market early to open up innovation. Unsolicited proposals must go to Premier and Cabinet.",
+      "text": "You can deliver better outcomes for the government and citizens of NSW by being innovative with your procurement. This could be in your procurement approach, in designing your requirements, the outcome you are seeking, or the way you deliver the outcome. One way to increase opportunities for innovation is by engaging suppliers early and in an ongoing way. You should look for suppliers who can deliver new, faster, more cost-effective and better goods and services, and look to innovate at every stage of the procurement process, especially when you engage with industry and approach the market. Unsolicited proposals can often be a good source of innovation, but they are also risky. For this reason you must refer unsolicited proposals to the Department of Premier and Cabinet.",
+      "keywords": ["innovation", "unsolicited proposal", "market engagement", "early engagement", "new solutions", "outcome based"],
+      "watch_outs": [
+        "Do not deal with an unsolicited proposal yourself - it must be referred to the Department of Premier and Cabinet"
+      ],
+      "citations": [
+        { "label": "Unsolicited proposals - NSW Government", "url": "https://www.nsw.gov.au/unsolicited-proposals" }
+      ]
+    },
+    {
+      "id": "objectives.sustainable-procurement",
+      "path": "foundations/objectives/sustainable-procurement",
+      "heading": "Economic development, social outcomes and sustainability",
+      "audiences": ["agency", "council", "supplier", "nfp", "corporate", "public"],
+      "jurisdiction": "both",
+      "authority": "training",
+      "summary": "Sustainable procurement means weighing the effects of the purchase on society, the economy and the environment.",
+      "text": "Considering benefits and impacts on society, the economy and the environment in your procurement is called sustainable procurement. Examples include encouraging skills development; creating jobs for the citizens of NSW; encouraging supplier diversity and increasing opportunities for minority businesses such as SMEs, regional businesses, Aboriginal businesses and disability employment organisations; complying with fair trade, human rights and modern slavery legislation; pollution control, waste minimisation, recycling and disposal; and energy efficiency and resource consumption. The Guide to Environmentally Sustainable Procurement includes practical templates and case studies from NSW Government agencies and covers the planning, sourcing and managing stages.",
+      "keywords": ["sustainability", "sustainable procurement", "environment", "social outcomes", "supplier diversity", "modern slavery", "recycling", "waste", "net zero", "esg", "circular economy"],
+      "templates": ["tpl-esp-guide", "tpl-modern-slavery-reasonable-steps"],
+      "citations": [
+        { "label": "Guide to Environmentally Sustainable Procurement", "url": "https://www.info.buy.nsw.gov.au/resources/guide-to-environmentally-sustainable-procurement" },
+        { "label": "Net Zero Government Operations Policy", "url": "https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/net-zero-government-operations-policy" }
+      ]
+    },
+    {
+      "id": "objectives.preferencing-suppliers",
+      "path": "foundations/objectives/preferencing-suppliers",
+      "heading": "When you must preference certain suppliers",
+      "audiences": ["agency", "supplier", "nfp", "corporate"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Aboriginal businesses get first consideration up to $250,000; SMEs get first preference up to $3 million - even off a panel.",
+      "text": "There are times you must give preference to buying from certain suppliers, particularly SMEs, Aboriginal businesses and local suppliers. This applies even when you are buying from a standing offer, panel or prequalification scheme. SMEs may include Aboriginal businesses, regional businesses, social enterprises and disability employment organisations. The Aboriginal Procurement Policy requires that you give first consideration to Aboriginal businesses for procurements up to $250,000. The SME and Regional Procurement Policy extends the direct purchasing preference threshold to $3 million. When deciding which policy to apply, consider the market, your agency's requirements and NSW Government targets for direct spend with Aboriginal businesses. You are also encouraged to buy from social enterprises to support economic and social change for disadvantaged people. Social enterprises tackle social problems, improve communities, provide people with access to employment and training, or help the environment; many are small businesses, SMEs, Aboriginal businesses or Australian Disability Enterprises and qualify for purchasing preferences. The NSW Government is also committed to improving gender equality in supply chains.",
+      "keywords": ["preference", "aboriginal business", "sme", "social enterprise", "disability employment organisation", "ade", "regional", "gender equitable", "supplier diversity", "first consideration", "250000", "3 million"],
+      "checklist": [
+        "Before you approach the market, check whether an Aboriginal business can meet the need (mandatory first consideration up to $250,000)",
+        "For direct purchases up to $3 million, check SME options first - including when buying off a panel",
+        "Search the Supplier Hub for verified Aboriginal, social enterprise, disability employment and gender equitable identifiers",
+        "Record why you did or did not use a preferenced supplier"
+      ],
+      "thresholds": ["thr-aboriginal-250k", "thr-sme-3m", "thr-small-business-50k", "thr-regional-150k"],
+      "templates": ["tpl-supplier-hub"],
+      "citations": [
+        { "label": "Aboriginal Procurement Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/aboriginal-procurement-policy" },
+        { "label": "SME and Regional Procurement Policy", "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy" }
+      ]
+    }
+  ]
+}

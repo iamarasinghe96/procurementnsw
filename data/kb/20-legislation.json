@@ -1,0 +1,137 @@
+{
+  "topic": {
+    "id": "legislation",
+    "title": "Procurement legislation and policies",
+    "path": "foundations/legislation-and-policy",
+    "stage": "foundations",
+    "source_document": "Procurement legislation and policies.docx",
+    "audiences": ["agency", "council", "supplier", "corporate", "public"],
+    "summary": "The Procurement Policy Framework, the Acts that bind NSW procurement, Board Directions, procurement policies and international trade obligations."
+  },
+  "chunks": [
+    {
+      "id": "legislation.policy-framework",
+      "path": "foundations/legislation-and-policy/procurement-policy-framework",
+      "heading": "The Procurement Policy Framework",
+      "audiences": ["agency", "corporate", "supplier"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "The single source of guidance on NSW procurement objectives, Board requirements and rules. Updated quarterly.",
+      "text": "The Procurement Policy Framework is your single source of guidance on government procurement objectives, Board requirements and rules for procurement in the NSW public sector. It includes mandatory rules based on legislation, Board Directions and policies, plus guidance on good practice with supporting documents. It is updated every three months with new and revised requirements. It has four sections: Section 1 Objectives, covering the goals of NSW Government procurement and supporting policies; Section 2 Plan, source, manage process, the best practice approach with relevant policies highlighted at each stage; Section 3 Governance and feedback, the structures supporting NSW Government procurement; and Section 4 Glossary. The Framework uses two key terms. MUST shows rules that are mandatory as per legislation and policy. SHOULD, MAY and RECOMMENDED indicate good practice.",
+      "keywords": ["procurement policy framework", "ppf", "framework", "must", "should", "rules", "mandatory", "single source of truth"],
+      "watch_outs": [
+        "The Framework is reissued quarterly - check you are reading the current version before relying on a threshold or rule",
+        "'Must' means mandatory. 'Should' means good practice. Confusing the two is how audit findings happen."
+      ],
+      "citations": [
+        { "label": "Procurement Policy Framework", "url": "https://info.buy.nsw.gov.au/policy-library/policies/procurement-policy-framework" }
+      ]
+    },
+    {
+      "id": "legislation.pwp-act",
+      "path": "foundations/legislation-and-policy/public-works-and-procurement-act",
+      "heading": "Public Works and Procurement Act 1912 and Regulation",
+      "audiences": ["agency", "council", "public"],
+      "jurisdiction": "nsw-government",
+      "authority": "legislation",
+      "summary": "The Act that establishes NSW procurement, creates the Procurement Board, and sets agency obligations under section 176.",
+      "text": "The Public Works and Procurement (PWP) Act 1912 establishes the legislative framework for the procurement of goods and services across the NSW public sector. Section 176 of the Act defines the obligations of government agencies, including obtaining value for money and exercising their procurement in accordance with the policies and directions of the NSW Procurement Board, the terms of their accreditation, and principles of probity and fairness. The Public Works and Procurement Regulation 2019 supports the Act and deals with specific procurement arrangements, including procurement for emergencies, purchasing from approved disability employment organisations, and procurement by public bodies that are not NSW Government agencies, such as councils, private schools and hospitals, universities and government agencies in other states or territories.",
+      "keywords": ["pwp act", "public works and procurement act", "section 176", "1912", "regulation 2019", "legislation", "legal basis", "procurement board"],
+      "citations": [
+        { "label": "Public Works and Procurement Act 1912", "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1912-045" }
+      ]
+    },
+    {
+      "id": "legislation.key-acts",
+      "path": "foundations/legislation-and-policy/key-legislation",
+      "heading": "ICAC Act, GIPA Act, State Records Act and Modern Slavery Act",
+      "audiences": ["agency", "council", "public", "corporate"],
+      "jurisdiction": "both",
+      "authority": "legislation",
+      "summary": "Four Acts that shape day-to-day procurement conduct: corruption, information access, recordkeeping and modern slavery.",
+      "text": "The Independent Commission Against Corruption Act 1988 sets out the functions of the ICAC: to investigate and expose corrupt conduct in the NSW public sector, actively prevent corruption through advice and assistance, and educate the NSW community and public sector about corruption and its effects. The Act requires your agency head to report to the Commission any matter they suspect on reasonable grounds concerns or may concern corrupt conduct. The Government Information (Public Access) Act 2009 helps ensure an open and transparent government and provides the public with a right to government information. It requires that you publicly disclose contracts valued at $150,000 (inc GST) and over, and proactively share information about procurement processes and decision making. The State Records Act 1998 requires that you keep appropriate records of procurement planning, management and decision making, stored securely to maintain confidentiality, kept for audit purposes, and able to be extracted, collated and arranged for reports. The NSW Modern Slavery Act 2018 includes requirements to take reasonable steps to ensure the goods and services you procure are not the product of modern slavery, including annual reporting requirements. Procurement is also subject to a financial framework including the Government Sector Finance Act 2018, Treasurer's Directions, agency delegations and internal expenditure policies.",
+      "keywords": ["icac act", "gipa act", "state records act", "modern slavery act", "legislation", "disclosure", "records", "1998", "2009", "2018", "transparency"],
+      "thresholds": ["thr-gipa-150k"],
+      "citations": [
+        { "label": "NSW legislation", "url": "https://legislation.nsw.gov.au/" },
+        { "label": "Modern Slavery Act 2018", "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2018-030" }
+      ]
+    },
+    {
+      "id": "legislation.board-directions-policies",
+      "path": "foundations/legislation-and-policy/board-directions-and-policies",
+      "heading": "Board Directions, procurement policies and agency policies",
+      "audiences": ["agency", "corporate", "supplier"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Four layers of policy sit above your procurement: Board Directions, government policies, agency policy, and administrative requirements.",
+      "text": "The NSW Procurement Board issues Board Directions to individual or all government agencies that set rules and guidelines around procurement. Examples include Directions that increase opportunities for local suppliers to supply to government, support bushfire and flood affected communities, enforce government procurement obligations arising from international procurement arrangements, define approved procurement arrangements for specific procurement values, and define arrangements for buying professional services. The Government, or the Procurement Board acting on its behalf, also issues policies that affect how you conduct procurement, including the SME and Regional Procurement Policy, the Aboriginal Procurement Policy, the Small Business Shorter Payment Terms Policy, and the Net Zero Government Operations Policy. Your agency procurement function will also have specific policies and procedures you must follow, usually set out in an agency procurement manual. The Government regularly issues further guidance collectively called Administrative Requirements, including Premier's Memoranda, Treasurer's Directions and Departmental Circulars.",
+      "keywords": ["board direction", "pbd", "policy", "agency policy", "procurement manual", "premier's memoranda", "treasurer's directions", "administrative requirements"],
+      "citations": [
+        { "label": "NSW Procurement Board Directions", "url": "https://arp.nsw.gov.au/all-ars/" },
+        { "label": "buy.nsw policy library", "url": "https://www.info.buy.nsw.gov.au/policy-library" }
+      ]
+    },
+    {
+      "id": "legislation.epp",
+      "path": "foundations/legislation-and-policy/enforceable-procurement-provisions",
+      "heading": "Enforceable procurement provisions and international trade agreements",
+      "audiences": ["agency", "corporate", "supplier"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Above roughly $680,000 for goods and services, international trade obligations become legally enforceable by suppliers.",
+      "text": "Australia is party to several international trade and procurement agreements that impact NSW Government procurement, including the Australia-United States Free Trade Agreement, the Comprehensive and Progressive Agreement for Trans-Pacific Partnership, the World Trade Organisation Government Procurement Agreement, and the Australia New Zealand Government Procurement Agreement. Board Direction PBD-2019-05 Enforceable Procurement Provisions (the EPP Direction) implements the requirements of these agreements. Before starting your procurement process you must assess whether the procurement is covered by the EPP Direction. You generally need to comply if the estimated value exceeds $680,000 (ex GST) for goods and services, or $9.584 million (ex GST) for construction. Key consequences of a covered procurement include a general requirement to use an open approach to market, a prohibition on discriminating against foreign suppliers or requiring Australian experience, and specific minimum tender periods. Under the Public Works and Procurement Act 1912 a supplier may lodge a complaint with the head of a government agency alleging the agency has contravened an enforceable procurement provision, and the agency head must investigate and attempt to resolve it. The NSW Procurement Board has no statutory role in covered procurement complaints - they are a matter for the agency, the supplier and, if proceedings are taken, the Supreme Court.",
+      "keywords": ["epp", "enforceable procurement provisions", "pbd-2019-05", "680000", "9.584 million", "international", "trade agreement", "wto", "cptpp", "covered procurement", "open tender", "foreign supplier"],
+      "checklist": [
+        "Estimate the value of the whole procurement, including options and extensions, before deciding if the EPP Direction applies",
+        "If covered, default to an open approach to market",
+        "Remove any requirement for Australian experience or local presence that is not genuinely essential",
+        "Apply the EPP minimum tender periods, not just the general 25-day guidance",
+        "Document your covered-procurement assessment - it is the first thing a complaint will test"
+      ],
+      "watch_outs": [
+        "Splitting a procurement to fall under the threshold is a serious compliance failure",
+        "A covered procurement complaint can end up in the Supreme Court, not just in an internal review"
+      ],
+      "thresholds": ["thr-unaccredited-680k"],
+      "templates": ["tpl-complaint-guidelines"],
+      "citations": [
+        { "label": "PBD-2019-05 Enforceable Procurement Provisions", "url": "https://arp.nsw.gov.au/pbd-2019-05-enforceable-procurement-provisions/" },
+        { "label": "EPP guidance - buy.nsw", "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/enforceable-procurement-provisions" }
+      ]
+    },
+    {
+      "id": "legislation.policy-exemptions",
+      "path": "foundations/legislation-and-policy/exemption-from-policies",
+      "heading": "When you are exempt from some procurement policies",
+      "audiences": ["agency"],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Four situations where NSW procurement policies, including Board Directions, may not apply - but value for money always does.",
+      "text": "Sometimes you do not have to comply with NSW Government procurement policies, including Board Directions. This includes buying from an approved Australian Disability Enterprise; emergency procurements; procurements approved by Cabinet or the Expenditure Review Committee; and buying from other government entities. Where a procurement is approved by Cabinet or the ERC you still need to comply with the Procurement Policy Framework and Board Directions where consistent with the Cabinet decision, including the need to achieve value for money, and you will still need to comply with PBD-2019-05 Enforceable Procurement Provisions.",
+      "keywords": ["exemption", "exempt", "emergency", "cabinet", "erc", "australian disability enterprise", "ade", "other government entity"],
+      "watch_outs": [
+        "An exemption from a policy is not an exemption from value for money, probity or recordkeeping",
+        "Even a Cabinet-approved procurement must still meet the enforceable procurement provisions"
+      ]
+    },
+    {
+      "id": "legislation.other-objectives-guidance",
+      "path": "foundations/legislation-and-policy/guidance-for-other-objectives",
+      "heading": "Guidance on modern slavery, sustainability, accessibility and local suppliers",
+      "audiences": ["agency", "council", "corporate"],
+      "jurisdiction": "both",
+      "authority": "guidance",
+      "summary": "Four guidance documents that operationalise the government's broader procurement objectives.",
+      "text": "Several guides help you achieve the government's objectives relating to modern slavery, environmental sustainability, accessibility and engaging local suppliers. The NSW Anti-slavery Commissioner's Guidance on Reasonable Steps to Manage Modern Slavery Risks in Operations and Supply Chains aims to help agencies take reasonable steps to ensure goods and services procured by and for the agency are not the product of modern slavery; it became operative on 1 January 2024 and covers NSW government departments, local councils, certain universities, Local Aboriginal Land Councils and other state government agencies. The Guide to Environmentally Sustainable Procurement helps you increase environmental sustainability across planning, sourcing and managing. The Guidance on buying accessible products and services covers buying products and services usable by everyone, including people with disability. The Guidance on increasing opportunities for local suppliers sets out the rules on engaging local suppliers and the requirements for local market testing.",
+      "keywords": ["modern slavery", "reasonable steps", "anti-slavery commissioner", "accessibility", "accessible", "local supplier", "local market testing", "environmentally sustainable"],
+      "thresholds": ["thr-local-7-5m", "thr-modern-slavery-council-150k"],
+      "templates": ["tpl-modern-slavery-reasonable-steps", "tpl-esp-guide"],
+      "citations": [
+        { "label": "Guidance on Reasonable Steps", "url": "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf" },
+        { "label": "Guidance on buying accessible products and services", "url": "https://www.info.buy.nsw.gov.au/news/2023/guidance-on-buying-accessible-products-and-services" },
+        { "label": "Increasing opportunities for local suppliers", "url": "https://www.info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/guidance-on-increasing-opportunities-for-local-suppliers-to-supply-to-government" }
+      ]
+    }
+  ]
+}

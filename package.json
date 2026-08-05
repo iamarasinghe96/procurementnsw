@@ -1,0 +1,29 @@
+{
+  "name": "nsw-procurement-navigator",
+  "version": "1.0.0",
+  "description": "A grounded question-answering tool for NSW procurement: councils, agencies, suppliers and the public.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:kb": "node scripts/build-kb.mjs",
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "prestart": "node scripts/build-kb.mjs",
+    "pretest": "node scripts/build-kb.mjs"
+  },
+  "keywords": [
+    "nsw",
+    "procurement",
+    "local-government",
+    "rag",
+    "groq"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "^1.62.1"
+  }
+}
