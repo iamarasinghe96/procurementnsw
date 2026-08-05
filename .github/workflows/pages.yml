@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+# Rebuilds the standalone single-file site and publishes it to the gh-pages
+# branch, so the published site never drifts from the knowledge base.
+#
+# Requires GitHub Pages to be enabled once, by hand:
+#   Settings -> Pages -> Source: "Deploy from a branch" -> gh-pages / (root)
+
+on:
+  push:
+    branches:
+      - main
+      - claude/nsw-procurement-webtool-m48v59
+    paths:
+      - 'data/kb/**'
+      - 'public/**'
+      - 'server/retrieval.js'
+      - 'server/compose.js'
+      - 'scripts/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Validates the knowledge base, then bundles it into one HTML file.
+      # A broken reference fails the build rather than shipping a broken site.
+      - name: Build
+        run: npm run build:standalone
+
+      - name: Test
+        run: npm test
+
+      - name: Publish to gh-pages
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cp dist/procurement-navigator.html out/index.html
+          touch out/.nojekyll
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin gh-pages --depth=1 || true
+          git checkout -B gh-pages
+          find . -maxdepth 1 -mindepth 1 \
+            ! -name .git ! -name out ! -name node_modules -exec rm -rf {} +
+          mv out/index.html out/.nojekyll .
+          rmdir out
+
+          git add -A index.html .nojekyll
+          if git diff --cached --quiet; then
+            echo "Site unchanged, nothing to publish."
+            exit 0
+          fi
+          git commit -m "Rebuild site from ${GITHUB_SHA::7}"
+          git push --force origin gh-pages

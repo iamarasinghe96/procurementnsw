@@ -29,6 +29,21 @@ the same knowledge base and the same retrieval engine in the browser, and
 produces the answer the server produces when no key is configured — labelled
 "Knowledge base answer" in the UI so the two are never confused.
 
+### Published site
+
+The standalone build is published from the `gh-pages` branch at
+**https://iamarasinghe96.github.io/procurementnsw/**
+
+`.github/workflows/pages.yml` rebuilds and republishes it whenever the knowledge
+base, the UI or the retrieval engine changes, so the site cannot drift from the
+sources. Enabling Pages is a one-time manual step: **Settings → Pages → Source:
+"Deploy from a branch" → `gh-pages` / `(root)`**.
+
+GitHub Pages serves static files only and has nowhere to keep a secret, so the
+published site is the knowledge-base mode. Hosting the AI version means running
+the Node server somewhere that can hold `GROQ_API_KEY` as an environment
+variable.
+
 ---
 
 ## Why it exists
