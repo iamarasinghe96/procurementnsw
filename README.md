@@ -31,20 +31,30 @@ produces the answer the server produces when no key is configured — labelled
 
 ### Published site
 
-The standalone build is published from the `gh-pages` branch at
+The standalone build is published at
 **https://iamarasinghe96.github.io/procurementnsw/**
 
 `.github/workflows/pages.yml` rebuilds and republishes it whenever the knowledge
 base, the UI or the retrieval engine changes, so the site cannot drift from the
-sources. Enabling Pages is a one-time manual step: **Settings → Pages → Source:
-"Deploy from a branch" → `gh-pages` / `(root)`**.
+sources. It runs the test suite first, so a broken knowledge base reference
+fails the deploy rather than shipping.
 
 ### AI on the static site
 
-GitHub Pages has nowhere to keep a secret. To run AI answering there anyway, set
-a repository secret named `GROQ_API_KEY` (**Settings → Secrets and variables →
-Actions**). The workflow then builds with `--embed-key` and the key ships inside
-the published page.
+GitHub Pages has nowhere to keep a secret. To run AI answering there anyway:
+
+1. Set a repository secret `GROQ_API_KEY` (**Settings → Secrets and variables → Actions**).
+2. Set **Settings → Pages → Source** to **GitHub Actions**.
+
+The workflow then builds with `--embed-key` and the key ships inside the
+published page.
+
+Step 2 is not optional. The site was originally published by committing the
+built file to a `gh-pages` branch, and once the key was embedded GitHub's push
+protection blocked that push — correctly, because it would have written the key
+into git history permanently. Publishing as a Pages artifact serves the page to
+browsers without committing it, so the key is exposed exactly as far as the site
+is and can be rotated by changing the secret.
 
 **The key is then readable by anyone who opens the site**, and the rate limits in
 `server/rateLimit.js` do not apply to it — they are server-side. Use a key you

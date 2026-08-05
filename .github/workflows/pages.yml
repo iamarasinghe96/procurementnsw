@@ -1,10 +1,16 @@
 name: Deploy to GitHub Pages
 
-# Rebuilds the standalone single-file site and publishes it to the gh-pages
-# branch, so the published site never drifts from the knowledge base.
+# Builds the standalone single-file site and publishes it as a Pages artifact,
+# so the published page never drifts from the knowledge base.
 #
-# Requires GitHub Pages to be enabled once, by hand:
-#   Settings -> Pages -> Source: "Deploy from a branch" -> gh-pages / (root)
+# ONE-TIME SETTING: Settings -> Pages -> Source must be "GitHub Actions".
+# ("Deploy from a branch" will keep serving the old gh-pages content instead.)
+#
+# The artifact route matters once GROQ_API_KEY is set. Committing the built page
+# to a branch put the key into git history, and GitHub's push protection
+# correctly refused the push. An artifact is served to browsers without ever
+# being committed, so the key is exposed exactly as far as the site is, and no
+# further - and it can be rotated by changing one secret.
 
 on:
   push:
@@ -14,46 +20,45 @@ on:
     paths:
       - 'data/kb/**'
       - 'public/**'
-      - 'server/retrieval.js'
-      - 'server/compose.js'
+      - 'server/**'
       - 'scripts/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages-deploy
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       # Runs before the build: `pretest` regenerates the bundle without a key,
       # so building first would have the AI build silently overwritten.
       - name: Test
         run: npm test
 
-      # Validates the knowledge base, then bundles it into one HTML file.
-      # A broken reference fails the build rather than shipping a broken site.
-      #
-      # GROQ_API_KEY is optional. When the repository secret is set, the key is
-      # embedded in the published page so the static site can answer with AI.
-      # It is readable by anyone who opens the page - that is inherent to static
-      # hosting, and the reason the site works without it too.
+      # GROQ_API_KEY is optional. With the repository secret set, the key is
+      # embedded in the published page so the static site can answer with AI,
+      # and is readable by anyone who opens it. Without it the site builds
+      # knowledge-base-only and needs no key at all.
       - name: Build
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
         run: |
+          set -euo pipefail
           if [ -n "${GROQ_API_KEY:-}" ]; then
             echo "Building with AI answering enabled."
             node scripts/build-standalone.mjs --embed-key
@@ -62,37 +67,23 @@ jobs:
             node scripts/build-standalone.mjs
           fi
 
-      - name: Publish to gh-pages
+      - name: Assemble site
         run: |
           set -euo pipefail
-          mkdir -p out
-          cp dist/procurement-navigator.html out/index.html
-          touch out/.nojekyll
+          mkdir -p _site
+          cp dist/procurement-navigator.html _site/index.html
+          touch _site/.nojekyll
 
-          # Skip the deploy when the published page is byte-identical.
-          if git fetch origin gh-pages --depth=1 2>/dev/null \
-             && git cat-file -e origin/gh-pages:index.html 2>/dev/null; then
-            git show origin/gh-pages:index.html > out/published.html
-            if cmp -s out/index.html out/published.html; then
-              echo "Site unchanged, nothing to publish."
-              exit 0
-            fi
-            rm out/published.html
-          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Orphan branch so gh-pages holds the built site only - no source tree,
-          # no accumulating history. `git add -A <pathspec>` would not stage the
-          # deletions below, which is how the source tree leaked in once.
-          git checkout --orphan gh-pages-build
-          git rm -rf --cached . --quiet
-          find . -maxdepth 1 -mindepth 1 \
-            ! -name .git ! -name out ! -name node_modules -exec rm -rf {} +
-          mv out/index.html out/.nojekyll .
-          rmdir out
-
-          git add index.html .nojekyll
-          git commit --quiet -m "Rebuild site from ${GITHUB_SHA::7}"
-          git push --force origin gh-pages-build:gh-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
