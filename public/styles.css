@@ -206,11 +206,15 @@ main { display: block; }
 .search-go:disabled { opacity: .55; cursor: progress; }
 .search-go svg { width: 16px; height: 16px; }
 
-.search-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 14px; }
-.who { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); }
+.search-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 14px; min-width: 0; }
+/* The longest audience label is wider than a phone, so the select must be
+   allowed to shrink below its intrinsic content width. */
+.who { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); min-width: 0; max-width: 100%; }
+.who > span { flex: none; }
 .who select {
   border: 1px solid var(--line); background: var(--surface); border-radius: 8px;
-  padding: 7px 10px; font-size: 13.5px; font-weight: 500; max-width: 100%;
+  padding: 7px 10px; font-size: 13.5px; font-weight: 500;
+  min-width: 0; max-width: 100%; flex: 0 1 auto; text-overflow: ellipsis;
 }
 .hint { font-size: 13px; color: var(--ink-3); flex: 1 1 260px; min-width: 0; }
 
@@ -446,6 +450,9 @@ main { display: block; }
   #q { flex: 1 1 100%; order: 2; padding: 8px 4px; }
   .search-icon { order: 1; }
   .search-go { order: 3; width: 100%; justify-content: center; }
+  .search-meta { flex-direction: column; align-items: stretch; }
+  .who { width: 100%; }
+  .who select { flex: 1 1 auto; }
   .answer-body, .answer-top, .src-list, .answer-actions { padding-left: 16px; padding-right: 16px; }
   .sources > summary { padding-left: 16px; padding-right: 16px; }
 }

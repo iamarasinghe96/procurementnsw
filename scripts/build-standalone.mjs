@@ -41,7 +41,12 @@ const body = shell
   .replace(/<script src="\/app\.js"><\/script>/, '')
   .trim();
 
-const favicon = shell.match(/<link rel="icon"[^>]*>/)?.[0] ?? '';
+// Match the whole tag, allowing quoted attribute values that legitimately
+// contain '>' (a data: URI can). A naive [^>]* truncates the tag mid-attribute,
+// leaving an unterminated quote that swallows everything after it - including
+// the stylesheet.
+const favicon = shell.match(/<link\s+rel="icon"(?:[^>"']|"[^"]*"|'[^']*')*>/)?.[0] ?? '';
+if (!favicon) throw new Error('Could not find the favicon link in public/index.html');
 
 // `</script>` anywhere inside the JSON would close the tag early.
 const kbLiteral = JSON.stringify(kb).replace(/</g, '\\u003c');
@@ -89,6 +94,7 @@ ${scripts}
 const full = `<!doctype html>
 <html lang="en-AU">
 <head>
+${banner}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ${head}
@@ -100,14 +106,36 @@ ${scripts}
 </html>
 `;
 
+// A bundle whose <style> was destroyed still has every element in place, so
+// element counts pass while the page renders as raw text. Check the markup
+// itself before writing anything.
+function assertRenderable(html, label) {
+  const problems = [];
+  const headEnd = html.indexOf('</head>');
+  const styleOpen = html.indexOf('<style>');
+  if (styleOpen === -1) problems.push('no <style> element');
+  if (headEnd !== -1 && styleOpen > headEnd) problems.push('<style> is outside <head>');
+  if ((html.match(/<style>/g) || []).length !== 1) problems.push('expected exactly one <style>');
+  if ((html.match(/<\/style>/g) || []).length !== 1) problems.push('expected exactly one </style>');
+
+  const preamble = html.slice(0, styleOpen === -1 ? 0 : styleOpen);
+  if ((preamble.match(/"/g) || []).length % 2 !== 0) {
+    problems.push('unbalanced double quote before <style> - a tag is swallowing it');
+  }
+
+  if (problems.length) throw new Error(`${label} would not render: ${problems.join('; ')}`);
+}
+
 mkdirSync(join(root, 'dist'), { recursive: true });
 
 const outFull = join(root, 'dist', 'procurement-navigator.html');
-writeFileSync(outFull, `${banner}\n${full}`);
+assertRenderable(full, 'dist/procurement-navigator.html');
+writeFileSync(outFull, full);
 report(outFull);
 
 if (process.argv.includes('--fragment')) {
   const outFragment = join(root, 'dist', 'artifact.html');
+  assertRenderable(fragment, 'dist/artifact.html');
   writeFileSync(outFragment, fragment);
   report(outFragment);
 }
