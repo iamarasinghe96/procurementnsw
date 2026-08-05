@@ -56,6 +56,101 @@
 
   const state = { boot: null, busy: false, retryTimer: null, lastQuestion: '', lastAudience: '' };
 
+  /* ── Data adapter ───────────────────────────────────────────────
+     The same UI runs two ways: against the HTTP API (server mode, with AI
+     synthesis), or against a knowledge base embedded in the page (standalone
+     single-file build, no server and no AI). Everything below this line is
+     identical in both. */
+  const DATA = window.__PN_EMBEDDED__ ? embeddedAdapter(window.__PN_EMBEDDED__) : httpAdapter();
+
+  function httpAdapter() {
+    return {
+      offline: false,
+      bootstrap: () => fetch('/api/bootstrap').then(failFast),
+      topics: () => fetch('/api/topics').then(failFast),
+      async ask(question, audience) {
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question, audience: audience || null }),
+        });
+        const data = await res.json().catch(() => ({}));
+        return { status: res.status, data };
+      },
+    };
+  }
+
+  function failFast(res) {
+    if (!res.ok) throw new Error(String(res.status));
+    return res.json();
+  }
+
+  function embeddedAdapter({ kb, Index, composeFromKnowledgeBase, composeNoMatch }) {
+    const index = new Index(kb);
+    const MIN_SCORE = 1.2;
+    const allowed = new Set(kb.allowed_urls);
+    return {
+      offline: true,
+      async bootstrap() {
+        return {
+          meta: {
+            name: kb.meta.name, version: kb.meta.version, disclaimer: kb.meta.disclaimer,
+            training_source: kb.meta.training_source, chunk_count: kb.meta.chunk_count,
+            topic_count: kb.meta.topic_count, built_at: kb.meta.built_at,
+          },
+          audiences: kb.audiences,
+          topics: kb.topics.map((t) => ({
+            id: t.id, title: t.title, path: t.path, stage: t.stage,
+            summary: t.summary, audiences: t.audiences, chunk_count: t.chunk_ids.length,
+          })),
+          thresholds: kb.thresholds.map((t) => ({
+            id: t.id, label: t.label, applies_to: t.applies_to, rule: t.rule, citations: t.citations,
+          })),
+          glossary: kb.glossary,
+          primary_sources: kb.meta.primary_sources,
+          ai_enabled: false,
+        };
+      },
+      async topics() {
+        return {
+          topics: kb.topics.map((topic) => ({
+            ...topic,
+            chunks: kb.chunks.filter((c) => c.topic_id === topic.id).map((c) => ({
+              id: c.id, heading: c.heading, path: c.path, summary: c.summary,
+              audiences: c.audiences, jurisdiction: c.jurisdiction, authority: c.authority,
+              text: c.text, checklist: c.checklist || [], watch_outs: c.watch_outs || [],
+              citations: (c.citations || []).filter((cite) => allowed.has(cite.url)),
+            })),
+          })),
+          templates: kb.templates,
+        };
+      },
+      async ask(question, audience) {
+        const audienceMeta = audience ? kb.audiences.find((a) => a.id === audience) || null : null;
+        const hits = index.search(question, { audience: audienceMeta?.id || null, limit: 8 })
+          .filter((h) => h.score >= MIN_SCORE);
+
+        if (!hits.length) {
+          return { status: 200, data: {
+            question, status: 'no_match',
+            answer: composeNoMatch(kb, audienceMeta),
+            meta: { audience: audienceMeta?.id || null, grounded: false, mode: 'retrieval-only' },
+          } };
+        }
+
+        const supporting = index.supporting(question, hits, audienceMeta?.id || null);
+        return { status: 200, data: {
+          question, status: 'ok',
+          answer: composeFromKnowledgeBase(kb, hits, supporting, audienceMeta),
+          meta: {
+            audience: audienceMeta?.id || null, grounded: true, mode: 'retrieval-only',
+            note: 'This is the standalone build: the full knowledge base and search engine run in your browser, with no server and no AI synthesis.',
+          },
+        } };
+      },
+    };
+  }
+
   /* ── Theme ──────────────────────────────────────────────────── */
   const applyTheme = (t) => {
     if (t) document.documentElement.setAttribute('data-theme', t);
@@ -89,9 +184,7 @@
   async function boot() {
     let data;
     try {
-      const res = await fetch('/api/bootstrap');
-      if (!res.ok) throw new Error(String(res.status));
-      data = await res.json();
+      data = await DATA.bootstrap();
     } catch {
       $('#view-answer').hidden = false;
       $('#view-answer').replaceChildren(
@@ -186,7 +279,7 @@
     if (!host || host.dataset.loaded) return;
     if (!topicsCache) {
       try {
-        topicsCache = await (await fetch('/api/topics')).json();
+        topicsCache = await DATA.topics();
       } catch {
         host.replaceChildren(el('p', { class: 't-sum' }, 'Could not load this topic.'));
         return;
@@ -282,18 +375,15 @@
     history.replaceState(null, '', url);
 
     try {
-      const res = await fetch('/api/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, audience: audience || null }),
-      });
-      const data = await res.json().catch(() => ({}));
+      const { status, data } = await DATA.ask(question, audience);
 
-      if (res.status === 429) return showBusy(data);
-      if (!res.ok) return showError(data.message || 'That did not work. Please try again.');
+      if (status === 429) return showBusy(data);
+      if (status >= 400) return showError(data.message || 'That did not work. Please try again.');
       renderAnswer(question, data);
     } catch {
-      showError('Could not reach the server. Check your connection and try again.');
+      showError(DATA.offline
+        ? 'Something went wrong searching the knowledge base. Reload the page and try again.'
+        : 'Could not reach the server. Check your connection and try again.');
     } finally {
       state.busy = false;
       go.disabled = false;

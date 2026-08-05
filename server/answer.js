@@ -9,6 +9,7 @@ import { Index } from './retrieval.js';
 import { buildSystemPrompt, buildUserPrompt } from './prompt.js';
 import { chatJSON, GroqError, isConfigured } from './groq.js';
 import { validateAnswer } from './guardrails.js';
+import { composeFromKnowledgeBase, composeNoMatch } from './compose.js';
 
 const MIN_SCORE = 1.2; // below this the retrieval is noise, not evidence
 
@@ -115,72 +116,10 @@ export class Answerer {
 
   /** Assembled straight from the knowledge base - no model involved. */
   retrievalOnlyAnswer(hits, supporting, audienceMeta) {
-    const top = hits[0].chunk;
-    const checklist = [];
-    const watchOuts = [];
-    const keyPoints = [];
-
-    for (const hit of hits.slice(0, 4)) {
-      for (const item of hit.chunk.checklist || []) {
-        if (checklist.length < 10 && !checklist.includes(item)) checklist.push(item);
-      }
-      for (const item of hit.chunk.watch_outs || []) {
-        if (watchOuts.length < 5 && !watchOuts.includes(item)) watchOuts.push(item);
-      }
-      if (hit.chunk.id !== top.id && keyPoints.length < 5) keyPoints.push(`${hit.chunk.heading}: ${hit.chunk.summary}`);
-    }
-
-    return {
-      direct_answer: top.summary,
-      applies_to_you: audienceMeta ? audienceMeta.blurb : null,
-      key_points: keyPoints,
-      checklist,
-      thresholds: supporting.thresholds.map((t) => ({ label: t.label, detail: t.rule })),
-      templates: supporting.templates.slice(0, 5).map((t) => ({
-        id: t.id,
-        name: t.name,
-        url: t.url,
-        source: t.source,
-        why: t.description,
-      })),
-      watch_outs: watchOuts,
-      summary: top.text.length > 700 ? `${top.text.slice(0, 700).trim()}...` : top.text,
-      sources: hits.slice(0, 5).map((hit) => ({
-        id: hit.chunk.id,
-        heading: hit.chunk.heading,
-        topic: hit.chunk.topic_title,
-        path: hit.chunk.path,
-        authority: hit.chunk.authority,
-        jurisdiction: hit.chunk.jurisdiction,
-        excerpt: hit.chunk.summary,
-        source_document: hit.chunk.source_document,
-        links: (hit.chunk.citations || []).filter((c) => this.kb.allowed_urls.includes(c.url)),
-      })),
-      confidence: 'medium',
-      out_of_scope: false,
-    };
+    return composeFromKnowledgeBase(this.kb, hits, supporting, audienceMeta);
   }
 
-  noMatchAnswer(question, audienceMeta) {
-    const suggestions = audienceMeta
-      ? audienceMeta.top_questions
-      : this.kb.audiences.flatMap((a) => a.top_questions.slice(0, 1));
-    return {
-      direct_answer:
-        'This knowledge base does not cover that question, so there is nothing here that can be answered without guessing.',
-      applies_to_you: null,
-      key_points: [
-        'The knowledge base covers NSW procurement objectives, legislation and policy, governance, planning, sourcing, contract management, probity, corruption prevention, council procurement and supplier guidance.',
-      ],
-      checklist: [],
-      thresholds: [],
-      templates: [],
-      watch_outs: [],
-      summary: `Try rephrasing, or start from one of these: ${suggestions.slice(0, 4).join(' / ')}`,
-      sources: [],
-      confidence: 'low',
-      out_of_scope: true,
-      suggestions: suggestions.slice(0, 5),
-    };
+  noMatchAnswer(_question, audienceMeta) {
+    return composeNoMatch(this.kb, audienceMeta);
   }
 }

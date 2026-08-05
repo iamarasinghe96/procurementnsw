@@ -11,8 +11,23 @@ enterprises and Aboriginal businesses, and members of the public who just want
 to know how their money is being spent.
 
 ```
-npm start                       # http://localhost:3000
+npm start                       # full version, http://localhost:3000
+npm run build:standalone        # dist/procurement-navigator.html, one file, no server
 ```
+
+Two ways to run it:
+
+|  | `npm start` | `dist/procurement-navigator.html` |
+|---|---|---|
+| Needs a server | yes (Node) | no — opens from disk or any static host |
+| Needs a Groq key | yes, for AI answers | no |
+| Answers | AI-synthesised from retrieved sources | assembled directly from the knowledge base |
+| Search, checklists, thresholds, templates, sources | yes | yes |
+
+The standalone build exists because the API key must stay server-side. It runs
+the same knowledge base and the same retrieval engine in the browser, and
+produces the answer the server produces when no key is configured — labelled
+"Knowledge base answer" in the UI so the two are never confused.
 
 ---
 
@@ -92,7 +107,7 @@ visible rather than silent.
 
 The tool never hard-fails on the AI layer. If the key is missing or rejected,
 or the model returns something unusable, it falls back to a **retrieval-only
-answer** assembled straight from the knowledge base — direct answer, checklist,
+answer** assembled straight from the knowledge base (`server/compose.js`) — direct answer, checklist,
 thresholds, templates, watch-outs and sources, just without AI synthesis. The
 response is labelled so it's obvious which mode produced it.
 
@@ -279,12 +294,17 @@ fallback, 429 handling, degradation paths, rate limiter).
 ```
 data/kb/           knowledge base parts (edit these)
 data/              knowledge-base.json (generated)
-scripts/           build + validation
-server/            retrieval, prompt, groq client, guardrails, rate limit, http
-public/            frontend
+scripts/           build-kb.mjs (merge + validate), build-standalone.mjs (bundle)
+server/            retrieval, prompt, groq client, guardrails, compose, rate limit, http
+public/            frontend (one UI, two data adapters — HTTP or embedded)
+dist/              generated single-file build
 test/              node:test suites
 source-documents/  the original Comperio .docx modules
 ```
+
+`server/compose.js` and `server/retrieval.js` are shared by both builds: the
+standalone bundle inlines them rather than reimplementing them, so the two can't
+drift apart.
 
 ---
 
