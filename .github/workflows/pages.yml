@@ -37,13 +37,30 @@ jobs:
         with:
           node-version: '20'
 
-      # Validates the knowledge base, then bundles it into one HTML file.
-      # A broken reference fails the build rather than shipping a broken site.
-      - name: Build
-        run: npm run build:standalone
-
+      # Runs before the build: `pretest` regenerates the bundle without a key,
+      # so building first would have the AI build silently overwritten.
       - name: Test
         run: npm test
+
+      # Validates the knowledge base, then bundles it into one HTML file.
+      # A broken reference fails the build rather than shipping a broken site.
+      #
+      # GROQ_API_KEY is optional. When the repository secret is set, the key is
+      # embedded in the published page so the static site can answer with AI.
+      # It is readable by anyone who opens the page - that is inherent to static
+      # hosting, and the reason the site works without it too.
+      - name: Build
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+        run: |
+          if [ -n "${GROQ_API_KEY:-}" ]; then
+            echo "Building with AI answering enabled."
+            node scripts/build-standalone.mjs --embed-key
+          else
+            echo "No GROQ_API_KEY secret set; building knowledge-base-only."
+            node scripts/build-standalone.mjs
+          fi
 
       - name: Publish to gh-pages
         run: |

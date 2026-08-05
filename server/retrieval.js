@@ -124,6 +124,9 @@ function stem(token) {
     .replace(/(ies)$/, 'y')
     .replace(/(sses|ches|shes|xes)$/, '')
     .replace(/([^s])s$/, '$1')
+    // "ation" before "tion", or "accreditation" stems to "accredita" while
+    // "accredited" stems to "accredit" and the two never meet.
+    .replace(/(ation)$/, '')
     .replace(/(ing|ed|ment|tion|sion)$/, '');
 }
 
@@ -157,31 +160,37 @@ function expand(tokens) {
 
 function fieldTokens(chunk) {
   const bag = new Map();
-  const add = (value, weight) => {
+  // Heading, keywords and summary are curated labels for what a chunk is about.
+  // Body prose is not: a word can appear there incidentally. Tracking them
+  // separately lets retrieval tell "this chunk is about X" from "this chunk
+  // happens to contain the word X".
+  const topical = new Set();
+  const add = (value, weight, isTopical = false) => {
     for (const raw of tokenize(value)) {
       for (const token of [raw, stem(raw)]) {
         bag.set(token, (bag.get(token) || 0) + weight);
+        if (isTopical) topical.add(token);
       }
     }
   };
-  add(chunk.heading, FIELD_WEIGHTS.heading);
-  add((chunk.keywords || []).join(' '), FIELD_WEIGHTS.keywords);
-  add(chunk.summary, FIELD_WEIGHTS.summary);
-  add(chunk.topic_title, FIELD_WEIGHTS.topic_title);
+  add(chunk.heading, FIELD_WEIGHTS.heading, true);
+  add((chunk.keywords || []).join(' '), FIELD_WEIGHTS.keywords, true);
+  add(chunk.summary, FIELD_WEIGHTS.summary, true);
+  add(chunk.topic_title, FIELD_WEIGHTS.topic_title, true);
   add((chunk.checklist || []).join(' '), FIELD_WEIGHTS.checklist);
   add((chunk.watch_outs || []).join(' '), FIELD_WEIGHTS.watch_outs);
   add(chunk.text, FIELD_WEIGHTS.text);
-  return bag;
+  return { bag, topical };
 }
 
 export class Index {
   constructor(kb) {
     this.kb = kb;
     this.docs = kb.chunks.map((chunk) => {
-      const bag = fieldTokens(chunk);
+      const { bag, topical } = fieldTokens(chunk);
       let length = 0;
       for (const v of bag.values()) length += v;
-      return { chunk, bag, length };
+      return { chunk, bag, topical, length };
     });
 
     this.avgLength = this.docs.reduce((a, d) => a + d.length, 0) / (this.docs.length || 1);
@@ -216,14 +225,30 @@ export class Index {
     const audienceMeta = audience ? this.kb.audiences.find((a) => a.id === audience) : null;
     const rulebook = audienceMeta ? audienceMeta.primary_rulebook : null;
 
+    // Total IDF mass of the query, excluding bare numbers. A figure like
+    // "$300,000" is a value the reader supplied, not vocabulary the knowledge
+    // base should have to contain, so a missing match on it must not count
+    // against how well the question was understood.
+    const isNumeric = (t) => /^[\d.,$]+$/.test(t);
+    let queryMass = 0;
+    for (const token of counts.keys()) {
+      if (!isNumeric(token)) queryMass += this.idf(token);
+    }
+
     const scored = [];
     for (const doc of this.docs) {
       let score = 0;
       let matchedTerms = 0;
+      let matchedMass = 0;
+      let topicalMass = 0;
       for (const [token, qf] of counts) {
         const tf = doc.bag.get(token);
         if (!tf) continue;
         matchedTerms += 1;
+        if (!isNumeric(token)) {
+          matchedMass += this.idf(token);
+          if (doc.topical.has(token)) topicalMass += this.idf(token);
+        }
         const numerator = tf * (BM25_K1 + 1);
         const denominator = tf + BM25_K1 * (1 - BM25_B + BM25_B * (doc.length / this.avgLength));
         score += this.idf(token) * (numerator / denominator) * Math.min(qf, 2);
@@ -233,6 +258,13 @@ export class Index {
       // Reward covering more of the question rather than hammering one rare word.
       score *= 1 + Math.min(matchedTerms / Math.max(counts.size, 1), 1) * 0.35;
 
+      // Reward matching what a chunk is *about* over merely containing the word.
+      // Without this, a council chunk that mentions "value for money" in passing
+      // outranks the section headed "What value for money actually means",
+      // because the jurisdiction preference tips it over.
+      const topicalShare = queryMass > 0 ? topicalMass / queryMass : 0;
+      score *= 1 + topicalShare * 0.85;
+
       const chunk = doc.chunk;
 
       if (audience) {
@@ -241,11 +273,14 @@ export class Index {
 
         // Councils and state agencies run under genuinely different rulebooks.
         // Serving one the other's thresholds is the worst failure this tool can make.
+        // The penalty matters for correctness; the boost is only a preference,
+        // so keep it modest or a tangential council chunk outranks the section
+        // that actually answers the question.
         if (rulebook === 'local-government') {
-          if (chunk.jurisdiction === 'local-government') score *= 1.5;
+          if (chunk.jurisdiction === 'local-government') score *= 1.22;
           else if (chunk.jurisdiction === 'nsw-government') score *= 0.55;
         } else if (rulebook === 'nsw-government') {
-          if (chunk.jurisdiction === 'nsw-government') score *= 1.2;
+          if (chunk.jurisdiction === 'nsw-government') score *= 1.15;
           else if (chunk.jurisdiction === 'local-government') score *= 0.5;
         }
       }
@@ -255,7 +290,16 @@ export class Index {
       if (intent.wantsThresholds && chunk.thresholds?.length) score *= 1.25;
       if (intent.wantsRisks && chunk.watch_outs?.length) score *= 1.2;
 
-      scored.push({ chunk, score, matchedTerms });
+      scored.push({
+        chunk,
+        score,
+        matchedTerms,
+        // 0..1: share of the question's distinctive vocabulary this hit explains.
+        coverage: queryMass > 0 ? matchedMass / queryMass : 0,
+        // ...and how much of that landed in the chunk's curated labels rather
+        // than incidentally in its prose.
+        topicalCoverage: queryMass > 0 ? topicalMass / queryMass : 0,
+      });
     }
 
     scored.sort((a, b) => b.score - a.score);
@@ -382,6 +426,30 @@ function editDistance(a, b) {
     }
   }
   return d[a.length][b.length];
+}
+
+/**
+ * Is there enough here to answer from, or is it noise?
+ *
+ * Raw BM25 scores are not comparable between queries - they scale with query
+ * length and term rarity - so the gate is coverage: how much of the question's
+ * distinctive vocabulary the best hit actually explains. "How do I write a good
+ * job application" matches "application" and nothing else, and is rejected;
+ * "what is value for money" matches both content words, and passes.
+ */
+export const MIN_COVERAGE = 0.34;
+export const MIN_TOPICAL_COVERAGE = 0.25;
+
+export function relevant(hits, { minCoverage = MIN_COVERAGE, minTopical = MIN_TOPICAL_COVERAGE } = {}) {
+  if (!hits.length) return [];
+  const best = hits[0];
+  // Both gates must pass. Coverage alone accepts "what is the weather
+  // tomorrow", because "tomorrow" happens to appear in one checklist line.
+  if (best.coverage < minCoverage) return [];
+  if (best.topicalCoverage < minTopical) return [];
+  // Keep the supporting hits that are in the same league as the best one.
+  const floor = Math.max(hits[0].score * 0.12, 1);
+  return hits.filter((h) => h.score >= floor);
 }
 
 export function detectIntent(query) {

@@ -1,55 +1,69 @@
 /**
  * Minimal Groq chat-completions client.
  *
- * No SDK: one fetch call, an explicit model fallback chain, and error
- * classification the caller can act on. Anything that means "the service is
- * busy" is surfaced as `high_demand` so the UI can show the retry-in-a-minute
- * message rather than a stack trace.
+ * Runs in Node and in the browser: it takes its configuration as an argument
+ * rather than reading process.env directly, so the same file can be bundled
+ * into the standalone build. Anything meaning "the service is busy" is
+ * surfaced as `high_demand` so the UI can show the retry-in-a-minute message.
  */
 
-const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
+export const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 
 export class GroqError extends Error {
   constructor(kind, message, { status = null, retryAfter = null } = {}) {
     super(message);
     this.name = 'GroqError';
-    this.kind = kind; // high_demand | auth | bad_request | model_unavailable | network | server
+    // high_demand | auth | bad_request | model_unavailable | blocked | network | server
+    this.kind = kind;
     this.status = status;
     this.retryAfter = retryAfter;
   }
 }
 
-function modelChain() {
-  const configured = (process.env.GROQ_MODEL || '').trim();
-  const fallbacks = (process.env.GROQ_FALLBACK_MODELS || 'llama-3.1-8b-instant')
-    .split(',')
-    .map((m) => m.trim())
-    .filter(Boolean);
-  const primary = configured || 'llama-3.3-70b-versatile';
-  return [primary, ...fallbacks.filter((m) => m !== primary)];
+const env = (name, fallback = '') => {
+  if (typeof process === 'undefined' || !process?.env) return fallback;
+  return (process.env[name] || fallback).trim();
+};
+
+/** Server-side configuration, read from the environment. */
+export function configFromEnv() {
+  return {
+    apiKey: env('GROQ_API_KEY'),
+    model: env('GROQ_MODEL', 'llama-3.3-70b-versatile'),
+    fallbackModels: env('GROQ_FALLBACK_MODELS', 'llama-3.1-8b-instant')
+      .split(',')
+      .map((m) => m.trim())
+      .filter(Boolean),
+    endpoint: env('GROQ_ENDPOINT', GROQ_ENDPOINT),
+  };
 }
 
-export function isConfigured() {
-  return Boolean((process.env.GROQ_API_KEY || '').trim());
+export function isConfigured(config = configFromEnv()) {
+  return Boolean(config?.apiKey);
+}
+
+function modelChain(config) {
+  const primary = config.model || 'llama-3.3-70b-versatile';
+  const fallbacks = (config.fallbackModels || []).filter((m) => m && m !== primary);
+  return [primary, ...fallbacks];
 }
 
 /**
- * @param {{system: string, user: string, temperature?: number, maxTokens?: number, timeoutMs?: number}} opts
+ * @param {{system: string, user: string, config?: object, temperature?: number,
+ *          maxTokens?: number, timeoutMs?: number}} opts
  * @returns {Promise<{content: string, model: string, usage: object|null}>}
  */
 export async function chatJSON(opts) {
-  const apiKey = (process.env.GROQ_API_KEY || '').trim();
-  if (!apiKey) throw new GroqError('auth', 'GROQ_API_KEY is not set');
+  const config = opts.config || configFromEnv();
+  if (!config.apiKey) throw new GroqError('auth', 'No Groq API key is configured');
 
-  const models = modelChain();
   let lastError = null;
-
-  for (const model of models) {
+  for (const model of modelChain(config)) {
     try {
-      return await callOnce(apiKey, model, opts);
+      return await callOnce(config, model, opts);
     } catch (err) {
       lastError = err;
-      // Only walk down the chain for problems the next model could actually fix.
+      // Only walk the chain for problems the next model could actually fix.
       if (err instanceof GroqError && (err.kind === 'model_unavailable' || err.kind === 'high_demand')) {
         continue;
       }
@@ -59,17 +73,17 @@ export async function chatJSON(opts) {
   throw lastError || new GroqError('server', 'No Groq model succeeded');
 }
 
-async function callOnce(apiKey, model, { system, user, temperature = 0.15, maxTokens = 2200, timeoutMs = 30000 }) {
+async function callOnce(config, model, { system, user, temperature = 0.15, maxTokens = 2200, timeoutMs = 30000 }) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   let response;
   try {
-    response = await fetch(GROQ_URL, {
+    response = await fetch(config.endpoint || GROQ_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${config.apiKey}`,
       },
       body: JSON.stringify({
         model,
@@ -85,9 +99,17 @@ async function callOnce(apiKey, model, { system, user, temperature = 0.15, maxTo
       signal: controller.signal,
     });
   } catch (err) {
-    clearTimeout(timer);
     if (err.name === 'AbortError') {
       throw new GroqError('high_demand', `Groq request timed out after ${timeoutMs}ms`);
+    }
+    // In a browser a blocked cross-origin request is indistinguishable from an
+    // offline network: both surface as an opaque TypeError. Callers need to be
+    // able to tell the user which fix applies.
+    if (typeof window !== 'undefined') {
+      throw new GroqError(
+        'blocked',
+        'The browser could not reach Groq. This is usually a CORS restriction, which needs a small server-side proxy to fix.'
+      );
     }
     throw new GroqError('network', `Could not reach Groq: ${err.message}`);
   } finally {
@@ -100,7 +122,7 @@ async function callOnce(apiKey, model, { system, user, temperature = 0.15, maxTo
     try {
       detail = await response.text();
     } catch {
-      /* body already consumed or unreadable */
+      /* body unreadable */
     }
 
     if (response.status === 429) {

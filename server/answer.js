@@ -1,109 +1,90 @@
 /**
  * Answering pipeline: retrieve -> ground -> generate -> guard.
  *
- * Two things never happen here. The model is never asked a question without
- * retrieved evidence attached, and its output is never returned to a user
- * without passing through the guardrails.
+ * Two modes, and the difference is always visible to the reader.
+ *
+ * GROUNDED    Retrieval found evidence. The model sees numbered sources and may
+ *             use nothing else. This is the normal path.
+ * UNVERIFIED  Retrieval found nothing. If general answering is enabled the model
+ *             answers from its own knowledge, with NSW-specific figures stripped
+ *             on the way out and the answer flagged unverified. Otherwise the
+ *             reader is told plainly that the question is not covered.
+ *
+ * Runs unchanged in Node and in the browser: configuration is passed in rather
+ * than read from the environment.
  */
-import { Index } from './retrieval.js';
-import { buildSystemPrompt, buildUserPrompt } from './prompt.js';
-import { chatJSON, GroqError, isConfigured } from './groq.js';
-import { validateAnswer } from './guardrails.js';
+import { Index, relevant } from './retrieval.js';
+import {
+  buildSystemPrompt,
+  buildUserPrompt,
+  buildGeneralSystemPrompt,
+  buildGeneralUserPrompt,
+} from './prompt.js';
+import { chatJSON, GroqError, isConfigured, configFromEnv } from './groq.js';
+import { validateAnswer, validateGeneralAnswer } from './guardrails.js';
 import { composeFromKnowledgeBase, composeNoMatch } from './compose.js';
 
-const MIN_SCORE = 1.2; // below this the retrieval is noise, not evidence
-
 export class Answerer {
-  constructor(kb) {
+  /**
+   * @param {object} kb
+   * @param {{config?: object, allowGeneralAnswers?: boolean}} options
+   */
+  constructor(kb, options = {}) {
     this.kb = kb;
     this.index = new Index(kb);
+    this.config = options.config || (typeof process !== 'undefined' ? configFromEnv() : null);
+    this.allowGeneralAnswers = options.allowGeneralAnswers !== false;
   }
 
-  /**
-   * @param {{question: string, audience?: string|null}} input
-   */
+  get aiEnabled() {
+    return isConfigured(this.config);
+  }
+
   async ask({ question, audience = null }) {
     const started = Date.now();
     const audienceMeta = audience ? this.kb.audiences.find((a) => a.id === audience) || null : null;
+    const base = { audience: audienceMeta?.id || null };
 
-    const hits = this.index
-      .search(question, { audience: audienceMeta?.id || null, limit: 8 })
-      .filter((h) => h.score >= MIN_SCORE);
+    const hits = relevant(this.index.search(question, { audience: audienceMeta?.id || null, limit: 8 }));
 
     if (!hits.length) {
-      return {
-        status: 'no_match',
-        answer: this.noMatchAnswer(question, audienceMeta),
-        meta: { audience: audienceMeta?.id || null, elapsed_ms: Date.now() - started, grounded: false },
-      };
+      return this.answerWithoutSources({ question, audienceMeta, started, base });
     }
 
     const supporting = this.index.supporting(question, hits, audienceMeta?.id || null);
+    const fallback = (note) => ({
+      status: 'ok',
+      answer: composeFromKnowledgeBase(this.kb, hits, supporting, audienceMeta),
+      meta: { ...base, elapsed_ms: Date.now() - started, grounded: true, mode: 'retrieval-only', note },
+    });
 
-    if (!isConfigured()) {
-      return {
-        status: 'ok',
-        answer: this.retrievalOnlyAnswer(hits, supporting, audienceMeta),
-        meta: {
-          audience: audienceMeta?.id || null,
-          elapsed_ms: Date.now() - started,
-          grounded: true,
-          mode: 'retrieval-only',
-          note: 'GROQ_API_KEY is not set, so this answer is assembled directly from the knowledge base without AI synthesis.',
-        },
-      };
+    if (!this.aiEnabled) {
+      return fallback('No AI key is configured, so this answer is assembled directly from the knowledge base.');
     }
-
-    const system = buildSystemPrompt();
-    const user = buildUserPrompt({ question, audience: audienceMeta, hits, supporting });
 
     let completion;
     try {
-      completion = await chatJSON({ system, user });
+      completion = await chatJSON({
+        config: this.config,
+        system: buildSystemPrompt(),
+        user: buildUserPrompt({ question, audience: audienceMeta, hits, supporting }),
+      });
     } catch (err) {
-      if (err instanceof GroqError && (err.kind === 'high_demand' || err.kind === 'network')) {
-        const e = new Error('high_demand');
-        e.kind = 'high_demand';
-        e.retryAfter = err.retryAfter || 60;
-        throw e;
-      }
-      if (err instanceof GroqError && err.kind === 'auth') {
-        // A misconfigured key should not take the whole tool down.
-        return {
-          status: 'ok',
-          answer: this.retrievalOnlyAnswer(hits, supporting, audienceMeta),
-          meta: {
-            audience: audienceMeta?.id || null,
-            elapsed_ms: Date.now() - started,
-            grounded: true,
-            mode: 'retrieval-only',
-            note: 'The AI service rejected the configured API key, so this answer comes straight from the knowledge base.',
-          },
-        };
-      }
+      const handled = this.handleGroqError(err, fallback);
+      if (handled) return handled;
       throw err;
     }
 
     const validated = validateAnswer(completion.content, { hits, supporting, kb: this.kb });
     if (!validated.ok) {
-      return {
-        status: 'ok',
-        answer: this.retrievalOnlyAnswer(hits, supporting, audienceMeta),
-        meta: {
-          audience: audienceMeta?.id || null,
-          elapsed_ms: Date.now() - started,
-          grounded: true,
-          mode: 'retrieval-only',
-          note: `The AI response was rejected by the safety checks (${validated.reason}), so this answer comes straight from the knowledge base.`,
-        },
-      };
+      return fallback(`The AI response was rejected by the safety checks (${validated.reason}).`);
     }
 
     return {
       status: 'ok',
       answer: validated.answer,
       meta: {
-        audience: audienceMeta?.id || null,
+        ...base,
         elapsed_ms: Date.now() - started,
         grounded: true,
         mode: 'ai',
@@ -114,7 +95,73 @@ export class Answerer {
     };
   }
 
-  /** Assembled straight from the knowledge base - no model involved. */
+  /** Nothing was retrieved: either answer unverified, or decline clearly. */
+  async answerWithoutSources({ question, audienceMeta, started, base }) {
+    const declined = (note) => ({
+      status: 'no_match',
+      answer: composeNoMatch(this.kb, audienceMeta, this.index.didYouMean(question)),
+      meta: { ...base, elapsed_ms: Date.now() - started, grounded: false, mode: 'retrieval-only', note },
+    });
+
+    if (!this.aiEnabled || !this.allowGeneralAnswers) return declined();
+
+    let completion;
+    try {
+      completion = await chatJSON({
+        config: this.config,
+        system: buildGeneralSystemPrompt(),
+        user: buildGeneralUserPrompt({ question, audience: audienceMeta }),
+        temperature: 0.25,
+        maxTokens: 1200,
+      });
+    } catch (err) {
+      const handled = this.handleGroqError(err, declined);
+      if (handled) return handled;
+      throw err;
+    }
+
+    const validated = validateGeneralAnswer(completion.content, { kb: this.kb });
+    if (!validated.ok) {
+      return declined(`The AI response was rejected by the safety checks (${validated.reason}).`);
+    }
+
+    return {
+      status: 'unverified',
+      answer: { ...validated.answer, corrections: this.index.didYouMean(question) },
+      meta: {
+        ...base,
+        elapsed_ms: Date.now() - started,
+        grounded: false,
+        mode: 'ai-general',
+        model: completion.model,
+        removed: validated.removals,
+      },
+    };
+  }
+
+  /**
+   * Returns a response for errors the tool should absorb. High demand is
+   * rethrown, because the UI renders that one specially.
+   */
+  handleGroqError(err, fallback) {
+    if (!(err instanceof GroqError)) return null;
+    if (err.kind === 'high_demand' || err.kind === 'network') {
+      const e = new Error('high_demand');
+      e.kind = 'high_demand';
+      e.retryAfter = err.retryAfter || 60;
+      throw e;
+    }
+    if (err.kind === 'auth') {
+      return fallback('The AI service rejected the API key, so this answer comes straight from the knowledge base.');
+    }
+    if (err.kind === 'blocked') {
+      return fallback(
+        'The browser could not reach the AI service, so this answer comes straight from the knowledge base. A small server-side proxy fixes this.'
+      );
+    }
+    return fallback('The AI service could not be reached, so this answer comes straight from the knowledge base.');
+  }
+
   retrievalOnlyAnswer(hits, supporting, audienceMeta) {
     return composeFromKnowledgeBase(this.kb, hits, supporting, audienceMeta);
   }

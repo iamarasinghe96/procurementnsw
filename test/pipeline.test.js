@@ -61,14 +61,29 @@ test('the model is given retrieved sources and never asked a bare question', asy
   assert.equal(captured[0].body.response_format.type, 'json_object');
 });
 
-test('a question with no matching content never reaches the model', async () => {
-  stub(() => { throw new Error('the model should not have been called'); });
+test('a question with no matching content never reaches the GROUNDED prompt', async () => {
+  // General answering may still run (see general.test.js), but it must never
+  // be the source-grounded prompt, which would imply evidence that does not exist.
+  stub(() => completion({ direct_answer: 'General answer.', confidence: 'low' }));
   const answerer = new Answerer(kb);
+  const result = await answerer.ask({ question: 'purple monkey dishwasher xyzzy', audience: 'council' });
+
+  for (const call of captured) {
+    const user = call.body.messages.find((m) => m.role === 'user').content;
+    assert.ok(!user.includes('SOURCES:'), 'no sources may be fabricated for an unmatched question');
+  }
+  assert.ok(['no_match', 'unverified'].includes(result.status));
+  assert.equal(result.answer.out_of_scope, true);
+  assert.equal(result.answer.sources.length, 0);
+});
+
+test('with general answering disabled, an unmatched question never reaches the model at all', async () => {
+  stub(() => { throw new Error('the model should not have been called'); });
+  const answerer = new Answerer(kb, { allowGeneralAnswers: false });
   const result = await answerer.ask({ question: 'purple monkey dishwasher xyzzy', audience: 'council' });
 
   assert.equal(captured.length, 0);
   assert.equal(result.status, 'no_match');
-  assert.equal(result.answer.out_of_scope, true);
   assert.ok(result.answer.suggestions.length > 0);
 });
 

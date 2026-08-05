@@ -456,3 +456,24 @@ main { display: block; }
   .answer-body, .answer-top, .src-list, .answer-actions { padding-left: 16px; padding-right: 16px; }
   .sources > summary { padding-left: 16px; padding-right: 16px; }
 }
+
+/* Unverified answers: no source backing, so the caveat has to be impossible
+   to scroll past rather than a footnote. */
+.unverified {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--rose-wash);
+  border: 1px solid color-mix(in srgb, var(--rose) 42%, transparent);
+  border-left: 4px solid var(--rose);
+  border-radius: var(--radius-s); padding: 14px 16px;
+}
+.unverified svg { width: 20px; height: 20px; color: var(--rose); flex: none; margin-top: 1px; }
+.unverified strong {
+  display: block; font-size: 14.5px; color: var(--rose); margin-bottom: 4px;
+  letter-spacing: -.005em;
+}
+.unverified p { font-size: 13.8px; color: var(--ink-2); }
+.badge.rose {
+  background: var(--rose-wash);
+  border-color: color-mix(in srgb, var(--rose) 38%, transparent);
+  color: var(--rose);
+}

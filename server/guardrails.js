@@ -181,6 +181,96 @@ export function validateAnswer(raw, { hits, supporting, kb }) {
   return { ok: true, answer, removals };
 }
 
+/**
+ * Validates an answer produced with no sources at all.
+ *
+ * The model was told not to assert NSW-specific figures. This enforces it:
+ * dollar amounts, legislative section numbers and Board Direction numbers are
+ * stripped out, because a plausible-looking wrong threshold is the single most
+ * damaging thing this tool could emit. Everything is marked unverified.
+ */
+export function validateGeneralAnswer(raw, { kb }) {
+  const removals = [];
+  let parsed;
+
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (!match) return { ok: false, reason: 'The answer could not be parsed as JSON.' };
+    try {
+      parsed = JSON.parse(match[0]);
+    } catch {
+      return { ok: false, reason: 'The answer could not be parsed as JSON.' };
+    }
+  }
+  if (!parsed || typeof parsed !== 'object') {
+    return { ok: false, reason: 'The answer was not a JSON object.' };
+  }
+
+  // Known-good figures are the ones already in the knowledge base; anything else
+  // asserted as a NSW rule is unverifiable here.
+  const knownAmounts = new Set();
+  for (const t of kb.thresholds) {
+    for (const m of `${t.label} ${t.rule}`.matchAll(/\$[\d,.]+(?:\s*(?:million|m|k))?/gi)) {
+      knownAmounts.add(m[0].toLowerCase().replace(/\s+/g, ' '));
+    }
+  }
+
+  const RISKY = [
+    { re: /\$\s?[\d][\d,.]*(?:\s*(?:million|billion|m|k))?/gi, what: 'dollar figure' },
+    { re: /\bsections?\s+\d+[A-Za-z()0-9]*/gi, what: 'section reference' },
+    { re: /\bPBD[-\s]?\d{4}[-\s]?\d{2}\b/gi, what: 'Board Direction number' },
+    { re: /\bclause\s+\d+[A-Za-z()0-9]*/gi, what: 'clause reference' },
+    { re: /\bwithin\s+\d+\s+(business\s+|working\s+|calendar\s+)?days?\b/gi, what: 'deadline' },
+  ];
+
+  const scrubRisky = (text) => {
+    if (!text) return text;
+    let out = text;
+    for (const { re, what } of RISKY) {
+      out = out.replace(re, (match) => {
+        if (what === 'dollar figure' && knownAmounts.has(match.toLowerCase().replace(/\s+/g, ' '))) {
+          return match; // matches a figure the knowledge base already carries
+        }
+        removals.push(`unverifiable ${what} "${match.trim()}"`);
+        return '[figure removed - check the source document]';
+      });
+    }
+    return out;
+  };
+
+  const clean = (value) => scrubRisky(scrubText(value, removals));
+  const cleanList = (value, limit) =>
+    (Array.isArray(value) ? value : [])
+      .map((v) => clean(typeof v === 'string' ? v : v?.text ?? ''))
+      .filter(Boolean)
+      .slice(0, limit);
+
+  const direct = clean(parsed.direct_answer);
+  if (!direct) return { ok: false, reason: 'The answer had no direct answer field.' };
+
+  return {
+    ok: true,
+    removals,
+    answer: {
+      direct_answer: direct,
+      applies_to_you: null,
+      key_points: cleanList(parsed.key_points, 5),
+      checklist: cleanList(parsed.checklist, 6),
+      thresholds: [],
+      templates: [],
+      watch_outs: [],
+      where_to_check: cleanList(parsed.where_to_check, 4),
+      summary: clean(parsed.summary) || null,
+      sources: [],
+      confidence: 'low',
+      out_of_scope: true,
+      unverified: true,
+    },
+  };
+}
+
 function findTemplateLoosely(name, pool) {
   const needle = name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   if (needle.length < 6) return null;

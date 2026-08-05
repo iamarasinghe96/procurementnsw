@@ -39,10 +39,47 @@ base, the UI or the retrieval engine changes, so the site cannot drift from the
 sources. Enabling Pages is a one-time manual step: **Settings → Pages → Source:
 "Deploy from a branch" → `gh-pages` / `(root)`**.
 
-GitHub Pages serves static files only and has nowhere to keep a secret, so the
-published site is the knowledge-base mode. Hosting the AI version means running
-the Node server somewhere that can hold `GROQ_API_KEY` as an environment
-variable.
+### AI on the static site
+
+GitHub Pages has nowhere to keep a secret. To run AI answering there anyway, set
+a repository secret named `GROQ_API_KEY` (**Settings → Secrets and variables →
+Actions**). The workflow then builds with `--embed-key` and the key ships inside
+the published page.
+
+**The key is then readable by anyone who opens the site**, and the rate limits in
+`server/rateLimit.js` do not apply to it — they are server-side. Use a key you
+are willing to rotate, and watch your Groq usage. Without the secret the site
+builds knowledge-base-only, which needs no key at all.
+
+The alternative, which keeps the key private, is running `npm start` on any host
+that holds `GROQ_API_KEY` as an environment variable, or putting a small
+serverless proxy in front of the static site.
+
+### Two answering modes
+
+| | Grounded | Unverified |
+|---|---|---|
+| When | Retrieval found relevant sections | It found none |
+| Model sees | Numbered `[S1..Sn]` sources, and may use nothing else | The question only |
+| Figures | From the knowledge base | Stripped — dollar amounts, section numbers, Board Directions, clauses and deadlines are removed unless the knowledge base already carries them |
+| Shown as | "AI answer, source-checked" | Red "Unverified" banner |
+| Sources | Cited and linked | None, and none may be claimed |
+
+Unverified answering is on by default and can be switched off entirely with
+`new Answerer(kb, { allowGeneralAnswers: false })`, which makes the tool decline
+anything it has no sources for.
+
+### How relevance is judged
+
+Raw BM25 scores are not comparable between questions, so the gate is **coverage**:
+how much of the question's distinctive vocabulary the best hit explains, and how
+much of that landed in the chunk's curated labels (heading, keywords, summary)
+rather than incidentally in its prose.
+
+Both matter. "How do I write a good job application" matches *application* and
+nothing else. "What is the weather tomorrow" matches *tomorrow*, which appears
+once in a probity checklist line. Neither is a procurement question, and neither
+gets a grounded answer. `test/relevance.test.js` holds the regression set.
 
 ---
 

@@ -85,12 +85,17 @@
     return res.json();
   }
 
-  function embeddedAdapter({ kb, Index, composeFromKnowledgeBase, composeNoMatch }) {
-    const index = new Index(kb);
-    const MIN_SCORE = 1.2;
+  function embeddedAdapter({ kb, Answerer, ai }) {
+    // Same pipeline the server runs. With a key present it calls Groq straight
+    // from the browser; without one it answers from the knowledge base.
+    const answerer = new Answerer(kb, { config: ai || null });
     const allowed = new Set(kb.allowed_urls);
+    // Advisory only: a key shipped in the page cannot be rate limited, this
+    // just stops an accidental burst from one tab.
+    let recent = [];
     return {
       offline: true,
+      aiEnabled: answerer.aiEnabled,
       async bootstrap() {
         return {
           meta: {
@@ -108,7 +113,7 @@
           })),
           glossary: kb.glossary,
           primary_sources: kb.meta.primary_sources,
-          ai_enabled: false,
+          ai_enabled: answerer.aiEnabled,
         };
       },
       async topics() {
@@ -126,27 +131,30 @@
         };
       },
       async ask(question, audience) {
-        const audienceMeta = audience ? kb.audiences.find((a) => a.id === audience) || null : null;
-        const hits = index.search(question, { audience: audienceMeta?.id || null, limit: 8 })
-          .filter((h) => h.score >= MIN_SCORE);
-
-        if (!hits.length) {
-          return { status: 200, data: {
-            question, status: 'no_match',
-            answer: composeNoMatch(kb, audienceMeta, index.didYouMean(question)),
-            meta: { audience: audienceMeta?.id || null, grounded: false, mode: 'retrieval-only' },
+        const now = Date.now();
+        recent = recent.filter((t) => t > now - 60000);
+        if (answerer.aiEnabled && recent.length >= 12) {
+          return { status: 429, data: {
+            error: 'high_demand',
+            message: 'That is a lot of questions in one minute. Please wait about a minute and try again.',
+            retry_after_seconds: Math.max(1, Math.ceil((recent[0] + 60000 - now) / 1000)),
           } };
         }
+        recent.push(now);
 
-        const supporting = index.supporting(question, hits, audienceMeta?.id || null);
-        return { status: 200, data: {
-          question, status: 'ok',
-          answer: composeFromKnowledgeBase(kb, hits, supporting, audienceMeta),
-          meta: {
-            audience: audienceMeta?.id || null, grounded: true, mode: 'retrieval-only',
-            note: 'This is the standalone build: the full knowledge base and search engine run in your browser, with no server and no AI synthesis.',
-          },
-        } };
+        try {
+          const result = await answerer.ask({ question, audience: audience || null });
+          return { status: 200, data: { question, ...result } };
+        } catch (err) {
+          if (err.kind === 'high_demand') {
+            return { status: 429, data: {
+              error: 'high_demand',
+              message: 'We are getting a lot of questions right now, so this one could not be answered. Please try again in about 1 minute.',
+              retry_after_seconds: err.retryAfter || 60,
+            } };
+          }
+          throw err;
+        }
       },
     };
   }
@@ -461,13 +469,32 @@
     const meta = payload.meta || {};
     const audience = state.boot.audiences.find((x) => x.id === meta.audience);
 
+    const MODE_LABEL = {
+      ai: 'AI answer, source-checked',
+      'ai-general': 'AI general knowledge',
+      'retrieval-only': 'Knowledge base answer',
+    };
+
     const badges = [];
     if (audience) badges.push(el('span', { class: 'badge accent' }, audience.label));
-    if (a.out_of_scope) badges.push(el('span', { class: 'badge amber' }, 'Not covered here'));
+    if (a.unverified) badges.push(el('span', { class: 'badge rose' }, 'Unverified'));
+    else if (a.out_of_scope) badges.push(el('span', { class: 'badge amber' }, 'Not covered here'));
     else badges.push(el('span', { class: 'badge teal' }, `${a.confidence || 'medium'} confidence`));
-    badges.push(el('span', { class: 'badge' }, meta.mode === 'ai' ? 'AI answer, source-checked' : 'Knowledge base answer'));
+    badges.push(el('span', { class: 'badge' }, MODE_LABEL[meta.mode] || 'Knowledge base answer'));
 
     const body = [];
+
+    if (a.unverified) {
+      body.push(
+        el('div', { class: 'unverified' },
+          icon(ICONS.warn),
+          el('div', {},
+            el('strong', {}, 'Not from the NSW procurement knowledge base'),
+            el('p', {}, 'Your question is outside the material this tool is built on, so this is a general AI answer. ' +
+              'Specific dollar thresholds, section numbers and deadlines have been removed because they could not be verified. ' +
+              'Check it against your own organisation\u2019s policy and the current NSW guidance before you act on it.')))
+      );
+    }
 
     body.push(el('div', { class: 'direct' }, a.direct_answer));
 
@@ -510,6 +537,11 @@
       body.push(section('Watch out for', ICONS.warn,
         el('ul', { class: 'warns' }, ...a.watch_outs.map((w) =>
           el('li', {}, icon(ICONS.warn), el('span', {}, w))))));
+    }
+
+    if (a.where_to_check?.length) {
+      body.push(section('Check this against', ICONS.book,
+        el('ul', { class: 'points' }, ...a.where_to_check.map((w) => el('li', {}, w)))));
     }
 
     if (a.summary) {
@@ -570,13 +602,19 @@
   }
 
   function copyAnswer(question, a, button) {
-    const lines = [`Q: ${question}`, '', a.direct_answer];
+    const lines = [`Q: ${question}`, ''];
+    if (a.unverified) {
+      lines.push('[UNVERIFIED - general AI answer, not from the NSW procurement knowledge base.', 
+        'Figures and section references were removed because they could not be verified.]', '');
+    }
+    lines.push(a.direct_answer);
     if (a.applies_to_you) lines.push('', `What this means for you: ${a.applies_to_you}`);
     if (a.key_points?.length) lines.push('', 'Key points:', ...a.key_points.map((p) => `- ${p}`));
     if (a.checklist?.length) lines.push('', 'Checklist:', ...a.checklist.map((c) => `[ ] ${c}`));
     if (a.thresholds?.length) lines.push('', 'Thresholds:', ...a.thresholds.map((t) => `- ${t.label}${t.detail ? `: ${t.detail}` : ''}`));
     if (a.templates?.length) lines.push('', 'Templates:', ...a.templates.map((t) => `- ${t.name} — ${t.url}`));
     if (a.watch_outs?.length) lines.push('', 'Watch out for:', ...a.watch_outs.map((w) => `- ${w}`));
+    if (a.where_to_check?.length) lines.push('', 'Check this against:', ...a.where_to_check.map((w) => `- ${w}`));
     if (a.summary) lines.push('', `In short: ${a.summary}`);
     if (a.sources?.length) lines.push('', 'Sources:', ...a.sources.map((s) => `- ${s.heading} (${s.path})`));
     lines.push('', 'General information only, from the NSW Procurement Navigator. Confirm against your own organisation\'s policy.');
