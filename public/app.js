@@ -484,6 +484,19 @@
 
     const body = [];
 
+    // AI was configured but did not run. The likeliest cause is the browser
+    // being unable to reach the API, which looks identical to an outage from
+    // here - so say what happened rather than quietly serving a lesser answer.
+    if (state.boot?.ai_enabled && meta.mode === 'retrieval-only' && meta.note) {
+      body.push(
+        el('div', { class: 'degraded' },
+          icon(ICONS.warn),
+          el('div', {},
+            el('strong', {}, 'Answered without AI'),
+            el('p', {}, meta.note)))
+      );
+    }
+
     if (a.unverified) {
       body.push(
         el('div', { class: 'unverified' },

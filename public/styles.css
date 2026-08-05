@@ -477,3 +477,15 @@ main { display: block; }
   border-color: color-mix(in srgb, var(--rose) 38%, transparent);
   color: var(--rose);
 }
+
+/* AI was configured but did not run. Quietly serving a lesser answer hides a
+   real fault, so this states what happened. */
+.degraded {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--amber-wash); border: 1px solid var(--amber-line);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-s); padding: 13px 15px;
+}
+.degraded svg { width: 19px; height: 19px; color: var(--amber); flex: none; margin-top: 1px; }
+.degraded strong { display: block; font-size: 14px; color: var(--amber); margin-bottom: 3px; }
+.degraded p { font-size: 13.6px; color: var(--ink-2); }
