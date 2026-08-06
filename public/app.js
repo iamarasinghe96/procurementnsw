@@ -484,6 +484,30 @@
 
     const body = [];
 
+    // The question named a different party to the one selected. Silently
+    // answering under the other rulebook would be the worst failure this tool
+    // has, so the switch is stated.
+    const notice = meta.audience_notice;
+    if (notice) {
+      const to = state.boot.audiences.find((x) => x.id === notice.to);
+      const from = notice.from ? state.boot.audiences.find((x) => x.id === notice.from) : null;
+      const noun = (a) => a?.noun || a?.label || '';
+      const plural = (a) => a?.plural || `${noun(a)}s`;
+      const article = (word) => (/^[aeiou]/i.test(word) ? 'an' : 'a');
+      body.push(
+        el('div', { class: 'switched' },
+          icon(ICONS.warn),
+          el('div', {},
+            el('strong', {}, from
+              ? `Answered for ${article(noun(to))} ${noun(to)}, not ${article(noun(from))} ${noun(from)}`
+              : `Answered for ${article(noun(to))} ${noun(to)}`),
+            el('p', {},
+              `Your question says "${notice.evidence}"`,
+              from ? `, and ${plural(from)} and ${plural(to)} work under different rules. ` : '. ',
+              'Change the selector above if that is not what you meant.')))
+      );
+    }
+
     // AI was configured but did not run. The likeliest cause is the browser
     // being unable to reach the API, which looks identical to an outage from
     // here - so say what happened rather than quietly serving a lesser answer.

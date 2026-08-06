@@ -537,6 +537,65 @@ export function relevant(hits, { minTopicalMass = MIN_TOPICAL_MASS } = {}) {
   return hits.filter((h) => h.score >= floor);
 }
 
+/**
+ * Who is this question actually about?
+ *
+ * The audience selector is a default, not a declaration. A council officer
+ * researching how the other side works, or anyone who never touched the
+ * dropdown, will ask a question that plainly names a different party - "if an
+ * AGENCY wants to purchase..." - and answering that under the Local Government
+ * Act is worse than useless.
+ *
+ * Only strong, unambiguous signals count, and a tie is left alone: the reader's
+ * own selection wins unless the question clearly contradicts it.
+ */
+const AUDIENCE_SIGNALS = [
+  ['agency', [
+    /\ban agenc(y|ies)\b/i, /\bthe agenc(y|ies)\b/i, /\bmy agenc(y|ies)\b/i, /\bour agenc(y|ies)\b/i,
+    /\bnsw government agenc/i, /\bgovernment agenc/i, /\bstate agenc/i, /\bdepartment\b/i,
+    /\bprocurement board\b/i, /\bwhole[- ]of[- ]government\b/i, /\baccredit(ed|ation)\b/i,
+    /\bscm\d{4}\b/i, /\bpbd[- ]?\d{4}/i,
+  ]],
+  ['council', [
+    /\ba council\b/i, /\bthe council\b/i, /\bmy council\b/i, /\bour council\b/i, /\bcouncils\b/i,
+    /\blocal government act\b/i, /\bsection 55\b/i, /\bratepayer/i, /\bkerbside\b/i,
+    /\bshire\b/i, /\bjoint organisation\b/i,
+  ]],
+  ['supplier', [
+    /\bi (want to|would like to) (sell|supply|bid|tender)\b/i, /\bmy (company|business)\b/i,
+    /\bwe (sell|supply|make|manufacture|provide)\b/i, /\bas a supplier\b/i, /\bour tender\b/i,
+    /\bwe want to (sell|supply|win)\b/i, /\bget paid\b/i, /\bbecome a supplier\b/i,
+  ]],
+  ['nfp', [
+    /\baboriginal[- ]owned\b/i, /\bsocial enterprise\b/i, /\bdisability employment\b/i,
+    /\bnot[- ]for[- ]profit\b/i, /\bwe are an aboriginal\b/i,
+  ]],
+  ['public', [
+    /\bas a (member of the public|ratepayer|resident|journalist)\b/i, /\bthe public\b.*\bsee\b/i,
+  ]],
+];
+
+export function detectAudience(query) {
+  const text = String(query || '');
+  const scores = new Map();
+  const evidence = new Map();
+  for (const [id, patterns] of AUDIENCE_SIGNALS) {
+    for (const pattern of patterns) {
+      const match = text.match(pattern);
+      if (!match) continue;
+      scores.set(id, (scores.get(id) || 0) + 1);
+      if (!evidence.has(id)) evidence.set(id, match[0].trim());
+    }
+  }
+  if (!scores.size) return null;
+
+  const ranked = [...scores.entries()].sort((a, b) => b[1] - a[1]);
+  // An ambiguous question - one naming both a council and an agency - is left
+  // to the reader's own selection.
+  if (ranked.length > 1 && ranked[0][1] === ranked[1][1]) return null;
+  return { id: ranked[0][0], evidence: evidence.get(ranked[0][0]), strength: ranked[0][1] };
+}
+
 export function detectIntent(query) {
   const q = String(query || '').toLowerCase();
   return {

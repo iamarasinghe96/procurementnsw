@@ -207,7 +207,14 @@
         "disability employment organisation",
         "150000",
         "250000",
-        "10000"
+        "10000",
+        "ict",
+        "software",
+        "buy ict directly from an sme",
+        "not on the scheme",
+        "without using the scheme",
+        "direct from an sme",
+        "qualifies for an exemption"
       ],
       "thresholds": [
         "thr-pcard-10k",
@@ -220,6 +227,90 @@
         {
           "label": "Exemptions - buy.nsw",
           "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/exemptions"
+        }
+      ]
+    },
+    {
+      "id": "governance.exemptions-versus-mandatory-schemes",
+      "path": "foundations/governance/exemptions-versus-mandatory-schemes",
+      "heading": "Does a mandatory scheme override a direct-purchase exemption?",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "The exemptions ARE exemptions from the mandate to use whole-of-government contracts and prequalification schemes, so a qualifying direct purchase does not need the supplier to be on the scheme.",
+      "text": "This is the question people get wrong most often, because the two rules look like they contradict each other. They do not, and the order matters. The general rule is that you must use a whole-of-government contract or a prequalification scheme when one is available. The exemptions sit directly on top of that rule: the Procurement Policy Framework introduces them as exemptions FROM using government procurement arrangements, and states that where your procurement qualifies for an exemption you can often buy directly from a supplier. So a mandatory scheme does not defeat an exemption you actually qualify for - the exemption is what releases you from the scheme in the first place. Worked through for the common case: a procurement under $250,000 from a small or medium enterprise qualifies for direct purchase, and the Framework separately confirms you can buy ICT directly from an SME. On that basis an agency buying a $120,000 software solution from an SME is within the direct-purchase exemption, and the supplier does not need to be prequalified on the ICT Services Scheme for that purchase. The supplier preferencing rules point the same way rather than against it: the SME and Regional Procurement Policy requires first preference to SMEs for direct procurements up to $3 million, and says explicitly that this applies even when you are buying from a standing offer, panel or prequalification scheme. Three things still bind you. First, you must genuinely qualify - confirm the supplier meets the SME definition (an Australian or New Zealand enterprise with fewer than 200 full-time equivalent employees) and that your value estimate covers the whole contract including options. Second, an exemption removes the obligation to use the arrangement, not the obligation to achieve and evidence value for money, so test the price against the market. Third, individual Board Directions can attach their own conditions to a specific scheme, and your agency's own procurement policy may be stricter than the Framework - both bind you even where the Framework would allow the direct purchase. Check the current Board Direction for the scheme concerned and your agency's procurement team before relying on this.",
+      "keywords": [
+        "mandatory scheme",
+        "override",
+        "overrides",
+        "bypass",
+        "bypass the scheme",
+        "scheme or exemption",
+        "prequalified",
+        "not prequalified",
+        "prequalification",
+        "ict services scheme",
+        "scm0020",
+        "ict scheme",
+        "buy ict directly",
+        "ict from an sme",
+        "software",
+        "direct purchase",
+        "direct buy",
+        "sme exemption",
+        "does the scheme apply",
+        "must the supplier be on the scheme",
+        "which rule wins",
+        "conflict between rules",
+        "exemption versus scheme",
+        "regional sme",
+        "120000"
+      ],
+      "checklist": [
+        "Confirm the supplier genuinely meets the SME definition: an Australian or New Zealand enterprise with fewer than 200 full-time equivalent employees",
+        "Estimate the whole contract value including options and extensions, and check it sits under the exemption threshold",
+        "Identify the specific exemption you are relying on, and record it on the file",
+        "Check the current Board Direction for the scheme concerned in case it attaches its own conditions",
+        "Check your agency's own procurement policy, which may be stricter than the Framework",
+        "Test the price against the market anyway - an exemption does not remove the value for money obligation",
+        "Record the value for money assessment and the reason for the direct purchase"
+      ],
+      "watch_outs": [
+        "An exemption releases you from using the arrangement; it never releases you from value for money, probity or recordkeeping",
+        "Splitting a procurement so it fits under an exemption threshold defeats the rule and is a serious compliance failure",
+        "Your agency's own policy can be stricter than the Framework, and where it is, it binds you"
+      ],
+      "thresholds": [
+        "thr-aboriginal-250k",
+        "thr-sme-3m",
+        "thr-regional-150k",
+        "thr-small-business-50k"
+      ],
+      "citations": [
+        {
+          "label": "Exemptions - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/exemptions"
+        },
+        {
+          "label": "SME and Regional Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy"
+        },
+        {
+          "label": "PBD-2021-04 Approved procurement arrangements",
+          "url": "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/"
+        },
+        {
+          "label": "ICT/Digital sovereign procurement commitments",
+          "url": "https://www.info.buy.nsw.gov.au/resources/ictdigital-sovereign-procurement-commitments"
+        },
+        {
+          "label": "Prequalification schemes",
+          "url": "https://buy.nsw.gov.au/schemes"
         }
       ]
     },

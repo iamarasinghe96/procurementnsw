@@ -489,3 +489,15 @@ main { display: block; }
 .degraded svg { width: 19px; height: 19px; color: var(--amber); flex: none; margin-top: 1px; }
 .degraded strong { display: block; font-size: 14px; color: var(--amber); margin-bottom: 3px; }
 .degraded p { font-size: 13.6px; color: var(--ink-2); }
+
+/* The question named a different party to the one selected. Answering under
+   the wrong rulebook silently is the worst failure this tool has. */
+.switched {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--accent-wash); border: 1px solid var(--accent-line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-s); padding: 13px 15px;
+}
+.switched svg { width: 19px; height: 19px; color: var(--accent); flex: none; margin-top: 1px; }
+.switched strong { display: block; font-size: 14px; color: var(--accent-ink); margin-bottom: 3px; }
+.switched p { font-size: 13.6px; color: var(--ink-2); }

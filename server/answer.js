@@ -13,7 +13,7 @@
  * Runs unchanged in Node and in the browser: configuration is passed in rather
  * than read from the environment.
  */
-import { Index, relevant } from './retrieval.js';
+import { Index, relevant, detectAudience } from './retrieval.js';
 import {
   buildSystemPrompt,
   buildUserPrompt,
@@ -42,8 +42,25 @@ export class Answerer {
 
   async ask({ question, audience = null }) {
     const started = Date.now();
-    const audienceMeta = audience ? this.kb.audiences.find((a) => a.id === audience) || null : null;
-    const base = { audience: audienceMeta?.id || null };
+
+    // The selector is a default, not a declaration. "If an AGENCY wants to
+    // purchase..." asked with Local council selected must not be answered under
+    // the Local Government Act, so the question itself gets the final say.
+    const detected = detectAudience(question);
+    let effective = audience;
+    let audienceNotice = null;
+    if (detected && detected.id !== audience) {
+      effective = detected.id;
+      audienceNotice = {
+        from: audience,
+        to: detected.id,
+        evidence: detected.evidence,
+        reason: audience ? 'contradicts_selection' : 'inferred',
+      };
+    }
+
+    const audienceMeta = effective ? this.kb.audiences.find((a) => a.id === effective) || null : null;
+    const base = { audience: audienceMeta?.id || null, audience_notice: audienceNotice };
 
     const hits = relevant(this.index.search(question, { audience: audienceMeta?.id || null, limit: 8 }));
 

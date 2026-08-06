@@ -49,6 +49,13 @@ if (!registry) {
 }
 
 const audienceIds = new Set(registry.audiences.map((a) => a.id));
+// The UI writes sentences about audiences, so every one needs a singular and a
+// plural noun. Without them it produces "NSW Government agencys".
+for (const audience of registry.audiences) {
+  for (const key of ['noun', 'plural']) {
+    if (!audience[key]) errors.push(`audience "${audience.id}" is missing "${key}"`);
+  }
+}
 const thresholdIds = new Set(registry.thresholds.map((t) => t.id));
 const templateIds = new Set(registry.templates.map((t) => t.id));
 
