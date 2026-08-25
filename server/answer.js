@@ -169,14 +169,34 @@ export class Answerer {
       throw e;
     }
     if (err.kind === 'auth') {
-      return fallback('The AI service rejected the API key, so this answer comes straight from the knowledge base.');
+      return fallback(
+        'The AI service rejected the API key, so this answer comes straight from the knowledge base. ' +
+          'Check the key is current and has not been revoked.'
+      );
     }
     if (err.kind === 'blocked') {
       return fallback(
         'The browser could not reach the AI service, so this answer comes straight from the knowledge base. A small server-side proxy fixes this.'
       );
     }
-    return fallback('The AI service could not be reached, so this answer comes straight from the knowledge base.');
+
+    // Everything else DID reach the service and came back with a refusal. Saying
+    // "could not be reached" sends people hunting for a network fault that is
+    // not there, so report what the service actually said.
+    if (typeof console !== 'undefined') console.error('[procurement-navigator] AI call failed:', err);
+    const where = err.model ? ` (model ${err.model})` : '';
+    const status = err.status ? ` ${err.status}` : '';
+    const why = err.detail ? ` It said: "${err.detail}"` : '';
+    if (err.kind === 'model_unavailable') {
+      return fallback(
+        `Every AI model this build knows about was refused${status}${where}.${why} ` +
+          'Set GROQ_MODEL to a current model and redeploy. This answer comes straight from the knowledge base.'
+      );
+    }
+    return fallback(
+      `The AI service refused the request${status}${where}.${why} ` +
+        'This answer comes straight from the knowledge base.'
+    );
   }
 
   retrievalOnlyAnswer(hits, supporting, audienceMeta) {

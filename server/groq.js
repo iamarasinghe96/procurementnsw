@@ -9,15 +9,48 @@
 
 export const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 
+/**
+ * Tried in order when the configured model is unavailable.
+ *
+ * Groq retires models on its own schedule, and a key baked into a static page
+ * cannot be redeployed the moment one goes. A chain that spans several families
+ * means a retirement degrades the answer rather than stopping it.
+ */
+export const DEFAULT_FALLBACKS = [
+  'llama-3.3-70b-versatile',
+  'llama-3.1-8b-instant',
+  'openai/gpt-oss-120b',
+  'openai/gpt-oss-20b',
+  'meta-llama/llama-4-scout-17b-16e-instruct',
+  'qwen/qwen3-32b',
+];
+
 export class GroqError extends Error {
-  constructor(kind, message, { status = null, retryAfter = null } = {}) {
+  constructor(kind, message, { status = null, retryAfter = null, detail = null, model = null } = {}) {
     super(message);
     this.name = 'GroqError';
     // high_demand | auth | bad_request | model_unavailable | blocked | network | server
     this.kind = kind;
     this.status = status;
     this.retryAfter = retryAfter;
+    // Carried so the UI can say what actually went wrong instead of "could not
+    // be reached", which sends people looking for a network fault that is not there.
+    this.detail = detail;
+    this.model = model;
   }
+}
+
+/** Pull the useful sentence out of an API error body. */
+function summarise(body) {
+  if (!body) return '';
+  try {
+    const parsed = JSON.parse(body);
+    const message = parsed?.error?.message || parsed?.message;
+    if (message) return String(message).slice(0, 220);
+  } catch {
+    /* not JSON */
+  }
+  return String(body).replace(/\s+/g, ' ').trim().slice(0, 220);
 }
 
 const env = (name, fallback = '') => {
@@ -30,7 +63,7 @@ export function configFromEnv() {
   return {
     apiKey: env('GROQ_API_KEY'),
     model: env('GROQ_MODEL', 'llama-3.3-70b-versatile'),
-    fallbackModels: env('GROQ_FALLBACK_MODELS', 'llama-3.1-8b-instant')
+    fallbackModels: env('GROQ_FALLBACK_MODELS', DEFAULT_FALLBACKS.join(','))
       .split(',')
       .map((m) => m.trim())
       .filter(Boolean),
@@ -131,14 +164,27 @@ async function callOnce(config, model, { system, user, temperature = 0.15, maxTo
     if (response.status === 401 || response.status === 403) {
       throw new GroqError('auth', 'Groq rejected the API key', { status: response.status });
     }
-    if (response.status === 404 || /model.*(not found|decommissioned|does not exist)/i.test(detail)) {
-      throw new GroqError('model_unavailable', `Model ${model} is unavailable`, { status: response.status });
+    // A retired or unknown model comes back as a 404, and sometimes as a 400
+    // whose body names the model. Both must fall through to the next model
+    // rather than ending the request.
+    if (
+      response.status === 404 ||
+      /model/i.test(detail) &&
+        /(not found|decommissioned|does not exist|not supported|invalid|deprecat)/i.test(detail)
+    ) {
+      throw new GroqError('model_unavailable', `Model ${model} is unavailable: ${summarise(detail)}`, {
+        status: response.status,
+        detail: summarise(detail),
+        model,
+      });
     }
     if (response.status >= 500) {
       throw new GroqError('high_demand', `Groq returned ${response.status}`, { status: response.status, retryAfter });
     }
-    throw new GroqError('bad_request', `Groq returned ${response.status}: ${detail.slice(0, 300)}`, {
+    throw new GroqError('bad_request', `Groq returned ${response.status}: ${summarise(detail)}`, {
       status: response.status,
+      detail: summarise(detail),
+      model,
     });
   }
 

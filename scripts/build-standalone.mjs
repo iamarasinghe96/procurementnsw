@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { DEFAULT_FALLBACKS } from '../server/groq.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (...p) => readFileSync(join(root, ...p), 'utf8');
@@ -69,7 +70,9 @@ const aiConfig = apiKey
   ? {
       apiKey,
       model: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
-      fallbackModels: (process.env.GROQ_FALLBACK_MODELS || 'llama-3.1-8b-instant')
+      // Falls back to the chain in server/groq.js when unset, so a model
+      // retirement does not require editing the build.
+      fallbackModels: (process.env.GROQ_FALLBACK_MODELS || DEFAULT_FALLBACKS.join(','))
         .split(',').map((m) => m.trim()).filter(Boolean),
       endpoint: process.env.GROQ_ENDPOINT || 'https://api.groq.com/openai/v1/chat/completions',
     }
