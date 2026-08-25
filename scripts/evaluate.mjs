@@ -49,6 +49,10 @@ export const CASES = [
   ['can we buy off an LGP panel instead of tendering', 'council', 'councils.lgp-panels'],
   ['manage the kerbside collection contract and performance meetings', 'council', 'councils.waste-contract-management'],
   ['our garbage contractor keeps missing streets, what are our options', 'council', 'councils'],
+  // Managing an existing contract vs procuring a new one - same subject, and
+  // the second must not be answered with the first.
+  ['we are going to tender the garbage collection contract, what is the procedure', 'council', 'councils.tendering-a-service-contract'],
+  ['retender our waste collection contract, what steps do we follow', 'council', 'councils.tendering-a-service-contract'],
   ['what has to go in our contracts register', 'council', 'councils.transparency-obligations'],
   ['modern slavery reporting obligations for councils', 'council', 'councils.transparency-obligations'],
   ['how long does a council tender have to be advertised', 'council', 'councils.tender-methods'],

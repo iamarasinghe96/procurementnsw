@@ -208,6 +208,7 @@
     renderTopics();
     renderThresholds();
     renderGlossary();
+    renderAiStatus();
     renderFooter();
     renderExamples(null);
     hydrateFromUrl();
@@ -332,6 +333,18 @@
       ...state.boot.glossary.map((g) =>
         el('article', { class: 'term' }, el('b', {}, g.term), el('p', {}, g.definition)))
     );
+  }
+
+  /** "Is the AI actually on?" should be answerable without asking anyone. */
+  function renderAiStatus() {
+    const node = $('#ai-status');
+    const on = state.boot.ai_enabled;
+    node.hidden = false;
+    node.className = `ai-status ${on ? 'on' : 'off'}`;
+    node.textContent = on ? 'AI on' : 'AI off';
+    node.title = on
+      ? 'An AI key is configured. Answers are written by the model from retrieved sources; the badge on each answer says whether the call actually succeeded.'
+      : 'No AI key is configured for this build, so answers are assembled directly from the knowledge base.';
   }
 
   function renderFooter() {

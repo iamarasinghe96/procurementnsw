@@ -221,7 +221,24 @@
         "tender period",
         "minimum period",
         "days to advertise",
-        "invite tenders"
+        "invite tenders",
+        "tender procedure",
+        "procedure for a tender",
+        "how do we run a tender",
+        "how to tender",
+        "new tender",
+        "go to tender",
+        "going to tender",
+        "retender",
+        "re-tender",
+        "fresh tender",
+        "tender process",
+        "steps to tender",
+        "what is the procedure",
+        "running a tender",
+        "tender for a service contract",
+        "waste tender",
+        "collection contract tender"
       ],
       "checklist": [
         "Resolve or record the decision on whether the tender is open or selective",
@@ -240,6 +257,93 @@
         {
           "label": "OLG circular 22-40 - amendments to the tendering provisions",
           "url": "https://www.olg.nsw.gov.au/council-circulars/22-40-amendments-to-the-tendering-provisions-of-the-local-government-general-regulation-2021-and-consultation-of-the-development-of-new-procurement-guidelines-for-councils/"
+        }
+      ]
+    },
+    {
+      "id": "councils.tendering-a-service-contract",
+      "path": "councils/tendering-a-major-service-contract",
+      "heading": "Running a tender for a major council service contract (waste, cleaning, maintenance)",
+      "audiences": [
+        "council",
+        "corporate",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "practice",
+      "summary": "End to end procedure for retendering a large recurring service contract such as kerbside collection: value, method, timing, evaluation, award and the decisions reserved to the council itself.",
+      "text": "A recurring service contract like kerbside waste collection, street cleaning or parks maintenance is almost always over the section 55 threshold, so the procedure is a full tender under Part 7 of the Local Government (General) Regulation 2021. Work it in this order. First, value and confirm the obligation: estimate the total contract value including GST and every option year, remembering the threshold counts cumulative expenditure with a supplier for similar services. At the values these contracts run to, tendering is required unless a section 55(3) exemption genuinely applies - a prescribed arrangement such as an LGP contract is the realistic alternative, and using one still requires a competitive quote between panel members and a documented value for money assessment. Second, plan before going out: needs analysis and service level review (is the current specification still what the community needs, and if the driver is a budget deficit, which service levels are actually being changed), funding confirmation, risk assessment, market analysis and early industry engagement to test capacity and appetite, and a documented procurement strategy approved by the right delegate. Where the scope is being reduced, the community and stakeholder engagement is part of the planning, not an afterthought. Third, decide the method: open tendering by public advertisement, or selective tendering following an expression of interest advertisement, or selective tendering from a recognised contractor list. Allow at least 21 days from first publication of the advertisement to the deadline, and again for any invitation to shortlisted applicants. Fourth, prepare the documents and the evaluation plan before the tender closes: the specification and service levels, the schedule of rates, the KPI and reporting schedule, transition arrangements, and the evaluation criteria with weightings and the named panel. Fifth, run the process fairly - same information to everyone at the same time, addenda in writing with reasonable time to respond, and conflicts declared. Sixth, evaluate and award: rule out non-conforming submissions, score the rest against the published criteria, and accept the tender that having regard to all the circumstances appears most advantageous, or decline all of them and take one of the defined options. Two decisions are reserved. If the tender would outsource services currently provided by council staff, the decision cannot be delegated and must be made by resolution of the council under section 377(1)(i). And if the council declines all tenders and wants to negotiate instead, that also requires a council resolution stating its reasons. Finally, notify all tenderers of the outcome, debrief unsuccessful ones, enter the contract in the GIPA contracts register within 45 working days if it is $150,000 or more including GST, and stand up the contract management plan before the service transition date. Give the whole exercise a long runway: for a contract of this size, planning, approval, a 21-day-plus tender period, evaluation, council reporting and supplier transition realistically take many months.",
+      "keywords": [
+        "tender the garbage collection contract",
+        "tender a waste contract",
+        "retender waste",
+        "procedure for a new tender",
+        "what is the procedure",
+        "new tender",
+        "retender",
+        "re-tender",
+        "tender a service contract",
+        "garbage collection tender",
+        "waste collection tender",
+        "cleaning contract tender",
+        "maintenance contract tender",
+        "how do we tender a big contract",
+        "major service contract",
+        "going to tender",
+        "go to tender for services",
+        "tender steps",
+        "procurement procedure",
+        "budget deficit",
+        "cut services",
+        "reduce service levels",
+        "service level change",
+        "transition"
+      ],
+      "checklist": [
+        "Estimate total contract value including GST and all option years, counting cumulative spend on similar services",
+        "Confirm tendering is required, or identify the s 55(3) exemption or prescribed arrangement you are relying on",
+        "Review the service specification and service levels before going out - especially if the driver is a budget change",
+        "Confirm funding, complete a risk assessment, and do market analysis and early industry engagement",
+        "Get the procurement strategy approved by the correct delegate before approaching the market",
+        "Choose the method: open tendering, or selective following an EOI, or selective from a recognised contractor list",
+        "Allow at least 21 days from first advertisement to the tender deadline",
+        "Finalise the evaluation plan, criteria, weightings and panel before the tender closes",
+        "Issue the specification, rate schedule, KPI and reporting schedule, and transition requirements",
+        "Give all tenderers the same information at the same time, and issue any change as a written addendum",
+        "Rule out non-conforming submissions, then score the rest against the published criteria",
+        "Take the award to a council resolution if it outsources work currently done by council staff (s 377(1)(i))",
+        "If declining all tenders and negotiating instead, get a council resolution stating the reasons",
+        "Notify all tenderers of the outcome and debrief the unsuccessful ones",
+        "Enter the contract in the GIPA register within 45 working days if $150,000 or more inc GST",
+        "Stand up the contract management plan and transition arrangements before the service start date"
+      ],
+      "watch_outs": [
+        "A decision to outsource services currently provided by council staff cannot be delegated - it must be a council resolution",
+        "Reducing service levels to meet a budget target is a specification decision that belongs in planning and community engagement, not a mid-tender change",
+        "Leaving the retender too late forces an unplanned extension or a rushed process, and both weaken value for money",
+        "Changing the scope after the tender is advertised requires a formal addendum and reasonable time for tenderers to respond"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k",
+        "thr-council-tender-21-days",
+        "thr-gipa-150k"
+      ],
+      "templates": [
+        "tpl-olg-procurement-guidelines",
+        "tpl-lg-regulation"
+      ],
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021 Part 7",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
         }
       ]
     },
@@ -347,7 +451,6 @@
       "keywords": [
         "kerbside",
         "waste",
-        "collection contract",
         "domestic waste",
         "recycling",
         "organics",
@@ -363,7 +466,9 @@
         "route",
         "abatement",
         "variation",
-        "garbage"
+        "managing the waste contract",
+        "existing waste contract",
+        "waste contract performance"
       ],
       "checklist": [
         "Run the contract meeting to a fixed agenda and issue minutes with actions, owners and due dates",
