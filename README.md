@@ -45,6 +45,13 @@ GitHub Pages has nowhere to keep a secret. To run AI answering there anyway:
 
 1. Set a repository secret `GROQ_API_KEY` (**Settings → Secrets and variables → Actions**).
 2. Set **Settings → Pages → Source** to **GitHub Actions**.
+3. Merge to the default branch. Pages only deploys from there — the
+   `github-pages` environment carries a deployment branch policy limited to the
+   default branch, and a deploy job targeting it from a working branch is
+   refused before a runner is allocated. It fails in seconds with no steps and
+   no logs, which reads like a broken workflow rather than a policy decision.
+   The deploy job is gated on the default branch so working branches still
+   build and test without producing a misleading red cross.
 
 The workflow then builds with `--embed-key` and the key ships inside the
 published page.

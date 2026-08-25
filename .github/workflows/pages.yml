@@ -6,6 +6,14 @@ name: Deploy to GitHub Pages
 # ONE-TIME SETTING: Settings -> Pages -> Source must be "GitHub Actions".
 # ("Deploy from a branch" will keep serving the old gh-pages content instead.)
 #
+# Deploying also only works from the DEFAULT BRANCH. GitHub creates the
+# github-pages environment with a deployment branch policy limited to it, and a
+# job targeting that environment from any other branch is refused before a
+# runner is allocated - it fails in seconds with no steps and no logs, which
+# looks like a broken workflow rather than a policy decision. The deploy job
+# below is therefore gated on the default branch, so pushes to a working branch
+# still build and test without producing a misleading failed deploy.
+#
 # The artifact route matters once GROQ_API_KEY is set. Committing the built page
 # to a branch put the key into git history, and GitHub's push protection
 # correctly refused the push. An artifact is served to browsers without ever
@@ -80,6 +88,9 @@ jobs:
 
   deploy:
     needs: build
+    # The github-pages environment only accepts deployments from the default
+    # branch, so do not attempt one from anywhere else.
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     environment:
       name: github-pages
