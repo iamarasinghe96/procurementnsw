@@ -54,6 +54,21 @@ export const CASES = [
   ['how long does a council tender have to be advertised', 'council', 'councils.tender-methods'],
   ['do procurement board directions apply to councils', 'council', 'councils.different-rulebook'],
 
+  // ── OLG Procurement Guidelines (July 2026) ────────────────────────
+  ['is the $250,000 threshold inclusive of GST', 'council', 'olg.threshold-gst-and-splitting'],
+  ['can we split the order to stay under the tender threshold', 'council', 'olg.threshold-gst-and-splitting'],
+  ['we keep buying from the same supplier, does it add up', 'council', 'olg.threshold-gst-and-splitting'],
+  ['do the rules still apply under the threshold', 'council', 'olg.under-threshold'],
+  ['what should our procurement policy contain', 'council', 'olg.procurement-policy-content'],
+  ['segregation of duties in procurement', 'council', 'olg.segregation-of-duties'],
+  ['can we delegate the decision to outsource a service', 'council', 'olg.delegations'],
+  ['what records do we keep for a council tender', 'council', 'olg.tender-records'],
+  ['what checks apply when we buy a software platform', 'council', 'olg.ict-procurement'],
+  ['can we have a local preference policy', 'council', 'olg.local-preference'],
+  ['what modern slavery reporting do we do each year', 'council', 'olg.modern-slavery-councils'],
+  ['do we need an audit risk and improvement committee', 'council', 'olg.audit-and-risk'],
+  ['what percentage aboriginal ownership counts for a council', 'council', 'olg.social-and-sustainable'],
+
   // ── Agency buyers ─────────────────────────────────────────────────
   ['what is my agency accredited to buy', 'agency', 'governance.accreditation'],
   ['do I have to use a whole of government contract for stationery', 'agency', 'governance'],
@@ -77,7 +92,10 @@ export const CASES = [
   ['a bidder asked me who else is tendering', 'agency', 'corruption.misuse-of-information'],
   ['how do I report suspected corruption', null, 'corruption.ethical-obligations-reporting'],
   ['what is corrupt conduct', null, 'corruption.what-is-corrupt-conduct'],
-  ['do we need a probity adviser for this project', 'council', 'probity.advisers-auditors'],
+  // A council gets the OLG guidance written for councils - five triggers, the
+  // adviser/auditor distinction, s 55(3)(g) - not the general agency section.
+  ['do we need a probity adviser for this project', 'council', 'olg.probity-advisers-councils'],
+  ['do we need a probity adviser for this project', 'agency', 'probity.advisers-auditors'],
   ['what does probity actually mean', 'agency', 'probity'],
   ['what checks should I run on a new supplier', 'agency', 'due-diligence'],
   ['the supplier wants to change their bank details', 'agency', 'managing.post-engagement-due-diligence'],
@@ -91,7 +109,9 @@ export const CASES = [
   ['how quickly must I pay a small business', 'agency', 'managing.paying-suppliers'],
 
   // ── Foundations and public ────────────────────────────────────────
-  ['what is value for money', 'council', 'objectives.value-for-money'],
+  // Same question, different binding guidance: a council is bound to consider
+  // the OLG Guidelines, an agency works to the Procurement Policy Framework.
+  ['what is value for money', 'council', 'olg.value-for-money-factors'],
   ['what is value for money', 'agency', 'objectives.value-for-money'],
   ['what procurement information must be published', 'public', 'managing.disclosure-reporting'],
   ['how do I see what my council has contracted', 'public', 'councils.transparency-obligations'],

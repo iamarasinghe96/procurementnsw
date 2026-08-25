@@ -24,12 +24,16 @@
       {
         "label": "ICAC NSW corruption prevention publications",
         "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications"
+      },
+      {
+        "label": "OLG Procurement Guidelines for NSW Local Government (July 2026)",
+        "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
       }
     ],
-    "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base.",
-    "built_at": "2026-08-06T04:38:31.674Z",
-    "topic_count": 11,
-    "chunk_count": 74
+    "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base. Council content is additionally drawn from the Office of Local Government's Procurement Guidelines for NSW Local Government (July 2026), included in source-documents/.",
+    "built_at": "2026-08-25T07:53:45.165Z",
+    "topic_count": 12,
+    "chunk_count": 94
   },
   "audiences": [
     {
@@ -197,7 +201,7 @@
         "corporate",
         "public"
       ],
-      "rule": "Under the Government Information (Public Access) Act 2009 you must publicly disclose contracts valued at $150,000 (inc GST) or more. Agencies disclose on NSW eTendering within 45 working days of the contract taking effect, and the entry stays listed for at least 20 days or until the contract is complete, whichever is longer. Councils maintain a public contracts register under section 27 of the GIPA Act on the same $150,000 (inc GST) trigger, published within 45 days and kept available for 20 working days or until contract obligations are satisfied, whichever is longer.",
+      "rule": "Under the Government Information (Public Access) Act 2009 you must publicly disclose contracts valued at $150,000 (inc GST) or more. Agencies disclose on NSW eTendering within 45 working days of the contract taking effect, and the entry stays listed for at least 20 days or until the contract is complete, whichever is longer. Councils maintain a public contracts register under section 27 of the GIPA Act on the same $150,000 (inc GST) trigger, entered in the register within 45 working days of the contract becoming effective and kept available for 20 working days or until contract obligations are satisfied, whichever is longer.",
       "citations": [
         {
           "label": "Government Information (Public Access) Act 2009",
@@ -240,7 +244,7 @@
         "corporate",
         "public"
       ],
-      "rule": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3)(n) exempts contracts involving estimated expenditure or receipt of less than $250,000. The threshold was raised from $100,000 to $250,000 by the Local Government Amendment Act 2019. Note this is a council rule and is entirely separate from the NSW Procurement Board thresholds that apply to state agencies.",
+      "rule": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3)(n) exempts contracts involving estimated expenditure or receipt of less than $250,000. The OLG Procurement Guidelines confirm this threshold is INCLUSIVE of GST and applies to the total estimated contract value, which expressly includes cumulative expenditure with a supplier for similar goods and services. Councils must not invoice split or order split to avoid tendering, as that would be contrary to the Act. Procurements under the threshold are exempt from the legislated tendering requirements only - the principles in the Guidelines still apply at any value. This is a council rule and is entirely separate from the NSW Procurement Board thresholds that apply to state agencies.",
       "citations": [
         {
           "label": "Local Government Act 1993 s 55",
@@ -249,6 +253,10 @@
         {
           "label": "OLG - Procurement in Local Government",
           "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
         }
       ]
     },
@@ -630,14 +638,14 @@
       "source": "NSW Anti-slavery Commissioner"
     },
     {
-      "id": "tpl-olg-tendering-guidelines",
-      "name": "Tendering Guidelines for NSW Local Government",
+      "id": "tpl-olg-procurement-guidelines",
+      "name": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
       "stage": "all",
       "audiences": [
         "council"
       ],
-      "description": "Adopted under section 23A of the Local Government Act 1993, so councils must take them into consideration when exercising tendering functions. OLG has been developing replacement Procurement Guidelines - check the OLG site for the current version before relying on the 2009 document.",
-      "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government",
+      "description": "The Office of Local Government's procurement guidance for councils. Sections 1 and 2 cover the legislative context, the five best-practice principles, and procurement governance. Councils must consider these Guidelines when setting their own policy and procedures.",
+      "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf",
       "source": "Office of Local Government"
     },
     {
@@ -720,6 +728,57 @@
       "description": "LGP is prescribed under section 55 of the Local Government Act 1993, so a council can buy from an LGP-established contract above $250,000 without running its own tender.",
       "url": "https://lgp.org.au/approved-contractors/",
       "source": "Local Government Procurement"
+    },
+    {
+      "id": "tpl-model-code-of-conduct",
+      "name": "Model Code of Conduct for Local Councils in NSW",
+      "stage": "all",
+      "audiences": [
+        "council"
+      ],
+      "description": "Council procurement probity is evidenced through procedures that comply with the Model Code of Conduct. It prescribes mandatory requirements for disclosing and managing pecuniary and non-pecuniary conflicts of interest.",
+      "url": "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/",
+      "source": "Office of Local Government"
+    },
+    {
+      "id": "tpl-lg-regulation",
+      "name": "Local Government (General) Regulation 2021",
+      "stage": "source",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "description": "Part 7 sets the tendering procedure for councils: methods, advertising, the 21-day minimum, amendments, extensions, variations, evaluation and notification.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-lg-act",
+      "name": "Local Government Act 1993",
+      "stage": "all",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "description": "Sections 55 and 55A set the tendering requirements and exemptions; s 377(1)(i) reserves outsourcing tender decisions to the council; s 438ZE carries the modern slavery duty.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-supply-nation",
+      "name": "Supply Nation",
+      "stage": "plan",
+      "audiences": [
+        "council",
+        "agency",
+        "nfp",
+        "supplier"
+      ],
+      "description": "One of the organisations that verifies Aboriginal business ownership for procurement purposes, alongside BuyNSW, the NSW Indigenous Chamber of Commerce and ORIC.",
+      "url": "https://supplynation.org.au/",
+      "source": "Supply Nation"
     }
   ],
   "glossary": [
@@ -1083,6 +1142,42 @@
         "councils.lgp-panels",
         "councils.waste-contract-management",
         "councils.transparency-obligations"
+      ]
+    },
+    {
+      "id": "olg-guidelines",
+      "title": "OLG Procurement Guidelines for NSW Local Government",
+      "path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
+      "summary": "The Office of Local Government's Procurement Guidelines for NSW Local Government, published July 2026. Sections 1 and 2: legislative context, the five best-practice principles, and the governance every council procurement function needs.",
+      "chunk_ids": [
+        "olg.what-these-guidelines-are",
+        "olg.threshold-gst-and-splitting",
+        "olg.under-threshold",
+        "olg.five-principles",
+        "olg.value-for-money-factors",
+        "olg.probity-aspects",
+        "olg.probity-advisers-councils",
+        "olg.segregation-of-duties",
+        "olg.delegations",
+        "olg.tender-records",
+        "olg.contract-records",
+        "olg.ict-procurement",
+        "olg.procurement-policy-content",
+        "olg.local-preference",
+        "olg.social-and-sustainable",
+        "olg.modern-slavery-councils",
+        "olg.internal-governance",
+        "olg.staff-and-training",
+        "olg.audit-and-risk",
+        "olg.plan-source-manage"
       ]
     },
     {
@@ -2536,7 +2631,12 @@
         "protocols",
         "weightings",
         "evaluation team",
-        "before opening responses"
+        "before opening responses",
+        "evaluation templates",
+        "templates for evaluation",
+        "what templates for a tender evaluation",
+        "run a tender evaluation",
+        "evaluation documents"
       ],
       "watch_outs": [
         "Writing or changing the evaluation plan after responses are opened is a serious probity breach"
@@ -3701,7 +3801,7 @@
       "jurisdiction": "local-government",
       "authority": "legislation",
       "summary": "If you work for a council, NSW Procurement Board Directions, agency accreditation and whole-of-government contract mandates generally do not apply to you.",
-      "text": "This is the single most important thing to get right. NSW local councils are not NSW Government agencies for procurement purposes. A council's procurement activities are carried out under sections 55 and 55A of the Local Government Act 1993 and Part 7 of the Local Government (General) Regulation 2021, together with guidelines adopted by the Office of Local Government under section 23A of the Act, which councils must take into consideration when exercising their tendering functions. NSW Procurement Board Directions, the agency accreditation scheme, the mandate to use whole-of-government contracts, and the enforceable procurement provisions in PBD-2019-05 are directed at NSW Government agencies, not councils. The Public Works and Procurement Regulation 2019 does deal with procurement by public bodies that are not NSW Government agencies, including councils, and councils may in some circumstances access NSW Government arrangements - but the governing obligations for a council come from the Local Government Act, not the Procurement Policy Framework. In practice councils commonly adopt the same good-practice methods that state agencies use - plan, source, manage; value for money; probity principles; evaluation plans and conduct plans - and several obligations genuinely do apply across both, notably the GIPA Act contract disclosure rules, the State Records Act, the ICAC Act, and the Modern Slavery Act. Your council will also have its own adopted procurement policy, which is the document that binds you day to day.",
+      "text": "This is the single most important thing to get right. NSW local councils are not NSW Government agencies for procurement purposes. A council's procurement activities are carried out under sections 55 and 55A of the Local Government Act 1993 and Part 7 of the Local Government (General) Regulation 2021, together with the Office of Local Government's Procurement Guidelines for NSW Local Government, published July 2026, which councils must consider when setting their own procurement policy and procedures. NSW Procurement Board Directions, the agency accreditation scheme, the mandate to use whole-of-government contracts, and the enforceable procurement provisions in PBD-2019-05 are directed at NSW Government agencies, not councils. The Public Works and Procurement Regulation 2019 does deal with procurement by public bodies that are not NSW Government agencies, including councils, and councils may in some circumstances access NSW Government arrangements - but the governing obligations for a council come from the Local Government Act, not the Procurement Policy Framework. In practice councils commonly adopt the same good-practice methods that state agencies use - plan, source, manage; value for money; probity principles; evaluation plans and conduct plans - and several obligations genuinely do apply across both, notably the GIPA Act contract disclosure rules, the State Records Act, the ICAC Act, and the Modern Slavery Act. Your council will also have its own adopted procurement policy, which is the document that binds you day to day.",
       "keywords": [
         "council",
         "local government",
@@ -3724,7 +3824,7 @@
         "thr-council-tender-250k"
       ],
       "templates": [
-        "tpl-olg-tendering-guidelines"
+        "tpl-olg-procurement-guidelines"
       ],
       "citations": [
         {
@@ -3738,6 +3838,10 @@
         {
           "label": "Local Government (General) Regulation 2021",
           "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
         }
       ],
       "topic_id": "councils",
@@ -3832,7 +3936,11 @@
         "licence",
         "no tender",
         "avoid tender",
-        "disaster recovery"
+        "disaster recovery",
+        "55(3)(g)",
+        "55(3)(q)",
+        "performance and management services scheme",
+        "disability employment organisation"
       ],
       "checklist": [
         "Identify the specific paragraph of section 55(3) you are relying on, by letter",
@@ -4161,6 +4269,1101 @@
       "topic_path": "councils",
       "stage": "all",
       "source_document": "Researched addition - not covered by the Comperio Procurement Foundations course, which addresses NSW Government agencies only."
+    },
+    {
+      "id": "olg.what-these-guidelines-are",
+      "path": "councils/olg-guidelines/status-and-scope",
+      "heading": "The OLG Procurement Guidelines: status and how far they bind you",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Issued by the Office of Local Government in July 2026. They sit alongside the Act and Regulation as the sector's procurement guidance, and councils must consider them when setting their own policy.",
+      "text": "The Procurement Guidelines for NSW Local Government were published by the Office of Local Government in July 2026, based on knowledge and understanding as at March 2026. They are listed by the Guidelines themselves as one of the legal instruments, policies and guidance governing council procurement, alongside the Local Government Act 1993, the Local Government (General) Regulation 2021, the Modern Slavery Act 2018, the Public Interest Disclosures Act 2022, the Government Information (Public Access) Act 2009 and the State Records Act 1998. Their reach is broader than the tendering threshold suggests. Procurements under the section 55 threshold are exempt from the legislated tendering requirements, but the principles and processes in the Guidelines generally apply to procurements of any value, and while councils may set their own policy and procedures they must consider these Guidelines when doing so. The Guidelines also state plainly that councils must comply with all legal obligations as well as any NSW Government procurement policies relevant to the local government sector, and that where a council is uncertain it should refer directly to the legislation and seek its own independent legal advice. Note on scope: the published document covers section 1 (procurement and local government) and section 2 (principles and governance). It forward-references a Source section, a Resources section, a Glossary, and supplementary guidance on order-splitting controls, which are not part of this document. For the detail of the tendering process itself, the Act and Part 7 of the Regulation remain the operative source.",
+      "keywords": [
+        "olg guidelines",
+        "procurement guidelines",
+        "guidelines for nsw local government",
+        "new guidelines",
+        "2026 guidelines",
+        "replace 2009",
+        "tendering guidelines",
+        "do the guidelines bind us",
+        "must we follow the guidelines",
+        "office of local government",
+        "olg",
+        "status of the guidelines",
+        "what guidelines apply to councils"
+      ],
+      "checklist": [
+        "Read the Guidelines alongside the Act and Part 7 of the Regulation - the Guidelines do not replace them",
+        "Apply the principles to procurements of any value, not only those over the tendering threshold",
+        "Show that the Guidelines were considered when your council's procurement policy was set or reviewed",
+        "Get your own legal advice where a requirement is unclear - the Guidelines say so explicitly"
+      ],
+      "watch_outs": [
+        "The published document is sections 1 and 2 only. Its Source section, Resources, Glossary and order-splitting guidance are referenced but not included, so do not treat it as the complete tendering procedure"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "OLG - Procurement in Local Government",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.threshold-gst-and-splitting",
+      "path": "councils/olg-guidelines/threshold-gst-and-splitting",
+      "heading": "The $250,000 threshold: inclusive of GST, cumulative, and never to be split",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "The threshold includes GST and applies to total estimated contract value, counting cumulative spend with a supplier on similar goods and services. Splitting orders or invoices to stay under it is contrary to the Act.",
+      "text": "Section 55 of the Act prescribes a value threshold of $250,000 for contracts, and councils must follow the tendering requirements in Part 7 of the Regulation before entering into contracts of that value or more, unless exempt under section 55(3). The Guidelines add three points of detail that decide most real cases. First, the threshold is inclusive of goods and services tax. A contract at $240,000 excluding GST is $264,000 including it, and is over the threshold. Second, it applies to the total estimated contract value, and that expressly includes cumulative expenditure with a supplier for similar goods and services. Repeat purchases from the same supplier for similar things are counted together, not treated as separate small buys. Third, councils should not invoice split or order split to avoid tendering requirements, because such activities would be contrary to the Act. The Guidelines flag that controls to minimise the risk of order splitting will be covered in supplementary guidance. In practice this means the value estimate is a documented judgement about the whole arrangement over its life, made before the procurement method is chosen, and it is the first thing an auditor will test.",
+      "keywords": [
+        "250000 inc gst",
+        "including gst",
+        "gst inclusive",
+        "is the threshold inclusive of gst",
+        "total estimated contract value",
+        "cumulative expenditure",
+        "cumulative spend",
+        "similar goods",
+        "repeat purchases",
+        "same supplier",
+        "order splitting",
+        "invoice splitting",
+        "split the order",
+        "split a contract",
+        "avoid tendering",
+        "under the threshold",
+        "how do we value the contract",
+        "keep buying from the same supplier",
+        "does it add up",
+        "adds up",
+        "buying repeatedly",
+        "multiple purchases",
+        "aggregate",
+        "aggregation",
+        "running total",
+        "same supplier repeatedly"
+      ],
+      "checklist": [
+        "Estimate the value including GST, not excluding it",
+        "Add up cumulative expenditure with that supplier for similar goods, materials or services",
+        "Count the whole arrangement including option and extension years",
+        "Record the estimate and the reasoning before choosing the procurement method",
+        "If repeat low-value purchases with one supplier are adding up, treat them as one arrangement and plan a compliant process"
+      ],
+      "watch_outs": [
+        "Splitting orders or invoices to stay under $250,000 is contrary to the Act, not a grey area",
+        "A contract priced just under the threshold excluding GST is usually over it once GST is added",
+        "Rolling repeat purchases with the same supplier is the most common way councils drift over the threshold without noticing"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k"
+      ],
+      "citations": [
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.under-threshold",
+      "path": "councils/olg-guidelines/procurements-under-the-threshold",
+      "heading": "What applies below $250,000",
+      "audiences": [
+        "council",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Exempt from the legislated tendering requirements, but not from the principles. Councils set their own policy for this range and must consider the Guidelines when doing so.",
+      "text": "Procurements under the value threshold prescribed by section 55 are exempt from the legislated tendering requirements. That is the full extent of the exemption. The principles and processes outlined throughout the Guidelines generally apply to procurements of any value, and councils may set their own policy and procedures in this respect but must consider the Guidelines when doing so. So a $40,000 purchase still has to demonstrate value for money, still has to be fair and open, still has to be probity-rich and documented, and still has to be recorded under the State Records Act. What changes below the threshold is the method, not the standard. Most councils set internal quotation requirements in value bands in their adopted procurement policy, and those internal rules bind staff even though the Act does not require them.",
+      "keywords": [
+        "under the threshold",
+        "below 250000",
+        "small purchase",
+        "low value procurement",
+        "do the rules apply under the threshold",
+        "quotes required",
+        "quotation thresholds",
+        "internal thresholds",
+        "council policy thresholds",
+        "how many quotes"
+      ],
+      "checklist": [
+        "Check your council's adopted policy for the quotation requirement in this value band",
+        "Apply the same principles you would above the threshold: value for money, fair competition, probity, records",
+        "Document the value for money assessment even for a small purchase",
+        "Keep the records to the same standard - the State Records Act does not have a dollar threshold"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.five-principles",
+      "path": "councils/olg-guidelines/principles",
+      "heading": "The five principles of best-practice council procurement",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Value for money, fair and open competition, probity and transparency, innovation, and economic development/social outcomes/sustainability - applying to every procurement regardless of value.",
+      "text": "The Guidelines set five principles that apply to every procurement, irrespective of the value, complexity and risk level involved: value for money; fair and open competition; probity and transparency; innovation; and economic development, social outcomes and sustainability. Note that this is a different list from the NSW Government's five procurement objectives, which a council officer may also encounter. The council list has probity and transparency as a principle in its own right, where the state list has easy to do business. On value for money, the Guidelines are direct: all procurement must demonstrate value for money; value for money does not mean obtaining and accepting the lowest price; a big picture view is required, assessing a range of factors to get the greatest total benefit for a community. On fair and open competition: councils must promote an even playing field and equal treatment for all potential suppliers, all suppliers must be treated and seen to be treated in an open, fair and transparent manner with access to the same information, and encouraging competition is itself a way of managing corruption risk. Councils should take a balanced approach between contracting with known reliable suppliers and reviewing contracts to improve accessibility for new entrants. On innovation: it can occur at any stage, councils should innovate where possible but not at the expense of other principles, and the focus should be on constant improvement. Alternate proposals in tenders may be considered, so long as risks are managed, the market has been tested for alternatives, and the alternate is submitted alongside a conforming tender that addresses the original request.",
+      "keywords": [
+        "principles",
+        "five principles",
+        "best practice principles",
+        "council principles",
+        "value for money council",
+        "fair and open competition",
+        "probity and transparency",
+        "innovation",
+        "economic development",
+        "social outcomes",
+        "sustainability",
+        "what principles apply",
+        "alternate proposals",
+        "alternative tender",
+        "non conforming tender"
+      ],
+      "watch_outs": [
+        "The council principles are not the same list as the NSW Government's procurement objectives - do not quote one at the other",
+        "An alternate proposal is only considerable alongside a conforming tender that answers the original request"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.value-for-money-factors",
+      "path": "councils/olg-guidelines/value-for-money-factors",
+      "heading": "Assessing value for money: the seven factors",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "The Guidelines set out seven factors councils are encouraged to weigh: justifying the need, fitness for purpose, supplier assessment, broader objectives, total cost of ownership, timeliness and risk.",
+      "text": "Each council may set its own evaluation criteria, but the Guidelines encourage assessment against seven factors, financial and non-financial. Justify the procurement need: is the procurement required, is there an alternative option, could existing assets, equipment, materials or resources be repurposed? Fit for purpose: does it meet the council's needs, considering quality, quantity, the methodology or program offered, and the cost quoted or tendered? Supplier assessment: can the supplier fulfil the requirements, considering relevant experience, performance history, capability and capacity, and the support and service provided? Broader council and government objectives: does the contract fit with wider policies and strategies, including council priorities, strategy and Community Strategic Plan targets, and economic, social, environmental and ethical objectives? Total cost of ownership: what other costs affect the procurement, what is required to maintain or operate it beyond the initial purchase price, what are the re-sale options, and are costs lump sum, schedule of rates, provisional or milestone-based? Timeliness: when is it needed, and what are the key dates and timeframe considerations? Risk: what uncertainties may affect or arise from the procurement, what controls apply, and what insurance cover is required?",
+      "keywords": [
+        "value for money factors",
+        "how do we assess value for money",
+        "vfm criteria",
+        "total cost of ownership",
+        "whole of life cost",
+        "fit for purpose",
+        "supplier assessment",
+        "justify the need",
+        "timeliness",
+        "evaluation factors",
+        "what should we consider",
+        "seven factors",
+        "assessing value"
+      ],
+      "checklist": [
+        "Justify the need: is this required at all, and could an existing asset be repurposed instead?",
+        "Fit for purpose: quality, quantity, methodology and the price offered",
+        "Supplier assessment: experience, performance history, capability, capacity, support and service",
+        "Broader objectives: council priorities, CSP targets, and economic, social, environmental and ethical goals",
+        "Total cost of ownership: everything council will pay over the lifecycle, plus re-sale options",
+        "Timeliness: key dates and whether the timeframe is achievable",
+        "Risk: the uncertainties, the controls, and the insurance required"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.probity-aspects",
+      "path": "councils/olg-guidelines/probity-aspects",
+      "heading": "The seven key aspects of probity for councils",
+      "audiences": [
+        "council",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Impartiality and fairness, defensible records, managing conflicts, confidentiality, disputes and misconduct, integrity and risk, and general compliance - aligned to the Model Code of Conduct.",
+      "text": "Probity for councils means complete honesty and integrity in a process that can be confirmed and evidenced to observers: demonstrating integrity, accountability and fairness in a way that withstands external scrutiny. It is evidenced through procurement procedures that align with the Guidelines and comply with the Model Code of Conduct for Local Councils in NSW. The Guidelines set out seven key aspects. Impartiality and fairness: treat all suppliers fairly and consistently, give every market participant the same information at the same time, give submissions fair and equal consideration in accordance with the tender documents and conditions of tendering, develop probity plans and evaluation processes upfront, only approach the market with the intention, capacity and funding to execute a contract, never engage in collusive practices or give improper advantages, and put multiple staff on higher risk or higher value processes. Defensible documents and record keeping: full and clear documentation of the process, requirements, timelines, submission conditions, evaluation criteria, participation, delegation and decisions, all saved to document management systems for audit, future reference and GIPA Act purposes. Managing conflicts of interest: implement a policy, document and treat every conflict for each project, and comply with conflict of interest obligations. Confidentiality: control arrangements to protect confidential information, including legally binding confidentiality or non-disclosure clauses. Management of disputes and misconduct: a dispute resolution mechanism, a way to report misconduct or make a public interest disclosure, and management of corruption and lobbying risks. Integrity and mitigating risks: a probity plan for all phases of high-risk projects, including delivery of the contract. General compliance with all other legal and policy obligations. The Guidelines are blunt about accountability: each person involved in the procurement process is accountable for ensuring probity.",
+      "keywords": [
+        "model code of conduct",
+        "impartiality",
+        "defensible records",
+        "confidentiality",
+        "dispute resolution",
+        "misconduct",
+        "lobbying",
+        "probity plan",
+        "collusive practices",
+        "improper advantage",
+        "what does probity require",
+        "probity checklist",
+        "seven aspects of probity",
+        "probity requirements checklist"
+      ],
+      "checklist": [
+        "Give every market participant the same information at the same time",
+        "Write the probity plan and evaluation process before approaching the market",
+        "Only go to market when you have the intention, capacity and funding to actually award",
+        "Put more than one staff member on higher risk or higher value processes",
+        "Document the process, criteria, delegations and decisions into the records system",
+        "Document and treat every conflict of interest, for each project separately",
+        "Put confidentiality or non-disclosure terms in place for confidential information",
+        "Provide a dispute resolution mechanism and a way to report misconduct or make a PID",
+        "Run a probity plan across all phases of a high-risk project, including contract delivery"
+      ],
+      "watch_outs": [
+        "Going to market without the funding or intention to award is a probity breach in itself",
+        "Records exist for audit, future reference and GIPA - a decision you cannot evidence is a decision you cannot defend"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "Model Code of Conduct for Local Councils in NSW",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.probity-advisers-councils",
+      "path": "councils/olg-guidelines/probity-advisers",
+      "heading": "Probity advisers and auditors: which one, and when",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Five triggers for engaging one, the difference between an adviser and an auditor, and the rule that neither removes the council's own accountability.",
+      "text": "It may be appropriate to engage a probity adviser or auditor if the procurement process is complex or high-risk, the project is vulnerable to corrupt practices, the project has a high level of public interest or scrutiny, there may be perceived bias or favouritism, or the integrity of the process could be questioned. Councils should include the threshold of risk that triggers this involvement in their risk management framework, so the decision is made against a standard rather than case by case. The two roles are different. A probity adviser provides advice on probity matters and acts as part of the procurement team through key phases of the lifecycle; they can help resolve probity issues as they arise, and may be engaged to oversee just the procurement process or the contract for its life. A probity auditor acts separately from the procurement team, checks whether the procurement complied with probity obligations, and generally reviews the detail after the procurement has concluded. Using an external probity adviser or auditor should be the exception and not the rule, and engagement is subject to each council's own policy and procedures. They are not a substitute for good probity and governance practices, and they do not remove the ultimate accountability for probity from the council. Where a council does engage one, it may use the Legal Services or Internal Audit and Management Contract specified by Local Government Procurement, or the NSW Government's Performance and Management Services Scheme - and if using that scheme, the council must comply with the rules associated with its use under section 55(3)(g) of the Act.",
+      "keywords": [
+        "probity adviser",
+        "probity auditor",
+        "when to engage a probity adviser",
+        "difference between adviser and auditor",
+        "external probity",
+        "high risk procurement",
+        "performance and management services scheme",
+        "55(3)(g)",
+        "internal audit contract",
+        "do we need a probity adviser",
+        "need a probity adviser",
+        "engage a probity adviser",
+        "should we engage",
+        "probity",
+        "adviser",
+        "auditor",
+        "project"
+      ],
+      "checklist": [
+        "Test the five triggers: complexity or risk, vulnerability to corrupt practices, public scrutiny, perceived bias, questionable integrity",
+        "Check your risk management framework for the risk threshold that requires one",
+        "Choose deliberately: an adviser sits inside the team through the process, an auditor reviews from outside afterwards",
+        "If using the Performance and Management Services Scheme, comply with its rules under s 55(3)(g)",
+        "Record that accountability for probity remains with the council regardless"
+      ],
+      "watch_outs": [
+        "Engaging a probity adviser does not transfer accountability, and it should be the exception rather than the rule"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "Performance and Management Services Scheme",
+          "url": "https://buy.nsw.gov.au/schemes/performance-and-management-services-scheme"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.segregation-of-duties",
+      "path": "councils/olg-guidelines/segregation-of-duties",
+      "heading": "Segregation of duties: the four separations",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "At a minimum, different staff must handle supplier selection, contract drafting versus authorisation, purchase orders versus payment approval, and requesting versus receipting.",
+      "text": "Ensuring clear operational separation between staff responsible for each phase of a procurement is crucial for minimising risk. Without it, transparency is limited and the council is more exposed to unethical behaviour, potential fraud and corruption. The Guidelines set a minimum: different staff are to be responsible for supplier selection activities, specifically establishing the evaluation criteria against which potential suppliers are to be assessed and evaluating submissions and recommending suppliers; drafting contract terms and authorising the final agreement; raising purchase orders and approving corresponding payments; and purchasing activities, specifically requesting and receipting delivery of goods and services, approving the expenditure of relevant funds in line with approved budget provisions, and financial delegation of authority thresholds. Councils should regularly review staff responsibilities, competence and skill development, liaising with internal teams to identify each type of risk and ensure systems manage the exposure. This is the control that small councils find hardest, because one person often covers several roles - which is exactly why the review, and a documented compensating control where full separation is impossible, matters.",
+      "keywords": [
+        "segregation of duties",
+        "separation of duties",
+        "who should do what",
+        "one person doing everything",
+        "fraud control",
+        "internal control",
+        "raising purchase orders",
+        "approving payments",
+        "small council",
+        "conflict between roles"
+      ],
+      "checklist": [
+        "Separate setting the evaluation criteria and evaluating submissions from the rest of the process",
+        "Separate drafting contract terms from authorising the final agreement",
+        "Separate raising a purchase order from approving the corresponding payment",
+        "Separate requesting goods from receipting their delivery",
+        "Review responsibilities regularly, and document a compensating control wherever full separation is not possible"
+      ],
+      "watch_outs": [
+        "In a small council one person often covers several of these roles - that is a risk to document and compensate for, not to ignore"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.delegations",
+      "path": "councils/olg-guidelines/delegations",
+      "heading": "Delegations, and the tender decision that cannot be delegated",
+      "audiences": [
+        "council",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "A decision to accept a tender to outsource services currently provided by council staff cannot be delegated - it must be a resolution of the council.",
+      "text": "The Act provides that a council may, by resolution, delegate certain functions to its general manager or any other person or body, not including another employee of the council, and the general manager may in turn subdelegate to staff and others. There is a specific and important exception: decisions to accept tenders to provide services currently provided by members of staff of the council - that is, decisions to outsource services currently provided in-house - cannot be delegated and must be made by a resolution of the council, under section 377(1)(i) of the Act, and section 397K of the Regulation for joint organisations. Councils and the general manager should clearly document which functions of the tendering process are delegated, any limitations based on financial amount or resourcing impact, and to whom or to which position the delegation is made. Each council must review all its delegations during the first 12 months of each term of office, under section 380 of the Act. Well-implemented delegations save cost while minimising the risk of fraud, corruption or errors from inappropriate approval of transactions, and increase the efficiency of authorisation within approved budget provisions.",
+      "keywords": [
+        "delegation",
+        "delegations",
+        "can we delegate",
+        "cannot be delegated",
+        "377",
+        "outsource",
+        "outsourcing",
+        "services provided by staff",
+        "in-house",
+        "council resolution required",
+        "general manager delegation",
+        "subdelegate",
+        "review delegations",
+        "380",
+        "joint organisation"
+      ],
+      "checklist": [
+        "Check whether the tender would outsource services currently provided by council staff - if so it must go to a council resolution and cannot be delegated",
+        "Document which tendering functions are delegated, with any financial or resourcing limits",
+        "Name the person or position holding each delegation",
+        "Review all delegations within the first 12 months of each term of office"
+      ],
+      "watch_outs": [
+        "Accepting an outsourcing tender under delegation instead of by council resolution is a clear breach of s 377(1)(i)"
+      ],
+      "citations": [
+        {
+          "label": "Local Government Act 1993 s 377",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.377"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.tender-records",
+      "path": "councils/olg-guidelines/tender-records",
+      "heading": "The tender record: everything a council must be able to produce",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "A full list of what the tendering file must contain, with the Regulation sections behind each, from the decision to tender through to notifying tenderers of the outcome.",
+      "text": "In conducting the tendering process councils should maintain full records of the entire process. The Guidelines list what that means: the council's decision to tender, or an approved procurement plan or sourcing strategy; a copy of the public advertisement or means of advertising, such as the e-tender notice or newspaper advertisement; a complete copy of the tender documents provided to tenderers; the policy, procedure and relevant plans regarding the operation of the tender evaluation panel, including the tender evaluation plan with its methodology, criteria and weightings, and the names of the staff involved; a copy of any variation to the tender documents, which should be in the form of an addendum; the names of all parties who received tender documents; a record of all subsequent dealings with tenderers and information provided to them; the names of all tenders submitted; where the council itself submits a tender, any policy or procedure on managing in-house tenders and the names of the staff involved; a record of any amendments to the tender documents and who was informed of them, under section 170(4) of the Regulation; a record of any extension or shortening of the tender period, under sections 171 and 172; a record of any variations, including clarifications, to tenders made under section 176; the evaluation of tenders and the reasons for recommending and selecting the successful tender, or for not accepting any of them, under section 178; and the notification to all tenderers of the outcome, under section 179. Councils should also document policies, procedures and decisions on risk assessment and management, comprehensively document all communications with potential tenderers, separately document the recommendation, review and final approval phases so the process is transparent and compliant with delegations, prepare an evaluation report on each tender, prepare a final report giving the reasons based on the tender criteria for the selection or for accepting none, and retain complete records of all tenders, evaluations and the contract itself.",
+      "keywords": [
+        "tender records",
+        "what records to keep",
+        "tender file",
+        "documentation required",
+        "evaluation report",
+        "final report",
+        "addendum record",
+        "in-house tender",
+        "clause 170",
+        "clause 171",
+        "clause 172",
+        "clause 176",
+        "clause 178",
+        "clause 179",
+        "notify tenderers",
+        "audit trail",
+        "records for a tender"
+      ],
+      "checklist": [
+        "The decision to tender, or the approved procurement plan or sourcing strategy",
+        "The public advertisement, or evidence of how it was advertised",
+        "A complete copy of the tender documents issued",
+        "The evaluation plan: methodology, criteria, weightings and the names of panel members",
+        "Any addendum varying the tender documents, and who was notified (Reg s 170(4))",
+        "The names of everyone who received tender documents, and of everyone who submitted",
+        "A record of all dealings with tenderers and information given to them",
+        "Any extension or shortening of the tender period (Reg ss 171-172)",
+        "Any variations or clarifications to tenders (Reg s 176)",
+        "The evaluation and the reasons for the recommendation, or for accepting none (Reg s 178)",
+        "The notification of the outcome to all tenderers (Reg s 179)",
+        "Where council itself tendered, the in-house tender policy and the staff involved",
+        "Separate records of the recommendation, the review and the final approval",
+        "An evaluation report on each tender, and a final report giving the reasons against the criteria"
+      ],
+      "watch_outs": [
+        "Access to tender documents should be restricted to those involved in the process, including the evaluation panel",
+        "The recommendation, review and approval phases must be separately documented, or the delegation trail cannot be demonstrated"
+      ],
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021 Part 7",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.contract-records",
+      "path": "councils/olg-guidelines/contract-records",
+      "heading": "Contract records across the life of the arrangement",
+      "audiences": [
+        "council",
+        "corporate"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Seven stages a council's contract records should cover, from initiation through to reporting - and the confidentiality controls that sit over all of them.",
+      "text": "Good contract and records management systems help councils organise and maintain contract records, track and monitor executed contracts and contract expenditure, and reduce risk through clear reporting and alerts. The Guidelines set out the stages the records should cover. Initiation: the needs, goals and expectations. Creation: version tracking, through clarification of terms. Approval: ensuring alignment with the initiation and other requirements. Execution: signatures of the delegated persons who can sign contracts, and implementation of agreed terms through a contract management plan. Monitoring and management: ongoing monitoring and auditing of contractor performance and compliance, with deviations from contract terms addressed or handled through variation approvals. Renewal or termination: review of performance and KPIs against the terms and against council needs, goals and expectations for renewal, or documentation of the termination process and reasons in line with the contract terms. Reporting: supplier conformance, and changes to contract requirements or to the needs, goals and expectations for any future tender for the continued requirement. Over all of this sit the confidentiality obligations: information that is intellectual property, proprietary, commercial-in-confidence or otherwise confidential must not be disclosed or made accessible without suitable arrangements in place, including protection from cyber-security breach or attack.",
+      "keywords": [
+        "contract records",
+        "contract management plan",
+        "contract lifecycle records",
+        "variation approvals",
+        "termination records",
+        "renewal review",
+        "contract register",
+        "monitoring performance records",
+        "commercial in confidence",
+        "confidentiality"
+      ],
+      "checklist": [
+        "Initiation: record the needs, goals and expectations the contract exists to meet",
+        "Creation: track versions and record how terms were clarified",
+        "Approval: show the contract still matches what was initiated",
+        "Execution: capture signatures of the properly delegated signatories and the contract management plan",
+        "Monitoring: record performance, compliance, and how deviations were addressed or varied",
+        "Renewal or termination: record the performance and KPI review, or the termination reasons",
+        "Reporting: record supplier conformance and any change in requirements for the next cycle"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.ict-procurement",
+      "path": "councils/olg-guidelines/ict-procurement",
+      "heading": "Buying ICT, systems and AI services: the checks that apply regardless of cost",
+      "audiences": [
+        "council",
+        "corporate",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Systems and platforms must go through cyber and architectural review, vendor risk assessment, AI risk consideration, privacy and data sovereignty checks, incident response terms and secure decommissioning - whatever they cost.",
+      "text": "Councils should ensure that the ICT systems they procure are compatible with the NSW Government platforms they are required to use, and this requirement should be clearly stated in tendering specifications and is encouraged in procurement policies. The Guidelines are explicit that systems or platforms, regardless of cost, must go through a procurement process that includes: cyber and architectural review to ensure compatibility and security, referring to the Cyber Security Guidelines; vendor risk assessment, including data protection and breach notification obligations; consideration of risks associated with AI services; privacy and data sovereignty checks, especially where sensitive or regulated data is involved; contractual clarity on incident response and ongoing support; and secure decommissioning and data sanitisation requirements. The words regardless of cost matter here: a low-value SaaS subscription that would otherwise pass as a minor purchase still needs these checks, because the risk it carries is not proportional to its price.",
+      "keywords": [
+        "ict procurement",
+        "buying software",
+        "saas",
+        "system procurement",
+        "platform",
+        "cyber security",
+        "vendor risk assessment",
+        "ai services",
+        "artificial intelligence",
+        "data sovereignty",
+        "privacy",
+        "breach notification",
+        "decommissioning",
+        "data sanitisation",
+        "buying a system",
+        "software subscription",
+        "compatible with nsw government platforms"
+      ],
+      "checklist": [
+        "Cyber and architectural review for compatibility and security",
+        "Vendor risk assessment covering data protection and breach notification obligations",
+        "Assess the risks associated with any AI services involved",
+        "Privacy and data sovereignty checks, especially for sensitive or regulated data",
+        "Contractual clarity on incident response and ongoing support",
+        "Secure decommissioning and data sanitisation requirements written into the contract",
+        "State NSW Government platform compatibility in the tender specification"
+      ],
+      "watch_outs": [
+        "These checks apply regardless of cost - a cheap subscription can carry the same data risk as a large system"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "buy.nsw",
+          "url": "https://buy.nsw.gov.au/"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.procurement-policy-content",
+      "path": "councils/olg-guidelines/procurement-policy-content",
+      "heading": "What a council procurement policy should contain",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Thirteen things the Guidelines say a council's procurement policies and procedures should do - and the requirement to publish them.",
+      "text": "Councils should require a well-considered and documented procurement strategy to be approved before starting any procurement, addressing the need, the process, risk analysis, the sourcing approach, evaluation criteria, panel members and methodology, contract management planning, transition, resourcing, and whole-of-lifecycle factors. Supporting that, councils are encouraged to develop and maintain fit-for-purpose policies and internal procedures. Those policies and procedures should: reflect and align with the Act, the Regulation, these Guidelines and any other relevant legislation and policies; reflect the council's own requirements, Community Strategic Plan and strategic priorities; reflect the Integrated Planning and Reporting framework and community expectations; reflect and promote the principles of best-practice procurement; reflect a best-practice framework, at a minimum the plan, source, manage approach; express the council's commitment to address modern slavery risks through a public statement of policy approved by its senior governing body; identify how the council may drive public value through promotion of local business, social enterprises and Aboriginal businesses; identify the council's policy on social, environmental and economic procurement; identify how procurement activities will be conducted, communicated, reported, monitored and reviewed; identify documentation, information and record management requirements including retention, security and confidentiality; identify control of associated risk, including containment strategies and contingency planning; set out what constitutes a breach and the actions to be taken, with systems to avoid breaches and mechanisms to report them; and identify the delegations and associated financial thresholds for procurement. These should be routinely updated to reflect changing legislation and requirements, which allows procedures to improve without amending the policy every time. Councils' policies should also be published on their website, which informs suppliers and the public, increases confidence and trust, and improves the relationship with suppliers and residents.",
+      "keywords": [
+        "procurement policy",
+        "what should our policy contain",
+        "policy content",
+        "write a procurement policy",
+        "review our policy",
+        "publish the policy",
+        "procedures",
+        "policy checklist",
+        "breach",
+        "what is a breach",
+        "delegations in policy",
+        "csp",
+        "integrated planning and reporting"
+      ],
+      "checklist": [
+        "Align with the Act, the Regulation, these Guidelines and other relevant law",
+        "Reflect your council's own requirements, CSP and strategic priorities",
+        "Reflect the Integrated Planning and Reporting framework and community expectations",
+        "Promote the five best-practice principles",
+        "Use at least the plan, source, manage framework",
+        "Include a public modern slavery statement approved by the senior governing body",
+        "Say how the council drives public value through local business, social enterprises and Aboriginal businesses",
+        "State the policy on social, environmental and economic procurement",
+        "Say how procurement will be conducted, communicated, reported, monitored and reviewed",
+        "Set record management requirements: retention, security and confidentiality",
+        "Set risk controls, containment strategies and contingency planning",
+        "Define what constitutes a breach, the action to take, and how to report it",
+        "Identify the delegations and their financial thresholds",
+        "Publish the policy on the council website"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.local-preference",
+      "path": "councils/olg-guidelines/local-preference",
+      "heading": "Local preference policies, and the tension they create",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Councils may prefer local suppliers, but must define what local means, acknowledge the conflict with whole-of-life value for money, and state how they balance the two.",
+      "text": "Procurement policies can reflect a council's local circumstances, such as an objective to support local small to medium enterprises and regional businesses, Aboriginal and Torres Strait Islander businesses, Australian made or developed goods or services, local innovation, Australian Disability Enterprises, social enterprises, or other economic and environmental development goals. Many councils see local businesses as integral to their communities and want public money spent within the communities they serve. But value for money and fair and open competition must still be upheld as part of a transparent and probity-rich process. The hardest part is definitional. Local has traditionally been defined by business location or employment opportunities, but even a locally based business may not keep the economic benefit in the area, because of ownership, where employees or the head office reside, or where the goods are sourced. Councils could use the local regions or communities defined in their Community Strategic Plan to provide a hierarchy for what local means. Councils should also be mindful of contractual arrangements that place onerous financial burdens on smaller or local suppliers and restrict them from tendering - contracts requiring the purchase of machinery or other upfront costs over a short timeframe can discourage local suppliers or put them at a disadvantage. To manage the tension, councils should clearly define what local means in their context, acknowledge the potential conflict between local support and life-cycle value for money, and explicitly state how they will balance these priorities in their procurement policies.",
+      "keywords": [
+        "local preference",
+        "local supplier policy",
+        "buy local",
+        "support local business",
+        "what is a local supplier",
+        "define local",
+        "local content",
+        "local price preference",
+        "weighting for local suppliers",
+        "define a local supplier"
+      ],
+      "checklist": [
+        "Define what local means for your council, ideally using the regions or communities in your CSP",
+        "Acknowledge in the policy that local preference can conflict with whole-of-life value for money",
+        "State explicitly how the council balances the two",
+        "Check your contract terms do not impose upfront costs that shut smaller local suppliers out",
+        "Keep fair and open competition intact - a local preference is not a reason to narrow the field improperly"
+      ],
+      "watch_outs": [
+        "A locally based business does not guarantee local economic benefit - ownership, head office and supply sources all matter",
+        "Onerous upfront contract requirements can exclude the local suppliers a preference policy was meant to help"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.social-and-sustainable",
+      "path": "councils/olg-guidelines/social-and-sustainable-suppliers",
+      "heading": "Social enterprises, Aboriginal businesses and ADEs for councils",
+      "audiences": [
+        "council",
+        "nfp",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "For councils, an Aboriginal business is majority (51%) Aboriginal owned - a different figure from the NSW Government policy - and no open tender is required to buy from an approved disability employment organisation.",
+      "text": "Councils are encouraged, though not required, to support positive social, environmental and economic outcomes in their procurements where supplier options are available. Social enterprises are businesses that trade with the goal of achieving social and environmental outcomes benefiting the public, community and environment while addressing societal problems; they may benefit disadvantaged Australians through training and employment, community and social services, or ethical products, with a significant portion of profits reinvested into social causes. On Aboriginal businesses, note the figure carefully: the Guidelines state that the NSW Government identifies an Aboriginal business as one that is majority Aboriginal ownership (51%) and is recognised through an appropriate organisation such as Supply Nation, BuyNSW, the NSW Indigenous Chamber of Commerce, or the Office of the Registrar of Indigenous Corporations. This differs from the 50 per cent figure used in the NSW Government's Aboriginal Procurement Policy that applies to state agencies, so a council should work to the figure in the guidance it is actually bound to consider, and check the current text of both before relying on either. Councils are encouraged to identify Aboriginal businesses within their local areas, may adapt the NSW Government's Aboriginal Procurement Policy to promote opportunities and economic participation while progressing Close the Gap, or may engage Aboriginal businesses through Local Government Procurement's First Nations Procurement Scheme. Australian Disability Enterprises are not-for-profits employing people living with a disability, operating across hospitality, retail, manufacturing, recycling and horticulture. Importantly, an open tender process is not required when procuring from a person or body approved as a disability employment organisation under the Public Works and Procurement Act 1912, under section 55(3)(q) of the Act. On environmental credentials, relevant organisations may hold environmental ISO or AS standards, meet Australian National Packaging Standards and targets, operate circular economies or product impact reporting schemes, hold energy efficiency ratings or decarbonisation and Net Zero commitments, or protect biodiversity and habitat; councils are pointed to the 10Rs framework of a circular economy for extending product lifecycles.",
+      "keywords": [
+        "social enterprise council",
+        "aboriginal business council",
+        "51 per cent",
+        "majority aboriginal ownership",
+        "supply nation",
+        "nswicc",
+        "oric",
+        "buynsw",
+        "first nations procurement scheme",
+        "australian disability enterprise",
+        "ade",
+        "disability employment organisation",
+        "55(3)(q)",
+        "no tender required",
+        "circular economy",
+        "10rs",
+        "environmental credentials",
+        "net zero",
+        "close the gap",
+        "percentage aboriginal ownership",
+        "what percentage",
+        "aboriginal ownership threshold",
+        "how much aboriginal ownership",
+        "ownership percentage",
+        "indigenous ownership"
+      ],
+      "checklist": [
+        "Check recognition through Supply Nation, BuyNSW, the NSW Indigenous Chamber of Commerce or ORIC",
+        "Use the ownership figure in the guidance that binds you - 51% in the OLG Guidelines for councils, 50% in the NSW Government policy for agencies",
+        "Consider Local Government Procurement's First Nations Procurement Scheme as a route",
+        "Remember no open tender is needed for an approved disability employment organisation (s 55(3)(q))",
+        "Look for environmental credentials: ISO or AS standards, packaging targets, circular economy schemes, energy ratings, biodiversity protection"
+      ],
+      "watch_outs": [
+        "The Aboriginal ownership threshold differs between the OLG Guidelines (51%) and the NSW Government Aboriginal Procurement Policy (50%) - check the current text of the one that applies to you"
+      ],
+      "thresholds": [
+        "thr-aboriginal-250k"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "Aboriginal Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/aboriginal-procurement-policy"
+        },
+        {
+          "label": "Supply Nation",
+          "url": "https://supplynation.org.au/"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.modern-slavery-councils",
+      "path": "councils/olg-guidelines/modern-slavery",
+      "heading": "Modern slavery: reasonable steps, model clauses and annual reporting",
+      "audiences": [
+        "council",
+        "corporate",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "Councils must take reasonable steps at every phase, use the Anti-slavery Commissioner's model tender and contract clauses, remediate any instances found, and report annually under s 428(4).",
+      "text": "Section 438ZE of the Local Government Act requires councils to take reasonable steps to ensure that goods, materials and services procured by and for the council are not the product of modern slavery within the meaning of the Modern Slavery Act 2018. The Guidelines are specific about what that involves: councils must undertake supplier due diligence throughout the procurement process to identify and manage modern slavery risks, and must remediate any instances of modern slavery. The steps should be taken at each phase of the plan, source, manage lifecycle and might include early market engagement to understand how best to integrate modern slavery risk into the sourcing process; incorporating modern slavery management criteria into prequalification schemes; including the NSW Anti-slavery Commissioner's Model Tender Clauses in tender processes; tailored due diligence to identify the residual risks associated with specific suppliers; and incorporating the Commissioner's Model Contract Clauses in supplier agreements. On reporting, the Act requires a council to publish in its annual report a statement of the action taken in relation to any issue raised by the Anti-slavery Commissioner during the year concerning the council's operations and identified as a significant issue, under section 428(4)(c), and of the steps taken to ensure goods, materials and services procured by and for the council during the year were not the product of modern slavery, under section 428(4)(d). Councils must also submit this information to the Office of the Anti-slavery Commissioner via the online form on its website. The council's procurement policy should express its commitment to addressing modern slavery risks through a public statement of policy approved by its senior governing body.",
+      "keywords": [
+        "modern slavery council",
+        "reasonable steps",
+        "438ze",
+        "428(4)",
+        "annual report modern slavery",
+        "model tender clauses",
+        "model contract clauses",
+        "anti-slavery commissioner",
+        "oasc",
+        "remediation",
+        "modern slavery due diligence",
+        "supply chain",
+        "report modern slavery"
+      ],
+      "checklist": [
+        "Build modern slavery risk into early market engagement, not just the contract",
+        "Put modern slavery management criteria into any prequalification scheme you run",
+        "Use the Anti-slavery Commissioner's Model Tender Clauses in tender processes",
+        "Use the Model Contract Clauses in supplier agreements",
+        "Run tailored due diligence for residual risk on specific suppliers",
+        "Remediate any instance of modern slavery you find - identification alone is not compliance",
+        "Publish the s 428(4)(c) and (d) statements in the annual report",
+        "Submit the information to the Office of the Anti-slavery Commissioner via its online form",
+        "Have a public modern slavery policy statement approved by the senior governing body"
+      ],
+      "thresholds": [
+        "thr-modern-slavery-council-150k"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "Guidance on Reasonable Steps",
+          "url": "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf"
+        },
+        {
+          "label": "Modern Slavery Act 2018",
+          "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2018-030"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.internal-governance",
+      "path": "councils/olg-guidelines/internal-governance",
+      "heading": "Code of conduct, conflicts of interest and the register of interests",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Pecuniary and non-pecuniary conflicts defined, ICAC's four recommendations, and a register of all disclosed conflicts across procurement activities.",
+      "text": "Council staff involved in procurement must comply with the same ethical and behavioural standards as other council officials, including the council's adopted code of conduct. Concerns about breaches by staff must be reported to the general manager, or in the case of breaches by the general manager, to the mayor, as required by the Procedures for the Administration of the Model Code of Conduct. Conflicts of interest can arise at any phase and are either pecuniary or non-pecuniary. A person has a pecuniary conflict where they stand to gain or lose financially from a decision on the matter. They have a non-pecuniary conflict where a reasonable and informed person would perceive they could be influenced by a private interest in carrying out their duties. Council officials and third parties acting on behalf of councils, including suppliers engaged during the procurement process, must ensure they have no real or perceived bias or conflicts that could influence how they exercise their functions. If a conflict is identified it must be promptly declared, assessed and addressed, and if necessary alternative working arrangements or other actions should be implemented to resolve it in favour of the public interest. ICAC recommends councils implement a conflicts of interest policy; identify, disclose and manage all conflicts, which may involve a council-prepared conflict of interest management plan; encourage officials to report any conflict they believe on reasonable grounds to be undisclosed, inadequately or wrongly disclosed, or inadequately managed; and oblige suppliers and tenderers to disclose in writing any actual or potential conflicts, including relationships or interests with council staff, other tenderers and associated entities. The Model Code of Conduct prescribes mandatory requirements for disclosing and managing both kinds of conflict. Councils should keep a register of all conflicts of interest disclosed by staff and by representatives of contracted entities for all procurement activities, which helps ensure conflicts are declared and managed as they arise and assists in managing conflicts in any subsequent procurement with that supplier. Section 8B of the Act requires sound financial management, and councils must implement and regularly review financial controls and budgetary processes for procurement.",
+      "keywords": [
+        "code of conduct",
+        "conflicts of interest council",
+        "pecuniary",
+        "non-pecuniary",
+        "register of interests",
+        "conflict register",
+        "declare a conflict",
+        "report a breach",
+        "general manager",
+        "mayor",
+        "model code of conduct",
+        "suppliers must disclose",
+        "8b",
+        "financial controls",
+        "sound financial management"
+      ],
+      "checklist": [
+        "Apply the council's adopted code of conduct to everyone involved in procurement",
+        "Report code of conduct breaches to the general manager, or to the mayor if the breach is by the general manager",
+        "Test for both pecuniary and non-pecuniary conflicts, using the reasonable and informed person test",
+        "Declare, assess and address any conflict promptly, changing working arrangements if needed",
+        "Require suppliers and tenderers to disclose conflicts in writing, including relationships with staff and other tenderers",
+        "Keep a register of all disclosed conflicts across procurement activities",
+        "Review financial controls and budgetary processes for procurement regularly (s 8B)"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "ICAC - Managing conflicts of interest in the NSW public sector",
+          "url": "https://www.icac.nsw.gov.au/ArticleDocuments/232/Managing-conflicts-of-interest-in-the-nsw-public-sector_June-2019.pdf.aspx"
+        },
+        {
+          "label": "Model Code of Conduct for Local Councils in NSW",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.staff-and-training",
+      "path": "councils/olg-guidelines/staff-and-training",
+      "heading": "Procurement resourcing, specialist teams and training",
+      "audiences": [
+        "council"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Seven questions for reviewing whether procurement resourcing is adequate, and the training topics councils should audit staff against.",
+      "text": "Procurement staff duties vary with the size of the council, the staff available and the complexity and number of procurement activities, but all staff undertaking procurement play a crucial role in ensuring value for money and meeting the council's needs. Councils should regularly review whether procurement resources are adequate and appropriate, considering: the requirements for achieving the council's goals in its Community Strategic Plan and Operational Plan; who the go-to person or team for procurement support is; what their primary responsibilities are, which may include procedural advice, researching suppliers and options, drafting documentation, tendering, executing purchase agreements, and ensuring products meet standards and comply with legislation; whether that person or team has the right knowledge and skills or needs additional training, and whether training can be coordinated with other councils or done online to reduce cost; whether a specialist person or team is essential and appropriate for the council's size and needs; which service model - decentralised, centre-led or centralised - best suits the council; and whether external expertise is needed. A specialist team can reduce costs, streamline processes and improve outcomes, and improves efficiency by understanding council spending and consolidating purchasing, building relationships with internal groups such as finance, project management, marketing, design and engineering, with other councils and joint organisations, and with suppliers, and by identifying opportunities such as joint procurement with other councils to maximise purchasing power. Where a council lacks in-house expertise it may engage external professionals, but must ensure systems protect confidentiality, provide adequate oversight of their work and approvals, and mitigate risks - and that engagement is itself subject to the Act and Regulation depending on cost and risk. Councils should audit staff to assess the knowledge and skills mix across the procurement lifecycle and train to close gaps.",
+      "keywords": [
+        "procurement staff",
+        "resourcing",
+        "specialist team",
+        "training",
+        "skills audit",
+        "centralised",
+        "decentralised",
+        "centre-led",
+        "joint procurement",
+        "external expertise",
+        "consultants",
+        "capability",
+        "do we have the right skills",
+        "procurement team structure"
+      ],
+      "checklist": [
+        "Review resourcing against the CSP and Operational Plan requirements",
+        "Identify the go-to person or team and what they are actually responsible for",
+        "Audit the knowledge and skills mix across the whole procurement lifecycle",
+        "Consider whether a specialist team suits the council's size and complexity",
+        "Choose a service model deliberately: decentralised, centre-led or centralised",
+        "Look for joint procurement opportunities with other councils and joint organisations",
+        "Where external expertise is engaged, put confidentiality, oversight and risk controls in place",
+        "Train against the gaps: legislation, negotiation, contract law, contract management, cost management, supplier relationship management, specification writing, risk, modern slavery, probity and governance"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.audit-and-risk",
+      "path": "councils/olg-guidelines/audit-and-risk",
+      "heading": "Audit, risk framework and reporting corrupt conduct",
+      "audiences": [
+        "council",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "Every council must have an Audit, Risk and Improvement Committee; risk management must be proportionate, with the policy setting the trigger for a full risk plan.",
+      "text": "All councils are required to appoint an Audit, Risk and Improvement Committee, which must review aspects of the council's operations including compliance, risk management, fraud and corruption control, financial management and governance. Including an audit of the council's procurement practices in the internal audit work plan, linked to strategic objectives, helps identify and mitigate current and emerging risks. Councils with larger procurement budgets, diverse or complex arrangements and higher risks may need more frequent general reviews of procurement policies and processes in addition to an audit; this may not be necessary for smaller councils with lower risk profiles. On risk generally, all procurement carries some level of risk, including heightened risk of fraud and corruption at any phase and throughout the contract's duration, and modern slavery risk must be managed before entering and during the life of the contract. Councils should develop a risk management framework, and may refer to ISO 31000:2018 Risk Management - Guidelines for general guidance. Risk management practices should be proportionate to value and risk level: a simple mechanism may suffice for low value, low risk procurement, while high value and high-risk procurement needs a more structured plan including consideration of probity. A council's procurement policy should establish the trigger point for when a more complex risk management plan is necessary. On corrupt conduct, council staff involved in procurement must remain vigilant for behaviour that may indicate corrupt conduct as defined in the Independent Commission Against Corruption Act 1988. Councils must ensure staff are aware that suspected corrupt conduct can be reported directly to the ICAC, and that suppliers understand how to report concerns - whether to the ICAC, a designated council officer, or through the council's public interest disclosures policy - which could be addressed through a statement of business ethics for suppliers.",
+      "keywords": [
+        "audit risk and improvement committee",
+        "aric",
+        "internal audit",
+        "risk framework",
+        "iso 31000",
+        "risk management plan",
+        "proportionate risk",
+        "trigger point",
+        "report corrupt conduct council",
+        "statement of business ethics",
+        "supplier reporting",
+        "fraud and corruption control",
+        "pid policy"
+      ],
+      "checklist": [
+        "Put procurement into the internal audit work plan, linked to strategic objectives",
+        "Build a risk management framework - ISO 31000:2018 is the reference the Guidelines name",
+        "Scale risk treatment to value and risk: simple for low, structured plus probity for high",
+        "Set the trigger point in the procurement policy for when a full risk plan is required",
+        "Make sure staff know they can report suspected corrupt conduct directly to the ICAC",
+        "Tell suppliers how to raise concerns - a statement of business ethics is the Guidelines' suggestion",
+        "Manage modern slavery risk before entering the contract and throughout its life"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "Report corruption to the ICAC",
+          "url": "https://www.icac.nsw.gov.au/reporting/report-corruption"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
+    },
+    {
+      "id": "olg.plan-source-manage",
+      "path": "councils/olg-guidelines/plan-source-manage",
+      "heading": "Plan, source, manage for councils: what each phase involves",
+      "audiences": [
+        "council",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "guidance",
+      "summary": "The council version of the three-phase lifecycle, with the specific activities and artefacts the Guidelines name for each.",
+      "text": "The plan, source, manage approach describes the lifecycle phases of most typical procurements. Every phase matters, but councils need not spend the same time and resources on each, and should assess based on the size of the activity, the level of risk and complexity, and their own situation and needs. Risk management strategies should be in place at each phase, and a whole-of-life risk-based approach should be taken to supplier and product due diligence, with the Guidelines pointing councils to ICAC's guidance on supplier due diligence. Methodologies and decisions throughout the lifecycle should be documented and filed under the State Records Act and the council's recordkeeping policy, to ensure transparency and accountability and to demonstrate defensible processes and decision-making. Plan involves a needs analysis such as a master plan, project plan or business case; determining availability of funds through budgetary requests, grants and approvals; developing procurement documents that clearly articulate requirements and terms, such as the scope, specification and statement of requirements; identifying risk and management measures through a risk assessment with controls and treatments; understanding community and other stakeholder needs and expectations, including outcomes of community engagement, council resolutions or stakeholder consultation; market analysis and early industry engagement to test appetite to supply, capacity, capability, factors influencing supply and innovation, through requests for information or expressions of interest; and formalising the procurement strategy through a procurement plan, communications plan, evaluation plan and finalised RFT or RFQ and contract documents. Source involves approaching the market by advertising requests with conditions of participation; selecting suppliers that pass due diligence checks, address selection and evaluation criteria and best demonstrate value for money through a scoring methodology; clarifying terms, recommending and awarding a contract via selection or recommendation reports for delegated approvers; debriefing unsuccessful proponents through post-tender review or feedback meetings; and contract disclosure in compliance with legislation, by displaying awarded contract details on the contracts register. Manage involves buyer and supplier documenting agreed systems, processes, risks and responsibilities in a contract management plan; ensuring a smooth transition of services, such as a transition plan for a new supplier; ensuring governance and management of contractual obligations, including milestone-based billing and management and approval of variations; tracking supplier performance and delivery against the contract management plan and terms; considering strategy for any renewal, extension or variation; and reviewing processes, outcomes, documentation, records and supplier performance to inform future procurements, through a post contract review report.",
+      "keywords": [
+        "plan source manage council",
+        "lifecycle",
+        "phases",
+        "needs analysis",
+        "business case",
+        "statement of requirements",
+        "early industry engagement",
+        "transition plan",
+        "contract management plan",
+        "post contract review",
+        "milestone billing",
+        "scoring methodology",
+        "what happens at each stage",
+        "procurement process for councils"
+      ],
+      "checklist": [
+        "Plan: needs analysis, funding, requirements documents, risk assessment, stakeholder and community input, market analysis, documented strategy",
+        "Source: approach the market with conditions of participation, run due diligence and scored evaluation, recommend and award, debrief unsuccessful proponents, disclose the contract",
+        "Manage: contract management plan, transition plan, variation and billing governance, performance tracking, renewal strategy, post contract review",
+        "Scale the effort at each phase to size, risk and complexity",
+        "Keep risk strategies and supplier due diligence running across all three phases",
+        "File methodologies and decisions under the State Records Act and your recordkeeping policy"
+      ],
+      "citations": [
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        },
+        {
+          "label": "ICAC Supplier Due Diligence guide",
+          "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies"
+        }
+      ],
+      "topic_id": "olg-guidelines",
+      "topic_title": "OLG Procurement Guidelines for NSW Local Government",
+      "topic_path": "councils/olg-guidelines",
+      "stage": "all",
+      "source_document": "Procurement Guidelines for NSW Local Government (OLG, July 2026).pdf"
     },
     {
       "id": "suppliers.getting-registered",
@@ -4771,12 +5974,14 @@
     "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/",
     "https://arp.nsw.gov.au/pbd-2023-04-mandated-registration-of-all-nsw-government-suppliers-on-the-buy-nsw-supplier-hub",
     "https://arp.nsw.gov.au/pbd-2024-02-increasing-opportunities-for-local-suppliers-to-supply-to-government/",
+    "https://buy.nsw.gov.au/",
     "https://buy.nsw.gov.au/buyer-guidance",
     "https://buy.nsw.gov.au/buyer-guidance/get-started/accreditation",
     "https://buy.nsw.gov.au/buyer-guidance/manage/complaints",
     "https://buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/multi-agency-contracts",
     "https://buy.nsw.gov.au/help/getting-started",
     "https://buy.nsw.gov.au/schemes",
+    "https://buy.nsw.gov.au/schemes/performance-and-management-services-scheme",
     "https://buy.nsw.gov.au/suppliers",
     "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf",
     "https://info.buy.nsw.gov.au/__data/assets/word_doc/0007/717235/addendum_to_rfx.docx",
@@ -4800,12 +6005,14 @@
     "https://legislation.nsw.gov.au/",
     "https://legislation.nsw.gov.au/view/html/inforce/current/act-1912-045",
     "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030",
+    "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.377",
     "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55",
     "https://legislation.nsw.gov.au/view/html/inforce/current/act-2009-052",
     "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460",
     "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2018-030",
     "https://lgp.org.au/approved-contractors/",
     "https://lgp.org.au/legislation/",
+    "https://supplynation.org.au/",
     "https://tenders.nsw.gov.au/",
     "https://www.audit.nsw.gov.au/our-work/reports/domestic-waste-management-in-campbelltown-city-council-and-fairfield-city-council",
     "https://www.epa.nsw.gov.au/Your-environment/Waste/local-council-operations/resources-for-local-councils",
@@ -4840,7 +6047,9 @@
     "https://www.nsw.gov.au/unsolicited-proposals",
     "https://www.olg.nsw.gov.au/council-circulars/22-40-amendments-to-the-tendering-provisions-of-the-local-government-general-regulation-2021-and-consultation-of-the-development-of-new-procurement-guidelines-for-councils/",
     "https://www.olg.nsw.gov.au/council-circulars/23-17-update-on-councils-obligations-under-the-modern-slavery-act-2018-nsw/",
+    "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/",
     "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government",
+    "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf",
     "https://www.ombo.nsw.gov.au/what-we-do/our-work/public-interest-disclosures",
     "https://www.psc.nsw.gov.au/culture-and-inclusion/ethics-hub/behaving-ethically",
     "https://www.service.nsw.gov.au/transaction/register-as-a-supplier-on-buynsw",

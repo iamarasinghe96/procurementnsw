@@ -24,9 +24,13 @@
       {
         "label": "ICAC NSW corruption prevention publications",
         "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications"
+      },
+      {
+        "label": "OLG Procurement Guidelines for NSW Local Government (July 2026)",
+        "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
       }
     ],
-    "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base."
+    "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base. Council content is additionally drawn from the Office of Local Government's Procurement Guidelines for NSW Local Government (July 2026), included in source-documents/."
   },
   "audiences": [
     {
@@ -194,7 +198,7 @@
         "corporate",
         "public"
       ],
-      "rule": "Under the Government Information (Public Access) Act 2009 you must publicly disclose contracts valued at $150,000 (inc GST) or more. Agencies disclose on NSW eTendering within 45 working days of the contract taking effect, and the entry stays listed for at least 20 days or until the contract is complete, whichever is longer. Councils maintain a public contracts register under section 27 of the GIPA Act on the same $150,000 (inc GST) trigger, published within 45 days and kept available for 20 working days or until contract obligations are satisfied, whichever is longer.",
+      "rule": "Under the Government Information (Public Access) Act 2009 you must publicly disclose contracts valued at $150,000 (inc GST) or more. Agencies disclose on NSW eTendering within 45 working days of the contract taking effect, and the entry stays listed for at least 20 days or until the contract is complete, whichever is longer. Councils maintain a public contracts register under section 27 of the GIPA Act on the same $150,000 (inc GST) trigger, entered in the register within 45 working days of the contract becoming effective and kept available for 20 working days or until contract obligations are satisfied, whichever is longer.",
       "citations": [
         {
           "label": "Government Information (Public Access) Act 2009",
@@ -237,7 +241,7 @@
         "corporate",
         "public"
       ],
-      "rule": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3)(n) exempts contracts involving estimated expenditure or receipt of less than $250,000. The threshold was raised from $100,000 to $250,000 by the Local Government Amendment Act 2019. Note this is a council rule and is entirely separate from the NSW Procurement Board thresholds that apply to state agencies.",
+      "rule": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3)(n) exempts contracts involving estimated expenditure or receipt of less than $250,000. The OLG Procurement Guidelines confirm this threshold is INCLUSIVE of GST and applies to the total estimated contract value, which expressly includes cumulative expenditure with a supplier for similar goods and services. Councils must not invoice split or order split to avoid tendering, as that would be contrary to the Act. Procurements under the threshold are exempt from the legislated tendering requirements only - the principles in the Guidelines still apply at any value. This is a council rule and is entirely separate from the NSW Procurement Board thresholds that apply to state agencies.",
       "citations": [
         {
           "label": "Local Government Act 1993 s 55",
@@ -246,6 +250,10 @@
         {
           "label": "OLG - Procurement in Local Government",
           "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
         }
       ]
     },
@@ -627,14 +635,14 @@
       "source": "NSW Anti-slavery Commissioner"
     },
     {
-      "id": "tpl-olg-tendering-guidelines",
-      "name": "Tendering Guidelines for NSW Local Government",
+      "id": "tpl-olg-procurement-guidelines",
+      "name": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
       "stage": "all",
       "audiences": [
         "council"
       ],
-      "description": "Adopted under section 23A of the Local Government Act 1993, so councils must take them into consideration when exercising tendering functions. OLG has been developing replacement Procurement Guidelines - check the OLG site for the current version before relying on the 2009 document.",
-      "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government",
+      "description": "The Office of Local Government's procurement guidance for councils. Sections 1 and 2 cover the legislative context, the five best-practice principles, and procurement governance. Councils must consider these Guidelines when setting their own policy and procedures.",
+      "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf",
       "source": "Office of Local Government"
     },
     {
@@ -717,6 +725,57 @@
       "description": "LGP is prescribed under section 55 of the Local Government Act 1993, so a council can buy from an LGP-established contract above $250,000 without running its own tender.",
       "url": "https://lgp.org.au/approved-contractors/",
       "source": "Local Government Procurement"
+    },
+    {
+      "id": "tpl-model-code-of-conduct",
+      "name": "Model Code of Conduct for Local Councils in NSW",
+      "stage": "all",
+      "audiences": [
+        "council"
+      ],
+      "description": "Council procurement probity is evidenced through procedures that comply with the Model Code of Conduct. It prescribes mandatory requirements for disclosing and managing pecuniary and non-pecuniary conflicts of interest.",
+      "url": "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/",
+      "source": "Office of Local Government"
+    },
+    {
+      "id": "tpl-lg-regulation",
+      "name": "Local Government (General) Regulation 2021",
+      "stage": "source",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "description": "Part 7 sets the tendering procedure for councils: methods, advertising, the 21-day minimum, amendments, extensions, variations, evaluation and notification.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-lg-act",
+      "name": "Local Government Act 1993",
+      "stage": "all",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "description": "Sections 55 and 55A set the tendering requirements and exemptions; s 377(1)(i) reserves outsourcing tender decisions to the council; s 438ZE carries the modern slavery duty.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-supply-nation",
+      "name": "Supply Nation",
+      "stage": "plan",
+      "audiences": [
+        "council",
+        "agency",
+        "nfp",
+        "supplier"
+      ],
+      "description": "One of the organisations that verifies Aboriginal business ownership for procurement purposes, alongside BuyNSW, the NSW Indigenous Chamber of Commerce and ORIC.",
+      "url": "https://supplynation.org.au/",
+      "source": "Supply Nation"
     }
   ],
   "glossary": [

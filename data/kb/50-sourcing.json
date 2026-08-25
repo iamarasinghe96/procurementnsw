@@ -139,7 +139,12 @@
         "protocols",
         "weightings",
         "evaluation team",
-        "before opening responses"
+        "before opening responses",
+        "evaluation templates",
+        "templates for evaluation",
+        "what templates for a tender evaluation",
+        "run a tender evaluation",
+        "evaluation documents"
       ],
       "watch_outs": [
         "Writing or changing the evaluation plan after responses are opened is a serious probity breach"

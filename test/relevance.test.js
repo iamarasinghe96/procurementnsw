@@ -62,10 +62,14 @@ test('real procurement questions are answerable from sources', () => {
 
 test('a chunk that is ABOUT the question beats one that merely mentions it', () => {
   // councils.lgp-panels uses the phrase "value for money" twice in prose and
-  // gets a council jurisdiction boost; objectives.value-for-money has it in the
-  // heading and keywords. The latter must win, for a council and an agency.
-  assert.equal(top('what is value for money', 'council'), 'objectives.value-for-money');
+  // gets a council jurisdiction boost, so it used to win. It must not.
+  for (const audience of ['council', 'agency']) {
+    assert.notEqual(top('what is value for money', audience), 'councils.lgp-panels');
+  }
+  // An agency gets the Framework definition; a council gets the OLG guidance it
+  // is bound to consider. Same question, different binding source.
   assert.equal(top('what is value for money', 'agency'), 'objectives.value-for-money');
+  assert.equal(top('what is value for money', 'council'), 'olg.value-for-money-factors');
 });
 
 test('a figure in the question does not count against understanding it', () => {

@@ -28,7 +28,7 @@
       "jurisdiction": "local-government",
       "authority": "legislation",
       "summary": "If you work for a council, NSW Procurement Board Directions, agency accreditation and whole-of-government contract mandates generally do not apply to you.",
-      "text": "This is the single most important thing to get right. NSW local councils are not NSW Government agencies for procurement purposes. A council's procurement activities are carried out under sections 55 and 55A of the Local Government Act 1993 and Part 7 of the Local Government (General) Regulation 2021, together with guidelines adopted by the Office of Local Government under section 23A of the Act, which councils must take into consideration when exercising their tendering functions. NSW Procurement Board Directions, the agency accreditation scheme, the mandate to use whole-of-government contracts, and the enforceable procurement provisions in PBD-2019-05 are directed at NSW Government agencies, not councils. The Public Works and Procurement Regulation 2019 does deal with procurement by public bodies that are not NSW Government agencies, including councils, and councils may in some circumstances access NSW Government arrangements - but the governing obligations for a council come from the Local Government Act, not the Procurement Policy Framework. In practice councils commonly adopt the same good-practice methods that state agencies use - plan, source, manage; value for money; probity principles; evaluation plans and conduct plans - and several obligations genuinely do apply across both, notably the GIPA Act contract disclosure rules, the State Records Act, the ICAC Act, and the Modern Slavery Act. Your council will also have its own adopted procurement policy, which is the document that binds you day to day.",
+      "text": "This is the single most important thing to get right. NSW local councils are not NSW Government agencies for procurement purposes. A council's procurement activities are carried out under sections 55 and 55A of the Local Government Act 1993 and Part 7 of the Local Government (General) Regulation 2021, together with the Office of Local Government's Procurement Guidelines for NSW Local Government, published July 2026, which councils must consider when setting their own procurement policy and procedures. NSW Procurement Board Directions, the agency accreditation scheme, the mandate to use whole-of-government contracts, and the enforceable procurement provisions in PBD-2019-05 are directed at NSW Government agencies, not councils. The Public Works and Procurement Regulation 2019 does deal with procurement by public bodies that are not NSW Government agencies, including councils, and councils may in some circumstances access NSW Government arrangements - but the governing obligations for a council come from the Local Government Act, not the Procurement Policy Framework. In practice councils commonly adopt the same good-practice methods that state agencies use - plan, source, manage; value for money; probity principles; evaluation plans and conduct plans - and several obligations genuinely do apply across both, notably the GIPA Act contract disclosure rules, the State Records Act, the ICAC Act, and the Modern Slavery Act. Your council will also have its own adopted procurement policy, which is the document that binds you day to day.",
       "keywords": [
         "council",
         "local government",
@@ -51,7 +51,7 @@
         "thr-council-tender-250k"
       ],
       "templates": [
-        "tpl-olg-tendering-guidelines"
+        "tpl-olg-procurement-guidelines"
       ],
       "citations": [
         {
@@ -65,6 +65,10 @@
         {
           "label": "Local Government (General) Regulation 2021",
           "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
         }
       ]
     },
@@ -149,7 +153,11 @@
         "licence",
         "no tender",
         "avoid tender",
-        "disaster recovery"
+        "disaster recovery",
+        "55(3)(g)",
+        "55(3)(q)",
+        "performance and management services scheme",
+        "disability employment organisation"
       ],
       "checklist": [
         "Identify the specific paragraph of section 55(3) you are relying on, by letter",

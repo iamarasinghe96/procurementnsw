@@ -87,7 +87,7 @@ node scripts/evaluate.mjs --verbose  # every case
 node scripts/evaluate.mjs --tune     # sweep the gate threshold
 ```
 
-71 cases: real questions across every topic and audience, phrased the way people
+85 cases: real questions across every topic and audience, phrased the way people
 actually type them — long, messy, full of commodity nouns the knowledge base has
 never heard of — plus off-topic negatives that must be turned away. It runs as
 part of `npm test`, so a scoring change that helps one query and quietly breaks
@@ -248,10 +248,28 @@ data/kb/80-corruption.json    ┘
 data/kb/90-councils.json      ┐
 data/kb/95-suppliers.json     ├─ researched additions filling gaps
 data/kb/97-due-diligence.json ┘  the course does not cover
+data/kb/91-olg-guidelines.json   from the OLG Procurement Guidelines
+                                 for NSW Local Government (July 2026)
 ```
 
-**73 sections across 11 topics**, plus 15 thresholds, 24 templates and a 17-term
+**94 sections across 12 topics**, plus 15 thresholds, 28 resources and a 17-term
 glossary.
+
+`91-olg-guidelines.json` carries the Office of Local Government's *Procurement
+Guidelines for NSW Local Government* (July 2026), the sector's current guidance,
+included as a PDF in `source-documents/`. It is the source of most of the
+council checklists — the seven value-for-money factors, the seven aspects of
+probity, the full tender record list with its Regulation section references, the
+thirteen-point procurement policy content list, and the segregation-of-duties
+minimums. It also supplies detail nothing else had: that the $250,000 threshold
+is **inclusive of GST** and counts **cumulative spend with a supplier on similar
+goods**, that order and invoice splitting is contrary to the Act, that outsourcing
+tender decisions cannot be delegated (s 377(1)(i)), and that ICT and AI
+procurement carries mandatory checks *regardless of cost*.
+
+Note the document published is sections 1–2 only; its Source section, Resources
+and Glossary are forward-referenced but not included, and the knowledge base says
+so rather than implying complete coverage.
 
 The three researched files exist because the course is written for NSW
 Government agency buyers. It has nothing on council tendering, nothing on the
