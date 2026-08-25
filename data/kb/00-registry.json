@@ -1,0 +1,929 @@
+{
+  "meta": {
+    "name": "NSW Procurement Navigator knowledge base",
+    "version": "1.0.0",
+    "jurisdiction": "New South Wales, Australia",
+    "disclaimer": "This tool summarises publicly available NSW procurement guidance and NSW Government procurement training material. It is general information, not legal or procurement advice. Always confirm against your own agency or council policy, the current Procurement Policy Framework, and the current legislation before you act.",
+    "primary_sources": [
+      {
+        "label": "NSW Procurement Policy Framework",
+        "url": "https://info.buy.nsw.gov.au/policy-library/policies/procurement-policy-framework"
+      },
+      {
+        "label": "buy.nsw buyer guidance",
+        "url": "https://buy.nsw.gov.au/buyer-guidance"
+      },
+      {
+        "label": "NSW Procurement Board Directions",
+        "url": "https://arp.nsw.gov.au/all-ars/"
+      },
+      {
+        "label": "Office of Local Government - Procurement in Local Government",
+        "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+      },
+      {
+        "label": "ICAC NSW corruption prevention publications",
+        "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications"
+      },
+      {
+        "label": "OLG Procurement Guidelines for NSW Local Government (July 2026)",
+        "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+      }
+    ],
+    "training_source": "Procurement Foundations course, NSW Comperio (buy.nsw training). Eight modules were scraped and converted into the topic chunks in this knowledge base. Council content is additionally drawn from the Office of Local Government's Procurement Guidelines for NSW Local Government (July 2026), included in source-documents/."
+  },
+  "audiences": [
+    {
+      "id": "council",
+      "label": "Local council",
+      "short": "Council staff, procurement officers, business leads, joint organisations",
+      "blurb": "Councils do not sit under the NSW Procurement Board framework. You are governed by the Local Government Act 1993 (ss 55, 55A), the Local Government (General) Regulation 2021 Part 7, and the Office of Local Government guidelines.",
+      "icon": "council",
+      "primary_rulebook": "local-government",
+      "top_questions": [
+        "Do I have to go to tender for this contract?",
+        "How do I manage a kerbside waste collection contract?",
+        "What has to go in our contracts register?",
+        "Can we buy off an LGP panel instead of tendering?",
+        "What do we do if we get no acceptable tenders?"
+      ],
+      "noun": "local council",
+      "plural": "local councils"
+    },
+    {
+      "id": "agency",
+      "label": "NSW Government agency buyer",
+      "short": "Public servants procuring goods and services for a NSW Government agency",
+      "blurb": "You work under the Public Works and Procurement Act 1912, the NSW Procurement Policy Framework, and NSW Procurement Board Directions. Your agency's accreditation level caps what you can procure.",
+      "icon": "agency",
+      "primary_rulebook": "nsw-government",
+      "top_questions": [
+        "Which market approach should I use?",
+        "What is my agency accredited to procure?",
+        "Do I have to use a whole-of-government contract?",
+        "How do I run a compliant tender evaluation?",
+        "When do the enforceable procurement provisions apply?"
+      ],
+      "noun": "NSW Government agency",
+      "plural": "NSW Government agencies"
+    },
+    {
+      "id": "supplier",
+      "label": "Supplier or SME",
+      "short": "Small and medium businesses, sole traders, start-ups, regional suppliers",
+      "blurb": "You want to find, bid for and deliver NSW public sector work. NSW policy actively preferences SMEs, regional, Aboriginal and social enterprise suppliers below certain thresholds.",
+      "icon": "supplier",
+      "primary_rulebook": "supplier",
+      "top_questions": [
+        "How do I register to sell to NSW Government?",
+        "When will I get paid?",
+        "How do I get a debrief after an unsuccessful tender?",
+        "What is a prequalification scheme and how do I join one?",
+        "How do I complain about a procurement process?"
+      ],
+      "noun": "supplier",
+      "plural": "suppliers"
+    },
+    {
+      "id": "corporate",
+      "label": "Corporate or large supplier",
+      "short": "Prime contractors, tier-1 suppliers, multinationals, consortium leads",
+      "blurb": "Above the larger thresholds you take on extra obligations: shorter payment terms to your small business subcontractors, SME participation criteria, modern slavery due diligence and local market testing.",
+      "icon": "corporate",
+      "primary_rulebook": "supplier",
+      "top_questions": [
+        "What are my obligations to small business subcontractors?",
+        "What SME and regional criteria will I be scored against?",
+        "How do the enforceable procurement provisions protect me?",
+        "What modern slavery evidence will I be asked for?",
+        "What happens if my contract is disclosed publicly?"
+      ],
+      "noun": "large supplier",
+      "plural": "large suppliers"
+    },
+    {
+      "id": "nfp",
+      "label": "Not-for-profit, social enterprise or Aboriginal business",
+      "short": "Social enterprises, ADEs, disability employment organisations, Aboriginal-owned businesses",
+      "blurb": "There are direct-engagement pathways that let buyers come to you without a full tender, but you generally need to be recognised by an approved body first.",
+      "icon": "nfp",
+      "primary_rulebook": "supplier",
+      "top_questions": [
+        "How do I get recognised as an Aboriginal business?",
+        "What direct purchasing thresholds apply to me?",
+        "How do disability employment organisation rules work?",
+        "What is the Aboriginal Procurement Policy target?",
+        "How do buyers find social enterprises?"
+      ],
+      "noun": "not-for-profit or Aboriginal business",
+      "plural": "not-for-profits and Aboriginal businesses"
+    },
+    {
+      "id": "public",
+      "label": "General public or ratepayer",
+      "short": "Community members, journalists, researchers, students",
+      "blurb": "You want to understand how public money is spent, what has to be disclosed, and how to raise a concern about a procurement.",
+      "icon": "public",
+      "primary_rulebook": "transparency",
+      "top_questions": [
+        "What procurement information must be published?",
+        "How do I see what my council has contracted?",
+        "How do I report suspected corruption in procurement?",
+        "What is value for money supposed to mean?",
+        "Who oversees NSW government procurement?"
+      ],
+      "noun": "member of the public",
+      "plural": "members of the public"
+    }
+  ],
+  "thresholds": [
+    {
+      "id": "thr-pcard-10k",
+      "label": "Up to $10,000 (ex GST)",
+      "amount": 10000,
+      "applies_to": [
+        "agency"
+      ],
+      "rule": "A NSW Government agency may procure goods and services up to $10,000 (ex GST) from any supplier, even where the item is available on a whole-of-government arrangement. Purchases at this level should be made on a purchasing card (PCard) under the Faster Payment Terms Policy, subject to your agency's own PCard thresholds. You still need approval from a financial delegate, and you still need to record the value for money reasoning.",
+      "citations": [
+        {
+          "label": "PBD-2021-04 Approved procurement arrangements",
+          "url": "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/"
+        },
+        {
+          "label": "Faster Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms"
+        }
+      ]
+    },
+    {
+      "id": "thr-small-business-50k",
+      "label": "Up to $50,000 direct from a small business",
+      "amount": 50000,
+      "applies_to": [
+        "agency",
+        "supplier"
+      ],
+      "rule": "NSW Government agencies may purchase goods or services up to $50,000 directly from a small business, even where those goods or services are available on a whole-of-government arrangement. A small business for this purpose has fewer than 20 full-time equivalent employees.",
+      "citations": [
+        {
+          "label": "PBD-2021-04 Approved procurement arrangements",
+          "url": "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/"
+        }
+      ]
+    },
+    {
+      "id": "thr-regional-150k",
+      "label": "Up to $150,000 direct from a regional supplier",
+      "amount": 150000,
+      "applies_to": [
+        "agency",
+        "supplier"
+      ],
+      "rule": "A NSW Government agency may buy directly from a regional supplier for procurements under $150,000.",
+      "citations": [
+        {
+          "label": "SME and Regional Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy"
+        }
+      ]
+    },
+    {
+      "id": "thr-gipa-150k",
+      "label": "$150,000 (inc GST) - public contract disclosure",
+      "amount": 150000,
+      "applies_to": [
+        "agency",
+        "council",
+        "corporate",
+        "public"
+      ],
+      "rule": "Under the Government Information (Public Access) Act 2009 you must publicly disclose contracts valued at $150,000 (inc GST) or more. Agencies disclose on NSW eTendering within 45 working days of the contract taking effect, and the entry stays listed for at least 20 days or until the contract is complete, whichever is longer. Councils maintain a public contracts register under section 27 of the GIPA Act on the same $150,000 (inc GST) trigger, entered in the register within 45 working days of the contract becoming effective and kept available for 20 working days or until contract obligations are satisfied, whichever is longer.",
+      "citations": [
+        {
+          "label": "Government Information (Public Access) Act 2009",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-2009-052"
+        },
+        {
+          "label": "Disclosure obligations - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/after-awarding-a-contract/disclosure-obligations"
+        },
+        {
+          "label": "IPC NSW - Register of government contracts",
+          "url": "https://www.ipc.nsw.gov.au/about-us/accessing-ipc-information/register-government-contracts"
+        }
+      ]
+    },
+    {
+      "id": "thr-aboriginal-250k",
+      "label": "Up to $250,000 - first consideration to Aboriginal business",
+      "amount": 250000,
+      "applies_to": [
+        "agency",
+        "nfp",
+        "supplier"
+      ],
+      "rule": "Under the Aboriginal Procurement Policy, NSW Government agencies must give first consideration to Aboriginal businesses for procurements up to $250,000, and may buy directly from them, even where a mandated scheme or panel exists. An Aboriginal business for this purpose has at least 50 per cent Aboriginal ownership and is recognised through an appropriate organisation such as Supply Nation, the NSW Indigenous Chamber of Commerce, or the Office of the Registrar of Indigenous Corporations.",
+      "citations": [
+        {
+          "label": "Aboriginal Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/aboriginal-procurement-policy"
+        }
+      ]
+    },
+    {
+      "id": "thr-council-tender-250k",
+      "label": "$250,000 (inc GST) - council tendering threshold",
+      "amount": 250000,
+      "applies_to": [
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
+      "rule": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3)(n) exempts contracts involving estimated expenditure or receipt of less than $250,000. The OLG Procurement Guidelines confirm this threshold is INCLUSIVE of GST and applies to the total estimated contract value, which expressly includes cumulative expenditure with a supplier for similar goods and services. Councils must not invoice split or order split to avoid tendering, as that would be contrary to the Act. Procurements under the threshold are exempt from the legislated tendering requirements only - the principles in the Guidelines still apply at any value. This is a council rule and is entirely separate from the NSW Procurement Board thresholds that apply to state agencies.",
+      "citations": [
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "OLG - Procurement in Local Government",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ]
+    },
+    {
+      "id": "thr-unaccredited-680k",
+      "label": "$680,000 - unaccredited agency ceiling and EPP trigger",
+      "amount": 680000,
+      "applies_to": [
+        "agency",
+        "corporate",
+        "supplier"
+      ],
+      "rule": "Two separate rules sit near this figure. First, an unaccredited NSW Government agency can generally procure goods and services not available on whole-of-government arrangements up to about $680,000; above that it needs concurrence on its procurement strategy from an accredited agency in its portfolio or from NSW Procurement. Second, the enforceable procurement provisions in PBD-2019-05 generally apply where the estimated value exceeds $680,000 (ex GST) for goods and services, or $9.584 million (ex GST) for construction.",
+      "citations": [
+        {
+          "label": "Accreditation - buy.nsw",
+          "url": "https://buy.nsw.gov.au/buyer-guidance/get-started/accreditation"
+        },
+        {
+          "label": "PBD-2019-05 Enforceable Procurement Provisions",
+          "url": "https://arp.nsw.gov.au/pbd-2019-05-enforceable-procurement-provisions/"
+        }
+      ]
+    },
+    {
+      "id": "thr-sme-3m",
+      "label": "$3 million - SME first preference and mandatory non-price criteria",
+      "amount": 3000000,
+      "applies_to": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "rule": "Under the SME and Regional Procurement Policy, agencies must give first preference to SMEs for direct procurements up to $3 million, including when buying from a prequalification scheme or panel. For contracts over $3 million the policy sets mandatory minimum non-price evaluation criteria; agencies may apply those criteria below the threshold as well. An SME is an Australian or New Zealand based enterprise with fewer than 200 full-time equivalent employees.",
+      "citations": [
+        {
+          "label": "SME and Regional Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy"
+        }
+      ]
+    },
+    {
+      "id": "thr-local-7-5m",
+      "label": "$7.5 million - local market testing and shorter payment terms",
+      "amount": 7500000,
+      "applies_to": [
+        "agency",
+        "corporate"
+      ],
+      "rule": "For projects worth more than $7.5 million, agencies must engage with local NSW suppliers before going to tender and must embed upfront local market testing in the procurement plan under PBD-2024-02. Separately, large businesses holding NSW Government goods and services contracts over $7.5 million must pay small businesses they directly subcontract within 20 business days of a correctly rendered invoice, under the Small Business Shorter Payment Terms Policy; model contract clauses should be used for these contracts.",
+      "citations": [
+        {
+          "label": "PBD-2024-02 Increasing opportunities for local suppliers",
+          "url": "https://arp.nsw.gov.au/pbd-2024-02-increasing-opportunities-for-local-suppliers-to-supply-to-government/"
+        },
+        {
+          "label": "Small Business Shorter Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/small-business-shorter-payment-terms-policy"
+        }
+      ]
+    },
+    {
+      "id": "thr-faster-payment-5-days",
+      "label": "5 business days - small business invoice payment",
+      "amount": 1000000,
+      "applies_to": [
+        "agency",
+        "supplier",
+        "nfp"
+      ],
+      "rule": "Correctly rendered invoices between $10,000 and $1 million from registered small businesses (fewer than 20 FTE) must be paid within 5 business days under the Faster Payment Terms Policy. Invoices under $10,000 should be paid as soon as possible, ideally instantly by PCard.",
+      "citations": [
+        {
+          "label": "Faster Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms"
+        },
+        {
+          "label": "What is a correctly rendered invoice",
+          "url": "https://www.smallbusiness.nsw.gov.au/get-help/faster-payment-terms/what-correctly-rendered-invoice"
+        }
+      ]
+    },
+    {
+      "id": "thr-accreditation-levels",
+      "label": "Agency accreditation ceilings",
+      "amount": 50000000,
+      "applies_to": [
+        "agency"
+      ],
+      "rule": "Level 1 accredited agencies may procure goods and services not available on whole-of-government arrangements up to $50 million for low risk, $35 million for medium risk and $20 million for high risk procurements; above those values they need concurrence from a level 2 agency in their portfolio or from NSW Procurement. Level 2 accredited agencies may procure any value within budget and play a concurrence role for their portfolio. Unaccredited agencies are generally capped at about $680,000.",
+      "citations": [
+        {
+          "label": "Accreditation - buy.nsw",
+          "url": "https://buy.nsw.gov.au/buyer-guidance/get-started/accreditation"
+        }
+      ]
+    },
+    {
+      "id": "thr-modern-slavery-council-150k",
+      "label": "$150,000 (inc GST) - council modern slavery reporting",
+      "amount": 150000,
+      "applies_to": [
+        "council"
+      ],
+      "rule": "Councils have been required to take reasonable steps to ensure goods and services they procure are not the product of modern slavery since 1 July 2022. From 1 July 2024, a council must file an online report with the Office of the NSW Anti-slavery Commissioner within 45 days of a contract taking effect where that contract arose from a heightened modern slavery due diligence process and is valued at $150,000 (inc GST) or more.",
+      "citations": [
+        {
+          "label": "OLG circular 23-17 - councils' obligations under the Modern Slavery Act",
+          "url": "https://www.olg.nsw.gov.au/council-circulars/23-17-update-on-councils-obligations-under-the-modern-slavery-act-2018-nsw/"
+        },
+        {
+          "label": "Guidance on Reasonable Steps",
+          "url": "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf"
+        }
+      ]
+    },
+    {
+      "id": "thr-council-tender-21-days",
+      "label": "21 days - minimum council tender period",
+      "amount": 0,
+      "applies_to": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "rule": "Under the Local Government (General) Regulation 2021, a council's tender deadline must be at least 21 days after the date the advertisement is first published. In selective tendering under clause 168, the same 21-day minimum applies again to the invitation to tender issued to shortlisted applicants.",
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021 Part 7",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        }
+      ]
+    },
+    {
+      "id": "thr-agency-tender-25-days",
+      "label": "25 days - recommended agency tender period",
+      "amount": 0,
+      "applies_to": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "rule": "For NSW Government agencies, allow a minimum of 25 calendar days when you publish a tender on NSW eTendering. Ten calendar days is the minimum recommended where the procurement was published in your agency's annual procurement plan within the last 12 months, where you are buying through approved arrangements such as a prequalification scheme, or for recurring procurement arrangements. There is no set minimum for genuinely urgent or emergency procurements. Covered procurements over $680,000 have their own minimum tender periods under the EPP Direction.",
+      "citations": [
+        {
+          "label": "Run a tender process - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/notify-and-brief-the-market/run-tender-process"
+        },
+        {
+          "label": "Enforceable procurement provisions guidance",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/enforceable-procurement-provisions"
+        }
+      ]
+    },
+    {
+      "id": "thr-contract-5-years",
+      "label": "5 years - normal maximum contract term",
+      "amount": 0,
+      "applies_to": [
+        "agency",
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "rule": "As a general rule you should not make a contract run longer than 5 years, including any extension options. Whole-of-government contracts typically run for 3 years with 1 or 2 year extension options.",
+      "citations": [
+        {
+          "label": "Negotiate and award a contract - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "tpl-rfi",
+      "name": "Request for Information (RFI) and Response template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Use when you need to understand the market before committing to a procurement approach. Does not commit you to buy.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=1414518",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-eoi",
+      "name": "Expression of Interest (EOI) and Response template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Use as stage one of a multi-stage approach to shortlist capable suppliers before inviting tenders. No pricing, no contract award.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=1414523",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-opportunity-terms",
+      "name": "Opportunity Specific Terms and Conditions",
+      "stage": "source",
+      "audiences": [
+        "agency"
+      ],
+      "description": "Part of the buy.nsw Opportunity suite. Sets the conditions of the market approach itself.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=1414524",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-opportunity-sor",
+      "name": "Opportunity Information and Statement of Requirements",
+      "stage": "source",
+      "audiences": [
+        "agency"
+      ],
+      "description": "Describes what you are buying and the requirements suppliers must respond to.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=1414525",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-opportunity-response",
+      "name": "Opportunity Response Document",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "description": "The response template you give suppliers so offers arrive in a consistent, comparable form.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=717248",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-addendum",
+      "name": "Addendum to Opportunity / RFx template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Use to formally amend a live market approach. Give suppliers reasonable time to re-submit and notify everyone who downloaded the documents.",
+      "url": "https://info.buy.nsw.gov.au/__data/assets/word_doc/0007/717235/addendum_to_rfx.docx",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-evaluation-plan",
+      "name": "Evaluation plan template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Must be finalised before the tender closes and before you open any responses.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=717254",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-conduct-plan",
+      "name": "Procurement conduct plan (conflicts of interest) template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Sets the probity rules for your evaluation team and captures conflict of interest declarations before the market approach opens.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=717280",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-evaluation-report",
+      "name": "Evaluation report template",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Documents the evaluation team's assessment and recommendation for contract award.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=717302",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-evaluation-scoresheet",
+      "name": "Evaluation scoresheet",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Scoring sheet with guidance on how to rate how well a response meets your requirements.",
+      "url": "https://www.info.buy.nsw.gov.au/?a=717235",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-shorter-payment-clauses",
+      "name": "Shorter Payment Terms Policy - model contract clauses",
+      "stage": "manage",
+      "audiences": [
+        "agency",
+        "corporate"
+      ],
+      "description": "Use in goods and services contracts over $7.5 million so head contractors pay small business subcontractors within 20 business days.",
+      "url": "https://info.buy.nsw.gov.au/__data/assets/word_doc/0011/992621/Shorter-Payment-Terms-Policy-model-contract-clauses.docx",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-contract-templates",
+      "name": "NSW Government contract templates",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
+      "description": "Standard terms and conditions. Use an existing template where one exists; get legal advice before modifying one or negotiating new terms.",
+      "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-templates",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-contract-clauses",
+      "name": "Contract clauses and requirements guidance",
+      "stage": "source",
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
+      "description": "Guidance on insurances, indemnity, intellectual property, reporting and termination clauses.",
+      "url": "https://info.buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/contract-clauses",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-esp-guide",
+      "name": "Guide to Environmentally Sustainable Procurement",
+      "stage": "plan",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "Practical templates and NSW agency case studies for building environmental sustainability into planning, sourcing and managing.",
+      "url": "https://www.info.buy.nsw.gov.au/resources/guide-to-environmentally-sustainable-procurement",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-icac-due-diligence",
+      "name": "ICAC - Supplier Due Diligence: a guide for NSW public sector agencies",
+      "stage": "plan",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "The reference document for what checks to run on a supplier, when, and by whom. Covers the five check categories and online verification techniques.",
+      "url": "https://www.icac.nsw.gov.au/prevention/corruption-prevention-publications/latest-corruption-prevention-publications/supplier-due-diligence-a-guide-for-nsw-public-sector-agencies",
+      "source": "ICAC NSW"
+    },
+    {
+      "id": "tpl-icac-coi",
+      "name": "ICAC - Managing conflicts of interest in the NSW public sector",
+      "stage": "all",
+      "audiences": [
+        "agency",
+        "council"
+      ],
+      "description": "How to identify, declare and manage conflicts of interest, including the reasonable person test.",
+      "url": "https://www.icac.nsw.gov.au/ArticleDocuments/232/Managing-conflicts-of-interest-in-the-nsw-public-sector_June-2019.pdf.aspx",
+      "source": "ICAC NSW"
+    },
+    {
+      "id": "tpl-modern-slavery-reasonable-steps",
+      "name": "Guidance on Reasonable Steps (modern slavery)",
+      "stage": "all",
+      "audiences": [
+        "agency",
+        "council",
+        "corporate"
+      ],
+      "description": "NSW Anti-slavery Commissioner guidance on managing modern slavery risks in operations and supply chains. Operative from 1 January 2024.",
+      "url": "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf",
+      "source": "NSW Anti-slavery Commissioner"
+    },
+    {
+      "id": "tpl-olg-procurement-guidelines",
+      "name": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+      "stage": "all",
+      "audiences": [
+        "council"
+      ],
+      "description": "The Office of Local Government's procurement guidance for councils. Sections 1 and 2 cover the legislative context, the five best-practice principles, and procurement governance. Councils must consider these Guidelines when setting their own policy and procedures.",
+      "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf",
+      "source": "Office of Local Government"
+    },
+    {
+      "id": "tpl-complaint-guidelines",
+      "name": "NSW Procurement Board Complaint Management Guidelines",
+      "stage": "all",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "description": "How procurement complaints are handled, and the difference between covered procurement complaints under the EPP Direction and general procurement complaints.",
+      "url": "https://www.info.buy.nsw.gov.au/resources/complaint-management-guidelines",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-supplier-hub",
+      "name": "buy.nsw Supplier Hub",
+      "stage": "all",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp",
+        "agency"
+      ],
+      "description": "Where suppliers register a profile and where buyers search for suppliers, including verified Aboriginal, disability employment, social enterprise and gender equitable identifiers.",
+      "url": "https://buy.nsw.gov.au/suppliers",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-etendering",
+      "name": "NSW eTendering (tenders.nsw.gov.au)",
+      "stage": "source",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "agency",
+        "public"
+      ],
+      "description": "Where agencies advertise and manage tenders, request quotes from scheme suppliers, and publish awarded contracts over $150,000 (inc GST).",
+      "url": "https://tenders.nsw.gov.au/",
+      "source": "NSW Government"
+    },
+    {
+      "id": "tpl-schemes",
+      "name": "buy.nsw prequalification schemes",
+      "stage": "plan",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "description": "Lists of assessed suppliers by category or capability. Some are mandatory for agencies, others recommended. Schemes generally do not include pricing, so value for money still has to be tested.",
+      "url": "https://buy.nsw.gov.au/schemes",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-contracts",
+      "name": "NSW Government whole-of-government contracts",
+      "stage": "plan",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "description": "The catalogue of whole-of-government contracts agencies must generally use where one is available.",
+      "url": "https://info.buy.nsw.gov.au/contracts",
+      "source": "buy.nsw"
+    },
+    {
+      "id": "tpl-lgp",
+      "name": "Local Government Procurement (LGP) approved contracts",
+      "stage": "plan",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "description": "LGP is prescribed under section 55 of the Local Government Act 1993, so a council can buy from an LGP-established contract above $250,000 without running its own tender.",
+      "url": "https://lgp.org.au/approved-contractors/",
+      "source": "Local Government Procurement"
+    },
+    {
+      "id": "tpl-model-code-of-conduct",
+      "name": "Model Code of Conduct for Local Councils in NSW",
+      "stage": "all",
+      "audiences": [
+        "council"
+      ],
+      "description": "Council procurement probity is evidenced through procedures that comply with the Model Code of Conduct. It prescribes mandatory requirements for disclosing and managing pecuniary and non-pecuniary conflicts of interest.",
+      "url": "https://www.olg.nsw.gov.au/councils/governance/model-code-of-conduct/",
+      "source": "Office of Local Government"
+    },
+    {
+      "id": "tpl-lg-regulation",
+      "name": "Local Government (General) Regulation 2021",
+      "stage": "source",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "description": "Part 7 sets the tendering procedure for councils: methods, advertising, the 21-day minimum, amendments, extensions, variations, evaluation and notification.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-lg-act",
+      "name": "Local Government Act 1993",
+      "stage": "all",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "description": "Sections 55 and 55A set the tendering requirements and exemptions; s 377(1)(i) reserves outsourcing tender decisions to the council; s 438ZE carries the modern slavery duty.",
+      "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030",
+      "source": "NSW legislation"
+    },
+    {
+      "id": "tpl-supply-nation",
+      "name": "Supply Nation",
+      "stage": "plan",
+      "audiences": [
+        "council",
+        "agency",
+        "nfp",
+        "supplier"
+      ],
+      "description": "One of the organisations that verifies Aboriginal business ownership for procurement purposes, alongside BuyNSW, the NSW Indigenous Chamber of Commerce and ORIC.",
+      "url": "https://supplynation.org.au/",
+      "source": "Supply Nation"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Accreditation",
+      "definition": "An ongoing NSW Procurement Board assessment that authorises a government agency to procure goods and services up to a set value. Level 2 is the highest. Councils are not accredited under this scheme.",
+      "audiences": [
+        "agency"
+      ]
+    },
+    {
+      "term": "Correctly rendered invoice",
+      "definition": "An invoice that meets the requirements set out in the contract or purchase order, so payment clocks such as the 5-business-day Faster Payment Terms rule start running.",
+      "audiences": [
+        "supplier",
+        "agency",
+        "nfp"
+      ]
+    },
+    {
+      "term": "Covered procurement",
+      "definition": "A procurement caught by the enforceable procurement provisions in PBD-2019-05, generally above $680,000 (ex GST) for goods and services or $9.584 million (ex GST) for construction, giving suppliers enforceable rights.",
+      "audiences": [
+        "agency",
+        "corporate",
+        "supplier"
+      ]
+    },
+    {
+      "term": "EOI",
+      "definition": "Expression of interest. A first-stage market approach that shortlists capable suppliers. No pricing and no contract award at this stage.",
+      "audiences": [
+        "agency",
+        "council",
+        "supplier"
+      ]
+    },
+    {
+      "term": "EPP Direction",
+      "definition": "NSW Procurement Board Direction PBD-2019-05, which implements Australia's international trade agreement obligations in NSW procurement.",
+      "audiences": [
+        "agency",
+        "corporate"
+      ]
+    },
+    {
+      "term": "GIPA Act",
+      "definition": "Government Information (Public Access) Act 2009. Creates a public right to government information and requires public disclosure of contracts of $150,000 (inc GST) or more.",
+      "audiences": [
+        "agency",
+        "council",
+        "public"
+      ]
+    },
+    {
+      "term": "Multi-agency access contract",
+      "definition": "Also called piggybacking. A procurement arrangement set up by one agency that other agencies are permitted to use.",
+      "audiences": [
+        "agency"
+      ]
+    },
+    {
+      "term": "PCard",
+      "definition": "Purchasing card. A government credit card used for low value purchases, typically under $10,000, which removes the need to raise a purchase order.",
+      "audiences": [
+        "agency",
+        "council"
+      ]
+    },
+    {
+      "term": "Prequalification scheme",
+      "definition": "A list of suppliers assessed as capable in defined categories, sometimes called a procurement list. Using one streamlines a competitive process but does not by itself prove value for money.",
+      "audiences": [
+        "agency",
+        "supplier",
+        "council"
+      ]
+    },
+    {
+      "term": "Probity",
+      "definition": "Acting ethically, with integrity, uprightness and honesty. In procurement it means value for money, impartiality, consistency and fairness, and accountability and transparency.",
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "public"
+      ]
+    },
+    {
+      "term": "Purchase order",
+      "definition": "A commercial document issued by a buyer to a seller. It becomes a legally binding contract once the seller accepts it. Often used where no standalone contract is issued.",
+      "audiences": [
+        "agency",
+        "council",
+        "supplier"
+      ]
+    },
+    {
+      "term": "RFx",
+      "definition": "Umbrella term for market approach documents: RFI, EOI, RFQ, RFP and RFT.",
+      "audiences": [
+        "agency",
+        "council",
+        "supplier"
+      ]
+    },
+    {
+      "term": "SME",
+      "definition": "Small or medium enterprise. Under the SME and Regional Procurement Policy, an Australian or New Zealand based business with fewer than 200 full-time equivalent employees. Small is 1 to 19 FTE, medium is 20 to 199 FTE.",
+      "audiences": [
+        "supplier",
+        "agency",
+        "nfp"
+      ]
+    },
+    {
+      "term": "Small business",
+      "definition": "For the Faster Payment Terms Policy and the $50,000 direct purchase rule, a business with fewer than 20 full-time equivalent employees.",
+      "audiences": [
+        "supplier",
+        "agency"
+      ]
+    },
+    {
+      "term": "Unsolicited proposal",
+      "definition": "A proposal put to government that was not requested through a market approach. In NSW these must be referred to the Department of Premier and Cabinet.",
+      "audiences": [
+        "agency",
+        "corporate"
+      ]
+    },
+    {
+      "term": "Value for money",
+      "definition": "Total lifetime benefit minus total lifetime cost. Not the lowest price and not the highest quality, but fit for purpose at the lowest whole-of-life cost.",
+      "audiences": [
+        "agency",
+        "council",
+        "supplier",
+        "public"
+      ]
+    },
+    {
+      "term": "Whole-of-government contract",
+      "definition": "A contract appointing one or more suppliers to supply any NSW Government agency, usually for 3 years with extension options. Agencies must generally use one where available unless exempt.",
+      "audiences": [
+        "agency",
+        "supplier"
+      ]
+    }
+  ]
+}

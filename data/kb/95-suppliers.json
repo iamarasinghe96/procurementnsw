@@ -1,0 +1,421 @@
+{
+  "topic": {
+    "id": "suppliers",
+    "title": "Selling to NSW government and councils",
+    "path": "suppliers",
+    "stage": "all",
+    "source_document": "Researched addition - supplier-side guidance, not covered by the buyer-focused Comperio course.",
+    "audiences": [
+      "supplier",
+      "corporate",
+      "nfp",
+      "council",
+      "agency"
+    ],
+    "summary": "How to register, find opportunities, join schemes and panels, write a competitive response, get paid, get a debrief, and complain if something went wrong."
+  },
+  "chunks": [
+    {
+      "id": "suppliers.getting-registered",
+      "path": "suppliers/getting-registered",
+      "heading": "Registering to sell to NSW Government",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Register on the buy.nsw Supplier Hub with a valid ABN, then keep the profile current so buyers can find you.",
+      "text": "To sell to the NSW Government you must be a registered business with an Australian Business Number. Registration is on the buy.nsw Supplier Hub: create an account and complete your profile. Registering and creating a profile lets NSW Government buyers find you on the supplier list, allows you to be matched with opportunities based on your profile, and lets you apply for contracts and schemes. Registration of NSW Government suppliers on the Supplier Hub has been mandated by Procurement Board Direction. When you complete your profile you can add business identifiers. These are either self-identified, shown in blue, or verified through a third party, shown in green - for example verified Aboriginal owned business, disability employment organisation, verified social enterprise, or gender equitable employer. Verified identifiers carry much more weight with buyers than self-declared ones, because several policies depend on recognised status. Small businesses with fewer than 20 full-time equivalent employees should also register for NSW Government Faster Payment Terms, which is what triggers the 5 business day payment obligation on invoices between $10,000 and $1 million. Separately, NSW eTendering is where tenders are advertised and managed, where quotes are requested from suppliers on prequalification schemes, and where awarded contracts over $150,000 (inc GST) are published.",
+      "keywords": [
+        "register",
+        "registration",
+        "supplier hub",
+        "abn",
+        "how do i sell to government",
+        "profile",
+        "get started",
+        "etendering",
+        "identifiers",
+        "verified",
+        "sign up",
+        "become a supplier",
+        "how to become a supplier",
+        "start selling",
+        "where do i start",
+        "supply to government",
+        "supplier to government",
+        "vendor registration",
+        "get started selling"
+      ],
+      "checklist": [
+        "Have a current ABN before you start",
+        "Create your Supplier Hub account and complete the whole profile, not just the minimum fields",
+        "Get your identifiers verified rather than self-declared where you are eligible",
+        "If you have fewer than 20 FTE, register as a small business so the 5-day payment terms apply",
+        "Set up notifications for the categories and schemes you want to hear about",
+        "Keep insurances, licences and capability statements current in the profile"
+      ],
+      "watch_outs": [
+        "An incomplete or stale profile is the most common reason capable suppliers never get found by buyers doing market analysis"
+      ],
+      "templates": [
+        "tpl-supplier-hub",
+        "tpl-etendering"
+      ],
+      "citations": [
+        {
+          "label": "buy.nsw Supplier Hub",
+          "url": "https://buy.nsw.gov.au/suppliers"
+        },
+        {
+          "label": "Getting started - buy.nsw",
+          "url": "https://buy.nsw.gov.au/help/getting-started"
+        },
+        {
+          "label": "Register as a supplier - Service NSW",
+          "url": "https://www.service.nsw.gov.au/transaction/register-as-a-supplier-on-buynsw"
+        },
+        {
+          "label": "PBD-2023-04 Mandated registration on the Supplier Hub",
+          "url": "https://arp.nsw.gov.au/pbd-2023-04-mandated-registration-of-all-nsw-government-suppliers-on-the-buy-nsw-supplier-hub"
+        }
+      ]
+    },
+    {
+      "id": "suppliers.finding-opportunities",
+      "path": "suppliers/finding-opportunities",
+      "heading": "Finding opportunities, and the thresholds that work in your favour",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Not every opportunity is advertised. Below several thresholds a buyer can come straight to you if you are the right kind of supplier.",
+      "text": "Advertised tenders on NSW eTendering are only part of the picture. A large share of government spend flows through whole-of-government contracts, prequalification schemes and direct engagement below certain thresholds, so being findable and being on the right scheme often matters more than watching the tender feed. Direct engagement thresholds that work in a supplier's favour include: under $10,000, a NSW Government agency can buy from any supplier; up to $50,000, an agency can buy directly from a small business with fewer than 20 FTE even if the item is on a whole-of-government contract; under $150,000, an agency can buy directly from a regional supplier; up to $250,000, an agency must give first consideration to an Aboriginal business recognised through an appropriate organisation, and can buy directly from an Aboriginal business or an SME; up to $3 million, the SME and Regional Procurement Policy requires first preference to SMEs for direct purchases, including from panels and schemes; and there is no value limit on buying from approved disability employment organisations via a single written quote. For councils, the equivalent access point is the $250,000 tendering threshold under the Local Government Act plus each council's own quotation thresholds, and panels established by Local Government Procurement. Practical implication: make sure the buyer can tell, from your registered profile, which of these categories you fall into.",
+      "keywords": [
+        "find opportunities",
+        "tenders",
+        "where are the tenders",
+        "direct engagement",
+        "thresholds",
+        "sme",
+        "regional",
+        "aboriginal business",
+        "disability employment",
+        "how to win work",
+        "get on a panel",
+        "not advertised",
+        "we make",
+        "we supply",
+        "we sell",
+        "want government contracts",
+        "get government work",
+        "join a panel",
+        "business wants to supply",
+        "win government work",
+        "services we offer",
+        "office supplies",
+        "laptops",
+        "it equipment",
+        "furniture",
+        "get on a government panel",
+        "how do i get on a panel",
+        "apply to join a scheme",
+        "cleaning company",
+        "small company",
+        "contractor wants work",
+        "supplier panel"
+      ],
+      "checklist": [
+        "Set up eTendering notifications for your categories",
+        "Identify which prequalification schemes cover what you sell and apply to join",
+        "Make your SME, regional, Aboriginal, social enterprise or ADE status visible and verified",
+        "For council work, watch individual council tender pages and consider LGP panels",
+        "Introduce yourself to category buyers - market analysis is a real stage and buyers do look"
+      ],
+      "thresholds": [
+        "thr-pcard-10k",
+        "thr-small-business-50k",
+        "thr-regional-150k",
+        "thr-aboriginal-250k",
+        "thr-sme-3m",
+        "thr-council-tender-250k"
+      ],
+      "templates": [
+        "tpl-etendering",
+        "tpl-schemes",
+        "tpl-lgp"
+      ],
+      "citations": [
+        {
+          "label": "NSW eTendering",
+          "url": "https://tenders.nsw.gov.au/"
+        },
+        {
+          "label": "Prequalification schemes",
+          "url": "https://buy.nsw.gov.au/schemes"
+        }
+      ]
+    },
+    {
+      "id": "suppliers.writing-a-response",
+      "path": "suppliers/writing-a-competitive-response",
+      "heading": "Writing a competitive response",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "both",
+      "authority": "practice",
+      "summary": "Buyers score against a published set of criteria using a scoresheet. Write to those criteria, evidence every claim, and answer the mandatory conditions first.",
+      "text": "Buyers evaluate in a defined order: first they rule out responses that fail the tender conditions or the mandatory criteria, then they score the remaining responses against the published non-mandatory criteria using an evaluation plan finalised before the tender closed. That order tells you how to write. Deal with the mandatory criteria and conditions of participation explicitly and early, in the buyer's own words, so nobody has to hunt for compliance. Use the response template provided; buyers use it precisely so responses are comparable, and departing from it makes you harder to score. Write to each published criterion in turn rather than submitting generic capability material. Evidence every claim - buyers are required to verify that suppliers have provided truthful information about skills, experience, business records and qualifications, so a claim you cannot evidence is a liability rather than an asset. Address capability and capacity separately: capability is the right skills, qualifications, experience, licences and insurances, capacity is having sufficient time, staff, equipment, materials and other resources to actually deliver. Price is scored against a stated weighting alongside non-price factors, so the lowest price does not automatically win, and the buyer's task is fitness for purpose at the lowest whole-of-life cost. If the procurement is over $3 million, expect mandatory minimum non-price criteria on SME and regional participation. Ask questions through the official channel during the tender period: your question will be deidentified and the answer circulated to all respondents, which is normal and does not disadvantage you. Do not expect leniency on lateness - buyers should not accept late submissions unless they caused the delay or no other bidder is disadvantaged.",
+      "keywords": [
+        "write a tender",
+        "bid",
+        "response",
+        "how to win",
+        "evaluation criteria",
+        "scoring",
+        "capability",
+        "capacity",
+        "evidence",
+        "mandatory criteria",
+        "template",
+        "questions",
+        "late tender",
+        "tender tips"
+      ],
+      "checklist": [
+        "Answer the mandatory criteria and conditions of participation first, explicitly",
+        "Use the buyer's response template and their headings",
+        "Write to each published criterion separately - do not submit a generic capability statement",
+        "Evidence every claim with a reference, a certificate, a named project or a number",
+        "Cover capability and capacity as two different things",
+        "Ask clarification questions through the official channel, early",
+        "Submit well before the deadline - closing time is typically 3pm and late bids are usually rejected"
+      ],
+      "watch_outs": [
+        "Failing a single mandatory criterion removes you before any of your strengths are read",
+        "Overstating experience is checked at due diligence and can end the engagement"
+      ]
+    },
+    {
+      "id": "suppliers.getting-paid",
+      "path": "suppliers/getting-paid",
+      "heading": "Getting paid, and what to do when you are not",
+      "audiences": [
+        "supplier",
+        "nfp",
+        "corporate"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Registered small businesses are entitled to 5 business day payment on correctly rendered invoices between $10,000 and $1 million.",
+      "text": "If you are a registered small business with fewer than 20 full-time equivalent employees, a NSW Government agency must pay your correctly rendered invoices between $10,000 and $1 million within 5 business days under the Faster Payment Terms Policy. Invoices under $10,000 should be paid as soon as possible, ideally instantly by purchasing card. If you subcontract to a large business that holds a NSW Government goods and services contract over $7.5 million, that head contractor must pay you within 20 business days of a correctly rendered invoice under the Small Business Shorter Payment Terms Policy. The phrase correctly rendered does real work here: the payment clock does not start until the invoice meets the requirements set out in the contract or purchase order, so confirm at the outset exactly what the buyer needs on the invoice, and always quote the purchase order number. The Office of the Small Business Commissioner monitors and reports on agency payment performance to small businesses, and agencies must report their on-time payment record in their annual report. If payment is late, start with the contract manager and the agency's accounts payable, then escalate through the agency's complaints process; the NSW Small Business Commissioner is the external avenue for small business payment disputes.",
+      "keywords": [
+        "get paid",
+        "payment",
+        "late payment",
+        "invoice",
+        "5 days",
+        "20 days",
+        "correctly rendered",
+        "small business commissioner",
+        "faster payment terms",
+        "not been paid",
+        "overdue",
+        "cashflow",
+        "when will i get paid",
+        "how long until i get paid",
+        "invoice not paid",
+        "chasing payment",
+        "payment is late",
+        "waiting for payment",
+        "still not paid"
+      ],
+      "checklist": [
+        "Register your small business status so the 5-day terms apply",
+        "Confirm in writing what makes an invoice correctly rendered for this contract",
+        "Always include the purchase order number",
+        "If payment is late, contact the contract manager and accounts payable in writing first",
+        "Escalate through the agency's complaints process, then to the NSW Small Business Commissioner if unresolved"
+      ],
+      "thresholds": [
+        "thr-faster-payment-5-days",
+        "thr-local-7-5m",
+        "thr-pcard-10k"
+      ],
+      "citations": [
+        {
+          "label": "Faster Payment Terms Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/faster-payment-terms"
+        },
+        {
+          "label": "What is a correctly rendered invoice",
+          "url": "https://www.smallbusiness.nsw.gov.au/get-help/faster-payment-terms/what-correctly-rendered-invoice"
+        },
+        {
+          "label": "Faster payments with the NSW Government",
+          "url": "https://www.smallbusiness.nsw.gov.au/help/common-questions/faster-payments-with-the-nsw-government"
+        }
+      ]
+    },
+    {
+      "id": "suppliers.debriefs-and-complaints",
+      "path": "suppliers/debriefs-and-complaints",
+      "heading": "Debriefs and complaints when you are unsuccessful",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "You can ask for a debrief - SMEs and regional suppliers can require one. Complaints split into covered and general procurement complaints.",
+      "text": "After a contract is awarded, buyers should debrief unsuccessful suppliers, covering the strengths in your response and areas for improvement in future submissions. Agencies must provide pre and post-tender briefings when reasonably requested by SMEs and regional suppliers. A debrief is feedback, not a re-argument of the decision, and the buyer must not disclose commercial-in-confidence information such as other suppliers' responses. If you believe something went wrong with the process rather than just the outcome, NSW distinguishes two kinds of complaint. A covered procurement complaint alleges a breach of the enforceable procurement provisions in the EPP Direction, which generally apply above $680,000 (ex GST) for goods and services or $9.584 million (ex GST) for construction. Under the Public Works and Procurement Act 1912 a supplier may lodge such a complaint with the head of the government agency, and the agency head must investigate and attempt to resolve it. The NSW Procurement Board has no statutory role in covered procurement complaints - they are a matter for the agency, the supplier and, if proceedings are taken, the Supreme Court. A general procurement complaint covers everything else, including procurements below the thresholds, exempt procurements, agencies not covered by the EPP Direction, and matters outside the scope of the Direction. These are handled under the NSW Procurement Board Complaint Management Guidelines, normally starting with the agency itself. For a council procurement, complaints go through the council's own complaints process, and the NSW Ombudsman and the Office of Local Government are the external avenues. Suspected corruption goes to the ICAC in either case.",
+      "keywords": [
+        "debrief",
+        "complaint",
+        "unsuccessful",
+        "why did i lose",
+        "unfair",
+        "challenge",
+        "covered procurement complaint",
+        "epp",
+        "ombudsman",
+        "dispute",
+        "appeal",
+        "feedback",
+        "lost the tender",
+        "lose the tender",
+        "did not win",
+        "unsuccessful bid",
+        "ask for feedback",
+        "request a debrief",
+        "supplier feedback"
+      ],
+      "checklist": [
+        "Ask for a debrief in writing promptly after the award notification",
+        "If you are an SME or regional supplier, say so - a reasonable request must be met",
+        "Separate a complaint about the process from disappointment about the outcome before you lodge",
+        "For a covered procurement, lodge with the agency head under the PWP Act",
+        "For a general complaint, follow the agency's or council's complaints process first",
+        "Report suspected corruption to the ICAC rather than through the complaints process"
+      ],
+      "thresholds": [
+        "thr-unaccredited-680k"
+      ],
+      "templates": [
+        "tpl-complaint-guidelines"
+      ],
+      "citations": [
+        {
+          "label": "NSW Procurement Board Complaint Management Guidelines",
+          "url": "https://www.info.buy.nsw.gov.au/resources/complaint-management-guidelines"
+        },
+        {
+          "label": "Complaint management for buyers - buy.nsw",
+          "url": "https://buy.nsw.gov.au/buyer-guidance/manage/complaints"
+        },
+        {
+          "label": "Report corruption to the ICAC",
+          "url": "https://www.icac.nsw.gov.au/reporting/report-corruption"
+        }
+      ]
+    },
+    {
+      "id": "suppliers.aboriginal-social-enterprise",
+      "path": "suppliers/aboriginal-businesses-and-social-enterprises",
+      "heading": "Aboriginal businesses, social enterprises and disability employment organisations",
+      "audiences": [
+        "nfp",
+        "supplier",
+        "agency",
+        "council"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Recognition by an approved body is what unlocks the direct-engagement and first-consideration pathways.",
+      "text": "For the purposes of the NSW Aboriginal Procurement Policy, an Aboriginal business is one that has at least 50 per cent Aboriginal ownership and is recognised through an appropriate organisation, such as Supply Nation, the NSW Indigenous Chamber of Commerce, or the Office of the Registrar of Indigenous Corporations. Recognition is the gate: the first-consideration requirement for procurements up to $250,000, and the ability of an agency to buy directly at that level, depend on it. The Aboriginal Procurement Policy, which took effect in January 2021, also set a target for Aboriginal-owned businesses to be awarded at least three per cent of the total number of domestic contracts for goods and services issued by NSW Government agencies. Social enterprises tackle social problems, improve communities, provide people with access to employment and training, or help the environment. Many are small businesses, SMEs, Aboriginal businesses or Australian Disability Enterprises, and qualify for purchasing preferences. Buyers can purchase goods and services from approved disability employment organisations via a single written quote with no value limit. In every case, get the status verified on your buy.nsw Supplier Hub profile - verified identifiers appear in green and self-declared ones in blue, and policies that depend on recognised status need the verified version.",
+      "keywords": [
+        "aboriginal business",
+        "supply nation",
+        "nswicc",
+        "indigenous",
+        "50 per cent ownership",
+        "social enterprise",
+        "disability employment organisation",
+        "ade",
+        "australian disability enterprise",
+        "3 per cent target",
+        "recognition",
+        "verified"
+      ],
+      "checklist": [
+        "Get recognised by Supply Nation, the NSW Indigenous Chamber of Commerce or ORIC if you are an Aboriginal business",
+        "Get the identifier verified on your Supplier Hub profile, not just self-declared",
+        "Make sure buyers can see the status when they search the Supplier Hub during market analysis",
+        "Tell buyers which direct-engagement pathway applies to you - many buyers do not know the thresholds by heart"
+      ],
+      "thresholds": [
+        "thr-aboriginal-250k",
+        "thr-sme-3m"
+      ],
+      "templates": [
+        "tpl-supplier-hub"
+      ],
+      "citations": [
+        {
+          "label": "Aboriginal Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/aboriginal-procurement-policy"
+        },
+        {
+          "label": "Aboriginal businesses - buy.nsw",
+          "url": "https://www.info.buy.nsw.gov.au/buyer-guidance/source/select-suppliers/aboriginal-businesses"
+        }
+      ]
+    },
+    {
+      "id": "suppliers.supplier-conduct",
+      "path": "suppliers/supplier-conduct-and-integrity",
+      "heading": "What is expected of you as a supplier",
+      "audiences": [
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "both",
+      "authority": "legislation",
+      "summary": "Corrupt conduct rules apply to suppliers too. Collusion, information fishing and gift-based influence all carry real consequences.",
+      "text": "Corrupt conduct is not something only public officials can commit. It occurs when a member of the public influences, or tries to influence, a public official to use their position in a way that is dishonest or partial, and when the actions of any person impair or could impair public confidence in public administration - which expressly includes collusive tendering and dishonestly obtaining or benefiting from public funds or assets for private advantage. In practical terms, three supplier behaviours regularly cause problems. Collusion between suppliers to artificially elevate prices or to manipulate which of them wins the work. Fishing for information a buyer is not entitled to give you, such as which other suppliers were invited, the budget, or another supplier's pricing - buyers are trained to decline, record and report these requests. And influence-building through gifts, hospitality or cultivated friendships, which buyers are trained to decline and declare. Buyers are also required to verify that you have provided truthful information about your skills, experience, business records and qualifications, so overstating capability is checked rather than assumed. The Risk and Compliance Subcommittee of the NSW Procurement Board deals with remedial action for poor supplier performance or behaviour, and suppliers are members of the public whose confidence in the system the government is obliged to maintain.",
+      "keywords": [
+        "supplier conduct",
+        "collusion",
+        "collusive tendering",
+        "gifts",
+        "integrity",
+        "honesty",
+        "misrepresentation",
+        "consequences",
+        "banned",
+        "remedial action",
+        "what not to do"
+      ],
+      "watch_outs": [
+        "Asking a buyer who else is bidding puts you on a written record as having sought information you are not entitled to",
+        "Overstated credentials are checked at due diligence, and the failure is discovered at the worst possible time"
+      ],
+      "citations": [
+        {
+          "label": "ICAC - what is corrupt conduct",
+          "url": "https://www.icac.nsw.gov.au/about-corruption/what-is-corrupt-conduct"
+        }
+      ]
+    }
+  ]
+}

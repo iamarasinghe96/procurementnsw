@@ -1,0 +1,358 @@
+{
+  "topic": {
+    "id": "governance",
+    "title": "Procurement governance",
+    "path": "foundations/governance",
+    "stage": "foundations",
+    "source_document": "Procurement Governance.docx",
+    "audiences": [
+      "agency",
+      "supplier",
+      "corporate",
+      "public"
+    ],
+    "summary": "Who governs NSW procurement, how agency accreditation caps what you can buy, which buying arrangements exist, and the recordkeeping you must do."
+  },
+  "chunks": [
+    {
+      "id": "governance.devolved-structure",
+      "path": "foundations/governance/devolved-structure",
+      "heading": "Devolved governance and the NSW Procurement Board",
+      "audiences": [
+        "agency",
+        "public",
+        "corporate"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "training",
+      "summary": "The Board sets the system-wide rules; agency heads remain responsible for their own agency's procurement.",
+      "text": "In NSW, government procurement operates within a devolved governance structure, governed by the NSW Procurement Board. The Public Works and Procurement Act establishes the Board. It is made up of heads of NSW Government departments, or their appointed deputies, and is chaired by the Deputy Secretary Commercial within NSW Treasury. The Board is responsible for the government-wide strategic approach to procurement and overseeing the procurement system, developing and issuing Board Directions and procurement policies, monitoring compliance, and investigating and dealing with procurement-related complaints. Your agency head is ultimately responsible for your agency's procurement; they enter into procurement agreements on behalf of your agency and make sure you comply with the NSW Procurement Policy Framework. An agency can also be responsible for a whole-of-government procurement arrangement, in which case it enters agreements on behalf of the whole of NSW Government. Agency heads typically delegate responsibility for procurement, often to a Chief Procurement Officer, and when doing so must ensure appropriate governance mechanisms are in place. CPOs prepare Agency Procurement Plans and Annual Outcomes Reports and review individual project or category procurement strategies. NSW Treasury manages several whole-of-government contracts and is responsible for centralised functions including agency accreditation, whole-of-government procurement policy, data collection and reporting, procurement advisory services, complaint and feedback mechanisms, and sector-wide capability development. Also critical to governance are the ICAC and the Audit Office of NSW, portfolio and agency governance functions, appropriate delegation of authority, effective procurement planning, purchasing and procurement systems, and efficient approval processes.",
+      "keywords": [
+        "governance",
+        "procurement board",
+        "agency head",
+        "cpo",
+        "chief procurement officer",
+        "nsw treasury",
+        "delegation",
+        "who is responsible",
+        "oversight",
+        "audit office",
+        "icac"
+      ]
+    },
+    {
+      "id": "governance.subcommittees",
+      "path": "foundations/governance/board-subcommittees",
+      "heading": "Procurement Board subcommittees",
+      "audiences": [
+        "agency",
+        "public"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "training",
+      "summary": "Four subcommittees: the Procurement Leadership Group, Risk and Compliance, Construction Leadership and ICT & Digital Leadership.",
+      "text": "The Procurement Leadership Group (PLG) is the principal advisory group to the Board. It delivers state priorities by executing the government's and the Board's procurement objectives, and considers and advises on whole-of-government procurement strategy, financial performance, practices, policies and guidelines, resource and capability planning, and the innovation plan. The Risk and Compliance Subcommittee (RCS) reports on operational and administrative functions including Goods and Services Accreditation attestation and assurance outcomes, emergency procurement reported to the Board, ICAC reports and recommendations, NSW Audit Office reports and recommendations, supplier complaints to the Board, and remedial action for poor supplier performance or behaviour. The Construction Leadership Group (CLG) drives reform in the development, procurement and delivery of infrastructure and building projects, including procuring and managing projects more collaboratively, developing a transparent pipeline of projects, improving skills and training, reducing the cost of bidding, and improving the security and timeliness of contract payments. The ICT & Digital Leadership Group (IDLG) is the primary governance forum for ICT decisions and work programs across NSW Government, overseeing ICT strategies and policies, advising on investments under the ICT Assurance Framework, and driving cross-cluster expertise sharing.",
+      "keywords": [
+        "plg",
+        "rcs",
+        "clg",
+        "idlg",
+        "subcommittee",
+        "leadership group",
+        "construction",
+        "ict",
+        "digital",
+        "risk and compliance"
+      ]
+    },
+    {
+      "id": "governance.accreditation",
+      "path": "foundations/governance/accreditation",
+      "heading": "Agency accreditation levels",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Your agency's accreditation level caps the value of goods and services you can procure outside whole-of-government arrangements.",
+      "text": "The NSW Procurement Board has established and governs the accreditation programs for goods and services procurement. Accreditation is an ongoing assessment process to authorise agencies to procure goods and services up to a certain value. Your agency's accreditation status determines the maximum value of goods and services you can procure. There are two levels; the highest is level 2. Level 1 accredited agencies can procure goods and services that are not available on whole-of-government procurement arrangements up to different maximum values depending on risk: low risk up to $50 million, medium risk up to $35 million, high risk up to $20 million. Above these thresholds they must seek concurrence on the procurement strategy from a level 2 accredited agency in their portfolio, or from NSW Procurement. Level 2 accredited agencies can procure goods and services of any value within their budget and play a leadership and concurrence role within their portfolio. If your agency is not accredited you can still procure goods and services not available on whole-of-government arrangements up to a certain value, usually $680,000; above that you need concurrence to your procurement strategy from an accredited agency in your portfolio or from NSW Procurement. Accreditation means an agency has proven it can meet minimum standards for effectively managing risk, driving continuous improvement in its procurement function, and delivering outcomes that provide value and match strategic priorities. Councils are not part of this accreditation scheme.",
+      "keywords": [
+        "accreditation",
+        "level 1",
+        "level 2",
+        "unaccredited",
+        "concurrence",
+        "50 million",
+        "35 million",
+        "20 million",
+        "680000",
+        "how much can i buy",
+        "delegation limit"
+      ],
+      "checklist": [
+        "Look up your agency's current accreditation level and status on buy.nsw",
+        "Assess the risk rating of the procurement, not just its value - the ceiling changes with risk",
+        "If you are above your ceiling, start the concurrence conversation early; it takes time",
+        "Confirm you also have the financial delegation to approve the spend - accreditation and delegation are different things"
+      ],
+      "thresholds": [
+        "thr-accreditation-levels",
+        "thr-unaccredited-680k"
+      ],
+      "citations": [
+        {
+          "label": "Accreditation - buy.nsw",
+          "url": "https://buy.nsw.gov.au/buyer-guidance/get-started/accreditation"
+        }
+      ]
+    },
+    {
+      "id": "governance.buying-arrangements",
+      "path": "foundations/governance/government-procurement-arrangements",
+      "heading": "Government procurement arrangements: what you must use",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Work down the ladder: under $10,000 anywhere; then whole-of-government contracts; then schemes; then agency contracts; then the open market.",
+      "text": "When planning a procurement you need to consider the buying solutions available, including existing government procurement arrangements. Board Direction PBD-2021-04 specifies the approved procurement arrangements for agencies. Under $10,000 (ex GST) you can procure from any supplier, even if the item is available on a whole-of-government arrangement, provided you get approval from someone with financial delegation, check and follow any additional agency rules, and keep records about your decisions and value for money assessment. Purchases up to $10,000 should normally be made using a purchasing card. Agencies may also purchase goods or services up to $50,000 directly from a small business, defined as fewer than twenty full-time equivalent employees, even where those are available on a whole-of-government arrangement. NSW Government contracts are the main way agencies buy goods and services: the general rule is that you must use a whole-of-government contract when one is available, unless you are exempt. A whole-of-government contract appoints one or more suppliers to supply any government agency and runs for a specific period, usually 3 years, with some having 1 or 2-year extension options. Example contracts include Facilities Management - Cleaning Services, Food Services, Office and Education Furniture, the Microsoft Enterprise Agreement, Telecommunications Purchasing Arrangements, Travel Management Services and Waste Management. You can also use prequalification schemes, sometimes called procurement lists, to choose prequalified suppliers based on categories or capabilities; suppliers go through an assessment process to join, and some schemes are mandatory while others are recommended. Examples include Contingent Workforce, ICT Services, Motor Vehicles, the Legal Services Panel and Performance and Management Services. Schemes do not generally include pricing information, so you still need to confirm you are getting value for money. Many agencies have their own contracts and prequalification schemes, and if your agency or portfolio has an existing contract you may be required to use it. Multi-agency access contracts, often called piggybacking contracts, are arrangements set up by one agency that other agencies can use, reducing market approaches and delivering volume savings. If nothing exists, first check whether your agency or portfolio is bound by any standing offers or panel contracts, then select an appropriate way to approach the market as per PBD-2021-04 and the terms of your agency's accreditation.",
+      "keywords": [
+        "whole of government contract",
+        "wog",
+        "prequalification scheme",
+        "supplier panel",
+        "standing offer",
+        "piggyback",
+        "multi-agency",
+        "pbd-2021-04",
+        "approved arrangements",
+        "must i use",
+        "catalogue",
+        "existing contract",
+        "three quotes",
+        "how many quotes",
+        "number of quotes",
+        "do i need quotes",
+        "quotes required",
+        "small purchase",
+        "low value purchase",
+        "buying laptops",
+        "office equipment",
+        "stationery"
+      ],
+      "checklist": [
+        "Is it under $10,000? Buy from anywhere, on PCard, with delegate approval and a recorded VFM note",
+        "Is it under $50,000 and from a small business? You can buy direct even if a WoG contract covers it",
+        "Is there a whole-of-government contract? If yes, use it unless you have a documented exemption",
+        "Is there a mandatory prequalification scheme for this category?",
+        "Does your agency or portfolio have its own contract you are required to use?",
+        "Could you piggyback on another agency's multi-agency access contract?",
+        "Only then design a fresh market approach"
+      ],
+      "thresholds": [
+        "thr-pcard-10k",
+        "thr-small-business-50k",
+        "thr-contract-5-years"
+      ],
+      "templates": [
+        "tpl-contracts",
+        "tpl-schemes"
+      ],
+      "citations": [
+        {
+          "label": "PBD-2021-04 Approved procurement arrangements",
+          "url": "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/"
+        },
+        {
+          "label": "NSW Government contracts",
+          "url": "https://info.buy.nsw.gov.au/contracts"
+        },
+        {
+          "label": "Prequalification schemes",
+          "url": "https://buy.nsw.gov.au/schemes"
+        },
+        {
+          "label": "Multi-agency contracts",
+          "url": "https://buy.nsw.gov.au/buyer-guidance/source/negotiate-and-award-contract/multi-agency-contracts"
+        }
+      ]
+    },
+    {
+      "id": "governance.value-exemptions",
+      "path": "foundations/governance/exemptions-by-value",
+      "heading": "Exemptions that let you buy direct",
+      "audiences": [
+        "agency",
+        "supplier",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "Value and supplier-type exemptions that release you from using a whole-of-government arrangement.",
+      "text": "The general rule is that you must use whole-of-government contracts or prequalification schemes, but there are exemptions. Your procurement may qualify due to the size or nature of the procurement or the supplier you choose. Where an exemption applies you can often buy directly from a supplier, but you should still make sure you are achieving value for money, for example by confirming quoted prices reflect market rates. Exemptions by value include: less than $10,000, buy directly from any supplier; less than $150,000, buy directly from a regional supplier; less than $250,000, buy directly from an Aboriginal business recognised through an appropriate organisation, or from a small or medium enterprise, and you can also buy ICT directly from an SME. There is no limit on buying goods and services from approved disability employment organisations via a single written quote. Note that NSW Government agencies must engage with local NSW suppliers before going to tender for projects worth more than $7.5 million.",
+      "keywords": [
+        "exemption",
+        "buy direct",
+        "direct engagement",
+        "single quote",
+        "regional supplier",
+        "aboriginal business",
+        "sme",
+        "disability employment organisation",
+        "150000",
+        "250000",
+        "10000",
+        "ict",
+        "software",
+        "buy ict directly from an sme",
+        "not on the scheme",
+        "without using the scheme",
+        "direct from an sme",
+        "qualifies for an exemption"
+      ],
+      "thresholds": [
+        "thr-pcard-10k",
+        "thr-regional-150k",
+        "thr-aboriginal-250k",
+        "thr-sme-3m",
+        "thr-local-7-5m"
+      ],
+      "citations": [
+        {
+          "label": "Exemptions - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/exemptions"
+        }
+      ]
+    },
+    {
+      "id": "governance.exemptions-versus-mandatory-schemes",
+      "path": "foundations/governance/exemptions-versus-mandatory-schemes",
+      "heading": "Does a mandatory scheme override a direct-purchase exemption?",
+      "audiences": [
+        "agency",
+        "supplier",
+        "corporate",
+        "nfp"
+      ],
+      "jurisdiction": "nsw-government",
+      "authority": "policy",
+      "summary": "The exemptions ARE exemptions from the mandate to use whole-of-government contracts and prequalification schemes, so a qualifying direct purchase does not need the supplier to be on the scheme.",
+      "text": "This is the question people get wrong most often, because the two rules look like they contradict each other. They do not, and the order matters. The general rule is that you must use a whole-of-government contract or a prequalification scheme when one is available. The exemptions sit directly on top of that rule: the Procurement Policy Framework introduces them as exemptions FROM using government procurement arrangements, and states that where your procurement qualifies for an exemption you can often buy directly from a supplier. So a mandatory scheme does not defeat an exemption you actually qualify for - the exemption is what releases you from the scheme in the first place. Worked through for the common case: a procurement under $250,000 from a small or medium enterprise qualifies for direct purchase, and the Framework separately confirms you can buy ICT directly from an SME. On that basis an agency buying a $120,000 software solution from an SME is within the direct-purchase exemption, and the supplier does not need to be prequalified on the ICT Services Scheme for that purchase. The supplier preferencing rules point the same way rather than against it: the SME and Regional Procurement Policy requires first preference to SMEs for direct procurements up to $3 million, and says explicitly that this applies even when you are buying from a standing offer, panel or prequalification scheme. Three things still bind you. First, you must genuinely qualify - confirm the supplier meets the SME definition (an Australian or New Zealand enterprise with fewer than 200 full-time equivalent employees) and that your value estimate covers the whole contract including options. Second, an exemption removes the obligation to use the arrangement, not the obligation to achieve and evidence value for money, so test the price against the market. Third, individual Board Directions can attach their own conditions to a specific scheme, and your agency's own procurement policy may be stricter than the Framework - both bind you even where the Framework would allow the direct purchase. Check the current Board Direction for the scheme concerned and your agency's procurement team before relying on this.",
+      "keywords": [
+        "mandatory scheme",
+        "override",
+        "overrides",
+        "bypass",
+        "bypass the scheme",
+        "scheme or exemption",
+        "prequalified",
+        "not prequalified",
+        "prequalification",
+        "ict services scheme",
+        "scm0020",
+        "ict scheme",
+        "buy ict directly",
+        "ict from an sme",
+        "software",
+        "direct purchase",
+        "direct buy",
+        "sme exemption",
+        "does the scheme apply",
+        "must the supplier be on the scheme",
+        "which rule wins",
+        "conflict between rules",
+        "exemption versus scheme",
+        "regional sme",
+        "120000"
+      ],
+      "checklist": [
+        "Confirm the supplier genuinely meets the SME definition: an Australian or New Zealand enterprise with fewer than 200 full-time equivalent employees",
+        "Estimate the whole contract value including options and extensions, and check it sits under the exemption threshold",
+        "Identify the specific exemption you are relying on, and record it on the file",
+        "Check the current Board Direction for the scheme concerned in case it attaches its own conditions",
+        "Check your agency's own procurement policy, which may be stricter than the Framework",
+        "Test the price against the market anyway - an exemption does not remove the value for money obligation",
+        "Record the value for money assessment and the reason for the direct purchase"
+      ],
+      "watch_outs": [
+        "An exemption releases you from using the arrangement; it never releases you from value for money, probity or recordkeeping",
+        "Splitting a procurement so it fits under an exemption threshold defeats the rule and is a serious compliance failure",
+        "Your agency's own policy can be stricter than the Framework, and where it is, it binds you"
+      ],
+      "thresholds": [
+        "thr-aboriginal-250k",
+        "thr-sme-3m",
+        "thr-regional-150k",
+        "thr-small-business-50k"
+      ],
+      "citations": [
+        {
+          "label": "Exemptions - buy.nsw",
+          "url": "https://info.buy.nsw.gov.au/buyer-guidance/plan/before-you-approach-the-market/exemptions"
+        },
+        {
+          "label": "SME and Regional Procurement Policy",
+          "url": "https://info.buy.nsw.gov.au/policy-library/policies/sme-and-regional-procurement-policy"
+        },
+        {
+          "label": "PBD-2021-04 Approved procurement arrangements",
+          "url": "https://arp.nsw.gov.au/pbd-2021-04-approved-procurement-arrangements/"
+        },
+        {
+          "label": "ICT/Digital sovereign procurement commitments",
+          "url": "https://www.info.buy.nsw.gov.au/resources/ictdigital-sovereign-procurement-commitments"
+        },
+        {
+          "label": "Prequalification schemes",
+          "url": "https://buy.nsw.gov.au/schemes"
+        }
+      ]
+    },
+    {
+      "id": "governance.recordkeeping",
+      "path": "foundations/governance/recordkeeping",
+      "heading": "Recordkeeping obligations",
+      "audiences": [
+        "agency",
+        "council",
+        "public"
+      ],
+      "jurisdiction": "both",
+      "authority": "legislation",
+      "summary": "Keeping good records at every stage is a legal obligation under the State Records Act - and your defence if a decision is challenged.",
+      "text": "Records are an essential part of an accountable and transparent government and all government employees are obligated to keep them. You must keep good records at every stage of a procurement to document your decisions and the reasons behind them. This is a legal obligation under the State Records Act and will help you answer any complaints or requests for public information. All information created, sent or received in the course of your work is a record; you do not own these records even when you create them yourself - the government does. Your purchasing records should show authorisation for the purchase, reasons for selection of the purchasing method, details of all offers obtained, supplier evaluation criteria and reasons for supplier selection, records of negotiations if applicable, completed purchase orders and payment documentation, evidence of receipt, acceptance and payment, and copies of all related correspondence. Keep emails and letters relating to business; RFx documents, purchase orders, contract documents, evidence of payment and receipts; notes of phone calls recording when the call occurred, who was involved, what was discussed, decisions made and advice given; meeting records with dates, times, locations, attendees, key discussion points and decisions; instant messages where they contain advice, decisions or approvals; text messages containing decisions or actions; and briefing notes, approvals, plans and reports. You do not need to keep sticky notes (make a proper record of the content instead), emails duplicating information already captured elsewhere, or unsolicited mail. If you are unsure whether to make or keep a record, ask: did I write, send, use or keep this in the course of my work; am I or is someone else required to act on this; will anyone need this information in the future?",
+      "keywords": [
+        "procurement records",
+        "recordkeeping",
+        "state records act",
+        "documentation",
+        "audit trail",
+        "what to keep",
+        "file notes",
+        "meeting minutes",
+        "evidence",
+        "keep emails and letters",
+        "which emails to keep"
+      ],
+      "checklist": [
+        "Record the authorisation and the financial delegate who gave it",
+        "Record why you chose this purchasing method",
+        "Keep every offer received, not just the winning one",
+        "Record the evaluation criteria and the reasons for selecting the supplier",
+        "Record negotiations, including what was conceded and why",
+        "Keep the PO, invoices, evidence of receipt and evidence of payment",
+        "Make a file note of any substantive phone call or meeting with a supplier"
+      ],
+      "watch_outs": [
+        "Messages in chat apps count as records if they contain advice, decisions or approvals - get them into the system or repeat them in email",
+        "You cannot answer a GIPA request, a complaint or an audit from memory"
+      ]
+    }
+  ]
+}

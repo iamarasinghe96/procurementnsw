@@ -1,0 +1,11 @@
+node_modules/
+
+# Regenerable duplicate of dist/procurement-navigator.html without the document
+# skeleton, for hosts that supply their own. Build with:
+#   node scripts/build-standalone.mjs --fragment
+dist/artifact.html
+
+.env
+.env.local
+*.log
+.DS_Store

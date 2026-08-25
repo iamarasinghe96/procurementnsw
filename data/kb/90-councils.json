@@ -1,0 +1,566 @@
+{
+  "topic": {
+    "id": "councils",
+    "title": "Procurement for NSW local councils",
+    "path": "councils",
+    "stage": "all",
+    "source_document": "Researched addition - not covered by the Comperio Procurement Foundations course, which addresses NSW Government agencies only.",
+    "audiences": [
+      "council",
+      "supplier",
+      "corporate",
+      "nfp",
+      "public"
+    ],
+    "summary": "Councils run under a different rulebook to state agencies: Local Government Act 1993 ss 55 and 55A, Local Government (General) Regulation 2021 Part 7, and Office of Local Government guidelines."
+  },
+  "chunks": [
+    {
+      "id": "councils.different-rulebook",
+      "path": "councils/which-rules-apply",
+      "heading": "Councils follow a different rulebook to NSW Government agencies",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "If you work for a council, NSW Procurement Board Directions, agency accreditation and whole-of-government contract mandates generally do not apply to you.",
+      "text": "This is the single most important thing to get right. NSW local councils are not NSW Government agencies for procurement purposes. A council's procurement activities are carried out under sections 55 and 55A of the Local Government Act 1993 and Part 7 of the Local Government (General) Regulation 2021, together with the Office of Local Government's Procurement Guidelines for NSW Local Government, published July 2026, which councils must consider when setting their own procurement policy and procedures. NSW Procurement Board Directions, the agency accreditation scheme, the mandate to use whole-of-government contracts, and the enforceable procurement provisions in PBD-2019-05 are directed at NSW Government agencies, not councils. The Public Works and Procurement Regulation 2019 does deal with procurement by public bodies that are not NSW Government agencies, including councils, and councils may in some circumstances access NSW Government arrangements - but the governing obligations for a council come from the Local Government Act, not the Procurement Policy Framework. In practice councils commonly adopt the same good-practice methods that state agencies use - plan, source, manage; value for money; probity principles; evaluation plans and conduct plans - and several obligations genuinely do apply across both, notably the GIPA Act contract disclosure rules, the State Records Act, the ICAC Act, and the Modern Slavery Act. Your council will also have its own adopted procurement policy, which is the document that binds you day to day.",
+      "keywords": [
+        "council",
+        "local government",
+        "which rules",
+        "do procurement board directions apply",
+        "accreditation",
+        "difference",
+        "lga",
+        "section 55",
+        "55a",
+        "regulation 2021",
+        "olg",
+        "not an agency"
+      ],
+      "watch_outs": [
+        "Applying NSW Government agency thresholds to a council procurement is a common and material error - the council tender threshold is $250,000 under the Local Government Act, and it is not the same rule as any state agency threshold that happens to share that number",
+        "Your council's own adopted procurement policy may set lower internal quote thresholds than the legislation requires - the policy binds you"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k"
+      ],
+      "templates": [
+        "tpl-olg-procurement-guidelines"
+      ],
+      "citations": [
+        {
+          "label": "OLG - Procurement in Local Government",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        },
+        {
+          "label": "Local Government Act 1993",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030"
+        },
+        {
+          "label": "Local Government (General) Regulation 2021",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ]
+    },
+    {
+      "id": "councils.tender-threshold",
+      "path": "councils/tendering-threshold",
+      "heading": "When a council must go to tender: the $250,000 threshold",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "Section 55 requires tendering; section 55(3)(n) exempts contracts with estimated expenditure or receipt under $250,000.",
+      "text": "Section 55 of the Local Government Act 1993 requires a council to invite tenders before entering into a contract. Section 55(3) lists the exemptions, and section 55(3)(n) exempts a contract involving an estimated expenditure or receipt of an amount of less than $250,000. The threshold was raised from $100,000 to $250,000 by amendments commencing in June 2019. The threshold applies to the estimated value of the contract, so estimate the whole value including options and extensions rather than a single year or a single order. Below the threshold a council is not required to tender, but the Office of Local Government encourages councils to consider using tendering, or at least a competitive quotation process, where a lesser amount is involved, in order to obtain best value. Most councils set their own internal quotation thresholds in their adopted procurement policy - for example a number of written quotes required in defined value bands - and those internal rules bind staff even though the Act does not require them.",
+      "keywords": [
+        "250000",
+        "threshold",
+        "must we tender",
+        "do i need to tender",
+        "section 55",
+        "55(3)(n)",
+        "estimated expenditure",
+        "quotes",
+        "quotation",
+        "council tender",
+        "construction",
+        "playground",
+        "new contract",
+        "do we need to tender",
+        "need to tender"
+      ],
+      "checklist": [
+        "Estimate the full contract value including all options and extension years, not the first year alone",
+        "Check whether an exemption in section 55(3) applies before assuming you must tender",
+        "Check your council's own adopted procurement policy for internal quotation thresholds below $250,000",
+        "Record the value estimate and the reasoning - it is the basis for the whole procurement method decision"
+      ],
+      "watch_outs": [
+        "Splitting a requirement into parts to stay under $250,000 defeats section 55 and is a serious governance failure",
+        "The threshold is about estimated value at the time of the decision, so a defensible, documented estimate matters"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k"
+      ],
+      "citations": [
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "OLG - Procurement in Local Government",
+          "url": "https://www.olg.nsw.gov.au/councils/governance/procurement-local-government"
+        }
+      ]
+    },
+    {
+      "id": "councils.tender-exemptions",
+      "path": "councils/tendering-exemptions",
+      "heading": "Exemptions from council tendering under section 55(3)",
+      "audiences": [
+        "council",
+        "supplier",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "Several exemptions exist, including prescribed bodies such as LGP, emergencies, and a resolution-based extenuating circumstances exemption.",
+      "text": "Section 55(3) of the Local Government Act 1993 sets out a number of exemptions from the requirement to invite tenders. Commonly relied-on exemptions include: a contract for goods, materials or services made with a person or body prescribed for the purpose, which is the basis on which councils can buy from arrangements established by Local Government Procurement and certain other prescribed organisations without running their own tender; a contract for the leasing or licensing of land by the council; a contract for purchase or sale by a council at public auction; a contract for the employment of a person as an employee of the council; a contract made in a case of emergency; a contract where, because of extenuating circumstances, remoteness of locality or the unavailability of competitive or reliable tenderers, the council decides by resolution stating its reasons that a satisfactory result would not be achieved by inviting tenders; and a contract involving an estimated expenditure or receipt of less than $250,000. Where an exemption depends on a council resolution, the resolution itself must state the reasons - a bare resolution is not enough. Because the exemptions are set by legislation and have been amended over time, including targeted increases for natural disaster and bushfire recovery, always check the current text of section 55(3) rather than relying on a summary before you decide not to tender.",
+      "keywords": [
+        "exemption",
+        "55(3)",
+        "prescribed body",
+        "lgp",
+        "emergency",
+        "extenuating circumstances",
+        "resolution",
+        "auction",
+        "lease",
+        "licence",
+        "no tender",
+        "avoid tender",
+        "disaster recovery",
+        "55(3)(g)",
+        "55(3)(q)",
+        "performance and management services scheme",
+        "disability employment organisation"
+      ],
+      "checklist": [
+        "Identify the specific paragraph of section 55(3) you are relying on, by letter",
+        "If the exemption needs a council resolution, draft the resolution so it states the reasons on its face",
+        "For a prescribed-body exemption, confirm the arrangement really was established by that body and is current",
+        "Record the exemption decision on the procurement file, with the value estimate that supports it"
+      ],
+      "watch_outs": [
+        "The extenuating circumstances exemption is narrow and has been tested in court - it is not a general convenience exemption",
+        "An emergency exemption relied on after the urgency has passed will not hold up"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k"
+      ],
+      "templates": [
+        "tpl-lgp"
+      ],
+      "citations": [
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "Local Government Procurement - legislation",
+          "url": "https://lgp.org.au/legislation/"
+        }
+      ]
+    },
+    {
+      "id": "councils.tender-methods",
+      "path": "councils/tendering-methods",
+      "heading": "Council tendering methods and the 21-day minimum",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "Three methods under the Regulation: open tender, selective tender following an EOI advertisement, and selective tender from a recognised contractor list.",
+      "text": "Part 7 of the Local Government (General) Regulation 2021 governs how councils tender. The council must decide whether tenders are to be by open tendering or selective tendering. Three methods are provided: the open tendering method, where tenders are invited by public advertisement; the selective tendering method, where invitations to tender are made following a public advertisement asking for expressions of interest; and the selective tendering method, where recognised contractors selected from a list prepared or adopted by the council are invited to tender for contracts of a particular kind. Minimum periods apply. The tender deadline must be at least 21 days after the date the advertisement is first published. Under the selective method that follows an expression of interest advertisement, the same 21-day minimum applies again when shortlisted applicants are invited to tender. The tendering provisions in Part 7 were updated by the Local Government (General) Amendment Regulation (No 2) 2022, which commenced on 16 December 2022, so check the current text rather than an older summary. Councils and joint organisations should also confirm how the provisions apply to joint procurement.",
+      "keywords": [
+        "open tender",
+        "selective tender",
+        "recognised contractors",
+        "contractor list",
+        "21 days",
+        "advertisement",
+        "expression of interest",
+        "part 7",
+        "clause 166",
+        "167",
+        "168",
+        "169",
+        "how do councils tender",
+        "joint organisation",
+        "advertised",
+        "advertising period",
+        "how long advertised",
+        "public notice",
+        "tender period",
+        "minimum period",
+        "days to advertise",
+        "invite tenders",
+        "tender procedure",
+        "procedure for a tender",
+        "how do we run a tender",
+        "how to tender",
+        "new tender",
+        "go to tender",
+        "going to tender",
+        "retender",
+        "re-tender",
+        "fresh tender",
+        "tender process",
+        "steps to tender",
+        "what is the procedure",
+        "running a tender",
+        "tender for a service contract",
+        "waste tender",
+        "collection contract tender"
+      ],
+      "checklist": [
+        "Resolve or record the decision on whether the tender is open or selective",
+        "Allow at least 21 days from first publication of the advertisement to the deadline",
+        "Under a selective process, allow another 21 days for the invitation to shortlisted applicants",
+        "Check the current Part 7 text - the tendering provisions were amended in December 2022"
+      ],
+      "thresholds": [
+        "thr-council-tender-21-days"
+      ],
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "OLG circular 22-40 - amendments to the tendering provisions",
+          "url": "https://www.olg.nsw.gov.au/council-circulars/22-40-amendments-to-the-tendering-provisions-of-the-local-government-general-regulation-2021-and-consultation-of-the-development-of-new-procurement-guidelines-for-councils/"
+        }
+      ]
+    },
+    {
+      "id": "councils.tendering-a-service-contract",
+      "path": "councils/tendering-a-major-service-contract",
+      "heading": "Running a tender for a major council service contract (waste, cleaning, maintenance)",
+      "audiences": [
+        "council",
+        "corporate",
+        "supplier"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "practice",
+      "summary": "End to end procedure for retendering a large recurring service contract such as kerbside collection: value, method, timing, evaluation, award and the decisions reserved to the council itself.",
+      "text": "A recurring service contract like kerbside waste collection, street cleaning or parks maintenance is almost always over the section 55 threshold, so the procedure is a full tender under Part 7 of the Local Government (General) Regulation 2021. Work it in this order. First, value and confirm the obligation: estimate the total contract value including GST and every option year, remembering the threshold counts cumulative expenditure with a supplier for similar services. At the values these contracts run to, tendering is required unless a section 55(3) exemption genuinely applies - a prescribed arrangement such as an LGP contract is the realistic alternative, and using one still requires a competitive quote between panel members and a documented value for money assessment. Second, plan before going out: needs analysis and service level review (is the current specification still what the community needs, and if the driver is a budget deficit, which service levels are actually being changed), funding confirmation, risk assessment, market analysis and early industry engagement to test capacity and appetite, and a documented procurement strategy approved by the right delegate. Where the scope is being reduced, the community and stakeholder engagement is part of the planning, not an afterthought. Third, decide the method: open tendering by public advertisement, or selective tendering following an expression of interest advertisement, or selective tendering from a recognised contractor list. Allow at least 21 days from first publication of the advertisement to the deadline, and again for any invitation to shortlisted applicants. Fourth, prepare the documents and the evaluation plan before the tender closes: the specification and service levels, the schedule of rates, the KPI and reporting schedule, transition arrangements, and the evaluation criteria with weightings and the named panel. Fifth, run the process fairly - same information to everyone at the same time, addenda in writing with reasonable time to respond, and conflicts declared. Sixth, evaluate and award: rule out non-conforming submissions, score the rest against the published criteria, and accept the tender that having regard to all the circumstances appears most advantageous, or decline all of them and take one of the defined options. Two decisions are reserved. If the tender would outsource services currently provided by council staff, the decision cannot be delegated and must be made by resolution of the council under section 377(1)(i). And if the council declines all tenders and wants to negotiate instead, that also requires a council resolution stating its reasons. Finally, notify all tenderers of the outcome, debrief unsuccessful ones, enter the contract in the GIPA contracts register within 45 working days if it is $150,000 or more including GST, and stand up the contract management plan before the service transition date. Give the whole exercise a long runway: for a contract of this size, planning, approval, a 21-day-plus tender period, evaluation, council reporting and supplier transition realistically take many months.",
+      "keywords": [
+        "tender the garbage collection contract",
+        "tender a waste contract",
+        "retender waste",
+        "procedure for a new tender",
+        "what is the procedure",
+        "new tender",
+        "retender",
+        "re-tender",
+        "tender a service contract",
+        "garbage collection tender",
+        "waste collection tender",
+        "cleaning contract tender",
+        "maintenance contract tender",
+        "how do we tender a big contract",
+        "major service contract",
+        "going to tender",
+        "go to tender for services",
+        "tender steps",
+        "procurement procedure",
+        "budget deficit",
+        "cut services",
+        "reduce service levels",
+        "service level change",
+        "transition"
+      ],
+      "checklist": [
+        "Estimate total contract value including GST and all option years, counting cumulative spend on similar services",
+        "Confirm tendering is required, or identify the s 55(3) exemption or prescribed arrangement you are relying on",
+        "Review the service specification and service levels before going out - especially if the driver is a budget change",
+        "Confirm funding, complete a risk assessment, and do market analysis and early industry engagement",
+        "Get the procurement strategy approved by the correct delegate before approaching the market",
+        "Choose the method: open tendering, or selective following an EOI, or selective from a recognised contractor list",
+        "Allow at least 21 days from first advertisement to the tender deadline",
+        "Finalise the evaluation plan, criteria, weightings and panel before the tender closes",
+        "Issue the specification, rate schedule, KPI and reporting schedule, and transition requirements",
+        "Give all tenderers the same information at the same time, and issue any change as a written addendum",
+        "Rule out non-conforming submissions, then score the rest against the published criteria",
+        "Take the award to a council resolution if it outsources work currently done by council staff (s 377(1)(i))",
+        "If declining all tenders and negotiating instead, get a council resolution stating the reasons",
+        "Notify all tenderers of the outcome and debrief the unsuccessful ones",
+        "Enter the contract in the GIPA register within 45 working days if $150,000 or more inc GST",
+        "Stand up the contract management plan and transition arrangements before the service start date"
+      ],
+      "watch_outs": [
+        "A decision to outsource services currently provided by council staff cannot be delegated - it must be a council resolution",
+        "Reducing service levels to meet a budget target is a specification decision that belongs in planning and community engagement, not a mid-tender change",
+        "Leaving the retender too late forces an unplanned extension or a rushed process, and both weaken value for money",
+        "Changing the scope after the tender is advertised requires a formal addendum and reasonable time for tenderers to respond"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k",
+        "thr-council-tender-21-days",
+        "thr-gipa-150k"
+      ],
+      "templates": [
+        "tpl-olg-procurement-guidelines",
+        "tpl-lg-regulation"
+      ],
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021 Part 7",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        },
+        {
+          "label": "Local Government Act 1993 s 55",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-1993-030#sec.55"
+        },
+        {
+          "label": "Procurement Guidelines for NSW Local Government (OLG, July 2026)",
+          "url": "https://www.olg.nsw.gov.au/sites/default/files/2026-07/procurement-guidelines-for-nsw-local-government.pdf"
+        }
+      ]
+    },
+    {
+      "id": "councils.accepting-tenders",
+      "path": "councils/accepting-or-declining-tenders",
+      "heading": "Accepting tenders, or declining all of them",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "A council must accept the most advantageous tender or decline all of them - and if it declines, it has four defined options.",
+      "text": "Under the Local Government (General) Regulation 2021, a council must either accept the tender submission that, having regard to all the circumstances, appears to it to be the most advantageous, or decline to accept any of the tender submissions. Note the test is the most advantageous submission having regard to all the circumstances, not automatically the lowest price. If a council decides not to accept any of the tender submissions for a proposed contract, or receives no tender submissions, it must do one of the following: postpone or cancel the proposal; invite fresh tender submissions; invite fresh applications from interested persons; by resolution of the council, enter into negotiations with any person with a view to entering into a contract in relation to the subject matter of the tender; or carry out the requirements of the proposed contract itself. If the council resolves to enter into negotiations, the resolution must state the council's reasons for declining to invite fresh tender submissions or applications, and the council's reasons for determining to enter into negotiations with that person or persons.",
+      "keywords": [
+        "accept tender",
+        "decline",
+        "no tenders received",
+        "most advantageous",
+        "negotiate",
+        "resolution",
+        "cancel",
+        "fresh tenders",
+        "clause 178",
+        "unsuccessful tender process"
+      ],
+      "checklist": [
+        "Frame the recommendation around the most advantageous submission having regard to all the circumstances",
+        "If declining all tenders, pick one of the defined options - do not improvise a fifth",
+        "If negotiating, get a council resolution that states both sets of reasons required by the Regulation",
+        "Record the evaluation that led to the decision, whichever way it went"
+      ],
+      "watch_outs": [
+        "Moving into direct negotiation after a failed tender without the required resolution and reasons is a common compliance failure"
+      ],
+      "citations": [
+        {
+          "label": "Local Government (General) Regulation 2021",
+          "url": "https://legislation.nsw.gov.au/view/html/inforce/current/sl-2021-0460"
+        }
+      ]
+    },
+    {
+      "id": "councils.lgp-panels",
+      "path": "councils/buying-from-lgp-and-prescribed-arrangements",
+      "heading": "Buying from LGP and other prescribed arrangements",
+      "audiences": [
+        "council",
+        "supplier",
+        "corporate"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "policy",
+      "summary": "LGP is prescribed under section 55, so a council can buy from an LGP-established contract above $250,000 without tendering itself.",
+      "text": "Local Government Procurement has been prescribed for the purposes of section 55 of the Local Government Act 1993, which allows councils to use supply arrangements coordinated by LGP without going to tender in their own right. LGP contracts are established through a tender process in which suppliers apply to join a prequalified panel; once approved, suppliers are included on the panel and councils can engage them through the live contract. This means a council can procure goods or services from an LGP contract at values above $250,000 without running its own tender. Using a prescribed arrangement removes the tendering obligation, but it does not remove the obligation to demonstrate value for money, to run a fair and documented selection process between panel members, or to comply with your council's own procurement policy. Panels generally do not fix a single price, so a competitive request for quote between panel members is usually the right way to test value for money.",
+      "keywords": [
+        "lgp",
+        "local government procurement",
+        "supplier panel",
+        "prescribed",
+        "prequalified",
+        "approved contractor",
+        "buy off panel",
+        "no tender needed",
+        "regional procurement"
+      ],
+      "checklist": [
+        "Confirm the arrangement is a current LGP or other prescribed arrangement covering what you are buying",
+        "Run a competitive quote between panel members rather than picking one - the panel does not prove value for money",
+        "Document the selection reasoning and the value for money assessment",
+        "Check your council's procurement policy for any additional internal steps"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k"
+      ],
+      "templates": [
+        "tpl-lgp"
+      ],
+      "citations": [
+        {
+          "label": "LGP approved contracts",
+          "url": "https://lgp.org.au/approved-contractors/"
+        },
+        {
+          "label": "LGP - legislation",
+          "url": "https://lgp.org.au/legislation/"
+        }
+      ]
+    },
+    {
+      "id": "councils.waste-contract-management",
+      "path": "councils/waste-and-domestic-collection-contracts",
+      "heading": "Managing a kerbside collection or waste services contract",
+      "audiences": [
+        "council",
+        "corporate",
+        "public"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "practice",
+      "summary": "Applied contract management for a council's highest-visibility service contract: what to measure, what to review, and what to escalate.",
+      "text": "Kerbside domestic waste and recycling collection is usually a council's most visible, longest-running and most complaint-generating service contract, so contract management effort should be sized accordingly. In practice the work centres on four things. First, a standing contract management meeting rhythm with the contractor, typically monthly, working to a fixed agenda: actions carried forward, work health and safety and incidents, performance against each contract KPI supported by evidence, missed services and customer complaints, financial matters including invoices, rise and fall or indexation adjustments, variations and any abatements, upcoming operational changes such as route or calendar changes, and risks. Minutes with decisions, actions, owners and due dates are records under the State Records Act and are the evidence base if performance ever has to be enforced. Second, performance measurement against the KPIs the contract actually defines. Typical measures for a collection contract include missed collection rates per thousand services, time to rectify a missed service, complaint volumes and resolution times, contamination rates in the recycling and organics streams, bin repair and replacement turnaround, vehicle presentation and safety incidents, and reporting timeliness and accuracy. The critical test is whether you receive the data needed to measure each KPI independently rather than relying solely on the contractor's own reporting. Third, periodic review of the contract schedules so the operational annexures still match reality: the service specification, the price or rate schedule and its indexation mechanism, the KPI and reporting schedule, the vehicle and bin asset schedules, and the collection route or service area definitions. Where operations have drifted from the schedules, deal with it as a formal variation with a documented value for money and delegation assessment. Fourth, statutory and reporting obligations that sit alongside the contract: waste levy liabilities and reporting where the council is the relevant party, EPA waste data reporting, and the council's own reporting on domestic waste management charges. Domestic waste management is funded by a separate charge under the Local Government Act and must be accounted for accordingly, so keep the contract cost data in a state that supports that reporting. Note also that provisions in the Local Government Act protect council employees engaged in domestic and waste management services when those services are contracted out, so check the current requirements before any change in delivery model. Finally, the procurement of the contract itself is a section 55 tender in almost all cases given the values involved, so treat renewal planning as a multi-year exercise rather than an end-of-term task.",
+      "keywords": [
+        "kerbside",
+        "waste",
+        "domestic waste",
+        "recycling",
+        "organics",
+        "contamination",
+        "missed collection",
+        "bins",
+        "contract management meeting",
+        "contract schedules",
+        "performance management",
+        "kpi",
+        "waste levy",
+        "epa",
+        "route",
+        "abatement",
+        "variation",
+        "managing the waste contract",
+        "existing waste contract",
+        "waste contract performance"
+      ],
+      "checklist": [
+        "Run the contract meeting to a fixed agenda and issue minutes with actions, owners and due dates",
+        "Take the performance pack in advance and work through KPIs against evidence, not impressions",
+        "Check you can verify key measures independently of the contractor's own reporting",
+        "Review the service specification, rate schedule and indexation, KPI schedule, asset schedules and route definitions on a set cycle",
+        "Treat any operational drift from the schedules as a formal variation with value for money and delegation sign-off",
+        "Track complaints and missed services as trend data, not just as individual tickets",
+        "Keep waste levy, EPA reporting and domestic waste management charge data aligned with the contract cost data",
+        "Start renewal planning years ahead - a section 55 tender for a collection contract is a major exercise"
+      ],
+      "watch_outs": [
+        "Contamination and missed-service disputes are usually won or lost on the quality of the evidence trail from routine meetings",
+        "Informal agreement to a route or service change that is never varied leaves you unable to enforce the schedule you are actually operating to",
+        "Check the employee protection provisions in the Local Government Act before changing the delivery model for domestic waste services"
+      ],
+      "thresholds": [
+        "thr-council-tender-250k",
+        "thr-gipa-150k"
+      ],
+      "citations": [
+        {
+          "label": "EPA - resources for local council waste and recycling operations",
+          "url": "https://www.epa.nsw.gov.au/Your-environment/Waste/local-council-operations/resources-for-local-councils"
+        },
+        {
+          "label": "Audit Office of NSW - domestic waste management in councils",
+          "url": "https://www.audit.nsw.gov.au/our-work/reports/domestic-waste-management-in-campbelltown-city-council-and-fairfield-city-council"
+        }
+      ]
+    },
+    {
+      "id": "councils.transparency-obligations",
+      "path": "councils/transparency-and-modern-slavery",
+      "heading": "Council transparency, contracts register and modern slavery obligations",
+      "audiences": [
+        "council",
+        "public",
+        "corporate"
+      ],
+      "jurisdiction": "local-government",
+      "authority": "legislation",
+      "summary": "Councils maintain a public contracts register at $150,000, and have had modern slavery reasonable-steps duties since July 2022.",
+      "text": "Under section 27 of the Government Information (Public Access) Act 2009, a council must keep a register recording information about each contract with a private sector body that has, or is likely to have, a value of $150,000 (inc GST) or more. The information must be made available within 45 days of the contract becoming effective and remain available for 20 working days or until the obligations under the contract have been satisfied, whichever is the longer period. Contracts are classified as Class 1 at $150,000 or more, Class 2 where additional information is required in certain circumstances, and Class 3 where a Class 2 contract has a value of $5 million or more. Councils are not required to publish genuinely commercial-in-confidence provisions or information where there is an overriding public interest against disclosure. Separately, since 1 July 2022 councils have been required to take reasonable steps to ensure that goods and services they procure are not the product of modern slavery, and to report on those steps. The NSW Anti-slavery Commissioner's Guidance on Reasonable Steps, operative from 1 January 2024, applies to local councils among other bodies. From 1 July 2024, a council must file an online report with the Office of the Anti-slavery Commissioner within 45 days of the entry into force of any contract arising from a heightened modern slavery due diligence procurement process valued at $150,000 (inc GST) or more.",
+      "keywords": [
+        "contracts register",
+        "gipa",
+        "section 27",
+        "150000",
+        "class 1",
+        "class 2",
+        "class 3",
+        "modern slavery",
+        "reasonable steps",
+        "anti-slavery commissioner",
+        "council transparency",
+        "publish contracts",
+        "disclosure",
+        "what has my council contracted",
+        "see council contracts",
+        "council contract disclosure",
+        "find council contracts",
+        "public access to contracts",
+        "contracted"
+      ],
+      "checklist": [
+        "Publish Class 1, 2 and 3 contract information within 45 days of the contract becoming effective",
+        "Keep the entry available for 20 working days or until contract obligations are satisfied, whichever is longer",
+        "Apply modern slavery risk screening in procurement and keep the evidence of the reasonable steps taken",
+        "File the Anti-slavery Commissioner report within 45 days where a heightened due diligence contract of $150,000 or more takes effect"
+      ],
+      "thresholds": [
+        "thr-gipa-150k",
+        "thr-modern-slavery-council-150k"
+      ],
+      "templates": [
+        "tpl-modern-slavery-reasonable-steps"
+      ],
+      "citations": [
+        {
+          "label": "IPC NSW - Register of government contracts",
+          "url": "https://www.ipc.nsw.gov.au/about-us/accessing-ipc-information/register-government-contracts"
+        },
+        {
+          "label": "OLG circular 23-17 - modern slavery obligations",
+          "url": "https://www.olg.nsw.gov.au/council-circulars/23-17-update-on-councils-obligations-under-the-modern-slavery-act-2018-nsw/"
+        },
+        {
+          "label": "Guidance on Reasonable Steps",
+          "url": "https://dcj.nsw.gov.au/documents/legal-and-justice/anti-slavery-commissioner/due-diligence-and-reporting/guidance-on-reasonable-steps.pdf"
+        }
+      ]
+    }
+  ]
+}

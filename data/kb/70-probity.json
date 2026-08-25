@@ -1,0 +1,59 @@
+{
+  "topic": {
+    "id": "probity",
+    "title": "Probity in procurement",
+    "path": "integrity/probity",
+    "stage": "all",
+    "source_document": "Probity in procurement.docx",
+    "audiences": ["agency", "council", "supplier", "corporate", "public"],
+    "summary": "The four probity principles, why they matter, and when to engage a probity adviser or auditor."
+  },
+  "chunks": [
+    {
+      "id": "probity.what-is-probity",
+      "path": "integrity/probity/what-is-probity",
+      "heading": "What probity means",
+      "audiences": ["agency", "council", "supplier", "public"],
+      "jurisdiction": "both",
+      "authority": "training",
+      "summary": "Probity is more than avoiding corruption - it is acting ethically, with integrity, uprightness and honesty.",
+      "text": "Probity is more than simply avoiding corrupt or dishonest conduct. Probity means acting ethically, with integrity, uprightness and honesty. For public officials and public sector agencies, creating and maintaining probity involves applying and complying with public sector values and probity principles such as impartiality, accountability and transparency. Procurement is an area that is vulnerable to corruption and maladministration, and you are obligated to ensure your procurement conduct is probity rich. Not upholding probity principles can damage your agency's reputation, diminish the government's standing as a business partner, lead to poor procurement outcomes, and lead to disciplinary action.",
+      "keywords": ["probity", "ethics", "integrity", "honesty", "public sector values", "what is probity"]
+    },
+    {
+      "id": "probity.four-principles",
+      "path": "integrity/probity/probity-principles",
+      "heading": "The four probity principles",
+      "audiences": ["agency", "council", "supplier", "corporate", "public"],
+      "jurisdiction": "both",
+      "authority": "training",
+      "summary": "Value for money, impartiality, consistency and fairness, and accountability and transparency.",
+      "text": "As a public official you have a duty to adopt processes, practices and behaviour that enhance and promote honesty and integrity and protect the public interest. Your conduct must always be fair, ethical, transparent and accountable. Corrupt conduct violates key probity principles and can occur at any point in the procurement process, so upholding these principles helps prevent corruption. Suppliers often invest significant time, effort and resources in preparing and submitting offers, and in return are entitled to expect fair treatment at every stage. Principle 1, value for money: obtaining value for money is a fundamental principle of any procurement. Corrupted procurements do not deliver best value for money. Ensure the goods and services you procure are fit for purpose, that you understand the whole-of-life costs, and that they are appropriate. Good supplier due diligence helps because it increases the probability of engaging a high-performing, reliable supplier. Principle 2, impartiality: since we are spending public money it must be spent in an unbiased way. If you fail to act with impartiality, or even just appear to be biased, suppliers and the public may consider the process unfair, which can result in actual corrupt conduct, suppliers approaching officials seeking favourable treatment, reputational damage, suppliers being deterred from doing business with government, and suppliers taking legal action resulting in delays and significant costs. Principle 3, consistency and fairness: a clear, visible and meaningful commitment to fairness creates a level playing field and supports competition. Being fair and equitable means giving all suppliers the same access to information, guidance and instructions. Consistently applied processes help prevent discrimination and remove opportunities for corruption. Principle 4, accountability and transparency: taking responsibility for your decisions and ensuring decision-making processes are clear and open gives the public confidence and reduces opportunities for fraud and corruption to go undiscovered. All procurement decisions must be able to stand up to public scrutiny - always ask yourself whether you can explain and defend your decisions if they come under scrutiny. Good record keeping is key. The integrity of competitive procurement also hinges on maintaining appropriate confidentiality to protect information provided by suppliers, and information security makes it harder for a supplier to gain an unfair advantage. Public sector procurement can also help prevent unethical practices in the supply chain: due diligence checks can ensure suppliers and subcontractors pay fair wages, avoid child labour and source materials ethically.",
+      "keywords": ["probity principles", "impartiality", "fairness", "consistency", "accountability", "transparency", "bias", "level playing field", "public scrutiny", "confidentiality"],
+      "checklist": [
+        "Can you explain and defend this decision if it were made public tomorrow?",
+        "Has every supplier had the same access to the same information at the same time?",
+        "Is there anything in your process that a reasonable person could read as favouritism?",
+        "Is supplier confidential information secured and access-controlled?",
+        "Is the record complete enough for someone else to reconstruct why you decided as you did?"
+      ]
+    },
+    {
+      "id": "probity.advisers-auditors",
+      "path": "integrity/probity/probity-advisers-and-auditors",
+      "heading": "Probity advisers and auditors",
+      "audiences": ["agency", "council"],
+      "jurisdiction": "both",
+      "authority": "policy",
+      "summary": "Engaging a probity adviser does not transfer accountability, and should be the exception rather than the rule.",
+      "text": "Probity advisers and auditors monitor or verify that your procurement processes are consistent with government regulations and probity principles. Engaging a probity adviser is not a way to outsource accountability for probity, and it is not a substitute for good management practices; it does not guarantee there will be no probity or process breaches. You and your agency are always accountable. Using external probity advisers and auditors should be the exception rather than the rule, as per the Procurement Policy Framework. You may need to engage a probity adviser or auditor if the integrity of the process, or part of it, may be questioned; if the project is politically sensitive or potentially controversial; when establishing or renewing contracts for goods or services that are vulnerable to being influenced by corrupt practices; to avoid a perception of bias or favouritism; where the process is extremely complex; or where there are substantial costs involved in preparing submissions or substantial government funding involved.",
+      "keywords": ["probity adviser", "probity auditor", "independent probity", "when to engage", "accountability", "politically sensitive"],
+      "watch_outs": [
+        "A probity adviser's sign-off is not a defence if the underlying decision was poor - accountability stays with you and your agency"
+      ],
+      "citations": [
+        { "label": "Procurement Policy Framework", "url": "https://info.buy.nsw.gov.au/policy-library/policies/procurement-policy-framework" }
+      ]
+    }
+  ]
+}
